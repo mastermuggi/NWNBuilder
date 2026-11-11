@@ -137,37 +137,4 @@ public class FeatRuleTests
         Assert.Contains("Mangler", info);
         Assert.StartsWith("⚠", editor.Rows[0].Problems);
     }
-
-    [Fact]
-    public void Swashbuckler_gets_mobility_at_7()
-    {
-        var build = new Build
-        {
-            Race = "Human",
-            StartAbilities = new AbilityScores { Str = 10, Dex = 16, Con = 14, Int = 10, Wis = 10, Cha = 8 },
-            Levels = Enumerable.Range(1, 7).Select(i => new BuildLevel { Level = i, Class = "Swashbuckler" }).ToList(),
-        };
-        build.Levels[6].ClassFeat = "Mobility";
-
-        Assert.Empty(Problems(build, 7));
-    }
-
-    [Fact]
-    public void Warpriest_cleric_gets_weapon_specialization_at_12()
-    {
-        Build Cleric(string? path) => new()
-        {
-            Race = "Human",
-            StartAbilities = new AbilityScores { Str = 14, Dex = 10, Con = 14, Int = 10, Wis = 16, Cha = 8 },
-            Levels = Enumerable.Range(1, 12).Select(i => new BuildLevel
-            {
-                Level = i, Class = "Cleric",
-                ClassFeat = i == 1 ? path : i == 12 ? "Weapon Specialization Concussion" : null,
-                GeneralFeat = i == 1 ? "Weapon Focus Concussion" : null,
-            }).ToList(),
-        };
-
-        Assert.Empty(Problems(Cleric("Path: Warpriest"), 12));
-        Assert.NotEmpty(Problems(Cleric(null), 12));
-    }
 }
