@@ -40,16 +40,23 @@ public sealed class LevelRow : INotifyPropertyChanged
     private readonly Action _changed;
     private LevelResult? _result;
 
-    public LevelRow(BuildLevel level, Action changed)
+    public LevelRow(BuildLevel level, Action changed, BuildEditor editor)
     {
         _level = level;
         _changed = changed;
+        Editor = editor;
     }
 
+    /// <summary>Giver dropdowns i rækken direkte adgang til valgmulighederne.</summary>
+    public BuildEditor Editor { get; }
+
     public int Level => _level.Level;
-    public string Class { get => _level.Class; set { _level.Class = value ?? ""; _changed(); } }
-    public string? ClassFeat { get => _level.ClassFeat; set { _level.ClassFeat = Empty(value); _changed(); } }
-    public string? GeneralFeat { get => _level.GeneralFeat; set { _level.GeneralFeat = Empty(value); _changed(); } }
+
+    // null ignoreres: en dropdown sender null når den indlæses før sin liste – det må ikke slette værdien.
+    // Tom tekst ("") er det bevidste "ingen" valg.
+    public string Class { get => _level.Class; set { if (value == null) return; _level.Class = value; _changed(); } }
+    public string? ClassFeat { get => _level.ClassFeat ?? ""; set { if (value == null) return; _level.ClassFeat = Empty(value); _changed(); } }
+    public string? GeneralFeat { get => _level.GeneralFeat ?? ""; set { if (value == null) return; _level.GeneralFeat = Empty(value); _changed(); } }
     public Ability? AbilityIncrease { get => _level.AbilityIncrease; set { _level.AbilityIncrease = value; _changed(); } }
 
     public int? Bab => _result?.Bab;
@@ -184,7 +191,7 @@ public sealed class BuildEditor : INotifyPropertyChanged
             .ToList();
 
         Friends = new(build.Friends);
-        Rows = new(build.Levels.OrderBy(l => l.Level).Select(l => new LevelRow(l, Recalculate)));
+        Rows = new(build.Levels.OrderBy(l => l.Level).Select(l => new LevelRow(l, Recalculate, this)));
 
         Gifts = (ruleset?.Gifts ?? new())
             .Select(g => new GiftOption

@@ -97,4 +97,22 @@ public class BuildEditorTests
         Assert.All(build.Levels, l => Assert.Equal("", l.Class));
         Assert.Null(build.Id);
     }
+
+    [Fact]
+    public void Dropdown_sending_null_does_not_erase_level()
+    {
+        var editor = new BuildEditor(BuildJson.LoadSample("hesper-salcedo"), TestRules.Arelith());
+        var row = editor.Rows[0];
+
+        row.Class = null!;      // som en ComboBox gør når den indlæses
+        row.ClassFeat = null;
+        row.GeneralFeat = null;
+
+        Assert.Equal("Monk", row.Class);
+        Assert.Equal("Improved Expertise", row.ClassFeat);
+        Assert.Equal("Expertise", row.GeneralFeat);
+
+        row.GeneralFeat = "";   // bevidst "ingen"
+        Assert.Null(editor.Build.Levels[0].GeneralFeat);
+    }
 }

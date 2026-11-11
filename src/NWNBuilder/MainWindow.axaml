@@ -228,11 +228,11 @@
                         AutoGenerateColumns="False" CanUserSortColumns="False" CanUserReorderColumns="False"
                         HeadersVisibility="Column" GridLinesVisibility="Horizontal" Background="Transparent">
                 <DataGrid.Columns>
-                  <DataGridTextColumn Header="Lvl" Binding="{Binding Level}" IsReadOnly="True" Width="60" />
+                  <DataGridTextColumn Header="Lvl" Binding="{Binding Level}" IsReadOnly="True" Width="70" />
                   <DataGridTemplateColumn Header="Klasse" Width="200">
                     <DataGridTemplateColumn.CellTemplate>
                       <DataTemplate x:CompileBindings="False">
-                        <ComboBox ItemsSource="{Binding $parent[DataGrid].DataContext.ClassOptions}"
+                        <ComboBox ItemsSource="{Binding Editor.ClassOptions}"
                                   SelectedItem="{Binding Class, Mode=TwoWay}"
                                   HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" />
                       </DataTemplate>
@@ -241,7 +241,7 @@
                   <DataGridTemplateColumn Header="Class feat" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                       <DataTemplate x:CompileBindings="False">
-                        <ComboBox ItemsSource="{Binding $parent[DataGrid].DataContext.FeatOptions}"
+                        <ComboBox ItemsSource="{Binding Editor.FeatOptions}"
                                   SelectedItem="{Binding ClassFeat, Mode=TwoWay}"
                                   HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" />
                       </DataTemplate>
@@ -250,7 +250,7 @@
                   <DataGridTemplateColumn Header="General feat" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                       <DataTemplate x:CompileBindings="False">
-                        <ComboBox ItemsSource="{Binding $parent[DataGrid].DataContext.FeatOptions}"
+                        <ComboBox ItemsSource="{Binding Editor.FeatOptions}"
                                   SelectedItem="{Binding GeneralFeat, Mode=TwoWay}"
                                   HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" />
                       </DataTemplate>
@@ -277,20 +277,20 @@
                         AutoGenerateColumns="False" CanUserSortColumns="False" CanUserReorderColumns="False"
                         HeadersVisibility="Column" GridLinesVisibility="Horizontal" Background="Transparent">
                 <DataGrid.Columns>
-                  <DataGridTextColumn Header="Lvl" Binding="{Binding Level}" Width="60" />
+                  <DataGridTextColumn Header="Lvl" Binding="{Binding Level}" Width="70" />
                   <DataGridTextColumn Header="Klasse" Binding="{Binding Class}" Width="180" />
-                  <DataGridTextColumn Header="BAB" Binding="{Binding Bab}" Width="70" />
-                  <DataGridTextColumn Header="Fort" Binding="{Binding Fort}" Width="70" />
-                  <DataGridTextColumn Header="Ref" Binding="{Binding Ref}" Width="70" />
-                  <DataGridTextColumn Header="Will" Binding="{Binding Will}" Width="70" />
-                  <DataGridTextColumn Header="HP" Binding="{Binding Hp}" Width="80" />
+                  <DataGridTextColumn Header="BAB" Binding="{Binding Bab}" Width="84" />
+                  <DataGridTextColumn Header="Fort" Binding="{Binding Fort}" Width="84" />
+                  <DataGridTextColumn Header="Ref" Binding="{Binding Ref}" Width="84" />
+                  <DataGridTextColumn Header="Will" Binding="{Binding Will}" Width="84" />
+                  <DataGridTextColumn Header="HP" Binding="{Binding Hp}" Width="90" />
                   <DataGridTextColumn Header="Skill pt" Binding="{Binding SkillPoints}" Width="90" />
-                  <DataGridTextColumn Header="STR" Binding="{Binding Str}" Width="70" />
-                  <DataGridTextColumn Header="DEX" Binding="{Binding Dex}" Width="70" />
-                  <DataGridTextColumn Header="CON" Binding="{Binding Con}" Width="70" />
-                  <DataGridTextColumn Header="INT" Binding="{Binding Int}" Width="70" />
-                  <DataGridTextColumn Header="WIS" Binding="{Binding Wis}" Width="70" />
-                  <DataGridTextColumn Header="CHA" Binding="{Binding Cha}" Width="70" />
+                  <DataGridTextColumn Header="STR" Binding="{Binding Str}" Width="84" />
+                  <DataGridTextColumn Header="DEX" Binding="{Binding Dex}" Width="84" />
+                  <DataGridTextColumn Header="CON" Binding="{Binding Con}" Width="84" />
+                  <DataGridTextColumn Header="INT" Binding="{Binding Int}" Width="84" />
+                  <DataGridTextColumn Header="WIS" Binding="{Binding Wis}" Width="84" />
+                  <DataGridTextColumn Header="CHA" Binding="{Binding Cha}" Width="84" />
                 </DataGrid.Columns>
               </DataGrid>
             </Border>
@@ -310,11 +310,11 @@
                             HeadersVisibility="Column" GridLinesVisibility="Horizontal" Background="Transparent">
                     <DataGrid.Columns>
                       <DataGridTextColumn Header="Skill" Binding="{Binding Name}" IsReadOnly="True" Width="*" />
-                      <DataGridTextColumn Header="Point" Binding="{Binding Points}" Width="80" />
-                      <DataGridTextColumn Header="Class" Binding="{Binding ClassSkill}" IsReadOnly="True" Width="70" CellStyleClasses="calc" />
-                      <DataGridTextColumn Header="Ranks" Binding="{Binding Ranks}" IsReadOnly="True" Width="72" CellStyleClasses="calc" />
-                      <DataGridTextColumn Header="Mod" Binding="{Binding Modifier}" IsReadOnly="True" Width="64" CellStyleClasses="calc" />
-                      <DataGridTextColumn Header="Total" Binding="{Binding Total}" IsReadOnly="True" Width="70" CellStyleClasses="calc" />
+                      <DataGridTextColumn Header="Point" Binding="{Binding Points}" Width="90" />
+                      <DataGridTextColumn Header="Class" Binding="{Binding ClassSkill}" IsReadOnly="True" Width="90" CellStyleClasses="calc" />
+                      <DataGridTextColumn Header="Ranks" Binding="{Binding Ranks}" IsReadOnly="True" Width="90" CellStyleClasses="calc" />
+                      <DataGridTextColumn Header="Mod" Binding="{Binding Modifier}" IsReadOnly="True" Width="80" CellStyleClasses="calc" />
+                      <DataGridTextColumn Header="Total" Binding="{Binding Total}" IsReadOnly="True" Width="90" CellStyleClasses="calc" />
                     </DataGrid.Columns>
                   </DataGrid>
                 </DockPanel>
