@@ -1,7 +1,7 @@
 {
   "id": "arelith",
   "name": "Arelith",
-  "version": "2026-11-11c",
+  "version": "2026-11-11d",
   "notes": "Kilde: wiki.nwnarelith.com (klassesider, Gift, Skill changes) + ejers ark (256 builds). Start-stats er efter race og før gifts, som i arkene.",
   "rules": {
     "maxLevel": 30,
@@ -1109,7 +1109,9 @@
       "aliases": [
         "Halfling",
         "Hafling"
-      ]
+      ],
+      "allSaves": 1,
+      "notes": "Lucky: +1 alle saves fra level 1."
     },
     {
       "name": "Sun Elf",

@@ -144,7 +144,7 @@ public static class Calculator
                 }
             }
 
-            var allSaves = gifts.Sum(g => g.AllSaves);
+            var allSaves = gifts.Sum(g => g.AllSaves) + (race?.AllSaves ?? 0);
             var hasChaToSaves = classLevels.Any(kv =>
                 rules.FindClass(kv.Key)?.ChaToSavesFromLevel is { } from && kv.Value >= from);
             if (hasChaToSaves)

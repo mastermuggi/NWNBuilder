@@ -144,4 +144,19 @@ public class CalculatorTests
         // Paladin 2: F3/R0/W0 · DC 2: F3/R3/W0 · CHA +2 (én gang) · Sacred Defense +1
         Assert.Equal((3 + 3 + 2 + 1, 0 + 3 + 2 + 1, 0 + 0 + 2 + 1), (f.Fort, f.Ref, f.Will));
     }
+
+    [Fact]
+    public void Lightfoot_halfling_is_lucky()
+    {
+        var build = new Build
+        {
+            Race = "Lightfoot Halfling",
+            StartAbilities = new AbilityScores { Str = 10, Dex = 10, Con = 10, Int = 10, Wis = 10, Cha = 10 },
+            Levels = new() { new BuildLevel { Level = 1, Class = "Fighter" } },
+        };
+
+        var f = Calculator.Calculate(build, LoadArelith()).Final!;
+
+        Assert.Equal((2 + 1, 0 + 1, 0 + 1), (f.Fort, f.Ref, f.Will));
+    }
 }

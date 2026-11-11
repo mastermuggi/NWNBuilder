@@ -82,6 +82,9 @@ public sealed class RaceRule
     public List<string> Aliases { get; set; } = new();
     public Dictionary<string, int> Abilities { get; set; } = new();
     public int BonusSkillPoints { get; set; }
+    /// <summary>Bonus til alle saves (fx Lightfoot Halfling: Lucky +1).</summary>
+    public int AllSaves { get; set; }
+    public string? Notes { get; set; }
 }
 
 public sealed class GiftRule
