@@ -151,4 +151,23 @@ public class FeatRuleTests
 
         Assert.Empty(Problems(build, 7));
     }
+
+    [Fact]
+    public void Warpriest_cleric_gets_weapon_specialization_at_12() // wiki.nwnarelith.com/Cleric
+    {
+        Build Cleric(string? path) => new()
+        {
+            Race = "Human",
+            StartAbilities = new AbilityScores { Str = 14, Dex = 10, Con = 14, Int = 10, Wis = 16, Cha = 8 },
+            Levels = Enumerable.Range(1, 12).Select(i => new BuildLevel
+            {
+                Level = i, Class = "Cleric",
+                ClassFeat = i == 3 ? path : i == 12 ? "Weapon Specialization Concussion" : null,
+                GeneralFeat = i == 3 ? "Weapon Focus Concussion" : null,
+            }).ToList(),
+        };
+
+        Assert.Empty(Problems(Cleric("Path: Warpriest"), 12));
+        Assert.NotEmpty(Problems(Cleric(null), 12));
+    }
 }

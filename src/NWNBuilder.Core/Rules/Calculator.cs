@@ -177,15 +177,20 @@ public static class Calculator
             will += featWill + allSaves + Mod(abilities.Wis);
 
             // Feats som klasse/race giver automatisk tæller som taget, og deres krav tjekkes ikke.
+            var chosen = taken.Concat(levelFeats).ToList();
             var granted = classLevels
-                .SelectMany(kv => rules.FindClass(kv.Key)?.GrantedFeats.Where(g => g.ClassLevel <= kv.Value).Select(g => g.Feat)
+                .SelectMany(kv => rules.FindClass(kv.Key)?.GrantedFeats
+                                      .Where(g => g.ClassLevel <= kv.Value
+                                                  && (g.WithFeat == null || chosen.Contains(FindFeat(rules, g.WithFeat)!)))
+                                      .Select(g => g.Feat)
                                   ?? Enumerable.Empty<string>())
                 .Concat(race?.GrantedFeats ?? new())
                 .Select(n => FindFeat(rules, n)).OfType<FeatRule>().ToHashSet();
             var ctx = new FeatContext(rules, L, bab, beforeFeats, classLevels,
                 taken.Concat(levelFeats).Concat(granted).ToList(), build, buildClasses);
             var problems = new List<string>();
-            foreach (var feat in levelFeats.Where(f => !granted.Contains(f)))
+            // Også varianter: "Weapon Specialization Concussion" er dækket af en gratis Weapon Specialization.
+            foreach (var feat in levelFeats.Where(f => !granted.Contains(f) && !(f.Base != null && granted.Any(g => Same(g.Name, f.Base)))))
             {
                 var missing = MissingRequirements(feat, ctx);
                 if (missing.Count > 0)

@@ -67,6 +67,9 @@ public sealed class GrantedFeat
 {
     public int ClassLevel { get; set; }
     public string Feat { get; set; } = "";
+    /// <summary>Gives kun hvis buildet har dette feat (fx "Path: Warpriest").</summary>
+    public string? WithFeat { get; set; }
+    public string? Notes { get; set; }
 }
 
 /// <summary>Stat-bonus fra en klasse når klasse-level nås. Ability "StrOrDex" = STR medmindre start-DEX er højere.</summary>
