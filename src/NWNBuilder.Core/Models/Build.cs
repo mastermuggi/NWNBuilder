@@ -36,9 +36,11 @@ public sealed class Build
     public string Deity { get; set; } = "";
     public int? Age { get; set; }
 
-    /// <summary>Start-stats før gifts.</summary>
+    /// <summary>Start-stats før race og gifts.</summary>
     public AbilityScores StartAbilities { get; set; } = new();
-    public string Gifts { get; set; } = "";
+
+    /// <summary>Valgte gifts (navne fra regelsættet).</summary>
+    public List<string> GiftNames { get; set; } = new();
 
     public List<BuildLevel> Levels { get; set; } = new();
 
@@ -58,6 +60,7 @@ public sealed class Build
     public List<string>? Origins { get; set; }
     public string? Voiceset { get; set; }
     public string? VoiceExample { get; set; }
+    public string? Gifts { get; set; }
 }
 
 /// <summary>En ven i vennebogen.</summary>

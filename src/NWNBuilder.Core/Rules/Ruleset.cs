@@ -1,0 +1,97 @@
+namespace NWNBuilder.Core.Rules;
+
+/// <summary>Et regelsæt (fx Arelith). Indlæses fra JSON og gemmes i MongoDB (collection "rulesets").</summary>
+public sealed class Ruleset
+{
+    public string Id { get; set; } = "";
+    public string Name { get; set; } = "";
+    public string Version { get; set; } = "";
+    public string? Notes { get; set; }
+
+    public GeneralRules Rules { get; set; } = new();
+
+    /// <summary>Save-tabeller pr. navn ("high", "low", "medium" …), værdi for klasse-level 1–20.</summary>
+    public Dictionary<string, List<int>> SaveTables { get; set; } = new();
+
+    public List<ClassRule> Classes { get; set; } = new();
+    public List<RaceRule> Races { get; set; } = new();
+    public List<GiftRule> Gifts { get; set; } = new();
+    public List<SkillRule> Skills { get; set; } = new();
+    public List<FeatRule> Feats { get; set; } = new();
+
+    public ClassRule? FindClass(string name) => Classes.FirstOrDefault(c => Same(c.Name, name));
+    public RaceRule? FindRace(string name) => Races.FirstOrDefault(r => Same(r.Name, name));
+    public GiftRule? FindGift(string name) => Gifts.FirstOrDefault(g => Same(g.Name, name));
+    public FeatRule? FindFeat(string name) =>
+        Feats.FirstOrDefault(f => Same(f.Name, name) || f.Aliases.Any(a => Same(a, name)));
+
+    private static bool Same(string a, string b) => string.Equals(a.Trim(), b.Trim(), StringComparison.OrdinalIgnoreCase);
+}
+
+public sealed class GeneralRules
+{
+    public int MaxLevel { get; set; } = 30;
+    public int EpicFromLevel { get; set; } = 21;
+    public int Level1SkillMultiplier { get; set; } = 4;
+    public int MaxRanksAboveLevel { get; set; } = 3;
+    public string? Notes { get; set; }
+}
+
+public sealed class ClassRule
+{
+    public string Name { get; set; } = "";
+    public int HitDie { get; set; }
+    /// <summary>"full", "3/4" eller "1/2".</summary>
+    public string Bab { get; set; } = "full";
+    public string Fort { get; set; } = "low";
+    public string Ref { get; set; } = "low";
+    public string Will { get; set; } = "low";
+    public int SkillPoints { get; set; }
+    public List<string> ClassSkills { get; set; } = new();
+    public List<SaveBonus> SaveBonuses { get; set; } = new();
+    public string? Notes { get; set; }
+}
+
+/// <summary>Save-bonus fra en klasse når klasse-level nås (fx Swashbuckler Grace).</summary>
+public sealed class SaveBonus
+{
+    public int ClassLevel { get; set; }
+    public int Fort { get; set; }
+    public int Ref { get; set; }
+    public int Will { get; set; }
+}
+
+public sealed class RaceRule
+{
+    public string Name { get; set; } = "";
+    public Dictionary<string, int> Abilities { get; set; } = new();
+    public int BonusSkillPoints { get; set; }
+}
+
+public sealed class GiftRule
+{
+    public string Name { get; set; } = "";
+    public double Ecl { get; set; }
+    public string Effect { get; set; } = "";
+    public Dictionary<string, int> Abilities { get; set; } = new();
+    public Dictionary<string, int> Skills { get; set; } = new();
+    public int AllSaves { get; set; }
+}
+
+public sealed class SkillRule
+{
+    public string Name { get; set; } = "";
+    /// <summary>"Str", "Dex" … eller null hvis ukendt.</summary>
+    public string? Ability { get; set; }
+}
+
+public sealed class FeatRule
+{
+    public string Name { get; set; } = "";
+    public List<string> Aliases { get; set; } = new();
+    public Dictionary<string, int> Abilities { get; set; } = new();
+    public int Fort { get; set; }
+    public int Ref { get; set; }
+    public int Will { get; set; }
+    public string? Notes { get; set; }
+}

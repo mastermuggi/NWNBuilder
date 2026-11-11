@@ -1,5 +1,7 @@
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using NWNBuilder.Core.Models;
+using NWNBuilder.Core.Rules;
 
 namespace NWNBuilder.Core;
 
@@ -10,13 +12,68 @@ public sealed class NamedValue
     public int Value { get; set; }
 }
 
-/// <summary>Redigerbar visning af et build. Apply() skriver ændringerne tilbage til Build.</summary>
-public sealed class BuildEditor
+/// <summary>En gift man kan vælge til/fra.</summary>
+public sealed class GiftOption
 {
+    public string Name { get; init; } = "";
+    public string Effect { get; init; } = "";
+    public double Ecl { get; init; }
+    public bool IsSelected { get; set; }
+    public string Label => Ecl > 0 ? $"{Name}  (ECL +{Ecl})" : Name;
+}
+
+/// <summary>Et level i Levels-tabellen: redigerbare valg + beregnede værdier.</summary>
+public sealed class LevelRow : INotifyPropertyChanged
+{
+    private readonly BuildLevel _level;
+    private readonly Action _changed;
+    private LevelResult? _result;
+
+    public LevelRow(BuildLevel level, Action changed)
+    {
+        _level = level;
+        _changed = changed;
+    }
+
+    public int Level => _level.Level;
+    public string Class { get => _level.Class; set { _level.Class = value ?? ""; _changed(); } }
+    public string? ClassFeat { get => _level.ClassFeat; set { _level.ClassFeat = value; _changed(); } }
+    public string? GeneralFeat { get => _level.GeneralFeat; set { _level.GeneralFeat = value; _changed(); } }
+    public Ability? AbilityIncrease { get => _level.AbilityIncrease; set { _level.AbilityIncrease = value; _changed(); } }
+
+    public int? Bab => _result?.Bab;
+    public int? Fort => _result?.Fort;
+    public int? Ref => _result?.Ref;
+    public int? Will => _result?.Will;
+    public int? Hp => _result?.Hp;
+    public int? SkillPoints => _result?.SkillPoints;
+    public int? Str => _result?.Abilities.Str;
+    public int? Dex => _result?.Abilities.Dex;
+    public int? Con => _result?.Abilities.Con;
+    public int? Int => _result?.Abilities.Int;
+    public int? Wis => _result?.Abilities.Wis;
+    public int? Cha => _result?.Abilities.Cha;
+
+    public event PropertyChangedEventHandler? PropertyChanged;
+
+    internal void SetResult(LevelResult? result)
+    {
+        _result = result;
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(string.Empty));
+    }
+}
+
+/// <summary>Redigerbar visning af et build. Apply() skriver ændringerne tilbage til Build.</summary>
+public sealed class BuildEditor : INotifyPropertyChanged
+{
+    private readonly Ruleset? _ruleset;
+
     public Build Build { get; }
     public ObservableCollection<NamedValue> Skills { get; }
     public ObservableCollection<NamedValue> Crafting { get; }
     public ObservableCollection<Friend> Friends { get; }
+    public ObservableCollection<LevelRow> Rows { get; }
+    public IReadOnlyList<GiftOption> Gifts { get; }
 
     /// <summary>Fx "Human · Lawful Evil · Mask".</summary>
     public string Summary { get; }
@@ -24,14 +81,42 @@ public sealed class BuildEditor
     /// <summary>Fx ["25 Monk", "5 Swashbuckler"].</summary>
     public IReadOnlyList<string> ClassSplit { get; }
 
-    public BuildEditor(Build build)
+    // --- Beregnet ---
+    public BuildResult? Result { get; private set; }
+    public bool HasRuleset => _ruleset != null;
+    public string RulesetText => _ruleset == null
+        ? "Intet regelsæt – forbind og importér rulesets/arelith.json"
+        : $"Regelsæt: {_ruleset.Name} ({_ruleset.Version})";
+    public AbilityScores? StartWithGifts => Result?.StartAbilities;
+    public LevelResult? Final => Result?.Final;
+    public int SkillRanksSpent => Skills.Sum(s => s.Value);
+    public string SkillPointsText => Final == null
+        ? ""
+        : $"Skillpoints: {SkillRanksSpent} brugt af {Final.SkillPointsTotal} · max {Final.MaxRanks} ranks pr. skill";
+    public string WarningsText => Result == null ? "" : string.Join("\n", Result.Warnings);
+
+    public event PropertyChangedEventHandler? PropertyChanged;
+
+    public BuildEditor(Build build, Ruleset? ruleset = null)
     {
         MoveOldFieldsToNotes(build);
 
         Build = build;
+        _ruleset = ruleset;
         Skills = new(build.SkillRanks.Select(kv => new NamedValue { Name = kv.Key, Value = kv.Value }));
         Crafting = new(build.Crafting.Select(kv => new NamedValue { Name = kv.Key, Value = kv.Value }));
         Friends = new(build.Friends);
+        Rows = new(build.Levels.OrderBy(l => l.Level).Select(l => new LevelRow(l, Recalculate)));
+
+        Gifts = (ruleset?.Gifts ?? new())
+            .Select(g => new GiftOption
+            {
+                Name = g.Name,
+                Effect = g.Effect,
+                Ecl = g.Ecl,
+                IsSelected = build.GiftNames.Contains(g.Name, StringComparer.OrdinalIgnoreCase),
+            })
+            .ToList();
 
         Summary = string.Join(" · ", new[] { build.Race, build.Alignment, build.Deity }
             .Where(s => !string.IsNullOrWhiteSpace(s)));
@@ -41,6 +126,25 @@ public sealed class BuildEditor
             .GroupBy(l => l.Class.Trim())
             .Select(g => $"{g.Count()} {g.Key}")
             .ToList();
+
+        Recalculate();
+    }
+
+    /// <summary>Beregner progressionen igen ud fra de nuværende valg.</summary>
+    public void Recalculate()
+    {
+        if (_ruleset == null)
+            return;
+
+        if (Gifts.Count > 0)
+            Build.GiftNames = Gifts.Where(g => g.IsSelected).Select(g => g.Name).ToList();
+
+        Result = Calculator.Calculate(Build, _ruleset);
+        var byLevel = Result.Levels.ToDictionary(r => r.Level);
+        foreach (var row in Rows)
+            row.SetResult(byLevel.GetValueOrDefault(row.Level));
+
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(string.Empty));
     }
 
     public Build Apply()
@@ -50,6 +154,8 @@ public sealed class BuildEditor
         Build.Friends = Friends
             .Where(f => !string.IsNullOrWhiteSpace(f.AccountName + f.PlayerName + f.Note))
             .ToList();
+        if (Gifts.Count > 0)
+            Build.GiftNames = Gifts.Where(g => g.IsSelected).Select(g => g.Name).ToList();
         return Build;
     }
 
@@ -60,7 +166,7 @@ public sealed class BuildEditor
         Levels = Enumerable.Range(1, 30).Select(i => new BuildLevel { Level = i }).ToList(),
     };
 
-    /// <summary>Ældre builds havde origins/voiceset/replikker som egne felter – de lægges ind i noterne.</summary>
+    /// <summary>Ældre builds havde origins/voiceset/replikker/gifts-tekst som egne felter – de lægges ind i noterne.</summary>
     private static void MoveOldFieldsToNotes(Build build)
     {
         var parts = new List<string>();
@@ -70,6 +176,8 @@ public sealed class BuildEditor
             parts.Add("Voiceset: " + build.Voiceset);
         if (!string.IsNullOrWhiteSpace(build.VoiceExample))
             parts.Add(build.VoiceExample);
+        if (!string.IsNullOrWhiteSpace(build.Gifts))
+            parts.Add("Gifts (gammel tekst): " + build.Gifts);
 
         if (parts.Count > 0)
             build.Notes = string.Join("\n\n", new[] { build.Notes }.Where(n => !string.IsNullOrWhiteSpace(n)).Concat(parts));
@@ -77,6 +185,7 @@ public sealed class BuildEditor
         build.Origins = null;
         build.Voiceset = null;
         build.VoiceExample = null;
+        build.Gifts = null;
     }
 
     private static Dictionary<string, int> ToDictionary(IEnumerable<NamedValue> values)

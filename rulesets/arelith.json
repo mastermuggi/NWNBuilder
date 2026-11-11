@@ -1,0 +1,145 @@
+{
+  "id": "arelith",
+  "name": "Arelith",
+  "version": "2026-11-11",
+  "notes": "Kilde: wiki.nwnarelith.com (Monk (PGCC), Swashbuckler, Gift, Skill changes) + Hesper Salcedo-arket. Felter markeret 'unverified' i notes skal tjekkes.",
+
+  "rules": {
+    "maxLevel": 30,
+    "epicFromLevel": 21,
+    "level1SkillMultiplier": 4,
+    "maxRanksAboveLevel": 3,
+    "notes": "HP er altid max. Alle skills koster 1 point pr. rank (cross-training). Epic: +1 BAB ved 21, 23, 25, 27, 29. +1 alle saves ved 22, 24, 26, 28, 30."
+  },
+
+  "saveTables": {
+    "high":   [2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12],
+    "low":    [0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6],
+    "medium": [1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 7, 7, 7, 8, 9, 9, 9]
+  },
+
+  "classes": [
+    {
+      "name": "Monk",
+      "hitDie": 8,
+      "bab": "3/4",
+      "fort": "medium",
+      "ref": "medium",
+      "will": "medium",
+      "skillPoints": 6,
+      "classSkills": ["Concentration", "Craft Mastery", "Discipline", "Heal", "Hide", "Intimidate", "Leadership", "Listen", "Lore", "Move Silently", "Sail", "Spot", "Parry", "Perform", "Tumble", "Ride"],
+      "saveBonuses": [],
+      "notes": "Monk (PGCC). Medium saves: wiki viser lvl 2,3,5,7,9,11,15,17,19; lvl 16 = 7 fra Hesper-arket. Øvrige levels er unverified."
+    },
+    {
+      "name": "Swashbuckler",
+      "hitDie": 10,
+      "bab": "full",
+      "fort": "high",
+      "ref": "high",
+      "will": "low",
+      "skillPoints": 6,
+      "classSkills": ["Bluff", "Climb", "Craft Mastery", "Discipline", "Heal", "Intimidate", "Leadership", "Lore", "Parry", "Perform", "Sail", "Spot", "Taunt", "Tumble", "Ride"],
+      "saveBonuses": [
+        { "classLevel": 2, "ref": 1 },
+        { "classLevel": 11, "ref": 1 },
+        { "classLevel": 20, "ref": 1 },
+        { "classLevel": 29, "ref": 1 }
+      ],
+      "notes": "Grace: Reflex +1 ved 2, +2 ved 11, +3 ved 20, +4 ved 29."
+    }
+  ],
+
+  "races": [
+    { "name": "Human", "abilities": {}, "bonusSkillPoints": 1 }
+  ],
+
+  "gifts": [
+    { "name": "Gift of Might", "ecl": 1, "effect": "STR +2 (hard)", "abilities": { "Str": 2 } },
+    { "name": "Gift of Grace", "ecl": 1, "effect": "DEX +2 (hard)", "abilities": { "Dex": 2 } },
+    { "name": "Gift of Endurance", "ecl": 1, "effect": "CON +2 (hard)", "abilities": { "Con": 2 } },
+    { "name": "Gift of Learning", "ecl": 1, "effect": "INT +2 (hard)", "abilities": { "Int": 2 } },
+    { "name": "Gift of Insight", "ecl": 1, "effect": "WIS +2 (hard)", "abilities": { "Wis": 2 } },
+    { "name": "Gift of Confidence", "ecl": 1, "effect": "CHA +2 (hard)", "abilities": { "Cha": 2 } },
+    { "name": "Gift of Fortune", "ecl": 1, "effect": "Alle saves +2 (soft)", "allSaves": 2 },
+    { "name": "Gift of Craftsmanship", "ecl": 1, "effect": "Daily crafting points +10, tradeskills +10" },
+    { "name": "Gift of Tongues", "ecl": 1, "effect": "4 ekstra sprog" },
+    { "name": "Gift of Wealth", "ecl": 0.5, "effect": "Guld over tid" },
+    { "name": "Gift of Hardiness", "ecl": 0.5, "effect": "5% immunitet mod fire, cold, electricity, acid" },
+    { "name": "Gift of Darkness", "ecl": 0.5, "effect": "Darkness 1/dag" },
+    { "name": "Gift of Hiding", "ecl": 0.5, "effect": "Invisibility, 8 min cooldown" },
+    { "name": "Gift of Greenfingers", "ecl": 0.5, "effect": "Kan passe planter" },
+    { "name": "Gift of Light", "ecl": 0, "effect": "Light 1/dag" },
+    { "name": "Gift of the Gab", "ecl": 0, "effect": "Bluff +6", "skills": { "Bluff": 6 } },
+    { "name": "Gift of Lightfingers", "ecl": 0, "effect": "Sleight of Hand +6", "skills": { "Sleight of Hand": 6 } },
+    { "name": "Gift of the Hunter", "ecl": 0, "effect": "Spot +6", "skills": { "Spot": 6 } },
+    { "name": "Gift of the Sneak", "ecl": 0, "effect": "Hide +4, Move Silently +4", "skills": { "Hide": 4, "Move Silently": 4 } },
+    { "name": "Gift of Stardom", "ecl": 0, "effect": "Perform +6", "skills": { "Perform": 6 } },
+    { "name": "Gift of Sailing", "ecl": 0, "effect": "Sail +6", "skills": { "Sail": 6 } },
+    { "name": "Gift of Devotion", "ecl": 0, "effect": "Ceremonier/altre for ikke-clerics" }
+  ],
+
+  "skills": [
+    { "name": "Animal Empathy", "ability": "Cha" },
+    { "name": "Appraise", "ability": "Int" },
+    { "name": "Bluff", "ability": "Cha" },
+    { "name": "Climb", "ability": "Str" },
+    { "name": "Concentration", "ability": "Con" },
+    { "name": "Craft Mastery", "ability": "Int" },
+    { "name": "Disable Trap", "ability": "Int" },
+    { "name": "Discipline", "ability": "Str" },
+    { "name": "Heal", "ability": "Wis" },
+    { "name": "Hide", "ability": "Dex" },
+    { "name": "Intimidate", "ability": "Cha" },
+    { "name": "Leadership", "ability": "Cha" },
+    { "name": "Listen", "ability": "Wis" },
+    { "name": "Lore", "ability": "Int" },
+    { "name": "Move Silently", "ability": "Dex" },
+    { "name": "Open Lock", "ability": "Dex" },
+    { "name": "Parry", "ability": "Dex" },
+    { "name": "Perform", "ability": "Cha" },
+    { "name": "Ride", "ability": "Dex" },
+    { "name": "Sail", "ability": "Wis" },
+    { "name": "Search", "ability": "Int" },
+    { "name": "Sleight of Hand", "ability": "Dex" },
+    { "name": "Spellcraft", "ability": "Int" },
+    { "name": "Spot", "ability": "Wis" },
+    { "name": "Taunt", "ability": "Cha" },
+    { "name": "Tumble", "ability": "Dex" },
+    { "name": "Use Magic Device", "ability": "Cha" },
+    { "name": "Use Trap" }
+  ],
+
+  "feats": [
+    { "name": "Great Strength", "abilities": { "Str": 1 } },
+    { "name": "Great Dexterity", "abilities": { "Dex": 1 } },
+    { "name": "Great Constitution", "abilities": { "Con": 1 } },
+    { "name": "Great Intelligence", "abilities": { "Int": 1 } },
+    { "name": "Great Wisdom", "abilities": { "Wis": 1 } },
+    { "name": "Great Charisma", "abilities": { "Cha": 1 } },
+
+    { "name": "Discipline: Martial (Novice)", "aliases": ["Martial Novice"] },
+    { "name": "Discipline: Martial (Practitioner)", "aliases": ["Martial Practitioner"], "ref": 1 },
+    { "name": "Discipline: Martial (Adept)", "aliases": ["Martial Adept"], "ref": 1, "notes": "unverified (udledt af Hesper-arket)" },
+    { "name": "Discipline: Martial (Master)", "aliases": ["Martial Master"], "ref": 1, "notes": "unverified (udledt af Hesper-arket)" },
+    { "name": "Discipline: Martial (Ascension)", "aliases": ["Martial Ascension"], "ref": 1, "notes": "unverified (udledt af Hesper-arket)" },
+
+    { "name": "Discipline: Body (Novice)", "aliases": ["Body Novice"] },
+    { "name": "Discipline: Body (Practitioner)", "aliases": ["Body Practitioner"], "fort": 1 },
+    { "name": "Discipline: Body (Adept)", "aliases": ["Body Adept"], "fort": 1 },
+    { "name": "Discipline: Body (Master)", "aliases": ["Body Master"], "fort": 1 },
+    { "name": "Discipline: Body (Ascension)", "aliases": ["Body Ascension"] },
+
+    { "name": "Discipline: Mind (Novice)", "aliases": ["Mind Novice"] },
+    { "name": "Discipline: Mind (Practitioner)", "aliases": ["Mind Practitioner"], "will": 1 },
+    { "name": "Discipline: Mind (Adept)", "aliases": ["Mind Adept"], "will": 1 },
+    { "name": "Discipline: Mind (Master)", "aliases": ["Mind Master"], "will": 1 },
+    { "name": "Discipline: Mind (Ascension)", "aliases": ["Mind Ascension"] },
+
+    { "name": "Discipline: Spiritual (Novice)", "aliases": ["Spirit Novice", "Spiritual Novice"] },
+    { "name": "Discipline: Spiritual (Practitioner)", "aliases": ["Spirit Practitioner", "Spiritual Practitioner"], "notes": "+1 save vs death" },
+    { "name": "Discipline: Spiritual (Adept)", "aliases": ["Spirit Adept", "Spiritual Adept"], "notes": "+1 save vs death" },
+    { "name": "Discipline: Spiritual (Master)", "aliases": ["Spirit Master", "Spiritual Master"], "fort": 1, "ref": 1, "will": 1 },
+    { "name": "Discipline: Spiritual (Ascension)", "aliases": ["Spirit Ascension", "Spiritual Ascension"] }
+  ]
+}

@@ -1,7 +1,9 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.Platform.Storage;
 using NWNBuilder.Core;
 using NWNBuilder.Core.Models;
+using NWNBuilder.Core.Rules;
 
 namespace NWNBuilder;
 
@@ -10,6 +12,7 @@ public partial class MainWindow : Window
     private readonly AppSettings _settings = AppSettings.Load();
     private BuildStore? _store;
     private List<Build> _builds = new();
+    private Dictionary<string, Ruleset> _rulesets = new(StringComparer.OrdinalIgnoreCase);
     private BuildEditor _editor = null!;
 
     public MainWindow()
@@ -26,7 +29,7 @@ public partial class MainWindow : Window
 
     private void ShowBuild(Build build)
     {
-        _editor = new BuildEditor(build);
+        _editor = new BuildEditor(build, _rulesets.GetValueOrDefault(build.Ruleset));
         Editor.DataContext = _editor;
     }
 
@@ -48,6 +51,7 @@ public partial class MainWindow : Window
         {
             var store = new BuildStore(connectionString);
             var builds = await store.ListAsync();
+            _rulesets = (await store.ListRulesetsAsync()).ToDictionary(r => r.Id, StringComparer.OrdinalIgnoreCase);
 
             _store = store;
             _settings.ConnectionString = connectionString;
@@ -55,7 +59,10 @@ public partial class MainWindow : Window
 
             _builds = builds;
             RefreshList(select: builds.FirstOrDefault());
-            StatusText.Text = $"Forbundet · {builds.Count} builds";
+            ShowBuild(builds.FirstOrDefault() ?? _editor.Build);
+            StatusText.Text = $"Forbundet · {builds.Count} builds · " + (_rulesets.Count == 0
+                ? "intet regelsæt – tryk Importér regelsæt"
+                : "regelsæt: " + string.Join(", ", _rulesets.Keys));
         }
         catch (Exception ex)
         {
@@ -88,6 +95,44 @@ public partial class MainWindow : Window
             StatusText.Text = "Kunne ikke gemme: " + ex.Message;
         }
     }
+
+    private async void ImportRuleset_Click(object? sender, RoutedEventArgs e)
+    {
+        if (_store is null)
+        {
+            StatusText.Text = "Forbind til databasen først.";
+            return;
+        }
+
+        var files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
+        {
+            Title = "Vælg regelsæt (JSON)",
+            AllowMultiple = false,
+            FileTypeFilter = new[] { new FilePickerFileType("Regelsæt (JSON)") { Patterns = new[] { "*.json" } } },
+        });
+        if (files.Count == 0)
+            return;
+
+        try
+        {
+            await using var stream = await files[0].OpenReadAsync();
+            var ruleset = BuildJson.LoadRuleset(stream);
+            await _store.SaveRulesetAsync(ruleset);
+            _rulesets[ruleset.Id] = ruleset;
+            ShowBuild(_editor.Apply());
+            StatusText.Text = $"Regelsæt importeret: {ruleset.Name} ({ruleset.Version}) · {ruleset.Classes.Count} klasser";
+        }
+        catch (Exception ex)
+        {
+            StatusText.Text = "Kunne ikke importere: " + ex.Message;
+        }
+    }
+
+    // --- Beregning ---
+
+    private void Tabs_SelectionChanged(object? sender, SelectionChangedEventArgs e) => _editor?.Recalculate();
+
+    private void Gift_Click(object? sender, RoutedEventArgs e) => _editor.Recalculate();
 
     // --- Liste ---
 

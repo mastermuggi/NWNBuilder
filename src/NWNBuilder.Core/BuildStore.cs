@@ -6,6 +6,7 @@ using MongoDB.Bson.Serialization.IdGenerators;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
 using NWNBuilder.Core.Models;
+using NWNBuilder.Core.Rules;
 
 namespace NWNBuilder.Core;
 
@@ -15,6 +16,7 @@ public sealed class BuildStore
     public const string DefaultDatabase = "nwnbuilder";
 
     private readonly IMongoCollection<Build> _builds;
+    private readonly IMongoCollection<Ruleset> _rulesets;
 
     static BuildStore()
     {
@@ -48,6 +50,7 @@ public sealed class BuildStore
 
         var db = new MongoClient(settings).GetDatabase(database ?? url.DatabaseName ?? DefaultDatabase);
         _builds = db.GetCollection<Build>("builds");
+        _rulesets = db.GetCollection<Ruleset>("rulesets");
     }
 
     public Task<List<Build>> ListAsync() =>
@@ -58,4 +61,11 @@ public sealed class BuildStore
         build.Id is null
             ? _builds.InsertOneAsync(build)
             : _builds.ReplaceOneAsync(b => b.Id == build.Id, build);
+
+    public Task<List<Ruleset>> ListRulesetsAsync() =>
+        _rulesets.Find(FilterDefinition<Ruleset>.Empty).ToListAsync();
+
+    /// <summary>Gemmer et regelsæt (erstatter et med samme id).</summary>
+    public Task SaveRulesetAsync(Ruleset ruleset) =>
+        _rulesets.ReplaceOneAsync(r => r.Id == ruleset.Id, ruleset, new ReplaceOptions { IsUpsert = true });
 }

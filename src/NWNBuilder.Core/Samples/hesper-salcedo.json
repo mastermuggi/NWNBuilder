@@ -13,7 +13,11 @@
     "wis": 8,
     "cha": 8
   },
-  "gifts": "+2 int, +2 dex, +4 hide/ms",
+  "giftNames": [
+    "Gift of Grace",
+    "Gift of Learning",
+    "Gift of the Sneak"
+  ],
   "levels": [
     {
       "level": 1,

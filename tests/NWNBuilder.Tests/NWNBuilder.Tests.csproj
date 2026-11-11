@@ -22,4 +22,8 @@
     <ProjectReference Include="..\..\src\NWNBuilder.Core\NWNBuilder.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\..\rulesets\*.json" LinkBase="rulesets" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
 </Project>
