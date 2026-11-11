@@ -1,0 +1,47 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:m="using:NWNBuilder.Core.Models"
+        x:Class="NWNBuilder.MainWindow"
+        x:DataType="m:Build"
+        Title="NWNBuilder"
+        Width="1000" Height="750">
+
+  <DockPanel Margin="16">
+
+    <StackPanel DockPanel.Dock="Top" Spacing="4" Margin="0,0,0,16">
+      <TextBlock Text="{Binding Name}" FontSize="24" FontWeight="SemiBold" />
+      <StackPanel Orientation="Horizontal" Spacing="16">
+        <TextBlock Text="{Binding Race}" />
+        <TextBlock Text="{Binding Alignment}" />
+        <TextBlock Text="{Binding Deity}" />
+        <TextBlock Text="{Binding Age, StringFormat='Age {0}'}" />
+        <TextBlock Text="{Binding Ruleset, StringFormat='Regelsæt: {0}'}" Opacity="0.6" />
+      </StackPanel>
+    </StackPanel>
+
+    <Grid DockPanel.Dock="Top" ColumnDefinitions="50,140,220,240,100" Margin="0,0,0,4">
+      <TextBlock Grid.Column="0" Text="Lvl" FontWeight="SemiBold" />
+      <TextBlock Grid.Column="1" Text="Klasse" FontWeight="SemiBold" />
+      <TextBlock Grid.Column="2" Text="Class feat" FontWeight="SemiBold" />
+      <TextBlock Grid.Column="3" Text="General feat" FontWeight="SemiBold" />
+      <TextBlock Grid.Column="4" Text="Ability +1" FontWeight="SemiBold" />
+    </Grid>
+
+    <ScrollViewer>
+      <ItemsControl ItemsSource="{Binding Levels}">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate x:DataType="m:BuildLevel">
+            <Grid ColumnDefinitions="50,140,220,240,100" Margin="0,2">
+              <TextBlock Grid.Column="0" Text="{Binding Level}" />
+              <TextBlock Grid.Column="1" Text="{Binding Class}" />
+              <TextBlock Grid.Column="2" Text="{Binding ClassFeat}" />
+              <TextBlock Grid.Column="3" Text="{Binding GeneralFeat}" />
+              <TextBlock Grid.Column="4" Text="{Binding AbilityIncrease}" />
+            </Grid>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+    </ScrollViewer>
+
+  </DockPanel>
+</Window>

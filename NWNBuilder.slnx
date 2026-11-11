@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/NWNBuilder/NWNBuilder.csproj" />
+    <Project Path="src/NWNBuilder.Core/NWNBuilder.Core.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/NWNBuilder.Tests/NWNBuilder.Tests.csproj" />
+  </Folder>
+</Solution>
