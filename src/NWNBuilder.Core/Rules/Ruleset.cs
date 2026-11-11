@@ -58,7 +58,15 @@ public sealed class ClassRule
     public List<AbilityBonus> AbilityBonuses { get; set; } = new();
     /// <summary>CHA-mod (hvis positiv) til alle saves fra dette klasse-level (Divine Grace m.fl.). Tælles kun én gang.</summary>
     public int? ChaToSavesFromLevel { get; set; }
+    /// <summary>Feats klassen giver automatisk (kravene tjekkes ikke for dem).</summary>
+    public List<GrantedFeat> GrantedFeats { get; set; } = new();
     public string? Notes { get; set; }
+}
+
+public sealed class GrantedFeat
+{
+    public int ClassLevel { get; set; }
+    public string Feat { get; set; } = "";
 }
 
 /// <summary>Stat-bonus fra en klasse når klasse-level nås. Ability "StrOrDex" = STR medmindre start-DEX er højere.</summary>
@@ -89,6 +97,8 @@ public sealed class RaceRule
     public int MinorGifts { get; set; } = 1;
     /// <summary>Bonus til alle saves (fx Lightfoot Halfling: Lucky +1).</summary>
     public int AllSaves { get; set; }
+    /// <summary>Feats racen giver automatisk (fx Half-Orc: Ambidexterity).</summary>
+    public List<string> GrantedFeats { get; set; } = new();
     public string? Notes { get; set; }
 }
 
@@ -126,4 +136,39 @@ public sealed class FeatRule
     /// <summary>Fast ekstra HP (fx Epic Toughness).</summary>
     public int Hp { get; set; }
     public string? Notes { get; set; }
+
+    /// <summary>Hvad featet gør (vanilla-beskrivelse).</summary>
+    public string? Description { get; set; }
+    /// <summary>Arelith-ændringer i forhold til vanilla.</summary>
+    public string? Arelith { get; set; }
+    /// <summary>Kravene som tekst (også dem programmet ikke kan tjekke, fx spell level).</summary>
+    public string? RequiresText { get; set; }
+    /// <summary>Krav der tjekkes pr. level.</summary>
+    public FeatRequirement? Requires { get; set; }
+    /// <summary>Epic feat: kan først tages fra level 21.</summary>
+    public bool Epic { get; set; }
+    /// <summary>"class", "race", "metamagic" … (tom = general).</summary>
+    public string? Type { get; set; }
+    /// <summary>Variant af et andet feat, fx "Weapon Focus Missile" → "Weapon Focus".</summary>
+    public string? Base { get; set; }
+    /// <summary>Sat hvis featet ikke kan tages på serveren.</summary>
+    public string? Disabled { get; set; }
+}
+
+public sealed class FeatRequirement
+{
+    public int? Level { get; set; }
+    public int? MaxLevel { get; set; }
+    public int? Bab { get; set; }
+    public Dictionary<string, int> Abilities { get; set; } = new();
+    /// <summary>Alle disse feats.</summary>
+    public List<string> Feats { get; set; } = new();
+    /// <summary>Mindst ét af disse feats.</summary>
+    public List<string> AnyFeats { get; set; } = new();
+    /// <summary>Skill → ranks.</summary>
+    public Dictionary<string, int> Skills { get; set; } = new();
+    /// <summary>Klasse → klasse-level.</summary>
+    public Dictionary<string, int> ClassLevels { get; set; } = new();
+    /// <summary>Mindst ét af disse sæt krav.</summary>
+    public List<FeatRequirement> AnyOf { get; set; } = new();
 }

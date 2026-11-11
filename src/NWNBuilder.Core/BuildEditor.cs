@@ -52,6 +52,16 @@ public sealed class LevelRow : INotifyPropertyChanged
 
     public int Level => _level.Level;
 
+    /// <summary>Feats der kan vælges på dette level (epic feats først fra level 21).</summary>
+    public IReadOnlyList<string> FeatOptions => Editor.FeatOptionsFor(Level);
+
+    /// <summary>Feats på levelet hvis krav ikke er opfyldt.</summary>
+    public string Problems => _result == null || _result.FeatProblems.Count == 0 ? "" : "⚠ " + string.Join(" · ", _result.FeatProblems);
+    public bool HasProblems => _result?.FeatProblems.Count > 0;
+
+    /// <summary>Beskrivelse, krav og Arelith-ændringer for levelets feats.</summary>
+    public string FeatInfo => Editor.DescribeFeats(new[] { _level.ClassFeat, _level.GeneralFeat }, _result);
+
     // null ignoreres: en dropdown sender null når den indlæses før sin liste – det må ikke slette værdien.
     // Tom tekst ("") er det bevidste "ingen" valg.
     public string Class { get => _level.Class; set { if (value == null) return; _level.Class = value; _changed(); } }
@@ -126,6 +136,8 @@ public sealed class BuildEditor : INotifyPropertyChanged
     public IReadOnlyList<string> RaceOptions { get; }
     public IReadOnlyList<string> ClassOptions { get; }
     public IReadOnlyList<string> FeatOptions { get; }
+    /// <summary>Som FeatOptions, men uden epic feats fra regelsættet.</summary>
+    public IReadOnlyList<string> PreEpicFeatOptions { get; }
 
     /// <summary>Fx "Human · Lawful Evil · Mask".</summary>
     public string Summary { get; }
@@ -206,8 +218,9 @@ public sealed class BuildEditor : INotifyPropertyChanged
 
         RaceOptions = Options(ruleset?.Races.Select(r => r.Name), new[] { build.Race }, includeEmpty: false);
         ClassOptions = Options(ruleset?.Classes.Select(c => c.Name), build.Levels.Select(l => l.Class), includeEmpty: true);
-        FeatOptions = Options(ruleset?.Feats.Select(f => f.Name),
-            build.Levels.SelectMany(l => new[] { l.ClassFeat, l.GeneralFeat }), includeEmpty: true);
+        var buildFeats = build.Levels.SelectMany(l => new[] { l.ClassFeat, l.GeneralFeat }).ToList();
+        FeatOptions = Options(ruleset?.Feats.Where(f => f.Disabled == null).Select(f => f.Name), buildFeats, includeEmpty: true);
+        PreEpicFeatOptions = Options(ruleset?.Feats.Where(f => f.Disabled == null && !f.Epic).Select(f => f.Name), buildFeats, includeEmpty: true);
 
         Summary = string.Join(" · ", new[] { build.Race, build.Alignment, build.Deity }
             .Where(s => !string.IsNullOrWhiteSpace(s)));
@@ -219,6 +232,36 @@ public sealed class BuildEditor : INotifyPropertyChanged
             .ToList();
 
         Recalculate();
+    }
+
+    public IReadOnlyList<string> FeatOptionsFor(int level) =>
+        level >= (_ruleset?.Rules.EpicFromLevel ?? 21) ? FeatOptions : PreEpicFeatOptions;
+
+    /// <summary>Tekst til feat-panelet i Levels-fanen.</summary>
+    public string DescribeFeats(IEnumerable<string?> cells, LevelResult? result)
+    {
+        if (_ruleset == null)
+            return "";
+        var parts = new List<string>();
+        foreach (var name in cells.SelectMany(Calculator.SplitFeats))
+        {
+            var feat = Calculator.FindFeat(_ruleset, name);
+            if (feat == null)
+            {
+                parts.Add($"{name}\n  Findes ikke i regelsættet.");
+                continue;
+            }
+            var lines = new List<string> { feat.Name + (feat.Epic ? " (epic)" : "") + (feat.Type is { } t ? $" · {t}" : "") };
+            if (feat.Disabled != null) lines.Add("  ✖ " + feat.Disabled);
+            if (feat.Description != null) lines.Add("  " + feat.Description);
+            if (feat.Arelith != null) lines.Add("  " + feat.Arelith);
+            if (feat.Notes != null) lines.Add("  " + feat.Notes);
+            if (feat.RequiresText != null) lines.Add("  Krav: " + feat.RequiresText);
+            var problem = result?.FeatProblems.FirstOrDefault(p => p.StartsWith(feat.Name + ":", StringComparison.OrdinalIgnoreCase));
+            if (problem != null) lines.Add("  ⚠ Mangler: " + problem[(feat.Name.Length + 1)..].Trim());
+            parts.Add(string.Join("\n", lines));
+        }
+        return parts.Count == 0 ? "Vælg et level med feats for at se hvad de gør." : string.Join("\n\n", parts);
     }
 
     /// <summary>Tjekker gift-grænsen efter et klik. Returnerer en fejl (og fravælger giften igen) hvis grænsen er overskredet.</summary>

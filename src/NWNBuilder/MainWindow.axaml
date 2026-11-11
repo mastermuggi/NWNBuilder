@@ -223,8 +223,9 @@
 
           <!-- Levels -->
           <TabItem Header="Levels">
-            <Border Classes="card" Padding="0" Margin="0,12,0,0">
-              <DataGrid x:CompileBindings="False" ItemsSource="{Binding Rows}"
+            <Grid RowDefinitions="*,Auto" Margin="0,12,0,0">
+            <Border Classes="card" Padding="0">
+              <DataGrid x:Name="LevelsGrid" x:CompileBindings="False" ItemsSource="{Binding Rows}"
                         AutoGenerateColumns="False" CanUserSortColumns="False" CanUserReorderColumns="False"
                         HeadersVisibility="Column" GridLinesVisibility="Horizontal" Background="Transparent">
                 <DataGrid.Columns>
@@ -241,7 +242,7 @@
                   <DataGridTemplateColumn Header="Class feat" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                       <DataTemplate x:CompileBindings="False">
-                        <ComboBox ItemsSource="{Binding Editor.FeatOptions}"
+                        <ComboBox ItemsSource="{Binding FeatOptions}"
                                   SelectedItem="{Binding ClassFeat, Mode=TwoWay}"
                                   HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" />
                       </DataTemplate>
@@ -250,7 +251,7 @@
                   <DataGridTemplateColumn Header="General feat" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                       <DataTemplate x:CompileBindings="False">
-                        <ComboBox ItemsSource="{Binding Editor.FeatOptions}"
+                        <ComboBox ItemsSource="{Binding FeatOptions}"
                                   SelectedItem="{Binding GeneralFeat, Mode=TwoWay}"
                                   HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" />
                       </DataTemplate>
@@ -265,9 +266,27 @@
                       </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                   </DataGridTemplateColumn>
+                  <DataGridTemplateColumn Header="Krav" Width="260">
+                    <DataGridTemplateColumn.CellTemplate>
+                      <DataTemplate x:CompileBindings="False">
+                        <TextBlock Text="{Binding Problems}" Foreground="#E0A040" TextTrimming="CharacterEllipsis"
+                                   VerticalAlignment="Center" Margin="8,0" ToolTip.Tip="{Binding Problems}" />
+                      </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                  </DataGridTemplateColumn>
                 </DataGrid.Columns>
               </DataGrid>
             </Border>
+            <Border Grid.Row="1" Classes="card" Margin="0,12,0,0" MaxHeight="260">
+              <StackPanel Spacing="6">
+                <TextBlock Classes="section" Text="FEATS PÅ VALGT LEVEL" />
+                <ScrollViewer MaxHeight="210">
+                  <TextBlock x:CompileBindings="False" TextWrapping="Wrap"
+                             Text="{Binding #LevelsGrid.SelectedItem.FeatInfo, FallbackValue='Vælg et level for at se hvad feats gør og hvilke krav de har.'}" />
+                </ScrollViewer>
+              </StackPanel>
+            </Border>
+            </Grid>
           </TabItem>
 
           <!-- Progression (beregnet) -->

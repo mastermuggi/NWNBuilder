@@ -1,8 +1,8 @@
 {
   "id": "arelith",
   "name": "Arelith",
-  "version": "2026-11-11e",
-  "notes": "Kilde: wiki.nwnarelith.com (klassesider, Gift, Skill changes) + ejers ark (256 builds). Start-stats er efter race og før gifts, som i arkene.",
+  "version": "2026-11-11f",
+  "notes": "Kilde: wiki.nwnarelith.com (klassesider, Gift, Skill changes) + ejers ark (256 builds). Start-stats er efter race og før gifts, som i arkene. Feats: krav og beskrivelser fra NWN Wiki (nwn.fandom.com, CC BY-SA 3.0) via nwn-siala-builder, rettet efter wiki.nwnarelith.com/Feat_changes.",
   "rules": {
     "maxLevel": 30,
     "epicFromLevel": 21,
@@ -102,7 +102,57 @@
         "Sail",
         "Spot"
       ],
-      "notes": "Prestige, max 20."
+      "notes": "Prestige, max 20.",
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Light)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Medium)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Enchant Arrow"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Shield Proficiency"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Martial)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Simple)"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Imbue Arrow"
+        },
+        {
+          "classLevel": 4,
+          "feat": "Seeker Arrow"
+        },
+        {
+          "classLevel": 6,
+          "feat": "Seeker Arrow"
+        },
+        {
+          "classLevel": 8,
+          "feat": "Hail of Arrows"
+        },
+        {
+          "classLevel": 10,
+          "feat": "Arrow of Death"
+        }
+      ]
     },
     {
       "name": "Barbarian",
@@ -127,7 +177,129 @@
         "Spot",
         "Taunt"
       ],
-      "notes": "Rage-Will kun under rage (ikke med)."
+      "notes": "Rage-Will kun under rage (ikke med).",
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Light)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Medium)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Barbarian Fast Movement"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Barbarian Rage"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Shield Proficiency"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Martial)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Simple)"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Uncanny Dodge"
+        },
+        {
+          "classLevel": 4,
+          "feat": "Barbarian Rage"
+        },
+        {
+          "classLevel": 5,
+          "feat": "Uncanny Dodge"
+        },
+        {
+          "classLevel": 8,
+          "feat": "Barbarian Rage"
+        },
+        {
+          "classLevel": 10,
+          "feat": "Uncanny Dodge"
+        },
+        {
+          "classLevel": 11,
+          "feat": "Damage Reduction (Barbarian)"
+        },
+        {
+          "classLevel": 12,
+          "feat": "Barbarian Rage"
+        },
+        {
+          "classLevel": 13,
+          "feat": "Uncanny Dodge"
+        },
+        {
+          "classLevel": 14,
+          "feat": "Damage Reduction (Barbarian)"
+        },
+        {
+          "classLevel": 15,
+          "feat": "Barbarian Rage"
+        },
+        {
+          "classLevel": 16,
+          "feat": "Barbarian Rage"
+        },
+        {
+          "classLevel": 16,
+          "feat": "Uncanny Dodge"
+        },
+        {
+          "classLevel": 17,
+          "feat": "Damage Reduction (Barbarian)"
+        },
+        {
+          "classLevel": 19,
+          "feat": "Uncanny Dodge"
+        },
+        {
+          "classLevel": 20,
+          "feat": "Barbarian Rage"
+        },
+        {
+          "classLevel": 20,
+          "feat": "Damage Reduction (Barbarian)"
+        },
+        {
+          "classLevel": 23,
+          "feat": "Epic Barbarian Damage Reduction"
+        },
+        {
+          "classLevel": 26,
+          "feat": "Epic Barbarian Damage Reduction"
+        },
+        {
+          "classLevel": 29,
+          "feat": "Epic Barbarian Damage Reduction"
+        },
+        {
+          "classLevel": 32,
+          "feat": "Epic Barbarian Damage Reduction"
+        },
+        {
+          "classLevel": 35,
+          "feat": "Epic Barbarian Damage Reduction"
+        },
+        {
+          "classLevel": 38,
+          "feat": "Epic Barbarian Damage Reduction"
+        }
+      ]
     },
     {
       "name": "Bard",
@@ -159,7 +331,37 @@
         "Tumble",
         "Use Magic Device"
       ],
-      "notes": "Wiki-siden kunne ikke hentes: hit die/saves er vanilla, skillpoints (6) og class skills fra dine ark."
+      "notes": "Wiki-siden kunne ikke hentes: hit die/saves er vanilla, skillpoints (6) og class skills fra dine ark.",
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Light)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Medium)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Bard Song"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Bardic Knowledge"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Shield Proficiency"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Simple)"
+        }
+      ]
     },
     {
       "name": "Blackguard",
@@ -189,7 +391,81 @@
         "Taunt"
       ],
       "notes": "Prestige, max 20. Fearless kun vs fear. CHA-mod til alle saves fra level 2 (Divine Grace/Dark Blessing, tælles kun én gang).",
-      "chaToSavesFromLevel": 2
+      "chaToSavesFromLevel": 2,
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Heavy)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Light)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Medium)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Shield Proficiency"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Use Poison"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Martial)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Simple)"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Bull's Strength"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Dark Blessing"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Divine Smite"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Create Undead"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Turn Undead"
+        },
+        {
+          "classLevel": 4,
+          "feat": "Sneak Attack, Blackguard"
+        },
+        {
+          "classLevel": 5,
+          "feat": "Summon Fiend"
+        },
+        {
+          "classLevel": 6,
+          "feat": "Inflict Serious Wounds"
+        },
+        {
+          "classLevel": 7,
+          "feat": "Contagion"
+        },
+        {
+          "classLevel": 8,
+          "feat": "Inflict Critical Wounds"
+        }
+      ]
     },
     {
       "name": "Cavalier",
@@ -213,7 +489,13 @@
         "Spot",
         "Taunt"
       ],
-      "notes": "Prestige."
+      "notes": "Prestige.",
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        }
+      ]
     },
     {
       "name": "Cleric",
@@ -233,6 +515,36 @@
         "Ride",
         "Sail",
         "Spellcraft"
+      ],
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Heavy)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Light)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Medium)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Shield Proficiency"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Turn Undead"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Simple)"
+        }
       ]
     },
     {
@@ -265,7 +577,13 @@
         "Tumble",
         "Use Magic Device"
       ],
-      "notes": "Prestige."
+      "notes": "Prestige.",
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        }
+      ]
     },
     {
       "name": "Divine Champion",
@@ -357,6 +675,124 @@
           "ref": 1,
           "will": 1
         }
+      ],
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Light)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Medium)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Lay On Hands"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Shield Proficiency"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Martial)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Simple)"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Sacred Defense"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Divine Smite"
+        },
+        {
+          "classLevel": 4,
+          "feat": "Sacred Defense"
+        },
+        {
+          "classLevel": 5,
+          "feat": "Divine Wrath"
+        },
+        {
+          "classLevel": 6,
+          "feat": "Sacred Defense"
+        },
+        {
+          "classLevel": 8,
+          "feat": "Sacred Defense"
+        },
+        {
+          "classLevel": 10,
+          "feat": "Divine Wrath"
+        },
+        {
+          "classLevel": 10,
+          "feat": "Sacred Defense"
+        },
+        {
+          "classLevel": 12,
+          "feat": "Sacred Defense"
+        },
+        {
+          "classLevel": 14,
+          "feat": "Sacred Defense"
+        },
+        {
+          "classLevel": 15,
+          "feat": "Divine Wrath"
+        },
+        {
+          "classLevel": 16,
+          "feat": "Sacred Defense"
+        },
+        {
+          "classLevel": 18,
+          "feat": "Sacred Defense"
+        },
+        {
+          "classLevel": 20,
+          "feat": "Divine Wrath"
+        },
+        {
+          "classLevel": 20,
+          "feat": "Sacred Defense"
+        },
+        {
+          "classLevel": 22,
+          "feat": "Sacred Defense"
+        },
+        {
+          "classLevel": 24,
+          "feat": "Sacred Defense"
+        },
+        {
+          "classLevel": 25,
+          "feat": "Divine Wrath"
+        },
+        {
+          "classLevel": 26,
+          "feat": "Sacred Defense"
+        },
+        {
+          "classLevel": 28,
+          "feat": "Sacred Defense"
+        },
+        {
+          "classLevel": 30,
+          "feat": "Divine Wrath"
+        },
+        {
+          "classLevel": 30,
+          "feat": "Sacred Defense"
+        }
       ]
     },
     {
@@ -376,6 +812,100 @@
         "Lore",
         "Sail",
         "Spellcraft"
+      ],
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Animal Companion"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Light)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Medium)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Nature Sense"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Shield Proficiency"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Druid)"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Woodland Stride"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Trackless Step"
+        },
+        {
+          "classLevel": 4,
+          "feat": "Resist Nature's Lure"
+        },
+        {
+          "classLevel": 5,
+          "feat": "Wildshape"
+        },
+        {
+          "classLevel": 6,
+          "feat": "Wildshape"
+        },
+        {
+          "classLevel": 7,
+          "feat": "Wildshape"
+        },
+        {
+          "classLevel": 9,
+          "feat": "Venom Immunity"
+        },
+        {
+          "classLevel": 10,
+          "feat": "Wildshape"
+        },
+        {
+          "classLevel": 14,
+          "feat": "Wildshape"
+        },
+        {
+          "classLevel": 16,
+          "feat": "Elemental Shape"
+        },
+        {
+          "classLevel": 17,
+          "feat": "Elemental Shape"
+        },
+        {
+          "classLevel": 18,
+          "feat": "Wildshape"
+        },
+        {
+          "classLevel": 19,
+          "feat": "Elemental Shape"
+        },
+        {
+          "classLevel": 20,
+          "feat": "Elemental Shape"
+        },
+        {
+          "classLevel": 22,
+          "feat": "Infinite Wildshape"
+        },
+        {
+          "classLevel": 26,
+          "feat": "Infinite Elemental Shape"
+        }
       ]
     },
     {
@@ -405,7 +935,57 @@
         "Spot",
         "Taunt"
       ],
-      "notes": "Tidligere Dwarven Defender. Prestige, max 20. Stances kun når aktive."
+      "notes": "Tidligere Dwarven Defender. Prestige, max 20. Stances kun når aktive.",
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Heavy)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Light)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Medium)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Defensive Stance"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Shield Proficiency"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Martial)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Simple)"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Defensive Awareness"
+        },
+        {
+          "classLevel": 5,
+          "feat": "Defensive Awareness"
+        },
+        {
+          "classLevel": 6,
+          "feat": "Dwarven Defender Damage Reduction"
+        },
+        {
+          "classLevel": 10,
+          "feat": "Defensive Awareness"
+        }
+      ]
     },
     {
       "name": "Elementalist",
@@ -445,6 +1025,12 @@
         "Ride",
         "Sail",
         "Spellcraft"
+      ],
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        }
       ]
     },
     {
@@ -482,7 +1068,37 @@
           "value": 1
         }
       ],
-      "notes": "+1 STR eller DEX ved 10 og 20 (STR medmindre base DEX er højere)."
+      "notes": "+1 STR eller DEX ved 10 og 20 (STR medmindre base DEX er højere).",
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Heavy)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Light)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Medium)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Shield Proficiency"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Martial)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Simple)"
+        }
+      ]
     },
     {
       "name": "Harbinger",
@@ -513,6 +1129,12 @@
         "Spot",
         "Taunt",
         "Use Trap"
+      ],
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        }
       ]
     },
     {
@@ -560,7 +1182,13 @@
         "Spot",
         "Tumble"
       ],
-      "notes": "Prestige."
+      "notes": "Prestige.",
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        }
+      ]
     },
     {
       "name": "Knight",
@@ -589,7 +1217,41 @@
         "Spot",
         "Taunt"
       ],
-      "notes": "Prestige, max 10. Skillpoints: wiki siger 4, ejers ark har ofte 6 – uafklaret."
+      "notes": "Prestige, max 10. Skillpoints: wiki siger 4, ejers ark har ofte 6 – uafklaret.",
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Heroic Shield"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Rallying Cry"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Inspire Courage"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Fear"
+        },
+        {
+          "classLevel": 4,
+          "feat": "Inspire Courage"
+        },
+        {
+          "classLevel": 4,
+          "feat": "Oath of Wrath"
+        },
+        {
+          "classLevel": 5,
+          "feat": "Final Stand"
+        }
+      ]
     },
     {
       "name": "Liberator",
@@ -617,7 +1279,13 @@
         "Use Trap"
       ],
       "notes": "Prestige, max 20. CHA-mod til alle saves fra level 2 (Divine Grace/Dark Blessing, tælles kun én gang).",
-      "chaToSavesFromLevel": 2
+      "chaToSavesFromLevel": 2,
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        }
+      ]
     },
     {
       "name": "Loremaster",
@@ -643,7 +1311,13 @@
         "Spot",
         "Use Magic Device"
       ],
-      "notes": "Prestige, max 5. Secrets kan give +2 til én save eller +30 HP (vælges som feat)."
+      "notes": "Prestige, max 5. Secrets kan give +2 til én save eller +30 HP (vælges som feat).",
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        }
+      ]
     },
     {
       "name": "Monk",
@@ -671,7 +1345,109 @@
         "Spot",
         "Tumble"
       ],
-      "notes": "Monk (PGCC). Disciplin-feats giver soft saves (se feats)."
+      "notes": "Monk (PGCC). Disciplin-feats giver soft saves (se feats).",
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Cleave"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Evasion"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Flurry of Blows"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Improved Unarmed Strike"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Monk AC Bonus"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Stunning Fist"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Monk)"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Deflect Arrows"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Monk Speed"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Still Mind"
+        },
+        {
+          "classLevel": 5,
+          "feat": "Purity of Body"
+        },
+        {
+          "classLevel": 6,
+          "feat": "Improved Knockdown"
+        },
+        {
+          "classLevel": 6,
+          "feat": "Knockdown"
+        },
+        {
+          "classLevel": 7,
+          "feat": "Wholeness of Body"
+        },
+        {
+          "classLevel": 9,
+          "feat": "Improved Evasion"
+        },
+        {
+          "classLevel": 10,
+          "feat": "Ki Strike"
+        },
+        {
+          "classLevel": 11,
+          "feat": "Diamond Body"
+        },
+        {
+          "classLevel": 12,
+          "feat": "Diamond Soul"
+        },
+        {
+          "classLevel": 13,
+          "feat": "Ki Strike"
+        },
+        {
+          "classLevel": 15,
+          "feat": "Quivering Palm"
+        },
+        {
+          "classLevel": 16,
+          "feat": "Ki Strike"
+        },
+        {
+          "classLevel": 18,
+          "feat": "Empty Body"
+        },
+        {
+          "classLevel": 20,
+          "feat": "Perfect Self"
+        },
+        {
+          "classLevel": 17,
+          "feat": "Defensive Roll"
+        }
+      ]
     },
     {
       "name": "Paladin",
@@ -697,7 +1473,69 @@
         "Taunt"
       ],
       "notes": "Fearless kun vs fear. CHA-mod til alle saves fra level 2 (Divine Grace/Dark Blessing, tælles kun én gang).",
-      "chaToSavesFromLevel": 2
+      "chaToSavesFromLevel": 2,
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Heavy)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Light)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Medium)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Divine Grace"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Divine Health"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Lay On Hands"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Shield Proficiency"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Martial)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Simple)"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Aura of Courage"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Divine Smite"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Remove Disease"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Turn Undead"
+        },
+        {
+          "classLevel": 5,
+          "feat": "Summon Mount"
+        }
+      ]
     },
     {
       "name": "Pale Master",
@@ -722,7 +1560,117 @@
         "Sail",
         "Spellcraft"
       ],
-      "notes": "Prestige, max 20."
+      "notes": "Prestige, max 20.",
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Bone Skin"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Animate Dead"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Darkvision"
+        },
+        {
+          "classLevel": 4,
+          "feat": "Bone Skin"
+        },
+        {
+          "classLevel": 4,
+          "feat": "Summon Undead"
+        },
+        {
+          "classLevel": 5,
+          "feat": "Deathless Vigor"
+        },
+        {
+          "classLevel": 6,
+          "feat": "Deathless Vigor"
+        },
+        {
+          "classLevel": 6,
+          "feat": "Undead Graft"
+        },
+        {
+          "classLevel": 7,
+          "feat": "Deathless Vigor"
+        },
+        {
+          "classLevel": 7,
+          "feat": "Tough As Bone"
+        },
+        {
+          "classLevel": 8,
+          "feat": "Bone Skin"
+        },
+        {
+          "classLevel": 8,
+          "feat": "Deathless Vigor"
+        },
+        {
+          "classLevel": 8,
+          "feat": "Undead Graft"
+        },
+        {
+          "classLevel": 9,
+          "feat": "Deathless Vigor"
+        },
+        {
+          "classLevel": 9,
+          "feat": "Summon Greater Undead"
+        },
+        {
+          "classLevel": 10,
+          "feat": "Deathless Master Touch"
+        },
+        {
+          "classLevel": 10,
+          "feat": "Deathless Mastery"
+        },
+        {
+          "classLevel": 10,
+          "feat": "Deathless Vigor"
+        },
+        {
+          "classLevel": 12,
+          "feat": "Bone Skin"
+        },
+        {
+          "classLevel": 15,
+          "feat": "Deathless Vigor"
+        },
+        {
+          "classLevel": 16,
+          "feat": "Bone Skin"
+        },
+        {
+          "classLevel": 20,
+          "feat": "Bone Skin"
+        },
+        {
+          "classLevel": 20,
+          "feat": "Deathless Vigor"
+        },
+        {
+          "classLevel": 24,
+          "feat": "Bone Skin"
+        },
+        {
+          "classLevel": 25,
+          "feat": "Deathless Vigor"
+        },
+        {
+          "classLevel": 28,
+          "feat": "Bone Skin"
+        },
+        {
+          "classLevel": 30,
+          "feat": "Deathless Vigor"
+        }
+      ]
     },
     {
       "name": "Ranger",
@@ -750,6 +1698,48 @@
         "Search",
         "Spot",
         "Use Trap"
+      ],
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Light)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Medium)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Dual-wield"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Shield Proficiency"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Trackless Step"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Martial)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Simple)"
+        },
+        {
+          "classLevel": 6,
+          "feat": "Animal Companion"
+        },
+        {
+          "classLevel": 9,
+          "feat": "Improved Two-weapon Fighting"
+        }
       ]
     },
     {
@@ -786,7 +1776,53 @@
         "Use Magic Device",
         "Use Trap"
       ],
-      "notes": "Arelith: hit die d8. +2 Spot/Listen ved 14, +3 ved 24 (ikke med)."
+      "notes": "Arelith: hit die d8. +2 Spot/Listen ved 14, +3 ved 24 (ikke med).",
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Light)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Sneak Attack"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Rogue)"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Evasion"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Uncanny Dodge"
+        },
+        {
+          "classLevel": 6,
+          "feat": "Uncanny Dodge"
+        },
+        {
+          "classLevel": 11,
+          "feat": "Uncanny Dodge"
+        },
+        {
+          "classLevel": 14,
+          "feat": "Uncanny Dodge"
+        },
+        {
+          "classLevel": 17,
+          "feat": "Uncanny Dodge"
+        },
+        {
+          "classLevel": 20,
+          "feat": "Uncanny Dodge"
+        }
+      ]
     },
     {
       "name": "Shadowdancer",
@@ -818,7 +1854,69 @@
         "Spot",
         "Tumble"
       ],
-      "notes": "Prestige, max 20. +1 Hide pr. level (ikke med)."
+      "notes": "Prestige, max 20. +1 Hide pr. level (ikke med).",
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Armor Proficiency (Light)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Hide in Plain Sight"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Simple)"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Darkvision"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Evasion"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Uncanny Dodge"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Shadow Daze"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Summon Shadow"
+        },
+        {
+          "classLevel": 4,
+          "feat": "Shadow Evade"
+        },
+        {
+          "classLevel": 5,
+          "feat": "Defensive Roll"
+        },
+        {
+          "classLevel": 5,
+          "feat": "Uncanny Dodge"
+        },
+        {
+          "classLevel": 7,
+          "feat": "Slippery Mind"
+        },
+        {
+          "classLevel": 10,
+          "feat": "Improved Evasion"
+        },
+        {
+          "classLevel": 10,
+          "feat": "Uncanny Dodge"
+        }
+      ]
     },
     {
       "name": "Shaman",
@@ -837,6 +1935,12 @@
         "Lore",
         "Sail",
         "Spellcraft"
+      ],
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        }
       ]
     },
     {
@@ -856,6 +1960,16 @@
         "Lore",
         "Sail",
         "Spellcraft"
+      ],
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Familiar"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Simple)"
+        }
       ]
     },
     {
@@ -918,6 +2032,12 @@
         "Sail",
         "Spellcraft",
         "Spot"
+      ],
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        }
       ]
     },
     {
@@ -963,7 +2083,13 @@
           "ref": 1
         }
       ],
-      "notes": "Grace: Reflex +1 ved 2, 11, 20, 29."
+      "notes": "Grace: Reflex +1 ved 2, 11, 20, 29.",
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        }
+      ]
     },
     {
       "name": "Vigilante",
@@ -997,7 +2123,17 @@
         "Tumble",
         "Use Trap"
       ],
-      "notes": "Prestige."
+      "notes": "Prestige.",
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 16,
+          "feat": "Defensive Roll"
+        }
+      ]
     },
     {
       "name": "Warlock",
@@ -1025,7 +2161,13 @@
         "Tumble",
         "Use Magic Device"
       ],
-      "notes": "CHA til saves er et tilvalg (feat-navn ukendt endnu)."
+      "notes": "CHA til saves er et tilvalg (feat-navn ukendt endnu).",
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        }
+      ]
     },
     {
       "name": "Weapon Master",
@@ -1054,7 +2196,57 @@
         "Spot",
         "Taunt"
       ],
-      "notes": "Prestige, max 20."
+      "notes": "Prestige, max 20.",
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Ki Damage"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon of Choice"
+        },
+        {
+          "classLevel": 5,
+          "feat": "Increased Multiplier"
+        },
+        {
+          "classLevel": 5,
+          "feat": "Superior Weapon Focus"
+        },
+        {
+          "classLevel": 7,
+          "feat": "Ki Critical"
+        },
+        {
+          "classLevel": 13,
+          "feat": "Epic Superior Weapon Focus"
+        },
+        {
+          "classLevel": 16,
+          "feat": "Epic Superior Weapon Focus"
+        },
+        {
+          "classLevel": 19,
+          "feat": "Epic Superior Weapon Focus"
+        },
+        {
+          "classLevel": 22,
+          "feat": "Epic Superior Weapon Focus"
+        },
+        {
+          "classLevel": 25,
+          "feat": "Epic Superior Weapon Focus"
+        },
+        {
+          "classLevel": 28,
+          "feat": "Epic Superior Weapon Focus"
+        }
+      ]
     },
     {
       "name": "Wizard",
@@ -1071,6 +2263,20 @@
         "Lore",
         "Sail",
         "Spellcraft"
+      ],
+      "grantedFeats": [
+        {
+          "classLevel": 1,
+          "feat": "Scribe Scroll"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Familiar"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Proficiency (Wizard)"
+        }
       ]
     }
   ],
@@ -1085,7 +2291,10 @@
       "name": "Half-Orc",
       "bonusSkillPoints": 0,
       "majorGifts": 2,
-      "minorGifts": 1
+      "minorGifts": 1,
+      "grantedFeats": [
+        "Ambidexterity"
+      ]
     },
     {
       "name": "Half-Elf",
@@ -1462,37 +2671,73 @@
       "name": "Great Strength",
       "abilities": {
         "Str": 1
-      }
+      },
+      "description": "The character gains +1 to their strength. This may be taken multiple times, to a maximum bonus of +10.",
+      "epic": true,
+      "requires": {
+        "level": 21
+      },
+      "requiresText": "21st level"
     },
     {
       "name": "Great Dexterity",
       "abilities": {
         "Dex": 1
-      }
+      },
+      "description": "The character gains +1 to their dexterity. This may be taken multiple times, to a maximum of +10.",
+      "epic": true,
+      "requires": {
+        "level": 21
+      },
+      "requiresText": "21st level"
     },
     {
       "name": "Great Constitution",
       "abilities": {
         "Con": 1
-      }
+      },
+      "description": "The character gains +1 to their constitution. This may be taken multiple times, to a maximum of +10.",
+      "epic": true,
+      "requires": {
+        "level": 21
+      },
+      "requiresText": "21st level"
     },
     {
       "name": "Great Intelligence",
       "abilities": {
         "Int": 1
-      }
+      },
+      "description": "The character gains +1 to their intelligence. This may be taken multiple times, to a maximum bonus of +10.",
+      "epic": true,
+      "requires": {
+        "level": 21
+      },
+      "requiresText": "21st level"
     },
     {
       "name": "Great Wisdom",
       "abilities": {
         "Wis": 1
-      }
+      },
+      "description": "The character gains +1 to their wisdom. This may be taken multiple times, to a maximum bonus of +10.",
+      "epic": true,
+      "requires": {
+        "level": 21
+      },
+      "requiresText": "21st level"
     },
     {
       "name": "Great Charisma",
       "abilities": {
         "Cha": 1
-      }
+      },
+      "description": "The character gains +1 to their charisma. This may be taken multiple times, to a maximum of +10.",
+      "epic": true,
+      "requires": {
+        "level": 21
+      },
+      "requiresText": "21st level"
     },
     {
       "name": "Discipline: Martial (Novice)",
@@ -1636,24 +2881,31 @@
     },
     {
       "name": "Toughness",
-      "hpPerLevel": 1
+      "hpPerLevel": 1,
+      "description": "A character with this feat is tougher than normal, gaining one bonus hit point per level. Hit points are gained retroactively when choosing this feat."
     },
     {
       "name": "Epic Toughness",
       "aliases": [
+        "ET",
         "Epic Toughness I",
         "Epic Toughness II",
         "Epic Toughness III",
         "Epic Toughness IV",
+        "Epic Toughness IX",
         "Epic Toughness V",
         "Epic Toughness VI",
         "Epic Toughness VII",
         "Epic Toughness VIII",
-        "Epic Toughness IX",
-        "Epic Toughness X",
-        "ET"
+        "Epic Toughness X"
       ],
-      "hp": 20
+      "hp": 20,
+      "description": "The character gains 20 hit points. This feat may be taken multiple times, up to a maximum of 200 hit points.",
+      "epic": true,
+      "requires": {
+        "level": 21
+      },
+      "requiresText": "21st level"
     },
     {
       "name": "Secret: Lesser Health",
@@ -1666,39 +2918,65 @@
     },
     {
       "name": "Great Fortitude",
-      "fort": 2
+      "fort": 2,
+      "description": "A character with this feat is tougher than normal, gaining a +2 bonus to all fortitude saving throws."
     },
     {
       "name": "Iron Will",
-      "will": 2
+      "will": 2,
+      "description": "The character's strong presence of mind gives him a +2 bonus to all will saving throws."
     },
     {
       "name": "Lightning Reflexes",
       "aliases": [
         "Lightning Reflex"
       ],
-      "ref": 2
+      "ref": 2,
+      "description": "The character's reflexes are faster than normal, granting him a +2 bonus to all reflex saving throws."
     },
     {
       "name": "Epic Fortitude",
-      "fort": 4
+      "fort": 4,
+      "description": "The character gains a +4 bonus to all fortitude saves.",
+      "epic": true,
+      "requires": {
+        "level": 21
+      },
+      "requiresText": "21st level"
     },
     {
       "name": "Epic Will",
-      "will": 4
+      "will": 4,
+      "description": "The character gains a +4 bonus to all will saves.",
+      "epic": true,
+      "requires": {
+        "level": 21
+      },
+      "requiresText": "21st level"
     },
     {
       "name": "Epic Reflex",
       "aliases": [
         "Epic Reflexes"
       ],
-      "ref": 4
+      "ref": 4,
+      "description": "The character has tremendously fast reflexes and gains a +4 bonus to all reflex saves.",
+      "epic": true,
+      "requires": {
+        "level": 21
+      },
+      "requiresText": "21st level"
     },
     {
       "name": "Luck of Heroes",
       "fort": 1,
       "ref": 1,
-      "will": 1
+      "will": 1,
+      "description": "The character gains a +1 bonus on all saving throws.",
+      "requires": {
+        "maxLevel": 1
+      },
+      "requiresText": "Can only take this at first level."
     },
     {
       "name": "Accursed Will"
@@ -1710,10 +2988,20 @@
       "name": "Agonizing Blasts"
     },
     {
-      "name": "Ambidexterity"
+      "name": "Ambidexterity",
+      "description": "When fighting with two weapons, this feat reduces the penalty of the off-hand weapon by 4.",
+      "requires": {
+        "abilities": {
+          "Dex": 13
+        }
+      },
+      "requiresText": "dexterity 13+ (Arelith)"
     },
     {
-      "name": "Animal Companion"
+      "name": "Animal Companion",
+      "description": "An animal companion may be summoned once per day, until killed or unsummoned.",
+      "requiresText": "druid 1, ranger 6",
+      "type": "class"
     },
     {
       "name": "Animal Language"
@@ -1728,64 +3016,137 @@
       "name": "Archer Path"
     },
     {
-      "name": "Armor Skin"
+      "name": "Armor Skin",
+      "description": "The character gains a natural +2 bonus to armor class.",
+      "epic": true,
+      "requires": {
+        "level": 21
+      },
+      "requiresText": "21st level"
     },
     {
       "name": "Armored Vigil"
     },
     {
-      "name": "Atrocity Invocation"
+      "name": "Atrocity Invocation",
+      "aliases": [
+        "Atrocity: Invocation"
+      ]
     },
     {
-      "name": "Atrocity Strike"
-    },
-    {
-      "name": "Atrocity: Invocation"
-    },
-    {
-      "name": "Atrocity: Strike"
+      "name": "Atrocity Strike",
+      "aliases": [
+        "Atrocity: Strike"
+      ]
     },
     {
       "name": "Atrocity: Whisper"
     },
     {
-      "name": "Aura of Courage"
+      "name": "Aura of Courage",
+      "description": "A character with this feat is immune to fear.",
+      "requiresText": "paladin 2",
+      "type": "class"
     },
     {
-      "name": "Auto Silent I"
+      "name": "Automatic Still Spell I",
+      "base": "Automatic Still Spell",
+      "description": "This feat allows the character to cast all spells of a given level range as still spells automatically. These spells may be cast while wearing armor. This feat may be taken multiple times: * Automatic still spell I: Cast any level 0 - 3 spell as a still spell. * Automatic still spell II: Cast any level 4 - 6 spell as a still spell. * Automatic still spell III: Cast any level 7 - 9 spell as a still spell.",
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Still Spell"
+        ],
+        "skills": {
+          "Spellcraft": 27
+        }
+      },
+      "requiresText": "21st level, still spell, spellcraft 27, ability to cast 9th level spells",
+      "epic": true,
+      "type": "metamagic",
+      "arelith": "Arelith: I/II reducerer samlet ASF med 5% / 10%."
     },
     {
-      "name": "Auto Silent Spell 1"
+      "name": "Automatic Still Spell II",
+      "base": "Automatic Still Spell",
+      "description": "This feat allows the character to cast all spells of a given level range as still spells automatically. These spells may be cast while wearing armor. This feat may be taken multiple times: * Automatic still spell I: Cast any level 0 - 3 spell as a still spell. * Automatic still spell II: Cast any level 4 - 6 spell as a still spell. * Automatic still spell III: Cast any level 7 - 9 spell as a still spell.",
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Still Spell"
+        ],
+        "skills": {
+          "Spellcraft": 27
+        }
+      },
+      "requiresText": "21st level, still spell, spellcraft 27, ability to cast 9th level spells",
+      "epic": true,
+      "type": "metamagic",
+      "arelith": "Arelith: I/II reducerer samlet ASF med 5% / 10%."
     },
     {
-      "name": "Automatic Still Spell I"
+      "name": "Automatic Still Spell III",
+      "base": "Automatic Still Spell",
+      "description": "This feat allows the character to cast all spells of a given level range as still spells automatically. These spells may be cast while wearing armor. This feat may be taken multiple times: * Automatic still spell I: Cast any level 0 - 3 spell as a still spell. * Automatic still spell II: Cast any level 4 - 6 spell as a still spell. * Automatic still spell III: Cast any level 7 - 9 spell as a still spell.",
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Still Spell"
+        ],
+        "skills": {
+          "Spellcraft": 27
+        }
+      },
+      "requiresText": "21st level, still spell, spellcraft 27, ability to cast 9th level spells",
+      "epic": true,
+      "type": "metamagic",
+      "arelith": "Arelith: I/II reducerer samlet ASF med 5% / 10%."
     },
     {
-      "name": "Automatic Still Spell II"
-    },
-    {
-      "name": "Automatic Still Spell III"
-    },
-    {
-      "name": "Bane of Enemies"
+      "name": "Bane of Enemies",
+      "description": "Any weapon the character wields against any of their favored enemies is treated as a bane weapon for that creature type (+2 to hit and an additional +2d6 damage).",
+      "epic": true,
+      "requires": {
+        "classLevels": {
+          "Ranger": 21
+        }
+      },
+      "requiresText": "ranger 21"
     },
     {
       "name": "Banner I"
     },
     {
-      "name": "Barbarian Rage"
+      "name": "Barbarian Rage",
+      "description": "The barbarian may rage, gaining a +4 morale bonus to strength and constitution and +2 to all will saving throws, in exchange for a -2 penalty to armor class. The barbarian may use this ability once per day at first level, +1 use per day at level 4, and every 4 levels thereafter, extending into epic levels. At 15th level, the rage ability becomes greater rage, giving the barbarian +6 to strength and constitution and +3 to will saves (the -2 penalty to armor class still applies).",
+      "requiresText": "barbarian",
+      "type": "class"
     },
     {
-      "name": "Bard Song"
+      "name": "Bard Song",
+      "description": "Bards are able to sing a song that can bolster their allies. Deafened creatures are not affected by the bard's singing. The song affects all allies within 30 feet and lasts for 10 rounds. The higher the bard's final perform skill and class level, the better the bard song.",
+      "requiresText": "bard",
+      "type": "class"
     },
     {
       "name": "Bleeding Wound"
     },
     {
-      "name": "Blindfight"
+      "name": "Blindfight",
+      "description": "This feat grants the character the ability to fight well, even if blinded or against invisible creatures. The character gets to re-roll its miss chance percentile one time to see if it actually hits. Furthermore, invisible creatures get no bonus to hit the character in melee."
     },
     {
-      "name": "Blinding Speed"
+      "name": "Blinding Speed",
+      "description": "The character is able to cast haste on himself once per day. The effect will last 10 rounds.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "abilities": {
+          "Dex": 25
+        }
+      },
+      "requiresText": "21st level, dexterity 25+",
+      "arelith": "Arelith: øjeblikkelig, 3 turns, ubegrænset brug med 8 turns cooldown."
     },
     {
       "name": "Blood Arcana Proficiency"
@@ -1803,13 +3164,16 @@
       "name": "Brawler"
     },
     {
-      "name": "Brew Potion"
+      "name": "Brew Potion",
+      "description": "The character can create a potion of any spell of third level or lower that the character knows and that targets a single creature. Brewing a potion will cost a small amount of XP as well as some gold to cover the material cost. The cost for brewing a potion depends on the innate level of the spell as well as the caster level of the resulting potion. Some examples: * A potion of bless (1) will cost 50 gold and 2 XP. * A potion of prayer (5) will cost 750 gold and 30 XP.",
+      "requiresText": "spellcaster level 3+",
+      "type": "item creation"
     },
     {
-      "name": "Brutal Attack +1"
-    },
-    {
-      "name": "Brutal Attack 1"
+      "name": "Brutal Attack +1",
+      "aliases": [
+        "Brutal Attack 1"
+      ]
     },
     {
       "name": "Brutal Attack 1d6"
@@ -1836,19 +3200,25 @@
       "name": "Brutal Attack 6"
     },
     {
-      "name": "Bull's Strength"
-    },
-    {
-      "name": "Bulls"
-    },
-    {
-      "name": "Bulls Strength"
+      "name": "Bull's Strength",
+      "aliases": [
+        "Bulls",
+        "Bulls Strength"
+      ],
+      "description": "Starting at second level, a blackguard may cast bull's strength.",
+      "requiresText": "blackguard 2",
+      "type": "class"
     },
     {
       "name": "Call of The Wild"
     },
     {
-      "name": "Called Shot"
+      "name": "Called Shot",
+      "description": "Grants the ability to make a potentially disabling attack against an opponent's arms or legs. Called shots are made at a -4 penalty, and must overcome the target's discipline skill check. A successful called shot against the legs reduces the opponent's movement rate by 20% and gives them a -2 cumulative penalty to their dexterity. A successful called shot against the arms applies a cumulative -2 penalty to the creature's attack rolls.",
+      "requires": {
+        "bab": 1
+      },
+      "requiresText": "base attack bonus of +1 or higher"
     },
     {
       "name": "Cause: Freedom"
@@ -1857,13 +3227,36 @@
       "name": "Cause: Vindication"
     },
     {
-      "name": "Circle Kick"
+      "name": "Circle Kick",
+      "description": "If the character succeeds in hitting an opponent with an unarmed attack, that character gets an additional free attack against another, nearby enemy. There is a maximum of one free attack per round.",
+      "requires": {
+        "bab": 3,
+        "abilities": {
+          "Dex": 15
+        },
+        "feats": [
+          "Improved Unarmed Strike"
+        ]
+      },
+      "requiresText": "base attack bonus +3, dexterity 15+, improved unarmed strike"
     },
     {
-      "name": "Cleave"
+      "name": "Cleave",
+      "description": "If the character kills an opponent, he gets a free attack against any opponent who is within melee weapon range.",
+      "requires": {
+        "abilities": {
+          "Str": 13
+        },
+        "feats": [
+          "Power Attack"
+        ]
+      },
+      "requiresText": "strength 13+, power attack"
     },
     {
-      "name": "Combat Casting"
+      "name": "Combat Casting",
+      "description": "The character is adept at casting spells in combat, and does not suffer the standard -4 penalty to concentration checks when casting defensively within four meters of an enemy.",
+      "requiresText": "ability to cast first-level spells"
     },
     {
       "name": "Combat Mastery"
@@ -1872,13 +3265,22 @@
       "name": "Corrupt Weapon"
     },
     {
-      "name": "Craft Wand"
+      "name": "Craft Wand",
+      "description": "The spellcaster can create a wand of any spell of fourth level or lower that he knows. Crafting a wand costs a small amount of XP and gold, depending on the level of the spell to be crafted into the wand. A newly created wand has 1d20 + 1 charge per level of the caster (up to a maximum of 50 charges). The cost for crafting a wand depends on the level of the spell as well as the level of the resulting wand. Some examples: * A wand of magic missile (5) will cost 3750 gold and 150 XP. * A wand of Melf's acid arrow (5) will cost 7500 gold and 300 XP. * A wand of fireball (5) will cost 11250 gold and 450 XP.",
+      "requiresText": "spellcaster level 5+",
+      "type": "item creation"
     },
     {
-      "name": "Create Undead"
+      "name": "Create Undead",
+      "description": "A blackguard may summon a ghast once per day. At seventh level, this ability improves and a doom knight is summoned instead.",
+      "requiresText": "blackguard 3",
+      "type": "class"
     },
     {
-      "name": "Crippling Strike"
+      "name": "Crippling Strike",
+      "description": "The rogue deals an additional 2 points of ability score strength damage when he makes a successful sneak attack.",
+      "requiresText": "rogue 10",
+      "type": "class"
     },
     {
       "name": "Crippling Throw"
@@ -1890,13 +3292,18 @@
       "name": "Curse of Rust"
     },
     {
-      "name": "Curse Song"
+      "name": "Curse Song",
+      "description": "Bards are able to sing a song that can curse their enemies. Deafened creatures are not affected by the bard's singing. The song affects all enemies within 30 feet and lasts for 10 rounds. The higher the bard's final perform skill and class level, the more powerful the curse song.",
+      "requiresText": "-"
     },
     {
       "name": "Cursed Armaments"
     },
     {
-      "name": "Dark Blessing"
+      "name": "Dark Blessing",
+      "description": "Blackguards add their charisma bonus to all saving throws.",
+      "requiresText": "blackguard 2",
+      "type": "class"
     },
     {
       "name": "Dark Claim"
@@ -1911,34 +3318,74 @@
       "name": "Dark Messenger"
     },
     {
-      "name": "Darkness"
+      "name": "Darkness",
+      "description": "Starting at fifth level, an assassin gains the ability to cast darkness.",
+      "requiresText": "assassin 5",
+      "type": "class"
     },
     {
-      "name": "Darkvision"
+      "name": "Darkvision",
+      "description": "This feat grants the ability to see in the dark.",
+      "requiresText": "dwarf, half-orc, shadowdancer 2, pale master 3, red dragon disciple 10",
+      "type": "classrace"
     },
     {
-      "name": "Defensive Awareness I"
+      "name": "Defensive Awareness I",
+      "base": "Defensive Awareness",
+      "description": "There are three versions of this feat with cumulative benefits. (1): The character retains his dexterity bonus to AC, even if caught flat-footed or attacked by a hidden or invisible creature. (2): The character can no longer be flanked, since he can react to opponents on opposite sides of him as easily as he can react to a single attack. (3): The character gains an intuitive sense that alerts him to danger from traps, giving a +1 bonus to reflex saves made to avoid traps.",
+      "requiresText": "dwarven defender 2 (5, 10)",
+      "type": "class"
     },
     {
-      "name": "Defensive Awareness II"
+      "name": "Defensive Awareness II",
+      "base": "Defensive Awareness",
+      "description": "There are three versions of this feat with cumulative benefits. (1): The character retains his dexterity bonus to AC, even if caught flat-footed or attacked by a hidden or invisible creature. (2): The character can no longer be flanked, since he can react to opponents on opposite sides of him as easily as he can react to a single attack. (3): The character gains an intuitive sense that alerts him to danger from traps, giving a +1 bonus to reflex saves made to avoid traps.",
+      "requiresText": "dwarven defender 2 (5, 10)",
+      "type": "class"
     },
     {
-      "name": "Defensive Awareness III"
+      "name": "Defensive Awareness III",
+      "base": "Defensive Awareness",
+      "description": "There are three versions of this feat with cumulative benefits. (1): The character retains his dexterity bonus to AC, even if caught flat-footed or attacked by a hidden or invisible creature. (2): The character can no longer be flanked, since he can react to opponents on opposite sides of him as easily as he can react to a single attack. (3): The character gains an intuitive sense that alerts him to danger from traps, giving a +1 bonus to reflex saves made to avoid traps.",
+      "requiresText": "dwarven defender 2 (5, 10)",
+      "type": "class"
     },
     {
-      "name": "Defensive Roll"
+      "name": "Defensive Roll",
+      "description": "If the character is struck by a potentially lethal blow, he makes a reflex saving throw (DC = damage dealt). If successful, he takes only half damage from the blow.",
+      "requiresText": "rogue 10, shadowdancer 5",
+      "type": "class"
     },
     {
-      "name": "Defensive Stance"
+      "name": "Defensive Stance",
+      "description": "When he needs to, the defender can become a stalwart bastion of defense. In this defensive stance, a defender gains phenomenal strength and durability, but he cannot move from the spot he is defending. He gains the following benefits: * +2 strength * +4 constitution * +2 resistance bonus on all saves * +4 dodge bonus on AC At first level, this ability can be used once per day. Every 2 levels beyond 1, the dwarven defender gains an additional use per day.",
+      "requiresText": "dwarven defender 1",
+      "type": "class"
     },
     {
-      "name": "Deflect Arrows"
+      "name": "Deflect Arrows",
+      "description": "The character can attempt to deflect one incoming missile attack per round. This is treated as a reflex save made against DC 20.",
+      "requires": {
+        "abilities": {
+          "Dex": 13
+        },
+        "feats": [
+          "Improved Unarmed Strike"
+        ]
+      },
+      "requiresText": "dexterity 13+, improved unarmed strike"
     },
     {
-      "name": "Diamond Body"
+      "name": "Diamond Body",
+      "description": "The monk gains immunity to all poisons.",
+      "requiresText": "monk 11",
+      "type": "class"
     },
     {
-      "name": "Diamond Soul"
+      "name": "Diamond Soul",
+      "description": "The monk gains spell resistance equal to their class level + 10.",
+      "requiresText": "monk 12",
+      "type": "class"
     },
     {
       "name": "Dirge of Awakening"
@@ -1953,10 +3400,23 @@
       "name": "Dirge of Reprisal"
     },
     {
-      "name": "Dirty Fighting"
+      "name": "Dirty Fighting",
+      "description": "The character knows brutal and effective fighting tactics. By sacrificing all other attacks during the round, the character can elect to perform a dirty fighting move that will deal an extra 1d4 points of damage. This mode cannot be used with power attack.",
+      "requires": {
+        "bab": 2
+      },
+      "requiresText": "base attack bonus +2"
     },
     {
-      "name": "Disarm"
+      "name": "Disarm",
+      "description": "The character can attempt to disarm an opponent in melee combat. Attempting a disarm applies a -6 penalty to the character's attack roll, and the combatant with the larger weapon gains a +4 bonus per size category of difference. A successful hit deals normal damage, and if the opponent fails a discipline check then the weapon flies from the opponent's hands.",
+      "requires": {
+        "abilities": {
+          "Int": 13
+        }
+      },
+      "requiresText": "intelligence 13+",
+      "arelith": "Arelith: AB-straf -4 (Improved: -2). Våbnet tabes ikke; målet får -10 AB pr. hånd i 6 sek."
     },
     {
       "name": "Disruptive Shot"
@@ -1965,37 +3425,79 @@
       "name": "Divination"
     },
     {
-      "name": "Divine Grace"
+      "name": "Divine Grace",
+      "description": "The paladin adds charisma bonus (if positive) to all saving throws.",
+      "requiresText": "paladin 1",
+      "type": "class"
     },
     {
-      "name": "Divine Might"
+      "name": "Divine Might",
+      "description": "The character may spend one of his turn undead attempts to add his charisma bonus to all weapon damage for a number of rounds equal to the charisma bonus.",
+      "requires": {
+        "abilities": {
+          "Cha": 13,
+          "Str": 13
+        },
+        "feats": [
+          "Turn Undead",
+          "Power Attack"
+        ]
+      },
+      "requiresText": "turn undead, charisma 13+, strength 13+, power attack",
+      "arelith": "Arelith: skade ×1,5 med tohåndsvåben. Kan tages af alle klasser, der opfylder kravene."
     },
     {
-      "name": "Divine Shield"
+      "name": "Divine Shield",
+      "description": "The character may spend one of his turn undead attempts to add his charisma bonus to his armor class for a number of rounds equal to the charisma bonus.",
+      "requires": {
+        "abilities": {
+          "Cha": 13,
+          "Str": 13
+        },
+        "feats": [
+          "Turn Undead",
+          "Power Attack"
+        ]
+      },
+      "requiresText": "turn undead, charisma 13+, strength 13+, power attack",
+      "arelith": "Arelith: stakker ikke med Monk WIS AC. Kan tages af alle klasser, der opfylder kravene."
     },
     {
-      "name": "Divine Smite"
+      "name": "Divine Smite",
+      "aliases": [
+        "Smite",
+        "Smite Evil",
+        "Smite Good"
+      ],
+      "description": "This feat allows the character to make a special attack against evil creatures. The character applies their charisma modifier to their attack roll, and their class level to the damage delivered. Smite evil may be used once per day.",
+      "requiresText": "paladin 2, champion of Torm 3",
+      "type": "class",
+      "arelith": "Arelith: Smite Good og Smite Evil er slået sammen til Divine Smite med ændret mekanik."
     },
     {
       "name": "Divine Synergy"
     },
     {
-      "name": "Divine Wrath"
+      "name": "Divine Wrath",
+      "description": "The champion is able to channel a portion of her deity's power once per day, giving her a +3 bonus on attack rolls, damage, and saving throws for a number of rounds equal to her charisma bonus. She also gains damage reduction of 5/+1. The attack and saving throw bonuses increase by +2 at level 10.",
+      "requiresText": "champion of Torm 5",
+      "type": "class"
     },
     {
-      "name": "Dodge"
+      "name": "Dodge",
+      "description": "The character gains a +1 dodge bonus to AC against attacks from his current target or latest attacker.",
+      "requires": {
+        "abilities": {
+          "Dex": 13
+        }
+      },
+      "requiresText": "dexterity 13+"
     },
     {
       "name": "Dodge Trick"
     },
     {
       "name": "Domain: Trickery"
-    },
-    {
-      "name": "Dragon Knight"
-    },
-    {
-      "name": "EDR"
     },
     {
       "name": "Elder Elemental Shape"
@@ -2025,16 +3527,25 @@
       "name": "Elemental Meteor"
     },
     {
-      "name": "Elemental Shape"
+      "name": "Elemental Shape",
+      "description": "The character with this ability can take the shape of an elemental (a huge elemental at 16th level, and an elder elemental at 20th level). The ability may be used once per day at level 16, twice per day at level 17, and three times per day at level 19. At level 26 the druid is able to shift into elemental shape at will. The transformation has a duration of 1 hour per class level.",
+      "requiresText": "druid 16",
+      "type": "class"
     },
     {
       "name": "Elemental Strike"
     },
     {
-      "name": "Empower Spell"
+      "name": "Empower Spell",
+      "description": "All variable, numeric effects of an empowered spell are increased by 50%. For example, an empowered magic missile deals one and one-half times normal damage (1d4 + 1 multiplied by 1.5). Empowerment does not increase spell duration.",
+      "requiresText": "ability to cast 2nd-level spells",
+      "type": "metamagic"
     },
     {
-      "name": "Empty Body"
+      "name": "Empty Body",
+      "description": "The monk is given 50% concealment.",
+      "requiresText": "monk 18",
+      "type": "class"
     },
     {
       "name": "Entangling Arrow"
@@ -2043,22 +3554,63 @@
       "name": "Entangling Shot"
     },
     {
-      "name": "Epic Dodge"
+      "name": "Epic Dodge",
+      "description": "The character avoids the first attack each round.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "abilities": {
+          "Dex": 25
+        },
+        "feats": [
+          "Improved Evasion",
+          "Defensive Roll"
+        ],
+        "skills": {
+          "Tumble": 30
+        }
+      },
+      "requiresText": "21st level, dexterity 25+, , tumble 30 ranks, improved evasion, defensive roll"
     },
     {
       "name": "Epic Eldritch Summon"
     },
     {
-      "name": "Epic Energy Resistance Cold"
+      "name": "Epic Energy Resistance Cold",
+      "base": "Epic Energy Resistance",
+      "description": "The character gains resistance 10 to the selected damage type (acid, cold, electrical, fire, or sonic). This feat may be taken multiple times, to a maximum of 100 resistance to each damage type.",
+      "requires": {
+        "level": 21
+      },
+      "requiresText": "21st level",
+      "epic": true,
+      "type": "defensive"
     },
     {
-      "name": "Epic Fiendish Servant"
+      "name": "Epic Fiendish Servant",
+      "description": "The character's evil and hatred grow strong enough to attract the attention of an epic vrock when summoning a fiendish servant from the outer planes. This vile creature is a master in the arts of melee combat and, fueled by its master's evil soul, grows in strength and power as the blackguard gains new levels.",
+      "epic": true,
+      "requiresText": "blackguard 15",
+      "type": "class"
     },
     {
       "name": "Epic Harbinger"
     },
     {
-      "name": "Epic Mage Armor"
+      "name": "Epic Mage Armor",
+      "aliases": [
+        "Epic Spell: Epic Mage Armor"
+      ],
+      "description": "The caster gets a +20 armor class bonus.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "skills": {
+          "Spellcraft": 26
+        }
+      },
+      "requiresText": "21st level, the ability to cast 9th level spells, spellcraft 26",
+      "type": "epic spell"
     },
     {
       "name": "Epic Pact: Abyssal"
@@ -2070,154 +3622,557 @@
       "name": "Epic Pact: Unseelie Fey"
     },
     {
-      "name": "Epic Prowess"
+      "name": "Epic Prowess",
+      "description": "The character's skill at combat grows and he gains a +1 bonus to all attacks.",
+      "epic": true,
+      "requires": {
+        "level": 21
+      },
+      "requiresText": "21st level",
+      "type": "combat"
     },
     {
       "name": "Epic Second Wind"
     },
     {
-      "name": "Epic Shadowlord"
+      "name": "Epic Shadowlord",
+      "description": "The character's summon shadow ability is reinforced, allowing him to call an epic shadowlord to his side. Unlike a non-epic shadowlord, an epic shadowlord is a potent fighter, reinforced by his master's lifeforce, making him stronger each time the shadowdancer gains a level.",
+      "epic": true,
+      "requiresText": "epic shadowdancer",
+      "type": "class"
     },
     {
-      "name": "Epic Skill Focus Animal Empathy"
+      "name": "Epic Skill Focus Animal Empathy",
+      "base": "Epic Skill Focus",
+      "description": "The character gains a +10 bonus on all skill checks with the chosen skill.",
+      "requires": {
+        "level": 21,
+        "skills": {
+          "Animal Empathy": 20
+        }
+      },
+      "requiresText": "21st level, 20 ranks in the chosen skill",
+      "epic": true,
+      "arelith": "Arelith: Hide/Move Silently og Listen/Spot giver den anden gratis. Persuade hedder Leadership."
     },
     {
-      "name": "Epic Skill Focus Discipline"
+      "name": "Epic Skill Focus Discipline",
+      "base": "Epic Skill Focus",
+      "description": "The character gains a +10 bonus on all skill checks with the chosen skill.",
+      "requires": {
+        "level": 21,
+        "skills": {
+          "Discipline": 20
+        }
+      },
+      "requiresText": "21st level, 20 ranks in the chosen skill",
+      "epic": true,
+      "arelith": "Arelith: Hide/Move Silently og Listen/Spot giver den anden gratis. Persuade hedder Leadership."
     },
     {
-      "name": "Epic Skill Focus Hide"
+      "name": "Epic Skill Focus Hide",
+      "base": "Epic Skill Focus",
+      "description": "The character gains a +10 bonus on all skill checks with the chosen skill.",
+      "requires": {
+        "level": 21,
+        "skills": {
+          "Hide": 20
+        }
+      },
+      "requiresText": "21st level, 20 ranks in the chosen skill",
+      "epic": true,
+      "arelith": "Arelith: Hide/Move Silently og Listen/Spot giver den anden gratis. Persuade hedder Leadership."
     },
     {
-      "name": "Epic Skill Focus Intimidate"
+      "name": "Epic Skill Focus Intimidate",
+      "base": "Epic Skill Focus",
+      "description": "The character gains a +10 bonus on all skill checks with the chosen skill.",
+      "requires": {
+        "level": 21,
+        "skills": {
+          "Intimidate": 20
+        }
+      },
+      "requiresText": "21st level, 20 ranks in the chosen skill",
+      "epic": true,
+      "arelith": "Arelith: Hide/Move Silently og Listen/Spot giver den anden gratis. Persuade hedder Leadership."
     },
     {
-      "name": "Epic Skill Focus Leadership"
+      "name": "Epic Skill Focus Leadership",
+      "base": "Epic Skill Focus",
+      "description": "The character gains a +10 bonus on all skill checks with the chosen skill.",
+      "requires": {
+        "level": 21,
+        "skills": {
+          "Leadership": 20
+        }
+      },
+      "requiresText": "21st level, 20 ranks in the chosen skill",
+      "epic": true,
+      "arelith": "Arelith: Hide/Move Silently og Listen/Spot giver den anden gratis. Persuade hedder Leadership."
     },
     {
-      "name": "Epic Skill Focus Parry"
+      "name": "Epic Skill Focus Parry",
+      "base": "Epic Skill Focus",
+      "description": "The character gains a +10 bonus on all skill checks with the chosen skill.",
+      "requires": {
+        "level": 21,
+        "skills": {
+          "Parry": 20
+        }
+      },
+      "requiresText": "21st level, 20 ranks in the chosen skill",
+      "epic": true,
+      "arelith": "Arelith: Hide/Move Silently og Listen/Spot giver den anden gratis. Persuade hedder Leadership."
     },
     {
-      "name": "Epic Skill Focus Perform"
+      "name": "Epic Skill Focus Perform",
+      "base": "Epic Skill Focus",
+      "description": "The character gains a +10 bonus on all skill checks with the chosen skill.",
+      "requires": {
+        "level": 21,
+        "skills": {
+          "Perform": 20
+        }
+      },
+      "requiresText": "21st level, 20 ranks in the chosen skill",
+      "epic": true,
+      "arelith": "Arelith: Hide/Move Silently og Listen/Spot giver den anden gratis. Persuade hedder Leadership."
     },
     {
-      "name": "Epic Skill Focus Taunt"
+      "name": "Epic Skill Focus Taunt",
+      "base": "Epic Skill Focus",
+      "description": "The character gains a +10 bonus on all skill checks with the chosen skill.",
+      "requires": {
+        "level": 21,
+        "skills": {
+          "Taunt": 20
+        }
+      },
+      "requiresText": "21st level, 20 ranks in the chosen skill",
+      "epic": true,
+      "arelith": "Arelith: Hide/Move Silently og Listen/Spot giver den anden gratis. Persuade hedder Leadership."
     },
     {
-      "name": "Epic Spell Focus Conjuration"
+      "name": "Epic Spell Focus Conjuration",
+      "base": "Epic Spell Focus",
+      "description": "The character gains a +6 to the difficulty class for all saving throws against spells from the chosen school of magic.",
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Spell Focus",
+          "Greater Spell Focus"
+        ]
+      },
+      "requiresText": "21st level, spell focus and greater spell focus in the chosen school, ability to cast 9th level spells",
+      "epic": true,
+      "type": "spell"
     },
     {
-      "name": "Epic Spell Focus Enchantment"
+      "name": "Epic Spell Focus Enchantment",
+      "base": "Epic Spell Focus",
+      "description": "The character gains a +6 to the difficulty class for all saving throws against spells from the chosen school of magic.",
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Spell Focus",
+          "Greater Spell Focus"
+        ]
+      },
+      "requiresText": "21st level, spell focus and greater spell focus in the chosen school, ability to cast 9th level spells",
+      "epic": true,
+      "type": "spell"
     },
     {
-      "name": "Epic Spell Focus Evocation"
+      "name": "Epic Spell Focus Evocation",
+      "base": "Epic Spell Focus",
+      "description": "The character gains a +6 to the difficulty class for all saving throws against spells from the chosen school of magic.",
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Spell Focus",
+          "Greater Spell Focus"
+        ]
+      },
+      "requiresText": "21st level, spell focus and greater spell focus in the chosen school, ability to cast 9th level spells",
+      "epic": true,
+      "type": "spell"
     },
     {
-      "name": "Epic Spell Focus Illusion"
+      "name": "Epic Spell Focus Illusion",
+      "base": "Epic Spell Focus",
+      "description": "The character gains a +6 to the difficulty class for all saving throws against spells from the chosen school of magic.",
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Spell Focus",
+          "Greater Spell Focus"
+        ]
+      },
+      "requiresText": "21st level, spell focus and greater spell focus in the chosen school, ability to cast 9th level spells",
+      "epic": true,
+      "type": "spell"
     },
     {
-      "name": "Epic Spell Focus Necromancy"
+      "name": "Epic Spell Focus Necromancy",
+      "base": "Epic Spell Focus",
+      "description": "The character gains a +6 to the difficulty class for all saving throws against spells from the chosen school of magic.",
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Spell Focus",
+          "Greater Spell Focus"
+        ]
+      },
+      "requiresText": "21st level, spell focus and greater spell focus in the chosen school, ability to cast 9th level spells",
+      "epic": true,
+      "type": "spell"
     },
     {
-      "name": "Epic Spell Focus Transmutation"
+      "name": "Epic Spell Focus Transmutation",
+      "base": "Epic Spell Focus",
+      "description": "The character gains a +6 to the difficulty class for all saving throws against spells from the chosen school of magic.",
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Spell Focus",
+          "Greater Spell Focus"
+        ]
+      },
+      "requiresText": "21st level, spell focus and greater spell focus in the chosen school, ability to cast 9th level spells",
+      "epic": true,
+      "type": "spell"
     },
     {
-      "name": "Epic Spell: Dragon Knight"
+      "name": "Epic Spell: Dragon Knight",
+      "aliases": [
+        "Dragon Knight"
+      ],
+      "description": "The caster summons a powerful adult red dragon to the targeted location to fight on his side.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "skills": {
+          "Spellcraft": 22
+        }
+      },
+      "requiresText": "21st level, the ability to cast 9th level spells, spellcraft 22",
+      "type": "epic spell"
     },
     {
-      "name": "Epic Weapon Focus"
+      "name": "Epic Weapon Focus",
+      "description": "The character gains a +2 bonus to all attack rolls with the chosen weapon.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Weapon Focus"
+        ]
+      },
+      "requiresText": "21st level, weapon focus with the chosen weapon",
+      "type": "combat"
     },
     {
-      "name": "Epic Weapon Focus Concussion"
+      "name": "Epic Weapon Focus Concussion",
+      "base": "Epic Weapon Focus",
+      "description": "The character gains a +2 bonus to all attack rolls with the chosen weapon.",
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Weapon Focus"
+        ]
+      },
+      "requiresText": "21st level, weapon focus with the chosen weapon",
+      "epic": true,
+      "type": "combat"
     },
     {
-      "name": "Epic Weapon Focus Edged"
+      "name": "Epic Weapon Focus Edged",
+      "base": "Epic Weapon Focus",
+      "description": "The character gains a +2 bonus to all attack rolls with the chosen weapon.",
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Weapon Focus"
+        ]
+      },
+      "requiresText": "21st level, weapon focus with the chosen weapon",
+      "epic": true,
+      "type": "combat"
     },
     {
-      "name": "Epic Weapon Focus Melee"
+      "name": "Epic Weapon Focus Melee",
+      "base": "Epic Weapon Focus",
+      "description": "The character gains a +2 bonus to all attack rolls with the chosen weapon.",
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Weapon Focus"
+        ]
+      },
+      "requiresText": "21st level, weapon focus with the chosen weapon",
+      "epic": true,
+      "type": "combat"
     },
     {
-      "name": "Epic Weapon Focus Missile"
+      "name": "Epic Weapon Focus Missile",
+      "base": "Epic Weapon Focus",
+      "description": "The character gains a +2 bonus to all attack rolls with the chosen weapon.",
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Weapon Focus"
+        ]
+      },
+      "requiresText": "21st level, weapon focus with the chosen weapon",
+      "epic": true,
+      "type": "combat"
     },
     {
-      "name": "Epic Weapon Focus Ranged"
+      "name": "Epic Weapon Focus Ranged",
+      "base": "Epic Weapon Focus",
+      "description": "The character gains a +2 bonus to all attack rolls with the chosen weapon.",
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Weapon Focus"
+        ]
+      },
+      "requiresText": "21st level, weapon focus with the chosen weapon",
+      "epic": true,
+      "type": "combat"
     },
     {
-      "name": "Epic Weapon Focus Throwing"
+      "name": "Epic Weapon Focus Throwing",
+      "base": "Epic Weapon Focus",
+      "description": "The character gains a +2 bonus to all attack rolls with the chosen weapon.",
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Weapon Focus"
+        ]
+      },
+      "requiresText": "21st level, weapon focus with the chosen weapon",
+      "epic": true,
+      "type": "combat"
     },
     {
-      "name": "Epic Weapon Focus Thrown"
+      "name": "Epic Weapon Focus Thrown",
+      "base": "Epic Weapon Focus",
+      "description": "The character gains a +2 bonus to all attack rolls with the chosen weapon.",
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Weapon Focus"
+        ]
+      },
+      "requiresText": "21st level, weapon focus with the chosen weapon",
+      "epic": true,
+      "type": "combat"
     },
     {
-      "name": "Epic Weapon Focus Unarmed"
+      "name": "Epic Weapon Focus Unarmed",
+      "base": "Epic Weapon Focus",
+      "description": "The character gains a +2 bonus to all attack rolls with the chosen weapon.",
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Weapon Focus"
+        ]
+      },
+      "requiresText": "21st level, weapon focus with the chosen weapon",
+      "epic": true,
+      "type": "combat"
     },
     {
-      "name": "Epic Weapon Specialization"
+      "name": "Epic Weapon Specialization",
+      "description": "The character gains a +4 bonus to all damage done by the chosen weapon.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Weapon Focus",
+          "Epic Weapon Focus",
+          "Weapon Specialization"
+        ]
+      },
+      "requiresText": "21st level; weapon focus, epic weapon focus, and weapon specialization all in the chosen weapon",
+      "type": "combat"
     },
     {
-      "name": "Epic Weapon Specialization Missile"
+      "name": "Epic Weapon Specialization Missile",
+      "base": "Epic Weapon Specialization",
+      "description": "The character gains a +4 bonus to all damage done by the chosen weapon.",
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Weapon Focus",
+          "Epic Weapon Focus",
+          "Weapon Specialization"
+        ]
+      },
+      "requiresText": "21st level; weapon focus, epic weapon focus, and weapon specialization all in the chosen weapon",
+      "epic": true,
+      "type": "combat"
     },
     {
-      "name": "Epic Weapon Specialization Throwing"
+      "name": "Epic Weapon Specialization Throwing",
+      "base": "Epic Weapon Specialization",
+      "description": "The character gains a +4 bonus to all damage done by the chosen weapon.",
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Weapon Focus",
+          "Epic Weapon Focus",
+          "Weapon Specialization"
+        ]
+      },
+      "requiresText": "21st level; weapon focus, epic weapon focus, and weapon specialization all in the chosen weapon",
+      "epic": true,
+      "type": "combat"
     },
     {
-      "name": "Epic Weapon Specialization Thrown"
+      "name": "Epic Weapon Specialization Thrown",
+      "base": "Epic Weapon Specialization",
+      "description": "The character gains a +4 bonus to all damage done by the chosen weapon.",
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Weapon Focus",
+          "Epic Weapon Focus",
+          "Weapon Specialization"
+        ]
+      },
+      "requiresText": "21st level; weapon focus, epic weapon focus, and weapon specialization all in the chosen weapon",
+      "epic": true,
+      "type": "combat"
     },
     {
-      "name": "Epic Weapon Specialization Unarmed"
+      "name": "Epic Weapon Specialization Unarmed",
+      "base": "Epic Weapon Specialization",
+      "description": "The character gains a +4 bonus to all damage done by the chosen weapon.",
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Weapon Focus",
+          "Epic Weapon Focus",
+          "Weapon Specialization"
+        ]
+      },
+      "requiresText": "21st level; weapon focus, epic weapon focus, and weapon specialization all in the chosen weapon",
+      "epic": true,
+      "type": "combat"
     },
     {
       "name": "Equipoise"
     },
     {
-      "name": "Evasiion"
-    },
-    {
-      "name": "Evasion"
+      "name": "Evasion",
+      "aliases": [
+        "Evasiion"
+      ],
+      "description": "Whenever a reflex save is allowed for half damage, the character instead takes no damage if he succeeds at the save.",
+      "requiresText": "monk 1, rogue 2, shadowdancer 2",
+      "type": "class"
     },
     {
       "name": "Eviscerate"
     },
     {
-      "name": "Exotic Weapons"
+      "name": "Expertise",
+      "description": "A character with this feat can make defensive attacks, gaining a +5 bonus to AC but receiving a -5 penalty to attack rolls.",
+      "requires": {
+        "abilities": {
+          "Int": 13
+        }
+      },
+      "requiresText": "intelligence 13+",
+      "arelith": "Arelith: slås fra ved casting og giver ingen AC mens man caster."
     },
     {
-      "name": "Expertise"
+      "name": "Extend Spell",
+      "description": "Extended spells have their duration doubled, lasting twice as long as normal.",
+      "requiresText": "ability to cast 1st level spells",
+      "type": "metamagic"
     },
     {
-      "name": "Extend Spell"
+      "name": "Extra Music",
+      "description": "The character may use bard song four extra times per day.",
+      "requires": {
+        "feats": [
+          "Bard Song"
+        ]
+      },
+      "requiresText": "bard song",
+      "arelith": "Arelith: bard song cooldown -3 minutter."
     },
     {
-      "name": "Extra Music"
+      "name": "Extra Smiting",
+      "description": "This feat increases the smiting ability to 3 times per day.",
+      "requires": {
+        "feats": [
+          "Divine Smite"
+        ]
+      },
+      "requiresText": "Divine Smite"
     },
     {
-      "name": "Extra Smiting"
+      "name": "Familiar",
+      "aliases": [
+        "Summon Familiar"
+      ],
+      "description": "A character with this feat may summon a familiar once per day. If the familiar dies, the character suffers 1d6 magical damage, but may summon the familiar again on the following day.",
+      "requiresText": "wizard 1, sorcerer 1",
+      "type": "class"
     },
     {
-      "name": "Extra Turning"
+      "name": "Favored Enemy Undead",
+      "base": "Favored Enemy",
+      "description": "The character gains a +1 bonus to any damage delivered to his favored enemy. He also receives a +1 bonus on listen, spot, and taunt checks against the favored enemy. These bonuses improve by +1 for every 5 levels that the ranger gains, but they do improve for the Harper.",
+      "requiresText": "ranger, Harper scout 1",
+      "type": "class"
     },
     {
-      "name": "Familiar"
+      "name": "fe constructs",
+      "base": "Favored Enemy",
+      "description": "The character gains a +1 bonus to any damage delivered to his favored enemy. He also receives a +1 bonus on listen, spot, and taunt checks against the favored enemy. These bonuses improve by +1 for every 5 levels that the ranger gains, but they do improve for the Harper.",
+      "requiresText": "ranger, Harper scout 1",
+      "type": "class"
     },
     {
-      "name": "Favored Enemy Undead"
+      "name": "Fe Dragons",
+      "base": "Favored Enemy",
+      "description": "The character gains a +1 bonus to any damage delivered to his favored enemy. He also receives a +1 bonus on listen, spot, and taunt checks against the favored enemy. These bonuses improve by +1 for every 5 levels that the ranger gains, but they do improve for the Harper.",
+      "requiresText": "ranger, Harper scout 1",
+      "type": "class"
     },
     {
-      "name": "fe constructs"
+      "name": "fe elementals",
+      "base": "Favored Enemy",
+      "description": "The character gains a +1 bonus to any damage delivered to his favored enemy. He also receives a +1 bonus on listen, spot, and taunt checks against the favored enemy. These bonuses improve by +1 for every 5 levels that the ranger gains, but they do improve for the Harper.",
+      "requiresText": "ranger, Harper scout 1",
+      "type": "class"
     },
     {
-      "name": "Fe Dragons"
+      "name": "Fe Humans",
+      "base": "Favored Enemy",
+      "description": "The character gains a +1 bonus to any damage delivered to his favored enemy. He also receives a +1 bonus on listen, spot, and taunt checks against the favored enemy. These bonuses improve by +1 for every 5 levels that the ranger gains, but they do improve for the Harper.",
+      "requiresText": "ranger, Harper scout 1",
+      "type": "class"
     },
     {
-      "name": "fe elementals"
+      "name": "fe orcs",
+      "base": "Favored Enemy",
+      "description": "The character gains a +1 bonus to any damage delivered to his favored enemy. He also receives a +1 bonus on listen, spot, and taunt checks against the favored enemy. These bonuses improve by +1 for every 5 levels that the ranger gains, but they do improve for the Harper.",
+      "requiresText": "ranger, Harper scout 1",
+      "type": "class"
     },
     {
-      "name": "Fe Humans"
-    },
-    {
-      "name": "fe orcs"
-    },
-    {
-      "name": "fe undead"
+      "name": "fe undead",
+      "base": "Favored Enemy",
+      "description": "The character gains a +1 bonus to any damage delivered to his favored enemy. He also receives a +1 bonus on listen, spot, and taunt checks against the favored enemy. These bonuses improve by +1 for every 5 levels that the ranger gains, but they do improve for the Harper.",
+      "requiresText": "ranger, Harper scout 1",
+      "type": "class"
     },
     {
       "name": "Fear Immune"
@@ -2226,16 +4181,31 @@
       "name": "Fear Immunity"
     },
     {
-      "name": "Fearless"
+      "name": "Fearless",
+      "description": "This feat grants a +2 bonus on saving throws against fear spells and effects.",
+      "requiresText": "halfling",
+      "type": "race"
     },
     {
-      "name": "Fearless +2"
+      "name": "Fearless +2",
+      "base": "Fearless",
+      "description": "This feat grants a +2 bonus on saving throws against fear spells and effects.",
+      "requiresText": "halfling",
+      "type": "race"
     },
     {
-      "name": "Fearless +4"
+      "name": "Fearless +4",
+      "base": "Fearless",
+      "description": "This feat grants a +2 bonus on saving throws against fear spells and effects.",
+      "requiresText": "halfling",
+      "type": "race"
     },
     {
-      "name": "Fearless +6"
+      "name": "Fearless +6",
+      "base": "Fearless",
+      "description": "This feat grants a +2 bonus on saving throws against fear spells and effects.",
+      "requiresText": "halfling",
+      "type": "race"
     },
     {
       "name": "Feint"
@@ -2247,28 +4217,98 @@
       "name": "Flesh of Steel"
     },
     {
-      "name": "Flurry of Blows"
+      "name": "Flurry of Blows",
+      "description": "Monks receive an extra attack per round when fighting with unarmed attacks or a kama. However, all attacks in that round suffer a -2 attack penalty.",
+      "requiresText": "monk 1",
+      "type": "class"
     },
     {
-      "name": "Good Aim"
+      "name": "Good Aim",
+      "description": "This feat grants a +1 attack bonus on attacks made with throwing weapons.",
+      "requiresText": "halfling",
+      "type": "race"
     },
     {
       "name": "Grace"
     },
     {
-      "name": "Great Cleave"
+      "name": "Great Cleave",
+      "description": "As cleave, except that there is no limit to the number of additional attacks that the character may make after killing one opponent.",
+      "requires": {
+        "bab": 4,
+        "abilities": {
+          "Str": 13
+        },
+        "feats": [
+          "Power Attack",
+          "Cleave"
+        ]
+      },
+      "requiresText": "strength 13+, power attack, cleave, base attack bonus +4"
     },
     {
-      "name": "Great Smiting I"
+      "name": "Great Smiting I",
+      "base": "Great Smiting",
+      "description": "Whenever the character makes a successful smite attack, it adds two times the character's level to damage. This feat may be taken multiple times, up to a maximum of 10 times — each time adding additional damage equal to the character's level to the smite attack.",
+      "requires": {
+        "level": 21,
+        "abilities": {
+          "Cha": 25
+        },
+        "feats": [
+          "Divine Smite"
+        ]
+      },
+      "requiresText": "21st level, charisma 25+, Divine Smite",
+      "epic": true
     },
     {
-      "name": "Great Smiting II"
+      "name": "Great Smiting II",
+      "base": "Great Smiting",
+      "description": "Whenever the character makes a successful smite attack, it adds two times the character's level to damage. This feat may be taken multiple times, up to a maximum of 10 times — each time adding additional damage equal to the character's level to the smite attack.",
+      "requires": {
+        "level": 21,
+        "abilities": {
+          "Cha": 25
+        },
+        "feats": [
+          "Divine Smite"
+        ]
+      },
+      "requiresText": "21st level, charisma 25+, Divine Smite",
+      "epic": true
     },
     {
-      "name": "Great Smiting III"
+      "name": "Great Smiting III",
+      "base": "Great Smiting",
+      "description": "Whenever the character makes a successful smite attack, it adds two times the character's level to damage. This feat may be taken multiple times, up to a maximum of 10 times — each time adding additional damage equal to the character's level to the smite attack.",
+      "requires": {
+        "level": 21,
+        "abilities": {
+          "Cha": 25
+        },
+        "feats": [
+          "Divine Smite"
+        ]
+      },
+      "requiresText": "21st level, charisma 25+, Divine Smite",
+      "epic": true
     },
     {
-      "name": "Great Smiting IV"
+      "name": "Great Smiting IV",
+      "base": "Great Smiting",
+      "description": "Whenever the character makes a successful smite attack, it adds two times the character's level to damage. This feat may be taken multiple times, up to a maximum of 10 times — each time adding additional damage equal to the character's level to the smite attack.",
+      "requires": {
+        "level": 21,
+        "abilities": {
+          "Cha": 25
+        },
+        "feats": [
+          "Divine Smite"
+        ]
+      },
+      "requiresText": "21st level, charisma 25+, Divine Smite",
+      "epic": true
     },
     {
       "name": "Greater Eldritch Doom"
@@ -2289,28 +4329,96 @@
       "name": "Greater Pact: Unseelie Fey"
     },
     {
-      "name": "Greater Ruin"
+      "name": "Greater Ruin",
+      "aliases": [
+        "Epic Spell: Greater Ruin"
+      ],
+      "description": "The caster deals 35d6 positive damage to a single target. Save: fortitude for half damage",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "skills": {
+          "Spellcraft": 25
+        }
+      },
+      "requiresText": "21st level, the ability to cast 9th level spells, spellcraft 25",
+      "type": "epic spell"
     },
     {
-      "name": "Greater Spell Focus Conjuration"
+      "name": "Greater Spell Focus Conjuration",
+      "base": "Greater Spell Focus",
+      "description": "A character becomes even more adept with spells of a particular school of magic. The character gains a +4 bonus to the spell save DC for all spells of the chosen school.",
+      "requires": {
+        "feats": [
+          "Spell Focus"
+        ]
+      },
+      "requiresText": "spell focus (selected spell school)"
     },
     {
-      "name": "Greater Spell Focus Enchantment"
+      "name": "Greater Spell Focus Enchantment",
+      "base": "Greater Spell Focus",
+      "description": "A character becomes even more adept with spells of a particular school of magic. The character gains a +4 bonus to the spell save DC for all spells of the chosen school.",
+      "requires": {
+        "feats": [
+          "Spell Focus"
+        ]
+      },
+      "requiresText": "spell focus (selected spell school)"
     },
     {
-      "name": "Greater Spell Focus Evocation"
+      "name": "Greater Spell Focus Evocation",
+      "base": "Greater Spell Focus",
+      "description": "A character becomes even more adept with spells of a particular school of magic. The character gains a +4 bonus to the spell save DC for all spells of the chosen school.",
+      "requires": {
+        "feats": [
+          "Spell Focus"
+        ]
+      },
+      "requiresText": "spell focus (selected spell school)"
     },
     {
-      "name": "Greater Spell Focus Illusion"
+      "name": "Greater Spell Focus Illusion",
+      "base": "Greater Spell Focus",
+      "description": "A character becomes even more adept with spells of a particular school of magic. The character gains a +4 bonus to the spell save DC for all spells of the chosen school.",
+      "requires": {
+        "feats": [
+          "Spell Focus"
+        ]
+      },
+      "requiresText": "spell focus (selected spell school)"
     },
     {
-      "name": "Greater Spell Focus Necromancy"
+      "name": "Greater Spell Focus Necromancy",
+      "base": "Greater Spell Focus",
+      "description": "A character becomes even more adept with spells of a particular school of magic. The character gains a +4 bonus to the spell save DC for all spells of the chosen school.",
+      "requires": {
+        "feats": [
+          "Spell Focus"
+        ]
+      },
+      "requiresText": "spell focus (selected spell school)"
     },
     {
-      "name": "Greater Spell Focus Transmutation"
+      "name": "Greater Spell Focus Transmutation",
+      "base": "Greater Spell Focus",
+      "description": "A character becomes even more adept with spells of a particular school of magic. The character gains a +4 bonus to the spell save DC for all spells of the chosen school.",
+      "requires": {
+        "feats": [
+          "Spell Focus"
+        ]
+      },
+      "requiresText": "spell focus (selected spell school)"
     },
     {
-      "name": "Greater Spell Penetration"
+      "name": "Greater Spell Penetration",
+      "description": "A +4 bonus to caster level checks is granted to the character when trying to beat a creature's spell resistance.",
+      "requires": {
+        "feats": [
+          "Spell Penetration"
+        ]
+      },
+      "requiresText": "spell penetration"
     },
     {
       "name": "Grenades"
@@ -2328,10 +4436,20 @@
       "name": "Health"
     },
     {
-      "name": "Heavy Armor"
-    },
-    {
-      "name": "Hellball"
+      "name": "Hellball",
+      "aliases": [
+        "Epic Spell: Hellball"
+      ],
+      "description": "The caster creates a ball of energy that does 10d6 points of acid, fire, electrical and sonic damage to all targets in its blast radius.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "skills": {
+          "Spellcraft": 32
+        }
+      },
+      "requiresText": "21st level, the ability to cast 9th level spells, spellcraft 32",
+      "type": "epic spell"
     },
     {
       "name": "Hex of Arcane Hunger"
@@ -2349,9 +4467,6 @@
       "name": "Hideous Blow"
     },
     {
-      "name": "HiPS"
-    },
-    {
       "name": "Ill Tidings"
     },
     {
@@ -2361,37 +4476,119 @@
       "name": "Imbue Weapon"
     },
     {
-      "name": "Improved Combat Casting"
+      "name": "Improved Combat Casting",
+      "description": "The character does not incur attacks of opportunity for casting spells while threatened.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Combat Casting"
+        ],
+        "skills": {
+          "Concentration": 25
+        }
+      },
+      "requiresText": "21st level, combat casting, concentration 25+ ranks",
+      "type": "spell"
     },
     {
-      "name": "Improved Critical"
+      "name": "Improved Critical",
+      "description": "Combat ability increases the critical threat range of a selected weapon by a range equal to the item's base threat range. A longsword that normally threatens a critical on a roll of 19-20 would now threaten a critical on a roll of 17-20.",
+      "requires": {
+        "bab": 8
+      },
+      "requiresText": "proficiency with the chosen weapon, base attack bonus +8"
     },
     {
-      "name": "Improved Critical Unarmed"
+      "name": "Improved Critical Unarmed",
+      "base": "Improved Critical",
+      "description": "Combat ability increases the critical threat range of a selected weapon by a range equal to the item's base threat range. A longsword that normally threatens a critical on a roll of 19-20 would now threaten a critical on a roll of 17-20.",
+      "requires": {
+        "bab": 8
+      },
+      "requiresText": "proficiency with the chosen weapon, base attack bonus +8"
     },
     {
-      "name": "Improved Disarm"
+      "name": "Improved Disarm",
+      "description": "A character with this feat has learned not to provoke an attack of opportunity when attempting a disarm. Success knocks the opponent's weapon from his hands. The penalty to make a disarm attempt is reduced to -4.",
+      "requires": {
+        "abilities": {
+          "Int": 13
+        },
+        "feats": [
+          "Disarm"
+        ]
+      },
+      "requiresText": "intelligence 13+, disarm"
     },
     {
-      "name": "Improved Dweomer Crafting"
+      "name": "Improved Dweomer Crafting",
+      "description": "Arelith: +1 tier til Magic og Mundane Dweomercraft."
     },
     {
-      "name": "Improved Evasion"
+      "name": "Improved Evasion",
+      "description": "Whenever a reflex save is allowed for half damage, characters with this feat instead take no damage if they succeed at the save. Even if they fail the save, they take only half damage.",
+      "requiresText": "monk 9, rogue 10, shadowdancer 10",
+      "type": "class"
     },
     {
-      "name": "Improved Expertise"
+      "name": "Improved Expertise",
+      "description": "A character with this feat can make defensive attacks, gaining a +10 bonus to AC but receiving a -10 penalty to attack rolls.",
+      "requires": {
+        "abilities": {
+          "Int": 13
+        },
+        "feats": [
+          "Expertise"
+        ]
+      },
+      "requiresText": "intelligence 13+, expertise"
     },
     {
-      "name": "Improved Knockdown"
+      "name": "Improved Knockdown",
+      "description": "A character with this feat counts as one size category larger when he makes a knockdown attack. All other knockdown conditions still apply.",
+      "requires": {
+        "bab": 7,
+        "abilities": {
+          "Int": 13
+        },
+        "feats": [
+          "Knockdown"
+        ]
+      },
+      "requiresText": "intelligence 13+, knockdown, base attack bonus +7"
     },
     {
-      "name": "Improved Power Attack"
+      "name": "Improved Power Attack",
+      "description": "This feat allows the character to trade a -10 penalty on his attack roll to gain a +10 bonus on his damage roll. It is very useful when fighting tough, easy-to-hit opponents.",
+      "requires": {
+        "abilities": {
+          "Str": 13
+        },
+        "feats": [
+          "Power Attack"
+        ]
+      },
+      "requiresText": "strength 13+, power attack"
     },
     {
-      "name": "Improved Turning"
+      "name": "Improved Turning",
+      "aliases": [
+        "Extra Turning"
+      ],
+      "description": "This divine ability allows the character to turn undead six additional times per day.",
+      "requires": {
+        "feats": [
+          "Turn Undead"
+        ]
+      },
+      "requiresText": "turn undead, exclusive to clerics and paladins",
+      "type": "special",
+      "arelith": "Arelith (tidl. Extra Turning): +1d6 til turning-slag og maks HD, +6 turns pr. hvil, halveret cooldown."
     },
     {
-      "name": "Improved Unarmed Strike"
+      "name": "Improved Unarmed Strike",
+      "description": "Armed opponents no longer get attacks of opportunity against the character when he makes an unarmed attack."
     },
     {
       "name": "Improved Weapon Hex"
@@ -2409,46 +4606,86 @@
       "name": "Iron Stance"
     },
     {
-      "name": "ITWF"
-    },
-    {
-      "name": "Keen Senses"
+      "name": "Keen Senses",
+      "aliases": [
+        "Keen Sense"
+      ],
+      "description": "Characters with this feat may apply their full listen, search and spot skills even when making a passive search.",
+      "requiresText": "elf",
+      "type": "race"
     },
     {
       "name": "Ki Barrier"
     },
     {
-      "name": "Ki Strike +1"
+      "name": "Ki Strike +1",
+      "aliases": [
+        "Ki Strike 1"
+      ],
+      "base": "Ki Strike",
+      "description": "The monk's unarmed attack counts as a magic weapon against creatures with damage reduction (+1 at 10th level, +2 at 13th, +3 at 16th).",
+      "requiresText": "monk (10, 13, 16)",
+      "type": "class"
     },
     {
-      "name": "Ki Strike +2"
+      "name": "Ki Strike +2",
+      "aliases": [
+        "Ki Strike 2"
+      ],
+      "base": "Ki Strike",
+      "description": "The monk's unarmed attack counts as a magic weapon against creatures with damage reduction (+1 at 10th level, +2 at 13th, +3 at 16th).",
+      "requiresText": "monk (10, 13, 16)",
+      "type": "class"
     },
     {
-      "name": "Ki Strike +3"
+      "name": "Ki Strike +3",
+      "base": "Ki Strike",
+      "description": "The monk's unarmed attack counts as a magic weapon against creatures with damage reduction (+1 at 10th level, +2 at 13th, +3 at 16th).",
+      "requiresText": "monk (10, 13, 16)",
+      "type": "class"
     },
     {
-      "name": "Ki Strike +4"
+      "name": "Ki Strike +4",
+      "base": "Ki Strike",
+      "description": "The monk's unarmed attack counts as a magic weapon against creatures with damage reduction (+1 at 10th level, +2 at 13th, +3 at 16th).",
+      "requiresText": "monk (10, 13, 16)",
+      "type": "class"
     },
     {
-      "name": "Ki Strike +5"
+      "name": "Ki Strike +5",
+      "base": "Ki Strike",
+      "description": "The monk's unarmed attack counts as a magic weapon against creatures with damage reduction (+1 at 10th level, +2 at 13th, +3 at 16th).",
+      "requiresText": "monk (10, 13, 16)",
+      "type": "class"
     },
     {
-      "name": "Ki Strike 1"
+      "name": "Knockdown",
+      "description": "A character with this feat can attempt to knock his melee opponents to the ground. The character makes an attack roll at -4, and if successful the defender makes an opposed discipline check against the character's attack roll. If the character wins, the defender is knocked to a prone position."
     },
     {
-      "name": "Ki Strike 2"
+      "name": "Lasting Inspiration",
+      "aliases": [
+        "Lasting Inpiration"
+      ],
+      "description": "This feat allows the effects of bardic music to last ten times longer.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Bard Song"
+        ],
+        "skills": {
+          "Perform": 25
+        }
+      },
+      "requiresText": "21st level, perform 25, bard song"
     },
     {
-      "name": "Knockdown"
-    },
-    {
-      "name": "Lasting Inpiration"
-    },
-    {
-      "name": "Lasting Inspiration"
-    },
-    {
-      "name": "Lay on Hands"
+      "name": "Lay on Hands",
+      "description": "With this feat, characters can heal damage equal to their class level multiplied by their charisma modifier.",
+      "requiresText": "paladin 1, champion of Torm 1",
+      "type": "class",
+      "arelith": "Arelith: ingen daglige brug, 10 minutters cooldown."
     },
     {
       "name": "Legendary Charisma"
@@ -2469,10 +4706,10 @@
       "name": "Legendary Wisdom"
     },
     {
-      "name": "Light Armor"
-    },
-    {
-      "name": "Lucky"
+      "name": "Lucky",
+      "description": "This feat grants a +1 racial bonus to all saving throws.",
+      "requiresText": "halfling",
+      "type": "race"
     },
     {
       "name": "Lurker in Darkness"
@@ -2487,22 +4724,46 @@
       "name": "Martial Practicioner"
     },
     {
-      "name": "Martial Weapons"
+      "name": "Maximize Spell",
+      "description": "Maximized spells apply all variable numeric effects — including damage, number of targets, and so on — at their maximum values.",
+      "requiresText": "ability to cast 3rd-level spells",
+      "type": "metamagic"
     },
     {
-      "name": "Maximize Spell"
-    },
-    {
-      "name": "Mighty Rage"
+      "name": "Mighty Rage",
+      "description": "When the character rages, they gain +8 to strength and constitution and a +4 morale bonus to will saves. These bonuses replace the normal rage bonuses.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "abilities": {
+          "Con": 21,
+          "Str": 21
+        }
+      },
+      "requiresText": "21st level, strength 21+, constitution 21+, greater rage (6x per day)"
     },
     {
       "name": "Misfortune's Favor"
     },
     {
-      "name": "Mobility"
+      "name": "Mobility",
+      "description": "A character with this feat has learned to avoid attacks of opportunity more effectively, gaining a +4 dodge bonus to AC against them.",
+      "requires": {
+        "abilities": {
+          "Dex": 13
+        },
+        "feats": [
+          "Dodge"
+        ]
+      },
+      "requiresText": "dexterity 13+, dodge"
     },
     {
-      "name": "Monk Speed I"
+      "name": "Monk Speed I",
+      "base": "Monk Speed",
+      "description": "Monks move more quickly than other classes, and this ability improves with experience.",
+      "requiresText": "monk 3",
+      "type": "class"
     },
     {
       "name": "Monkey Grip"
@@ -2511,10 +4772,29 @@
       "name": "Monolithic Elemental Shape"
     },
     {
-      "name": "Mounted Archery"
+      "name": "Mounted Archery",
+      "description": "The attack penalty for using a bow while mounted is reduced from -4 to -2.",
+      "requires": {
+        "feats": [
+          "Mounted Combat"
+        ],
+        "skills": {
+          "Ride": 1
+        }
+      },
+      "requiresText": "ride 1 rank, mounted combat",
+      "arelith": "Arelith: fjerner -8 AB for ranged angreb i bevægelse (ingen +2 AB)."
     },
     {
-      "name": "Mounted Combat"
+      "name": "Mounted Combat",
+      "description": "While mounted, once per round you will attempt a ride check to increase your armor class by 1 point for every 5 of the check result.",
+      "requires": {
+        "skills": {
+          "Ride": 1
+        }
+      },
+      "requiresText": "ride 1 rank",
+      "arelith": "Arelith: +1 melee AB i stedet for AC-bonus."
     },
     {
       "name": "Mounting Resistance"
@@ -2526,7 +4806,20 @@
       "name": "Mounting Resistance II"
     },
     {
-      "name": "Mummy Dust"
+      "name": "Mummy Dust",
+      "aliases": [
+        "Epic Spell: Mummy Dust"
+      ],
+      "description": "The caster summons a powerful mummy warrior to do their bidding.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "skills": {
+          "Spellcraft": 15
+        }
+      },
+      "requiresText": "21st level, the ability to cast 9th level spells, spellcraft 15",
+      "type": "epic spell"
     },
     {
       "name": "Night Fang Piercer Art"
@@ -2559,7 +4852,10 @@
       "name": "Path: Air"
     },
     {
-      "name": "Path: Archer"
+      "name": "Path: Archer",
+      "aliases": [
+        "Path:Archer"
+      ]
     },
     {
       "name": "Path: Cloistered"
@@ -2580,25 +4876,46 @@
       "name": "Path: Water"
     },
     {
-      "name": "Path:Archer"
+      "name": "Perfect Health",
+      "description": "This feat makes the character immune to all diseases and poisons.",
+      "epic": true,
+      "requires": {
+        "abilities": {
+          "Con": 25
+        },
+        "feats": [
+          "Great Fortitude"
+        ]
+      },
+      "requiresText": "constitution 25+, great fortitude"
     },
     {
-      "name": "Perfect Health"
-    },
-    {
-      "name": "Perfect Self"
+      "name": "Perfect Self",
+      "description": "The character gains immunity to all mind-affecting spells and effects, and damage reduction 20/+1.",
+      "requiresText": "monk 20",
+      "type": "class"
     },
     {
       "name": "Planar Conduit"
     },
     {
-      "name": "Plant Shape"
+      "name": "Plant Shape",
+      "type": "class",
+      "description": "Arelith: erstatter Dragonshape (se Druid-artiklen)."
     },
     {
-      "name": "Point Blank Shot"
+      "name": "Point Blank Shot",
+      "description": "A character with this feat negates the -4 penalty for using missile weapons in melee, and gains an additional +1 to attack roll and damage with ranged weapons when the target is within 15 feet."
     },
     {
-      "name": "Power Attack"
+      "name": "Power Attack",
+      "description": "A character with this feat can make powerful but ungainly attacks. When power attack is selected, it grants a +5 bonus to the damage roll, but at the cost of -5 to the attack roll.",
+      "requires": {
+        "abilities": {
+          "Str": 13
+        }
+      },
+      "requiresText": "strength 13+"
     },
     {
       "name": "Pugilist"
@@ -2607,49 +4924,84 @@
       "name": "Puglist"
     },
     {
-      "name": "Purity of Body"
+      "name": "Purity of Body",
+      "description": "The monk is immune to all non-magical diseases.",
+      "requiresText": "monk 5",
+      "type": "class"
     },
     {
-      "name": "Quicken Spell"
+      "name": "Quicken Spell",
+      "description": "Quickened spells can be cast instantaneously, making them invulnerable to counterspells or interruption. A quickened spell is cast as a free action, and another action can be attempted within the same round, including the casting of another spell. Only one quickened spell can be cast per round.",
+      "requiresText": "ability to cast 4th-level spells",
+      "type": "metamagic",
+      "arelith": "Arelith: bruger et spell slot ét niveau højere."
     },
     {
-      "name": "Quivering Palm"
+      "name": "Quivering Palm",
+      "description": "This ability may be used once per day to instantly kill an opponent. If the character makes a successful attack after activating the ability, the target must make a fortitude save (DC 10 + half the monk's character level + the monk's wisdom modifier) or die.",
+      "requiresText": "monk 15",
+      "type": "class",
+      "arelith": "Arelith: ubegrænset brug, 5 minutters cooldown."
     },
     {
       "name": "Rage"
     },
     {
-      "name": "Rapid Reload"
+      "name": "Rapid Reload",
+      "description": "The character is able to reload so quickly that she gets the same number of attacks with any crossbow as she would if she was using a normal bow.",
+      "requires": {
+        "bab": 2
+      },
+      "requiresText": "base attack bonus +2"
     },
     {
-      "name": "Rapid Shot"
+      "name": "Rapid Shot",
+      "description": "A character with this feat gains an extra attack per round with a ranged weapon (excluding crossbows). When a rapid shot is attempted, the extra attack is made at the character's highest base attack bonus, but all attacks within the round suffer a -2 penalty.",
+      "requires": {
+        "abilities": {
+          "Dex": 13
+        },
+        "feats": [
+          "Point Blank Shot"
+        ]
+      },
+      "requiresText": "dexterity 13+, point blank shot"
     },
     {
       "name": "Richochet"
     },
     {
-      "name": "Rogue Weapon Proficiency"
-    },
-    {
-      "name": "Rogue Weapons"
-    },
-    {
-      "name": "Scribe Scroll"
+      "name": "Scribe Scroll",
+      "description": "The character can create a scroll of any spell that he knows. Scribing a scroll costs a small amount of XP and gold, depending on the innate level of the spell to scribe. The cost for scribing a scroll depends on the innate level of the spell as well as the caster level of the resulting scroll. Some examples: * A scroll of bless (1) will cost 25 gold and 6 XP. * A scroll of fireball (5) will cost 375 gold and 15 XP. * A scroll of chain lightning (11) will cost 1650 gold and 66 XP.",
+      "requiresText": "spellcaster level 1",
+      "type": "item creation"
     },
     {
       "name": "Second Intention"
     },
     {
-      "name": "SF: Illusion"
+      "name": "SF: Illusion",
+      "base": "Spell Focus",
+      "description": "A character with this feat is adept in a certain school of magic, granting a +2 bonus to spell save DC for all spells cast from that school.",
+      "requiresText": "ability to cast first-level spells"
     },
     {
-      "name": "Shadow Daze"
+      "name": "Shadow Daze",
+      "description": "Once per day the shadowdancer may inflict an illusory daze upon a target. This daze lasts for 5 rounds.",
+      "requiresText": "shadowdancer 3",
+      "type": "class",
+      "aliases": [
+        "Shadowdaze"
+      ]
     },
     {
       "name": "Shadow Displacement"
     },
     {
-      "name": "Shadow Evade"
+      "name": "Shadow Evade",
+      "description": "Three times per day the shadowdancer can call upon the shadows in the area to help conceal her. She gains a 5% concealment bonus, damage reduction of 5/+1, and a +1 AC bonus. The effect lasts for 5 rounds. This improves as the shadowdancer goes up in levels.",
+      "requiresText": "shadowdancer 4",
+      "type": "class"
     },
     {
       "name": "Shadow Illusion"
@@ -2658,22 +5010,16 @@
       "name": "Shadow Jump"
     },
     {
-      "name": "Shadow Magic"
+      "name": "Shadow Magic",
+      "aliases": [
+        "Shadowmagic"
+      ]
     },
     {
       "name": "Shadow Manifest"
     },
     {
-      "name": "Shadowdaze"
-    },
-    {
-      "name": "Shadowmagic"
-    },
-    {
       "name": "Sharp Alertness"
-    },
-    {
-      "name": "Shields"
     },
     {
       "name": "Signature Mastery"
@@ -2685,34 +5031,65 @@
       "name": "Signature Weapon"
     },
     {
-      "name": "Silent Spell"
+      "name": "Silent Spell",
+      "description": "Silent spells are cast without a verbal component.",
+      "requiresText": "ability to cast 1st-level spells",
+      "type": "metamagic"
     },
     {
-      "name": "Simple Weapons"
+      "name": "Skill Focus Animal Empathy",
+      "base": "Skill Focus",
+      "description": "A character with this feat is adept at a certain skill, gaining a +3 bonus on all checks with it.",
+      "requiresText": "able to use the skill",
+      "arelith": "Arelith: +5 til skill (vanilla +3). Hide/Move Silently og Listen/Spot giver den anden gratis. Persuade hedder Leadership."
     },
     {
-      "name": "Skill Focus Animal Empathy"
+      "name": "Skill Focus Concentration",
+      "base": "Skill Focus",
+      "description": "A character with this feat is adept at a certain skill, gaining a +3 bonus on all checks with it.",
+      "requiresText": "able to use the skill",
+      "arelith": "Arelith: +5 til skill (vanilla +3). Hide/Move Silently og Listen/Spot giver den anden gratis. Persuade hedder Leadership."
     },
     {
-      "name": "Skill Focus Concentration"
+      "name": "Skill Focus Leadership",
+      "base": "Skill Focus",
+      "description": "A character with this feat is adept at a certain skill, gaining a +3 bonus on all checks with it.",
+      "requiresText": "able to use the skill",
+      "arelith": "Arelith: +5 til skill (vanilla +3). Hide/Move Silently og Listen/Spot giver den anden gratis. Persuade hedder Leadership."
     },
     {
-      "name": "Skill Focus Leadership"
+      "name": "Skill Focus Lore",
+      "base": "Skill Focus",
+      "description": "A character with this feat is adept at a certain skill, gaining a +3 bonus on all checks with it.",
+      "requiresText": "able to use the skill",
+      "arelith": "Arelith: +5 til skill (vanilla +3). Hide/Move Silently og Listen/Spot giver den anden gratis. Persuade hedder Leadership."
     },
     {
-      "name": "Skill Focus Lore"
+      "name": "Skill Focus Parry",
+      "base": "Skill Focus",
+      "description": "A character with this feat is adept at a certain skill, gaining a +3 bonus on all checks with it.",
+      "requiresText": "able to use the skill",
+      "arelith": "Arelith: +5 til skill (vanilla +3). Hide/Move Silently og Listen/Spot giver den anden gratis. Persuade hedder Leadership."
     },
     {
-      "name": "Skill Focus Parry"
+      "name": "Skill Focus Perform",
+      "base": "Skill Focus",
+      "description": "A character with this feat is adept at a certain skill, gaining a +3 bonus on all checks with it.",
+      "requiresText": "able to use the skill",
+      "arelith": "Arelith: +5 til skill (vanilla +3). Hide/Move Silently og Listen/Spot giver den anden gratis. Persuade hedder Leadership."
     },
     {
-      "name": "Skill Focus Perform"
+      "name": "Skill Focus Sail",
+      "base": "Skill Focus",
+      "description": "A character with this feat is adept at a certain skill, gaining a +3 bonus on all checks with it.",
+      "requiresText": "able to use the skill",
+      "arelith": "Arelith: +5 til skill (vanilla +3). Hide/Move Silently og Listen/Spot giver den anden gratis. Persuade hedder Leadership."
     },
     {
-      "name": "Skill Focus Sail"
-    },
-    {
-      "name": "Skill Mastery"
+      "name": "Skill Mastery",
+      "description": "When using the disable trap, open lock, and set trap skills, the character automatically takes 20 on any skill checks, even if in combat.",
+      "requiresText": "rogue 10",
+      "type": "class"
     },
     {
       "name": "Skin of Bronze"
@@ -2724,61 +5101,124 @@
       "name": "Slayer"
     },
     {
-      "name": "Slippery Mind"
+      "name": "Slippery Mind",
+      "description": "Characters failing their will save versus mind-affecting spells get an automatic reroll.",
+      "requiresText": "rogue 10, shadowdancer 7",
+      "type": "class"
     },
     {
       "name": "Slow Fall"
     },
     {
-      "name": "Smite"
+      "name": "Sneak Attack",
+      "description": "Whenever the character makes a successful attack against an opponent who is flat-footed, cannot see them, or who is in combat with someone else, the character's blow delivers extra damage. This extra damage is +1d6 at first level and an additional +1d6 every two levels thereafter. This extra damage is not multiplied in the case of a critical hit.",
+      "requiresText": "rogue",
+      "type": "class"
     },
     {
-      "name": "Sneak Attack"
+      "name": "Sneak Attack +1d6",
+      "base": "Sneak Attack",
+      "description": "Whenever the character makes a successful attack against an opponent who is flat-footed, cannot see them, or who is in combat with someone else, the character's blow delivers extra damage. This extra damage is +1d6 at first level and an additional +1d6 every two levels thereafter. This extra damage is not multiplied in the case of a critical hit.",
+      "requiresText": "rogue",
+      "type": "class"
     },
     {
-      "name": "Sneak Attack +1d6"
+      "name": "Spell Focus Conjuration",
+      "base": "Spell Focus",
+      "description": "A character with this feat is adept in a certain school of magic, granting a +2 bonus to spell save DC for all spells cast from that school.",
+      "requiresText": "ability to cast first-level spells"
     },
     {
-      "name": "Spell Focus Conjuration"
+      "name": "Spell Focus Enchantment",
+      "base": "Spell Focus",
+      "description": "A character with this feat is adept in a certain school of magic, granting a +2 bonus to spell save DC for all spells cast from that school.",
+      "requiresText": "ability to cast first-level spells"
     },
     {
-      "name": "Spell Focus Enchantment"
+      "name": "Spell Focus Evocation",
+      "base": "Spell Focus",
+      "description": "A character with this feat is adept in a certain school of magic, granting a +2 bonus to spell save DC for all spells cast from that school.",
+      "requiresText": "ability to cast first-level spells"
     },
     {
-      "name": "Spell Focus Evocation"
+      "name": "Spell Focus Illusion",
+      "base": "Spell Focus",
+      "description": "A character with this feat is adept in a certain school of magic, granting a +2 bonus to spell save DC for all spells cast from that school.",
+      "requiresText": "ability to cast first-level spells"
     },
     {
-      "name": "Spell Focus Illusion"
+      "name": "Spell Focus Necromancy",
+      "base": "Spell Focus",
+      "description": "A character with this feat is adept in a certain school of magic, granting a +2 bonus to spell save DC for all spells cast from that school.",
+      "requiresText": "ability to cast first-level spells"
     },
     {
-      "name": "Spell Focus Necromancy"
+      "name": "Spell Focus Transmutation",
+      "base": "Spell Focus",
+      "description": "A character with this feat is adept in a certain school of magic, granting a +2 bonus to spell save DC for all spells cast from that school.",
+      "requiresText": "ability to cast first-level spells"
     },
     {
-      "name": "Spell Focus Transmutation"
-    },
-    {
-      "name": "Spell Penetration"
+      "name": "Spell Penetration",
+      "description": "A spellcaster with this feat gains a +2 bonus to caster level checks to beat a creature's spell resistance.",
+      "requiresText": "ability to cast first-level spells"
     },
     {
       "name": "Spirit Shield"
     },
     {
-      "name": "Spring Attack"
+      "name": "Spring Attack",
+      "description": "Enemies do not get attacks of opportunity against the character when the character is moving around in combat.",
+      "requires": {
+        "bab": 4,
+        "abilities": {
+          "Dex": 13
+        },
+        "feats": [
+          "Dodge",
+          "Mobility"
+        ]
+      },
+      "requiresText": "dexterity 13+, dodge, mobility, base attack bonus +4"
     },
     {
-      "name": "Still Mind"
+      "name": "Still Mind",
+      "description": "The monk gains a +2 competence bonus on all saving throws against mind-affecting spells.",
+      "requiresText": "monk 3",
+      "type": "class"
     },
     {
-      "name": "Still Spell"
+      "name": "Still Spell",
+      "description": "Still spells are cast without a somatic component. Any penalties incurred from casting in armor do not apply to a spell prepared with this feat.",
+      "requiresText": "ability to cast first-level spells",
+      "type": "metamagic"
     },
     {
-      "name": "Stunning Fist"
+      "name": "Stunning Fist",
+      "description": "A character with this feat can attempt a disabling strike with a -4 attack penalty and a -4 damage penalty. If successful, the target must succeed at a fortitude save (DC 10 + 1/2 the attacker's level + the attacker's wisdom modifier) or be held for three rounds. This attack may be used once per day for every four levels of the character.",
+      "requires": {
+        "bab": 8,
+        "abilities": {
+          "Dex": 13,
+          "Wis": 13
+        },
+        "feats": [
+          "Improved Unarmed Strike"
+        ]
+      },
+      "requiresText": "dexterity 13+, wisdom 13+, improved unarmed strike, base attack bonus +8"
     },
     {
-      "name": "Summon Fiend"
+      "name": "Summon Fiend",
+      "description": "Starting at fifth level, a blackguard may summon a succubus. At ninth level this ability improves and grants the power to summon a vrock.",
+      "requiresText": "blackguard 5",
+      "type": "class"
     },
     {
-      "name": "Summon Shadow"
+      "name": "Summon Shadow",
+      "description": "Once per day the shadowdancer can summon a shadow. This shadow is extremely difficult to turn and becomes more powerful as the shadowdancer gains levels.",
+      "requiresText": "shadowdancer 3",
+      "type": "class"
     },
     {
       "name": "Swashbuckler Dodge"
@@ -2790,13 +5230,31 @@
       "name": "Tensors Avaiable"
     },
     {
-      "name": "Terrifying Rage"
+      "name": "Terrifying Rage",
+      "description": "While the barbarian is raging, any enemy (with less than the barbarian's hit dice) that comes close to him must make a will save opposed by the barbarian's intimidate check or become panicked for 1d3 rounds. Opponents with up to twice the barbarian's hit dice will not flee but will receive a -2 penalty to attack and saving throw rolls. Creatures with at least twice the barbarian's hit dice are not affected by the rage.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "skills": {
+          "Intimidate": 25
+        }
+      },
+      "requiresText": "21st level, greater rage (4x per day), intimidate 25"
     },
     {
       "name": "Third Intention"
     },
     {
-      "name": "Thundering Rage"
+      "name": "Thundering Rage",
+      "description": "Any weapon the barbarian wields while in a rage does an additional 2d6 points of damage on a critical hit. There is a 25% chance for a creature hit by one of the barbarian's weapons to be deafened for 3 rounds.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "abilities": {
+          "Str": 25
+        }
+      },
+      "requiresText": "21st level, greater rage (4x per day), strength 25+"
     },
     {
       "name": "Totem: Parrot"
@@ -2808,112 +5266,1587 @@
       "name": "Tribal"
     },
     {
-      "name": "Turn Undead"
+      "name": "Turn Undead",
+      "description": "With this feat, the character can force undead to flee in terror. This ability may be activated three times per day, plus the character's charisma modifier. The character's level and charisma are used to determine how many undead are turned.",
+      "requiresText": "cleric 1, paladin 3, blackguard 3",
+      "type": "class"
     },
     {
-      "name": "Two Weapon Fighting"
+      "name": "Two Weapon Fighting",
+      "description": "A character with this feat reduces the penalties suffered when fighting with two weapons. The normal penalty of -6 to the primary hand and -10 to the off-hand becomes -4 for the primary hand and -8 for the off-hand. The ambidexterity feat further reduces the attack penalty for the second weapon by 4 (to -4/-4). Best results are achieved if the off-hand weapon is light, further reducing the penalty for both the primary and off-hand by 2 (to -2/-2)."
     },
     {
-      "name": "Uncanny Dodge"
+      "name": "Uncanny Dodge",
+      "description": "There are six versions of this feat, with cumulative (but not stacking) benefits. (Assassins and shadowdancers only qualify for the first three versions.) The sixth version includes benefits extending into epic class levels. I: The character retains his dexterity bonus to AC, even if caught flat-footed or attacked by a hidden or invisible creature. II: This feat grants a +1 bonus on reflex saving throws made to avoid traps. III: This feat grants a +2 bonus on reflex saving throws made to avoid traps. IV: This feat grants a +3 bonus on reflex saving throws made to avoid traps. V: This feat grants a +4 bonus on reflex saving throws made to avoid traps. VI+: This feat grants a +5 bonus on reflex saving throws made to avoid traps. Epic progression: The uncanny dodge bonus improves by +1 every three levels.",
+      "requiresText": "barbarian 2 (5, 10, 13, 16, 19); rogue 3 (6, 11, 14, 17, 20); shadowdancer 2 (5, 10); assassin 2 (5, 10)",
+      "type": "class"
     },
     {
-      "name": "Uncanny Dodge I"
+      "name": "Uncanny Dodge I",
+      "base": "Uncanny Dodge",
+      "description": "There are six versions of this feat, with cumulative (but not stacking) benefits. (Assassins and shadowdancers only qualify for the first three versions.) The sixth version includes benefits extending into epic class levels. I: The character retains his dexterity bonus to AC, even if caught flat-footed or attacked by a hidden or invisible creature. II: This feat grants a +1 bonus on reflex saving throws made to avoid traps. III: This feat grants a +2 bonus on reflex saving throws made to avoid traps. IV: This feat grants a +3 bonus on reflex saving throws made to avoid traps. V: This feat grants a +4 bonus on reflex saving throws made to avoid traps. VI+: This feat grants a +5 bonus on reflex saving throws made to avoid traps. Epic progression: The uncanny dodge bonus improves by +1 every three levels.",
+      "requiresText": "barbarian 2 (5, 10, 13, 16, 19); rogue 3 (6, 11, 14, 17, 20); shadowdancer 2 (5, 10); assassin 2 (5, 10)",
+      "type": "class"
     },
     {
-      "name": "Uncanny Dodge II"
+      "name": "Uncanny Dodge II",
+      "base": "Uncanny Dodge",
+      "description": "There are six versions of this feat, with cumulative (but not stacking) benefits. (Assassins and shadowdancers only qualify for the first three versions.) The sixth version includes benefits extending into epic class levels. I: The character retains his dexterity bonus to AC, even if caught flat-footed or attacked by a hidden or invisible creature. II: This feat grants a +1 bonus on reflex saving throws made to avoid traps. III: This feat grants a +2 bonus on reflex saving throws made to avoid traps. IV: This feat grants a +3 bonus on reflex saving throws made to avoid traps. V: This feat grants a +4 bonus on reflex saving throws made to avoid traps. VI+: This feat grants a +5 bonus on reflex saving throws made to avoid traps. Epic progression: The uncanny dodge bonus improves by +1 every three levels.",
+      "requiresText": "barbarian 2 (5, 10, 13, 16, 19); rogue 3 (6, 11, 14, 17, 20); shadowdancer 2 (5, 10); assassin 2 (5, 10)",
+      "type": "class"
     },
     {
-      "name": "Uncanny Dodge III"
+      "name": "Uncanny Dodge III",
+      "base": "Uncanny Dodge",
+      "description": "There are six versions of this feat, with cumulative (but not stacking) benefits. (Assassins and shadowdancers only qualify for the first three versions.) The sixth version includes benefits extending into epic class levels. I: The character retains his dexterity bonus to AC, even if caught flat-footed or attacked by a hidden or invisible creature. II: This feat grants a +1 bonus on reflex saving throws made to avoid traps. III: This feat grants a +2 bonus on reflex saving throws made to avoid traps. IV: This feat grants a +3 bonus on reflex saving throws made to avoid traps. V: This feat grants a +4 bonus on reflex saving throws made to avoid traps. VI+: This feat grants a +5 bonus on reflex saving throws made to avoid traps. Epic progression: The uncanny dodge bonus improves by +1 every three levels.",
+      "requiresText": "barbarian 2 (5, 10, 13, 16, 19); rogue 3 (6, 11, 14, 17, 20); shadowdancer 2 (5, 10); assassin 2 (5, 10)",
+      "type": "class"
     },
     {
-      "name": "Uncanny Dodge IV"
+      "name": "Uncanny Dodge IV",
+      "base": "Uncanny Dodge",
+      "description": "There are six versions of this feat, with cumulative (but not stacking) benefits. (Assassins and shadowdancers only qualify for the first three versions.) The sixth version includes benefits extending into epic class levels. I: The character retains his dexterity bonus to AC, even if caught flat-footed or attacked by a hidden or invisible creature. II: This feat grants a +1 bonus on reflex saving throws made to avoid traps. III: This feat grants a +2 bonus on reflex saving throws made to avoid traps. IV: This feat grants a +3 bonus on reflex saving throws made to avoid traps. V: This feat grants a +4 bonus on reflex saving throws made to avoid traps. VI+: This feat grants a +5 bonus on reflex saving throws made to avoid traps. Epic progression: The uncanny dodge bonus improves by +1 every three levels.",
+      "requiresText": "barbarian 2 (5, 10, 13, 16, 19); rogue 3 (6, 11, 14, 17, 20); shadowdancer 2 (5, 10); assassin 2 (5, 10)",
+      "type": "class"
     },
     {
-      "name": "Uncanny Dodge V"
+      "name": "Uncanny Dodge V",
+      "base": "Uncanny Dodge",
+      "description": "There are six versions of this feat, with cumulative (but not stacking) benefits. (Assassins and shadowdancers only qualify for the first three versions.) The sixth version includes benefits extending into epic class levels. I: The character retains his dexterity bonus to AC, even if caught flat-footed or attacked by a hidden or invisible creature. II: This feat grants a +1 bonus on reflex saving throws made to avoid traps. III: This feat grants a +2 bonus on reflex saving throws made to avoid traps. IV: This feat grants a +3 bonus on reflex saving throws made to avoid traps. V: This feat grants a +4 bonus on reflex saving throws made to avoid traps. VI+: This feat grants a +5 bonus on reflex saving throws made to avoid traps. Epic progression: The uncanny dodge bonus improves by +1 every three levels.",
+      "requiresText": "barbarian 2 (5, 10, 13, 16, 19); rogue 3 (6, 11, 14, 17, 20); shadowdancer 2 (5, 10); assassin 2 (5, 10)",
+      "type": "class"
     },
     {
-      "name": "Uncanny Dodge VI"
+      "name": "Uncanny Dodge VI",
+      "base": "Uncanny Dodge",
+      "description": "There are six versions of this feat, with cumulative (but not stacking) benefits. (Assassins and shadowdancers only qualify for the first three versions.) The sixth version includes benefits extending into epic class levels. I: The character retains his dexterity bonus to AC, even if caught flat-footed or attacked by a hidden or invisible creature. II: This feat grants a +1 bonus on reflex saving throws made to avoid traps. III: This feat grants a +2 bonus on reflex saving throws made to avoid traps. IV: This feat grants a +3 bonus on reflex saving throws made to avoid traps. V: This feat grants a +4 bonus on reflex saving throws made to avoid traps. VI+: This feat grants a +5 bonus on reflex saving throws made to avoid traps. Epic progression: The uncanny dodge bonus improves by +1 every three levels.",
+      "requiresText": "barbarian 2 (5, 10, 13, 16, 19); rogue 3 (6, 11, 14, 17, 20); shadowdancer 2 (5, 10); assassin 2 (5, 10)",
+      "type": "class"
     },
     {
-      "name": "Use Poison"
+      "name": "Use Poison",
+      "description": "The character is trained in the use of poison and never has to make a dexterity check when applying poison to a blade.",
+      "requiresText": "assassin 1, blackguard 1",
+      "type": "class"
     },
     {
       "name": "Valiant"
     },
     {
-      "name": "Weapon Finesse"
+      "name": "Weapon Finesse",
+      "description": "A character with this feat is adept at using light weapons subtly and effectively, allowing him to make melee attack rolls with his dexterity modifier instead of strength (if his dexterity is higher than his strength).",
+      "requires": {
+        "bab": 1
+      },
+      "requiresText": "base attack bonus +1",
+      "arelith": "Arelith: virker også med Katana, Katar, Light Pick, Longsword, Quarterstaff, Sai, Scimitar, Two-Bladed Sword, Wakizashi. Gratis på level 1 for medium og høj BAB-klasser."
     },
     {
-      "name": "Weapon Focus"
+      "name": "Weapon Focus",
+      "description": "A character with this feat is particularly skilled with a specific weapon, gaining a +1 attack bonus with it.",
+      "requires": {
+        "bab": 1
+      },
+      "requiresText": "proficiency with the chosen weapon, base attack bonus +1"
     },
     {
-      "name": "Weapon Focus Concussion"
+      "name": "Weapon Focus Concussion",
+      "base": "Weapon Focus",
+      "description": "A character with this feat is particularly skilled with a specific weapon, gaining a +1 attack bonus with it.",
+      "requires": {
+        "bab": 1
+      },
+      "requiresText": "proficiency with the chosen weapon, base attack bonus +1"
     },
     {
-      "name": "Weapon Focus Edged"
+      "name": "Weapon Focus Edged",
+      "base": "Weapon Focus",
+      "description": "A character with this feat is particularly skilled with a specific weapon, gaining a +1 attack bonus with it.",
+      "requires": {
+        "bab": 1
+      },
+      "requiresText": "proficiency with the chosen weapon, base attack bonus +1"
     },
     {
-      "name": "Weapon Focus Missile"
+      "name": "Weapon Focus Missile",
+      "base": "Weapon Focus",
+      "description": "A character with this feat is particularly skilled with a specific weapon, gaining a +1 attack bonus with it.",
+      "requires": {
+        "bab": 1
+      },
+      "requiresText": "proficiency with the chosen weapon, base attack bonus +1"
     },
     {
-      "name": "Weapon Focus One Handed Edged"
+      "name": "Weapon Focus One Handed Edged",
+      "base": "Weapon Focus",
+      "description": "A character with this feat is particularly skilled with a specific weapon, gaining a +1 attack bonus with it.",
+      "requires": {
+        "bab": 1
+      },
+      "requiresText": "proficiency with the chosen weapon, base attack bonus +1"
     },
     {
-      "name": "Weapon Focus Polearm"
+      "name": "Weapon Focus Polearm",
+      "base": "Weapon Focus",
+      "description": "A character with this feat is particularly skilled with a specific weapon, gaining a +1 attack bonus with it.",
+      "requires": {
+        "bab": 1
+      },
+      "requiresText": "proficiency with the chosen weapon, base attack bonus +1"
     },
     {
-      "name": "Weapon Focus Ranged"
+      "name": "Weapon Focus Ranged",
+      "base": "Weapon Focus",
+      "description": "A character with this feat is particularly skilled with a specific weapon, gaining a +1 attack bonus with it.",
+      "requires": {
+        "bab": 1
+      },
+      "requiresText": "proficiency with the chosen weapon, base attack bonus +1"
     },
     {
-      "name": "Weapon Focus Throwing"
+      "name": "Weapon Focus Throwing",
+      "base": "Weapon Focus",
+      "description": "A character with this feat is particularly skilled with a specific weapon, gaining a +1 attack bonus with it.",
+      "requires": {
+        "bab": 1
+      },
+      "requiresText": "proficiency with the chosen weapon, base attack bonus +1"
     },
     {
-      "name": "Weapon Focus Thrown"
+      "name": "Weapon Focus Thrown",
+      "base": "Weapon Focus",
+      "description": "A character with this feat is particularly skilled with a specific weapon, gaining a +1 attack bonus with it.",
+      "requires": {
+        "bab": 1
+      },
+      "requiresText": "proficiency with the chosen weapon, base attack bonus +1"
     },
     {
-      "name": "Weapon Focus Two Handed"
+      "name": "Weapon Focus Two Handed",
+      "base": "Weapon Focus",
+      "description": "A character with this feat is particularly skilled with a specific weapon, gaining a +1 attack bonus with it.",
+      "requires": {
+        "bab": 1
+      },
+      "requiresText": "proficiency with the chosen weapon, base attack bonus +1"
     },
     {
-      "name": "Weapon Focus Unarmed"
+      "name": "Weapon Focus Unarmed",
+      "base": "Weapon Focus",
+      "description": "A character with this feat is particularly skilled with a specific weapon, gaining a +1 attack bonus with it.",
+      "requires": {
+        "bab": 1
+      },
+      "requiresText": "proficiency with the chosen weapon, base attack bonus +1"
     },
     {
       "name": "Weapon Hex: Mortality"
     },
     {
-      "name": "Weapon Proficiency Rogue"
+      "name": "Weapon Proficiency Rogue",
+      "aliases": [
+        "Rogue Weapon Proficiency",
+        "Rogue Weapons"
+      ],
+      "description": "This feat allows the character to use the club, dagger, dart, handaxe, light crossbow, heavy crossbow, quarterstaff, mace, shortsword, rapier, shortbow, morningstar, and sling. Normal: A character cannot equip a weapon he is not proficient in.",
+      "requiresText": "rogue 1",
+      "type": "class"
     },
     {
-      "name": "Weapon Specialization"
+      "name": "Weapon Specialization",
+      "description": "A character with this feat has trained especially hard with a specific weapon type, and gains a +2 damage bonus when using these weapons in combat.",
+      "requires": {
+        "bab": 4,
+        "feats": [
+          "Weapon Focus"
+        ],
+        "classLevels": {
+          "Fighter": 4
+        }
+      },
+      "requiresText": "weapon focus (samme våben), base attack bonus +4, fighter 4",
+      "type": "special"
     },
     {
-      "name": "Weapon Specialization Concussion"
+      "name": "Weapon Specialization Concussion",
+      "base": "Weapon Specialization",
+      "description": "A character with this feat has trained especially hard with a specific weapon type, and gains a +2 damage bonus when using these weapons in combat.",
+      "requires": {
+        "bab": 4,
+        "feats": [
+          "Weapon Focus"
+        ],
+        "classLevels": {
+          "Fighter": 4
+        }
+      },
+      "requiresText": "weapon focus (samme våben), base attack bonus +4, fighter 4",
+      "type": "special"
     },
     {
-      "name": "Weapon Specialization Missile"
+      "name": "Weapon Specialization Missile",
+      "base": "Weapon Specialization",
+      "description": "A character with this feat has trained especially hard with a specific weapon type, and gains a +2 damage bonus when using these weapons in combat.",
+      "requires": {
+        "bab": 4,
+        "feats": [
+          "Weapon Focus"
+        ],
+        "classLevels": {
+          "Fighter": 4
+        }
+      },
+      "requiresText": "weapon focus (samme våben), base attack bonus +4, fighter 4",
+      "type": "special"
     },
     {
-      "name": "Weapon Specialization Thrown"
+      "name": "Weapon Specialization Thrown",
+      "base": "Weapon Specialization",
+      "description": "A character with this feat has trained especially hard with a specific weapon type, and gains a +2 damage bonus when using these weapons in combat.",
+      "requires": {
+        "bab": 4,
+        "feats": [
+          "Weapon Focus"
+        ],
+        "classLevels": {
+          "Fighter": 4
+        }
+      },
+      "requiresText": "weapon focus (samme våben), base attack bonus +4, fighter 4",
+      "type": "special"
     },
     {
-      "name": "Weapon Specialization Unarmed"
+      "name": "Weapon Specialization Unarmed",
+      "base": "Weapon Specialization",
+      "description": "A character with this feat has trained especially hard with a specific weapon type, and gains a +2 damage bonus when using these weapons in combat.",
+      "requires": {
+        "bab": 4,
+        "feats": [
+          "Weapon Focus"
+        ],
+        "classLevels": {
+          "Fighter": 4
+        }
+      },
+      "requiresText": "weapon focus (samme våben), base attack bonus +4, fighter 4",
+      "type": "special"
     },
     {
       "name": "Weapon Trick"
     },
     {
-      "name": "Whirlwind Attack"
+      "name": "Whirlwind Attack",
+      "description": "The character performs a full attack action, and makes one melee attack at full base attack bonus against each opponent within 5 feet.",
+      "requires": {
+        "bab": 4,
+        "abilities": {
+          "Dex": 13,
+          "Int": 13
+        },
+        "feats": [
+          "Expertise",
+          "Dodge",
+          "Mobility",
+          "Spring Attack"
+        ]
+      },
+      "requiresText": "dexterity 13+, intelligence 13+, expertise, dodge, mobility, spring attack, base attack bonus +4",
+      "arelith": "Arelith: kan ikke bruges beredent, i parry mode eller under 0 HP."
     },
     {
-      "name": "Wholeness of Body"
+      "name": "Wholeness of Body",
+      "description": "The monk can heal damage equal to twice her class level, once per day.",
+      "requiresText": "monk 7",
+      "type": "class"
     },
     {
-      "name": "Wildshape"
+      "name": "Wildshape",
+      "description": "The character with this ability can take the shape of an animal at will. It may be used once per day at fifth level, twice per day at sixth level, three times per day at seventh level, four times per day at tenth level, five times per day at fourteenth level, and six times per day at eighteenth level. The transformation has a duration of 1 hour per class level.",
+      "requiresText": "druid 5",
+      "type": "class"
     },
     {
-      "name": "Woodland Stride"
+      "name": "Woodland Stride",
+      "description": "The character is immune to the grease, web, and entangle spells.",
+      "requiresText": "druid 2",
+      "type": "class"
     },
     {
-      "name": "Zen Archery"
+      "name": "Zen Archery",
+      "description": "Wisdom guides the character's ranged attacks, letting them use their wisdom modifier, if it is higher, instead of their dexterity when firing ranged weapons.",
+      "requires": {
+        "bab": 3,
+        "abilities": {
+          "Wis": 13
+        }
+      },
+      "requiresText": "base attack bonus +3, wisdom 13+"
+    },
+    {
+      "name": "Alertness",
+      "description": "+2 bonus to spot and listen checks due to finely tuned senses."
+    },
+    {
+      "name": "Animate Dead",
+      "description": "Once per day a pale master may animate dead as a spell-like ability.",
+      "requiresText": "pale master 2",
+      "type": "class"
+    },
+    {
+      "name": "Arcane Defense",
+      "description": "The character gains a +2 bonus to saving throws versus the chosen school of magic.",
+      "requires": {
+        "feats": [
+          "Spell Focus"
+        ]
+      },
+      "requiresText": "spell focus in the chosen spell school"
+    },
+    {
+      "name": "Armor Proficiency (Heavy)",
+      "aliases": [
+        "Heavy Armor"
+      ],
+      "description": "This feat grants the knowledge to make effective use of heavy armor.",
+      "requires": {
+        "feats": [
+          "Armor Proficiency (Light)",
+          "Armor Proficiency (Medium)"
+        ]
+      },
+      "requiresText": "armor proficiency (light), armor proficiency (medium)"
+    },
+    {
+      "name": "Armor Proficiency (Light)",
+      "aliases": [
+        "Light Armor"
+      ],
+      "description": "This feat grants the knowledge to make effective use of light armor."
+    },
+    {
+      "name": "Armor Proficiency (Medium)",
+      "description": "This feat grants the knowledge to make effective use of medium armor.",
+      "requires": {
+        "feats": [
+          "Armor Proficiency (Light)"
+        ]
+      },
+      "requiresText": "armor proficiency (light)"
+    },
+    {
+      "name": "Arrow of Death",
+      "description": "At 10th level, an arcane archer can enchant an arrow once per day that forces a target, if damaged by the arrow, to make a fortitude save or be slain.",
+      "requiresText": "arcane archer 10",
+      "type": "class"
+    },
+    {
+      "name": "Artist",
+      "description": "Character gains a +2 bonus on perform and spot checks.",
+      "requires": {
+        "maxLevel": 1
+      },
+      "requiresText": "Can only take this feat at 1st-level, perform skill"
+    },
+    {
+      "name": "Automatic Quicken Spell",
+      "description": "This feat allows the character to cast spells with a moment of thought. This feat may be taken multiple times: * Automatic quicken spell I: Quicken any level 0 - 3 spells. * Automatic quicken spell II: Quicken any level 4 - 6 spells. * Automatic quicken spell III: Quicken any level 7 - 9 spells.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Quicken Spell"
+        ],
+        "skills": {
+          "Spellcraft": 30
+        }
+      },
+      "requiresText": "21st level, quicken spell, spellcraft 30, ability to cast 9th level spells",
+      "type": "metamagic"
+    },
+    {
+      "name": "Automatic Silent Spell",
+      "aliases": [
+        "Auto Silent I",
+        "Auto Silent Spell 1"
+      ],
+      "description": "This feat allows the character to cast all spells of a given level range without the caster making any sound. This is especially useful if the caster has been silenced. This feat may be taken multiple times: * Automatic silent spell I: Cast any level 0 - 3 spell as a silent spell. * Automatic silent spell II: Cast any level 4 - 6 spell as a silent spell. * Automatic silent spell III: Cast any level 7 - 9 spell as a silent spell.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Silent Spell"
+        ],
+        "skills": {
+          "Spellcraft": 24
+        }
+      },
+      "requiresText": "21st level, silent spell, spellcraft 24, ability to cast 9th level spells",
+      "type": "metamagic"
+    },
+    {
+      "name": "Automatic Still Spell",
+      "description": "This feat allows the character to cast all spells of a given level range as still spells automatically. These spells may be cast while wearing armor. This feat may be taken multiple times: * Automatic still spell I: Cast any level 0 - 3 spell as a still spell. * Automatic still spell II: Cast any level 4 - 6 spell as a still spell. * Automatic still spell III: Cast any level 7 - 9 spell as a still spell.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Still Spell"
+        ],
+        "skills": {
+          "Spellcraft": 27
+        }
+      },
+      "requiresText": "21st level, still spell, spellcraft 27, ability to cast 9th level spells",
+      "type": "metamagic",
+      "arelith": "Arelith: I/II reducerer samlet ASF med 5% / 10%."
+    },
+    {
+      "name": "Barbarian Fast Movement",
+      "description": "This feat gives the barbarian a 10% bonus to movement.",
+      "requiresText": "barbarian 1",
+      "type": "class"
+    },
+    {
+      "name": "Bardic Knowledge",
+      "description": "This feat allows the character to identify items more easily than others. It grants the character a bonus equal to their class level to any lore checks.",
+      "requiresText": "bard 1, Harper scout 1",
+      "type": "class"
+    },
+    {
+      "name": "Battle Training vs. Giants",
+      "description": "This feat grants a +4 dodge bonus to AC against giants.",
+      "requiresText": "dwarf, gnome",
+      "type": "race"
+    },
+    {
+      "name": "Battle Training vs. Goblins",
+      "description": "This feat grants a +1 racial bonus on attack rolls against goblinoids (goblins, hobgoblins, and bugbears).",
+      "requiresText": "dwarf, gnome",
+      "type": "race"
+    },
+    {
+      "name": "Battle Training vs. Orcs",
+      "description": "This feat grants a +1 racial bonus on attack rolls made against orcs.",
+      "requiresText": "dwarf",
+      "type": "race"
+    },
+    {
+      "name": "Battle Training vs. Reptilians",
+      "description": "This feat grants a +1 racial bonus on attack rolls against reptilian humanoids.",
+      "requiresText": "gnome",
+      "type": "race"
+    },
+    {
+      "name": "Blooded",
+      "description": "The character gains a +2 bonus on initiative and a +2 bonus on spot checks.",
+      "requires": {
+        "maxLevel": 1
+      },
+      "requiresText": "Can only take this feat at 1st-level."
+    },
+    {
+      "name": "Bone Skin",
+      "description": "The pale master gains an innate +2 bonus to their AC at 1st, 4th, 8th, 12th, 16th, 20th, 24th, and 28th class levels.",
+      "requiresText": "pale master 1",
+      "type": "class"
+    },
+    {
+      "name": "Bullheaded",
+      "description": "The character gains a +2 bonus on resisting taunts and a +1 bonus on will saving throws.",
+      "requires": {
+        "maxLevel": 1
+      },
+      "requiresText": "Can only take this feat at first level."
+    },
+    {
+      "name": "Cat's Grace",
+      "description": "A Harper scout at third level is able to cast the spell cat's grace once per day.",
+      "requiresText": "Harper scout 3",
+      "type": "class"
+    },
+    {
+      "name": "Construct Shape",
+      "description": "The character can shift into the following construct forms three times per day: iron golem, stone golem, or demonflesh golem.",
+      "epic": true,
+      "requires": {
+        "abilities": {
+          "Wis": 27
+        },
+        "classLevels": {
+          "Shifter": 11
+        }
+      },
+      "requiresText": "epic shifter, wisdom 27"
+    },
+    {
+      "name": "Contagion",
+      "description": "Starting at seventh level, a blackguard may cast contagion.",
+      "requiresText": "blackguard 7",
+      "type": "class"
+    },
+    {
+      "name": "Courteous Magocracy",
+      "description": "The character gains a +2 bonus on lore checks and spellcraft checks.",
+      "requires": {
+        "maxLevel": 1
+      },
+      "requiresText": "Can only take this feat at first level."
+    },
+    {
+      "name": "Craft Harper Item",
+      "description": "Once per day, the Harper may make a magical potion.",
+      "requiresText": "Harper scout 5",
+      "type": "class"
+    },
+    {
+      "name": "Damage Reduction (Barbarian)",
+      "description": "These feats allow the barbarian to shrug off points of damage from each attack that causes damage.",
+      "requiresText": "barbarian 11 (14, 17, 20)",
+      "type": "class"
+    },
+    {
+      "name": "Death Attack",
+      "description": "At first level, an assassin may use a death attack, which functions similarly to a sneak attack in that if the target is not in combat they become victim to the death attack. The successful attack forces the target to make a fortitude save or become paralyzed. Even if they succeed with the saving throw they still suffer +1d6 points of damage in addition to the normal damage the attack caused. This damage increases to 2d6 at level 3, 3d6 at level 5, 4d6 at level 7, and 5d6 at level 9.",
+      "requiresText": "assassin",
+      "type": "class"
+    },
+    {
+      "name": "Deathless Master Touch",
+      "description": "At 10th level a pale master's touch becomes deadly, instantly killing unless a DC 17 fortitude save is made.",
+      "requiresText": "pale master 10",
+      "type": "class"
+    },
+    {
+      "name": "Deathless Mastery",
+      "description": "At 10th level, a pale master becomes immune to critical hits.",
+      "requiresText": "pale master 10",
+      "type": "class"
+    },
+    {
+      "name": "Deathless Vigor",
+      "description": "The pale master gains +3 hit points per level.",
+      "requiresText": "pale master 5",
+      "type": "class"
+    },
+    {
+      "name": "Defensive Awareness",
+      "description": "There are three versions of this feat with cumulative benefits. (1): The character retains his dexterity bonus to AC, even if caught flat-footed or attacked by a hidden or invisible creature. (2): The character can no longer be flanked, since he can react to opponents on opposite sides of him as easily as he can react to a single attack. (3): The character gains an intuitive sense that alerts him to danger from traps, giving a +1 bonus to reflex saves made to avoid traps.",
+      "requiresText": "dwarven defender 2 (5, 10)",
+      "type": "class"
+    },
+    {
+      "name": "Deneir's Eye",
+      "description": "The Harper receives a +2 saving throw bonus vs. traps.",
+      "requiresText": "Harper scout 2",
+      "type": "class"
+    },
+    {
+      "name": "Devastating Critical",
+      "description": "Whenever scoring a critical hit with the chosen weapon, the character's target must make a fortitude save or die instantly. Creatures who are immune to critical hits are not affected by this feat.",
+      "epic": true,
+      "requires": {
+        "abilities": {
+          "Str": 25
+        },
+        "feats": [
+          "Cleave",
+          "Great Cleave",
+          "Improved Critical",
+          "Overwhelming Critical",
+          "Power Attack"
+        ]
+      },
+      "requiresText": "strength 25+, cleave, great cleave, improved critical (weapon to be chosen), overwhelming critical (weapon to be chosen), power attack,",
+      "type": "combat",
+      "disabled": "Slået fra for spillere på Arelith."
+    },
+    {
+      "name": "Divine Health",
+      "description": "The paladin is immune to disease.",
+      "requiresText": "paladin 1",
+      "type": "class"
+    },
+    {
+      "name": "Draconic Armor",
+      "description": "The character becomes more draconic in appearance. His skin develops tiny iridescent scales, nearly invisible. This provides increasing natural armor bonuses to his base armor class. {{{!}}class=\"wikitable\" style=\"text-align:center\" {{!}}- ! class level {{!}} 1 {{!}}{{!}} 5 {{!}}{{!}} 8 {{!}}{{!}} 10 {{!}} 15 {{!}}{{!}} 20 {{!}}{{!}} 25 {{!}}{{!}} 30 {{!}}- ! AC bonus {{!}} +1 {{!}}{{!}} +2 {{!}}{{!}} +3 {{!}}{{!}} +4 {{!}} +5 {{!}}{{!}} +6 {{!}}{{!}} +7 {{!}}{{!}} +8 {{!}}}",
+      "requiresText": "red dragon disciple",
+      "type": "class"
+    },
+    {
+      "name": "Dragon Abilities",
+      "description": "As the dragon disciple gains levels in this prestige class, his ability scores increase by the following table: {{{!}}border=0 style=\"margin:-2ex 2em 0ex\" {{!}}- {{!}} Level {{!}}{{!}} {{!}}- {{!}} 2: {{!}}{{!}} +2 to strength {{!}}- {{!}} 4: {{!}}{{!}} +2 to strength {{!}}- {{!}} 7: {{!}}{{!}} +2 to constitution {{!}}- {{!}} 9: {{!}}{{!}} +2 to intelligence {{!}}- {{!}}10: {{!}}{{!}} +4 to strength, +2 to charisma {{!}}}",
+      "requiresText": "red dragon disciple 2",
+      "type": "class"
+    },
+    {
+      "name": "Dragon Breath",
+      "description": "At third and seventh level, the dragon disciple begins to develop his ancestor's signature ability: a fiery breath weapon. While the damage potential of the breath weapon slowly raises until reaching its full potential on level ten, save DC (19) and area of effect (30' cone) stay the same.",
+      "requiresText": "red dragon disciple 3",
+      "type": "class"
+    },
+    {
+      "name": "Dragon Shape",
+      "description": "The character may use wild shape to change into a dragon. .",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "abilities": {
+          "Wis": 30
+        }
+      },
+      "requiresText": "21st level, wisdom 30+, either wild shape 6x/day or greater wildshape IV",
+      "disabled": "Fjernet på Arelith; erstattet af Plantshape (druid)."
+    },
+    {
+      "name": "Dual-wield",
+      "description": "Rangers, when wearing light armor, get all the benefits of having the ambidexterity and two-weapon fighting feats. While wearing medium or heavy armor they lose these benefits.",
+      "requiresText": "ranger 1",
+      "type": "class"
+    },
+    {
+      "name": "Dwarven Defender Damage Reduction",
+      "description": "At sixth level, the dwarven defender gains the ability to shrug off 3 points of damage from each blow or attack. At tenth level the damage reduction increases to 6 points of damage per attack or blow. Epic progression: For each 4 levels after 10, the damage reduction increases by 3 points.",
+      "requiresText": "dwarven defender 6",
+      "type": "class"
+    },
+    {
+      "name": "Eagle's Splendor",
+      "description": "A Harper scout at fourth level is able to cast the spell eagle's splendor once per day.",
+      "requiresText": "Harper scout 4",
+      "type": "class"
+    },
+    {
+      "name": "Enchant Arrow",
+      "description": "With this feat, every arrow an arcane archer nocks and lets fly gets a +1 enhancement bonus. The bonus only works for the arcane archer. For every 2 levels of arcane archer past 1st, the enhancement goes up by +1.",
+      "requiresText": "arcane archer",
+      "type": "class"
+    },
+    {
+      "name": "Epic Barbarian Damage Reduction",
+      "description": "An epic barbarian's damage reduction allows him to ignore the first 5 points of damage from any physical attack. This ability increases by +1 point every 3rd level past 23rd.",
+      "epic": true,
+      "requiresText": "barbarian 23",
+      "type": "class"
+    },
+    {
+      "name": "Epic Damage Reduction",
+      "aliases": [
+        "EDR"
+      ],
+      "description": "The character gains damage reduction 3/-. This feat may be taken up to three times, for damage reduction 6/-, then 9/-.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "abilities": {
+          "Con": 19
+        }
+      },
+      "requiresText": "21st level, constitution 19+ (Arelith)"
+    },
+    {
+      "name": "Epic Energy Resistance",
+      "description": "The character gains resistance 10 to the selected damage type (acid, cold, electrical, fire, or sonic). This feat may be taken multiple times, to a maximum of 100 resistance to each damage type.",
+      "epic": true,
+      "requires": {
+        "level": 21
+      },
+      "requiresText": "21st level",
+      "type": "defensive"
+    },
+    {
+      "name": "Epic Reputation",
+      "description": "The character gains a +4 bonus to all bluff, intimidate, persuasion and taunt checks because they have become very well known.",
+      "epic": true,
+      "requires": {
+        "level": 21
+      },
+      "requiresText": "21st level"
+    },
+    {
+      "name": "Epic Skill Focus",
+      "description": "The character gains a +10 bonus on all skill checks with the chosen skill.",
+      "epic": true,
+      "requires": {
+        "level": 21
+      },
+      "requiresText": "21st level, 20 ranks in the chosen skill",
+      "arelith": "Arelith: Hide/Move Silently og Listen/Spot giver den anden gratis. Persuade hedder Leadership."
+    },
+    {
+      "name": "Epic Warding",
+      "aliases": [
+        "Epic Spell: Epic Warding"
+      ],
+      "description": "The spell conjures a powerful magical ward around the caster protecting against all bludgeoning, piercing and slashing damage. It grants damage reduction 50/+20 for 1 round per level.",
+      "epic": true,
+      "requires": {
+        "skills": {
+          "Spellcraft": 34
+        }
+      },
+      "requiresText": "epic level caster, the ability to cast 9th level spells, spellcraft 34",
+      "type": "epic spell",
+      "disabled": "Kan ikke opnås på Arelith (level 30-loftet blokerer kravene)."
+    },
+    {
+      "name": "Epic Spell Focus",
+      "description": "The character gains a +6 to the difficulty class for all saving throws against spells from the chosen school of magic.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Spell Focus",
+          "Greater Spell Focus"
+        ]
+      },
+      "requiresText": "21st level, spell focus and greater spell focus in the chosen school, ability to cast 9th level spells",
+      "type": "spell"
+    },
+    {
+      "name": "Epic Spell Penetration",
+      "description": "The character gains a +6 bonus on caster level checks to beat a creature's spell resistance.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Spell Penetration",
+          "Greater Spell Penetration"
+        ]
+      },
+      "requiresText": "21st level, spell penetration, greater spell penetration",
+      "type": "spell"
+    },
+    {
+      "name": "Epic Superior Weapon Focus",
+      "description": "The weapon master gains a +1 bonus to all attack rolls with his weapon of choice at 13th level and every 3 levels afterwards. This bonus stacks with the weapon master's superior weapon focus feat.",
+      "epic": true,
+      "requiresText": "weapon of choice, epic weapon master",
+      "type": "class"
+    },
+    {
+      "name": "Extra Stunning Attacks",
+      "description": "The character gains 3 extra stunning attacks per day.",
+      "requires": {
+        "bab": 2,
+        "feats": [
+          "Stunning Fist"
+        ]
+      },
+      "requiresText": "base attack bonus +2, stunning fist"
+    },
+    {
+      "name": "Favored Enemy",
+      "description": "The character gains a +1 bonus to any damage delivered to his favored enemy. He also receives a +1 bonus on listen, spot, and taunt checks against the favored enemy. These bonuses improve by +1 for every 5 levels that the ranger gains, but they do improve for the Harper.",
+      "requiresText": "ranger, Harper scout 1",
+      "type": "class"
+    },
+    {
+      "name": "Fear",
+      "description": "Once per day, the purple dragon knight may cast the fear spell with a caster level equal to his character level.",
+      "requiresText": "purple dragon knight 3",
+      "type": "class"
+    },
+    {
+      "name": "Final Stand",
+      "description": "Once per day, the purple dragon knight can inspire his troops to a heroic effort. Each ally in the area gains 2d10 hit points. This ability can affect a number of people equal to his purple dragon knight level + charisma modifier, and lasts for the same number of rounds.",
+      "requiresText": "purple dragon knight 5",
+      "type": "class"
+    },
+    {
+      "name": "Ghostly Visage",
+      "description": "Starting at second level, an assassin gains the ability to cast ghostly visage.",
+      "requiresText": "assassin 2",
+      "type": "class"
+    },
+    {
+      "name": "Great Smiting",
+      "description": "Whenever the character makes a successful smite attack, it adds two times the character's level to damage. This feat may be taken multiple times, up to a maximum of 10 times — each time adding additional damage equal to the character's level to the smite attack.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "abilities": {
+          "Cha": 25
+        },
+        "feats": [
+          "Divine Smite"
+        ]
+      },
+      "requiresText": "21st level, charisma 25+, Divine Smite"
+    },
+    {
+      "name": "Greater Spell Focus",
+      "description": "A character becomes even more adept with spells of a particular school of magic. The character gains a +4 bonus to the spell save DC for all spells of the chosen school.",
+      "requires": {
+        "feats": [
+          "Spell Focus"
+        ]
+      },
+      "requiresText": "spell focus (selected spell school)"
+    },
+    {
+      "name": "Greater Wildshape I",
+      "description": "The character with this ability can take the shape of a red, green, black, white, or blue wyrmling six times per day. He gains the wyrmling's signature ability, its breath weapon. As the shifter rises in levels, the damage potential of the breath weapon increases.",
+      "requiresText": "shifter",
+      "type": "class"
+    },
+    {
+      "name": "Greater Wildshape II",
+      "description": "At third level, a shifter may shift into various creature forms (minotaur, harpy, gargoyle) three times per day.",
+      "requiresText": "shifter 3",
+      "type": "class"
+    },
+    {
+      "name": "Greater Wildshape III",
+      "description": "At fifth level, a shifter may shift into the the form of a manticore, basilisk, or drider three times per day.",
+      "requiresText": "shifter 5",
+      "type": "class"
+    },
+    {
+      "name": "Greater Wildshape IV",
+      "description": "At tenth level, a shifter may shift into the form of a large dire tiger, medusa, or mindflayer three times per day.",
+      "requiresText": "shifter 10",
+      "type": "class"
+    },
+    {
+      "name": "Hail of Arrows",
+      "description": "In lieu of a regular attack, once per day an arcane archer can fire an arrow at each and every target within range, to a maximum of one target for every arcane archer level he has.",
+      "requiresText": "arcane archer 8",
+      "type": "class"
+    },
+    {
+      "name": "Hardiness vs. Enchantments",
+      "description": "This feat grants a +2 bonus on saving throws against mind-affecting spells.",
+      "requiresText": "elf, half-elf",
+      "type": "race"
+    },
+    {
+      "name": "Hardiness vs. Illusions",
+      "description": "This feat grants a +2 racial bonus on saving throws against mind-affecting spells.",
+      "requiresText": "gnome",
+      "type": "race"
+    },
+    {
+      "name": "Hardiness vs. Poisons",
+      "description": "This feat grants a +2 racial bonus on saving throws vs. poison.",
+      "requiresText": "dwarf",
+      "type": "race"
+    },
+    {
+      "name": "Hardiness vs. Spells",
+      "description": "This feat grants a +2 racial bonus on saving throws vs. spells.",
+      "requiresText": "dwarf",
+      "type": "race"
+    },
+    {
+      "name": "Heroic Shield",
+      "description": "You may aid an ally, giving them a +4 dodge bonus to their armor class for one round.",
+      "requiresText": "purple dragon knight 1",
+      "type": "class"
+    },
+    {
+      "name": "Hide in Plain Sight",
+      "aliases": [
+        "HiPS"
+      ],
+      "description": "The shadowdancer is able to use the hide skill even while being observed. Note: This ability will not always be successful in the frenzy of combat, but disengaging from the enemy before attempting to hide in plain sight will succeed.",
+      "requiresText": "shadowdancer 1",
+      "type": "class",
+      "arelith": "Arelith: Shadowdancer får den på level 11. 30 sek. cooldown efter stealth."
+    },
+    {
+      "name": "Hit Die Increase",
+      "description": "As the dragon disciple gains levels in this prestige class, his base hit die type changes. This change is not retroactive. {{{!}} class=\"wikitable\" style=\"text-align:center\" {{!}}- ! Level {{!}} 1 {{!!}} 4 {{!!}} 6 {{!!}} 11 {{!}}- ! Hit die {{!}} d6 {{!!}} d8 {{!!}} d10 {{!!}} d12 {{!}}}",
+      "requiresText": "red dragon disciple 4",
+      "type": "class"
+    },
+    {
+      "name": "Humanoid Shape",
+      "description": "At seventh level, a shifter may shift into various humanoid forms. A shifter may do this three times per day.",
+      "requiresText": "shifter 7",
+      "type": "class"
+    },
+    {
+      "name": "Imbue Arrow",
+      "description": "At second level, an arcane archer gains the ability to summon a magical arrow and fire it at an enemy. If it hits, it explodes as a fireball spell, doing fire damage to all hostile creatures in the area of effect.",
+      "requiresText": "arcane archer 2",
+      "type": "class"
+    },
+    {
+      "name": "Immunity to Fire",
+      "description": "The character gains immunity to fire.",
+      "requiresText": "red dragon disciple 10",
+      "type": "class"
+    },
+    {
+      "name": "Immunity to Paralysis",
+      "description": "The red dragon disciple gains immunity to paralysis.",
+      "requiresText": "red dragon disciple 10",
+      "type": "class"
+    },
+    {
+      "name": "Immunity to Sleep",
+      "description": "This feat grants immunity to all sleep spells and effects.",
+      "requiresText": "elf, half-elf, or red dragon disciple 10",
+      "type": "classrace"
+    },
+    {
+      "name": "Improved Initiative",
+      "description": "The character gains a +4 bonus to initiative checks."
+    },
+    {
+      "name": "Improved Invisibility",
+      "description": "Starting at ninth level, an assassin gains the ability to cast improved invisibility.",
+      "requiresText": "assassin 9",
+      "type": "class"
+    },
+    {
+      "name": "Improved Ki Strike 4",
+      "description": "The monk's unarmed attack counts as a +4 magic weapon against creatures with damage reduction.",
+      "epic": true,
+      "requires": {
+        "abilities": {
+          "Wis": 21
+        },
+        "feats": [
+          "Ki Strike"
+        ],
+        "classLevels": {
+          "Monk": 1
+        }
+      },
+      "requiresText": "monk, ki strike +3, wisdom 21"
+    },
+    {
+      "name": "Improved Ki Strike 5",
+      "description": "The monk's unarmed attack counts as a +5 magic weapon against creatures with damage reduction.",
+      "epic": true,
+      "requires": {
+        "feats": [
+          "Improved Ki Strike 4"
+        ],
+        "classLevels": {
+          "Monk": 1
+        }
+      },
+      "requiresText": "monk, improved ki strike 4"
+    },
+    {
+      "name": "Improved Parry",
+      "description": "The character gains a +4 competence bonus to his opposed roll when using the parry skill.",
+      "requires": {
+        "abilities": {
+          "Int": 13
+        }
+      },
+      "requiresText": "intelligence 13+"
+    },
+    {
+      "name": "Improved Sneak Attack",
+      "description": "Add +1d6 to your sneak attack damage. This feat may be taken multiple times, to a maximum of +10d6.",
+      "epic": true,
+      "requiresText": "(rogue) sneak attack (+8d6), sneak attack, blackguard (+8d6), or death attack (+8d6)"
+    },
+    {
+      "name": "Improved Spell Resistance",
+      "description": "The character gains a +2 to spell resistance. This feat may be taken multiple times, to a maximum of +20.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Diamond Soul"
+        ]
+      },
+      "requiresText": "21st level, diamond soul"
+    },
+    {
+      "name": "Improved Stunning Fist",
+      "description": "Adds +2 to the DC of the character's stunning attack. This feat may be taken multiple times, to a maximum of +20.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "abilities": {
+          "Dex": 19,
+          "Wis": 19
+        },
+        "feats": [
+          "Improved Unarmed Strike",
+          "Stunning Fist"
+        ]
+      },
+      "requiresText": "21st level, dexterity 19+, wisdom 19+, improved unarmed strike, stunning fist"
+    },
+    {
+      "name": "Improved Two-weapon Fighting",
+      "aliases": [
+        "ITWF"
+      ],
+      "description": "The character with this feat is able to get a second off-hand attack (at a penalty of -5 to his attack roll).",
+      "requires": {
+        "bab": 9,
+        "feats": [
+          "Two-weapon Fighting",
+          "Ambidexterity"
+        ]
+      },
+      "requiresText": "two-weapon fighting, ambidexterity, base attack bonus +9",
+      "arelith": "Arelith: +1 AB ved dual wield. Ubrugelig med 9+ Ranger-levels."
+    },
+    {
+      "name": "Improved Whirlwind Attack",
+      "description": "The character performs a full attack action and makes one melee attack at full base attack bonus against all opponents they threaten (10 feet).",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "abilities": {
+          "Dex": 23,
+          "Int": 13
+        },
+        "feats": [
+          "Dodge",
+          "Expertise",
+          "Mobility",
+          "Spring Attack",
+          "Whirlwind Attack"
+        ]
+      },
+      "requiresText": "21st level, intelligence 13+, dexterity 23+, dodge, expertise, mobility, spring attack, whirlwind attack",
+      "type": "combat",
+      "arelith": "Arelith: øjeblikkelig handling."
+    },
+    {
+      "name": "Increased Multiplier",
+      "description": "With their weapon of choice, the multiplier is increased by x1 to all critical hits. Thus a x2 critical multiplier becomes a x3.",
+      "requiresText": "weapon of choice, weapon master 5",
+      "type": "class"
+    },
+    {
+      "name": "Infinite Elemental Shape",
+      "description": "Upon reaching 26th level, a druid gains unlimited uses of his elemental shape ability.",
+      "epic": true,
+      "requiresText": "druid 26",
+      "type": "class"
+    },
+    {
+      "name": "Infinite Greater Wildshape",
+      "description": "The shifter's ability to shapeshift into different forms grows while he is gaining levels. At some point the shifter is able to change into certain forms an infinite number of times per day: * Level 4: infinite greater wildshape I * Level 7: infinite greater wildshape II * Level 10: infinite greater wildshape III * Level 13: infinite humanoid shape * Level 16: infinite greater wildshape IV",
+      "requiresText": "shifter",
+      "type": "class"
+    },
+    {
+      "name": "Infinite Wildshape",
+      "description": "Upon reaching 22nd level, a druid gains unlimited uses of his wild shape ability.",
+      "epic": true,
+      "requiresText": "druid 22",
+      "type": "class"
+    },
+    {
+      "name": "Inflict Critical Wounds",
+      "description": "Starting at eighth level, a blackguard may cast inflict critical wounds.",
+      "requiresText": "blackguard 8",
+      "type": "class"
+    },
+    {
+      "name": "Inflict Serious Wounds",
+      "description": "Starting at sixth level, a blackguard may cast inflict serious wounds.",
+      "requiresText": "blackguard 6",
+      "type": "class"
+    },
+    {
+      "name": "Inspire Courage",
+      "description": "Once per day, the purple dragon knight can inspire his troops in combat. All affected creatures gain a +1 bonus to attack and damage, and a +2 bonus against mind-affecting spells. These bonuses last for 10 rounds.",
+      "requiresText": "purple dragon knight 2",
+      "type": "class"
+    },
+    {
+      "name": "Invisibility",
+      "description": "The character is able to cast the spell invisibility once per day.",
+      "requiresText": "assassin 7, Harper scout 5",
+      "type": "class"
+    },
+    {
+      "name": "Ki Critical",
+      "description": "The weapon master gains an additional +2 to the threat range of their weapon of choice.",
+      "requiresText": "weapon of choice, weapon master 7",
+      "type": "class"
+    },
+    {
+      "name": "Ki Damage",
+      "description": "Once per day per level, a weapon master may use this feat to do maximum damage to their opponent.",
+      "requiresText": "weapon of choice, weapon master 1",
+      "type": "class"
+    },
+    {
+      "name": "Ki Strike",
+      "description": "The monk's unarmed attack counts as a magic weapon against creatures with damage reduction (+1 at 10th level, +2 at 13th, +3 at 16th).",
+      "requiresText": "monk (10, 13, 16)",
+      "type": "class"
+    },
+    {
+      "name": "Lingering Song",
+      "description": "The effects of the bard's songs will last an additional five rounds.",
+      "requires": {
+        "feats": [
+          "Bard Song"
+        ]
+      },
+      "requiresText": "bard song"
+    },
+    {
+      "name": "Lliira's Heart",
+      "description": "The Harper receives a +2 saving throw bonus against mind-affecting spells.",
+      "requiresText": "Harper scout 4",
+      "type": "class"
+    },
+    {
+      "name": "Low-light Vision",
+      "description": "Low-light vision grants the ability to see in the dark, but not as far as darkvision.",
+      "requiresText": "elf, half-elf, gnome",
+      "type": "race"
+    },
+    {
+      "name": "Monk AC Bonus",
+      "description": "Monks add their wisdom modifier to their armor class.",
+      "requiresText": "monk 1",
+      "type": "class"
+    },
+    {
+      "name": "Monk Speed",
+      "description": "Monks move more quickly than other classes, and this ability improves with experience.",
+      "requiresText": "monk 3",
+      "type": "class"
+    },
+    {
+      "name": "Mount Actions",
+      "description": "This series of actions enables players to interact with their mounts."
+    },
+    {
+      "name": "Nature Sense",
+      "description": "The druid gains a +2 bonus on all attack rolls made while fighting in wilderness areas.",
+      "requiresText": "druid 1",
+      "type": "class"
+    },
+    {
+      "name": "Oath of Wrath",
+      "description": "Once per day, the purple dragon knight may swear to defeat a single opponent. He gains a +2 bonus to attack, damage, saves, and skills vs. that opponent. This lasts for a number of rounds equal to twice his class level.",
+      "requiresText": "purple dragon knight 4",
+      "type": "class"
+    },
+    {
+      "name": "Opportunist",
+      "description": "The rogue gains a +4 competence bonus to attack rolls when making attacks of opportunity.",
+      "requiresText": "rogue 10",
+      "type": "class"
+    },
+    {
+      "name": "Outsider Shape",
+      "description": "The character can assume different outsider shapes three times per day — either an azer chieftain, a rakshasa, or a death slaad.",
+      "epic": true,
+      "requires": {
+        "abilities": {
+          "Wis": 25
+        },
+        "classLevels": {
+          "Shifter": 11
+        }
+      },
+      "requiresText": "epic shifter, wisdom 25+"
+    },
+    {
+      "name": "Overwhelming Critical",
+      "description": "When using the weapon chosen, the character deals +1d6 points of damage on a successful critical hit. If the weapon's critical multiplier is x3, add +2d6 and if the multiplier is x4, add 3d6.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "abilities": {
+          "Str": 23
+        },
+        "feats": [
+          "Cleave",
+          "Great Cleave",
+          "Improved Critical",
+          "Power Attack"
+        ]
+      },
+      "requiresText": "21st level, strength 23+, cleave, great cleave, improved critical (chosen weapon), power attack",
+      "type": "combat"
+    },
+    {
+      "name": "Partial Skill Affinity (Listen)",
+      "description": "This feat grants a +1 racial bonus to listen checks.",
+      "requiresText": "half-elf",
+      "type": "race"
+    },
+    {
+      "name": "Partial Skill Affinity (Search)",
+      "description": "This feat grants a +1 racial bonus to search checks.",
+      "requiresText": "half-elf",
+      "type": "race"
+    },
+    {
+      "name": "Partial Skill Affinity (Spot)",
+      "description": "This feat grants a +1 racial bonus to spot checks.",
+      "requiresText": "half-elf",
+      "type": "race"
+    },
+    {
+      "name": "Planar Turning",
+      "description": "This feat allows outsiders to be turned like undead.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "abilities": {
+          "Cha": 19,
+          "Wis": 19
+        },
+        "feats": [
+          "Turn Undead"
+        ]
+      },
+      "requiresText": "21st level, wisdom 19+, charisma 19+ (Arelith), turn undead"
+    },
+    {
+      "name": "Poison Save",
+      "description": "Starting at second level, an assassin gains a natural saving throw bonus to all poisons of +1 for every 2 levels.",
+      "requiresText": "assassin 2",
+      "type": "class"
+    },
+    {
+      "name": "Quick to Master",
+      "description": "Humans start with an extra feat at character generation.",
+      "requiresText": "human",
+      "type": "race"
+    },
+    {
+      "name": "Rallying Cry",
+      "description": "Three times per day, a purple dragon knight can utter a powerful shout that gives all allies a +1 bonus to attack and a 20% bonus to land speed for one round.",
+      "requiresText": "purple dragon knight 1",
+      "type": "class"
+    },
+    {
+      "name": "Remove Disease",
+      "description": "A character with this feat may remove disease once per day.",
+      "requiresText": "paladin 3",
+      "type": "class"
+    },
+    {
+      "name": "Resist Disease",
+      "description": "The character gains a +4 bonus on fortitude saving throws to resist the effects of disease."
+    },
+    {
+      "name": "Resist Energy",
+      "description": "The character gains +5 resistance against the chosen type of energy. (The first 5 points of damage of this type of energy are ignored.)",
+      "requiresText": "fortitude save bonus +8"
+    },
+    {
+      "name": "Resist Nature's Lure",
+      "description": "This feat grants a +2 insight bonus on saving throws against fear spells and effects.",
+      "requiresText": "druid 4",
+      "type": "class"
+    },
+    {
+      "name": "Resist Poison",
+      "description": "The character gains a +4 bonus on fortitude saving throws against poison."
+    },
+    {
+      "name": "Sacred Defense",
+      "description": "Sacred defense adds a +1 bonus to all saving throws for every 2 levels of champion of Torm.",
+      "requiresText": "champion of Torm 2",
+      "type": "class"
+    },
+    {
+      "name": "Sap",
+      "description": "A character with this feat is able to make a special stun attack in melee. He makes an attack roll with a -4 penalty, and if the hit successfully deals damage, the defender must make a discipline check with a DC equal to the attacker's attack roll. If the defender fails, he or she is dazed for 12 seconds.",
+      "requires": {
+        "bab": 1,
+        "feats": [
+          "Called Shot"
+        ]
+      },
+      "requiresText": "base attack bonus +1, called shot, spellcaster level 100"
+    },
+    {
+      "name": "Seeker Arrow",
+      "description": "At fourth level, an arcane archer gains the ability to launch an arrow once per day that cannot miss its target. At sixth level this ability can be used twice per day. This arrow is magically created at the moment the archer uses this ability.",
+      "requiresText": "arcane archer 4",
+      "type": "class"
+    },
+    {
+      "name": "Self Concealment",
+      "description": "The character gains a 10% concealment bonus. This feat may be taken multiple times, to a maximum of 50% concealment.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "abilities": {
+          "Dex": 30
+        },
+        "feats": [
+          "Improved Evasion"
+        ],
+        "skills": {
+          "Hide": 30,
+          "Tumble": 30
+        }
+      },
+      "requiresText": "21st level, dexterity 30+, hide 30, tumble 30, improved evasion"
+    },
+    {
+      "name": "Shield Proficiency",
+      "aliases": [
+        "Shields"
+      ],
+      "description": "A character with this feat has the training required to use a shield."
+    },
+    {
+      "name": "Silver Palm",
+      "description": "The character gains a +2 bonus on appraise and persuade checks.",
+      "requires": {
+        "maxLevel": 1
+      },
+      "requiresText": "Can only take this feat at first level."
+    },
+    {
+      "name": "Skill Affinity (Concentration)",
+      "description": "This feat grants a +2 racial bonus to concentration checks.",
+      "requiresText": "gnome",
+      "type": "race"
+    },
+    {
+      "name": "Skill Affinity (Listen)",
+      "description": "This feat grants a +2 racial bonus to listen checks.",
+      "requiresText": "elf, gnome, halfling",
+      "type": "race"
+    },
+    {
+      "name": "Skill Affinity (Lore)",
+      "description": "This feat grants a +2 racial bonus to lore checks.",
+      "requiresText": "dwarf",
+      "type": "race"
+    },
+    {
+      "name": "Skill Affinity (Move Silently)",
+      "description": "This feat grants a +2 racial bonus to move silently checks.",
+      "requiresText": "halfling",
+      "type": "race"
+    },
+    {
+      "name": "Skill Affinity (Search)",
+      "description": "This feat grants a +2 racial bonus to search checks.",
+      "requiresText": "elf",
+      "type": "race"
+    },
+    {
+      "name": "Skill Affinity (Spot)",
+      "description": "This feat grants a +2 racial bonus to spot checks.",
+      "requiresText": "elf",
+      "type": "race"
+    },
+    {
+      "name": "Skill Focus",
+      "description": "A character with this feat is adept at a certain skill, gaining a +3 bonus on all checks with it.",
+      "requiresText": "able to use the skill",
+      "arelith": "Arelith: +5 til skill (vanilla +3). Hide/Move Silently og Listen/Spot giver den anden gratis. Persuade hedder Leadership."
+    },
+    {
+      "name": "Skilled",
+      "description": "The character receives 4 extra skill points at first level, plus 1 additional skill point at each following level.",
+      "requiresText": "human",
+      "type": "race"
+    },
+    {
+      "name": "Sleep",
+      "description": "A Harper scout at second level is able to cast sleep once per day.",
+      "requiresText": "Harper scout 2",
+      "type": "class"
+    },
+    {
+      "name": "Small Stature",
+      "description": "Gnomes and halflings are small creatures. As such, they gain bonuses to their attack rolls, armor class, and hide checks when dealing with larger creatures. Note: Because they are so small, they cannot use the following weapons: dire mace, two-bladed sword, double axe, greataxe, greatsword, halberd, heavy flail, quarterstaff, scythe, and spear.",
+      "requiresText": "gnome, halfling",
+      "type": "race"
+    },
+    {
+      "name": "Snake Blood",
+      "description": "The character gains a +1 reflex saving throw bonus. Also, any saving throws versus poison gain an additional +2 fortitude bonus.",
+      "requires": {
+        "maxLevel": 1
+      },
+      "requiresText": "Can only take this at first level."
+    },
+    {
+      "name": "Sneak Attack, Blackguard",
+      "description": "Whenever the character makes a successful attack against an opponent who is flat-footed, cannot see them, or who is in combat with someone else, the character's blow delivers extra damage. This extra damage is +1d6 at fourth level and an additional +1d6 every three levels thereafter. This extra damage is not multiplied in the case of a critical hit.",
+      "requiresText": "blackguard 4",
+      "type": "class"
+    },
+    {
+      "name": "Spell Focus",
+      "description": "A character with this feat is adept in a certain school of magic, granting a +2 bonus to spell save DC for all spells cast from that school.",
+      "requiresText": "ability to cast first-level spells"
+    },
+    {
+      "name": "Stealthy",
+      "description": "The character gains a +2 bonus on hide and move silently checks."
+    },
+    {
+      "name": "Stonecunning",
+      "description": "This feat grants a +2 bonus on search checks made in interior areas.",
+      "requiresText": "dwarf",
+      "type": "race"
+    },
+    {
+      "name": "Strong Soul",
+      "description": "The character gains a +1 bonus to fortitude and will saving throws, as well as a +1 bonus to any saving throw versus death magic.",
+      "requires": {
+        "maxLevel": 1
+      },
+      "requiresText": "Can only take this feat at first level."
+    },
+    {
+      "name": "Summon Greater Undead",
+      "description": "At ninth level, a pale master may summon a greater undead once per day as a spell-like ability. The pale master's level determines the type of undead summoned: * Level 9: mummy warrior * Level 10: spectre * Level 12: vampire rogue * Level 14: greater bodak * Level 16: ghoul king * Level 18: vampire mage * Level 20: skeleton blackguard * Level 22: lich * Level 24: lich lord * Level 26: alhoon * Level 28: alhoon elder * Level 30: lesser demilich",
+      "requiresText": "pale master 9",
+      "type": "class"
+    },
+    {
+      "name": "Summon Mount",
+      "description": "Summons to the paladin a faithful, magical beast — a warhorse mount. The beast is more powerful as the paladin gets more powerful. Note: Horses and the ride skill are only used in the premium module \"Neverwinter Nights - Wyvern Crown of Cormyr\" and specific community-made modules.",
+      "requiresText": "paladin 5",
+      "type": "class"
+    },
+    {
+      "name": "Summon Undead",
+      "description": "The pale master can summon an undead creature twice per day as a spell-like ability. The level of the pale master determines the type of undead that is summoned: * Level 4 and 5: ghoul * Level 6: shadow * Level 7: ghast * Level 8: wight * Level 9: wraith",
+      "requiresText": "pale master 4",
+      "type": "class"
+    },
+    {
+      "name": "Superior Initiative",
+      "description": "The character gains a +8 bonus on initiative checks.",
+      "epic": true,
+      "requires": {
+        "level": 21,
+        "feats": [
+          "Improved Initiative"
+        ]
+      },
+      "requiresText": "epic character, improved initiative",
+      "type": "combat"
+    },
+    {
+      "name": "Superior Weapon Focus",
+      "description": "The weapon master gains a +1 bonus to all attack rolls with their weapon of choice.",
+      "requiresText": "weapon of choice, weapon master 5",
+      "type": "class"
+    },
+    {
+      "name": "Thug",
+      "description": "The character gains a +2 bonus on initiative checks and a +2 bonus on persuade checks."
+    },
+    {
+      "name": "Tough As Bone",
+      "description": "The pale master becomes immune to stun, hold, and paralyzation.",
+      "requiresText": "pale master 7",
+      "type": "class"
+    },
+    {
+      "name": "Trackless Step",
+      "description": "This feat grants a +4 competence bonus to hide and move silently checks when in wilderness areas.",
+      "requiresText": "ranger 1, druid 3",
+      "type": "class"
+    },
+    {
+      "name": "Tymora's Smile",
+      "description": "Once per day, the Harper or a target receives a +2 saving throw bonus on all saving throws for 5 turns.",
+      "requiresText": "Harper scout 3",
+      "type": "class"
+    },
+    {
+      "name": "Undead Graft",
+      "description": "Two times per day a pale master may use their undead arm to paralyze foes. At level 8 this may be used three times per day.",
+      "requiresText": "pale master 6",
+      "type": "class"
+    },
+    {
+      "name": "Undead Shape",
+      "description": "The character with this ability can transform into a selection of powerful undead creatures three times per day: risen lord, vampire, and spectre.",
+      "epic": true,
+      "requires": {
+        "classLevels": {
+          "Shifter": 11
+        }
+      },
+      "requiresText": "epic shifter"
+    },
+    {
+      "name": "Venom Immunity",
+      "description": "The druid is immune to all poisons.",
+      "requiresText": "druid 9",
+      "type": "class"
+    },
+    {
+      "name": "Weapon of Choice",
+      "description": "The weapon chosen to be a weapon of choice by a weapon master becomes the focus for all of their special abilities.",
+      "requiresText": "weapon focus (chosen weapon)",
+      "type": "class"
+    },
+    {
+      "name": "Weapon Proficiency (Druid)",
+      "description": "This feat allows the character to use the club, dagger, dart, quarterstaff, scimitar, sickle, sling, and spear. Normal: A character cannot equip a weapon he is not proficient in.",
+      "requiresText": "druid 1",
+      "type": "class"
+    },
+    {
+      "name": "Weapon Proficiency (Elf)",
+      "description": "This feat allows the character to use the longsword, rapier, longbow, and shortbow. Normal: A character cannot equip a weapon he is not proficient in.",
+      "requiresText": "elf",
+      "type": "race"
+    },
+    {
+      "name": "Weapon Proficiency (Exotic)",
+      "aliases": [
+        "Exotic Weapons"
+      ],
+      "description": "This feat allows effective use of all exotic weapons. The exotic weapons list includes the bastard sword, dire mace, dwarven waraxe*, double axe, kama, katana, kukri, scythe, shuriken, whip*, and two-bladed sword. * exclusive to Hordes of the Underdark Normal: A character cannot equip weapons they are not proficient in.",
+      "requires": {
+        "bab": 1
+      },
+      "requiresText": "base attack bonus +1"
+    },
+    {
+      "name": "Weapon Proficiency (Martial)",
+      "aliases": [
+        "Martial Weapons"
+      ],
+      "description": "This feat allows effective use of all martial weapons. The martial weapons list includes the battleaxe, greataxe, greatsword, halberd, handaxe, heavy flail, light flail, light hammer, longbow, longsword, rapier, scimitar, shortsword, shortbow, throwing axe, trident, and warhammer. Normal: A character cannot equip weapons they are not proficient in."
+    },
+    {
+      "name": "Weapon Proficiency (Monk)",
+      "description": "This feat allows effective use of club, dagger, handaxe, light crossbow, heavy crossbow, quarterstaff, shuriken, kama, and sling. Normal: A character cannot equip a weapon he is not proficient in.",
+      "requiresText": "monk 1",
+      "type": "class"
+    },
+    {
+      "name": "Weapon Proficiency (Simple)",
+      "aliases": [
+        "Simple Weapons"
+      ],
+      "description": "This feat allows effective use of all simple weapons, including the club, dagger, mace, sickle, spear, morningstar, quarterstaff, light and heavy crossbows, dart, and sling. Normal: A character cannot equip weapons they are not proficient in."
+    },
+    {
+      "name": "Weapon Proficiency (Wizard)",
+      "description": "This feat allows the character to use the club, dagger, light crossbow, heavy crossbow, and quarterstaff. Normal: A character cannot equip a weapon he is not proficient in.",
+      "requiresText": "wizard 1",
+      "type": "class"
+    },
+    {
+      "name": "Craft Ammunition",
+      "requires": {
+        "anyFeats": [
+          "Weapon Focus"
+        ]
+      },
+      "description": "Arelith: én gang om dagen, med våbnet udstyret, laves ammunition der skalerer med level (Bronze 1–5 … Masterly Damask 26–30).",
+      "requiresText": "Weapon Focus i våbengruppen (bow, crossbow, sling eller thrown)"
     }
   ],
   "crafts": [

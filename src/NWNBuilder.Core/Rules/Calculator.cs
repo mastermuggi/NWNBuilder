@@ -17,6 +17,8 @@ public sealed class LevelResult
     public int SkillPoints { get; init; }
     public int SkillPointsTotal { get; init; }
     public int MaxRanks { get; init; }
+    /// <summary>Feats på dette level, hvis krav ikke er opfyldt.</summary>
+    public List<string> FeatProblems { get; init; } = new();
 }
 
 public sealed class SkillResult
@@ -86,6 +88,8 @@ public static class Calculator
         var unknownClasses = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         int featFort = 0, featRef = 0, featWill = 0, hitDice = 0, skillTotal = 0, hpPerLevel = 0, hpFlat = 0;
         var results = new List<LevelResult>();
+        var taken = new List<FeatRule>();
+        var buildClasses = build.Levels.Select(l => rules.FindClass(l.Class)).OfType<ClassRule>().Distinct().ToList();
 
         foreach (var lvl in build.Levels.OrderBy(l => l.Level))
         {
@@ -94,15 +98,6 @@ public static class Calculator
 
             var L = lvl.Level;
             if (lvl.AbilityIncrease is { } inc) Add(abilities, inc, 1);
-
-            foreach (var featName in SplitFeats(lvl.ClassFeat).Concat(SplitFeats(lvl.GeneralFeat)))
-            {
-                var feat = rules.FindFeat(featName);
-                if (feat == null) continue;
-                Add(abilities, feat.Abilities);
-                featFort += feat.Fort; featRef += feat.Ref; featWill += feat.Will;
-                hpPerLevel += feat.HpPerLevel; hpFlat += feat.Hp;
-            }
 
             var cls = rules.FindClass(lvl.Class);
             var className = cls?.Name ?? lvl.Class.Trim();
@@ -120,6 +115,18 @@ public static class Calculator
                     : bonus.Ability;
                 if (Enum.TryParse<Ability>(key, true, out var ab))
                     Add(abilities, ab, bonus.Value);
+            }
+
+            // Krav tjekkes med stats før dette levels feats (Great Strength tæller fra næste level).
+            var beforeFeats = Copy(abilities);
+            var levelFeats = SplitFeats(lvl.ClassFeat).Concat(SplitFeats(lvl.GeneralFeat))
+                .Select(n => FindFeat(rules, n)).Where(f => f != null).Select(f => f!).ToList();
+
+            foreach (var feat in levelFeats)
+            {
+                Add(abilities, feat.Abilities);
+                featFort += feat.Fort; featRef += feat.Ref; featWill += feat.Will;
+                hpPerLevel += feat.HpPerLevel; hpFlat += feat.Hp;
             }
 
             int intMod = Mod(abilities.Int);
@@ -169,8 +176,29 @@ public static class Calculator
             refl += featRef + allSaves + Mod(abilities.Dex);
             will += featWill + allSaves + Mod(abilities.Wis);
 
+            // Feats som klasse/race giver automatisk tæller som taget, og deres krav tjekkes ikke.
+            var granted = classLevels
+                .SelectMany(kv => rules.FindClass(kv.Key)?.GrantedFeats.Where(g => g.ClassLevel <= kv.Value).Select(g => g.Feat)
+                                  ?? Enumerable.Empty<string>())
+                .Concat(race?.GrantedFeats ?? new())
+                .Select(n => FindFeat(rules, n)).OfType<FeatRule>().ToHashSet();
+            var ctx = new FeatContext(rules, L, bab, beforeFeats, classLevels,
+                taken.Concat(levelFeats).Concat(granted).ToList(), build, buildClasses);
+            var problems = new List<string>();
+            foreach (var feat in levelFeats.Where(f => !granted.Contains(f)))
+            {
+                var missing = MissingRequirements(feat, ctx);
+                if (missing.Count > 0)
+                {
+                    problems.Add($"{feat.Name}: {string.Join(", ", missing)}");
+                    warnings.Add($"Level {L}: {feat.Name} – {string.Join(", ", missing)}");
+                }
+            }
+            taken.AddRange(levelFeats);
+
             results.Add(new LevelResult
             {
+                FeatProblems = problems,
                 Level = L,
                 Class = className,
                 ClassLevel = classLevels[className],
@@ -240,12 +268,93 @@ public static class Calculator
         Ability.Int => a.Int, Ability.Wis => a.Wis, _ => a.Cha,
     };
 
-    /// <summary>"Great Intelligence, Mummy Dust" → to feats. Tekst i parentes ignoreres.</summary>
-    private static IEnumerable<string> SplitFeats(string? cell) =>
+    /// <summary>"Great Intelligence, Mummy Dust" → to feats. Komma i parentes deler ikke.</summary>
+    public static IEnumerable<string> SplitFeats(string? cell) =>
         string.IsNullOrWhiteSpace(cell)
             ? Enumerable.Empty<string>()
-            : System.Text.RegularExpressions.Regex.Replace(cell, @"\(.*?\)", "")
-                .Split(new[] { ',', ';', '/' }, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+            : System.Text.RegularExpressions.Regex.Split(cell, @"[,;/](?![^(]*\))")
+                .Select(s => s.Trim()).Where(s => s.Length > 0);
+
+    /// <summary>Slår et feat op; "Weapon Focus (Kama)" findes som "Weapon Focus" hvis den fulde tekst ikke findes.</summary>
+    public static FeatRule? FindFeat(Ruleset rules, string name) =>
+        rules.FindFeat(name) ?? rules.FindFeat(System.Text.RegularExpressions.Regex.Replace(name, @"\(.*?\)", "").Trim());
+
+    private sealed record FeatContext(Ruleset Rules, int Level, int Bab, AbilityScores Abilities,
+        Dictionary<string, int> ClassLevels, List<FeatRule> Feats, Build Build, List<ClassRule> BuildClasses);
+
+    /// <summary>De krav featet mangler på dette level (tom liste = ok).</summary>
+    private static List<string> MissingRequirements(FeatRule feat, FeatContext ctx)
+    {
+        var missing = new List<string>();
+        if (feat.Disabled != null)
+            missing.Add(feat.Disabled);
+        var r = feat.Requires;
+        var minLevel = Math.Max(r?.Level ?? 0, feat.Epic ? ctx.Rules.Rules.EpicFromLevel : 0);
+        if (ctx.Level < minLevel)
+            missing.Add($"kræver level {minLevel}");
+        if (r == null)
+            return missing;
+        missing.AddRange(Missing(r, ctx, topLevel: true));
+        if (r.AnyOf.Count > 0 && r.AnyOf.All(alt => Missing(alt, ctx, topLevel: false).Count > 0))
+            missing.Add("et af: " + string.Join(" / ", r.AnyOf.Select(alt => string.Join(" + ", Describe(alt)))));
+        return missing;
+    }
+
+    private static List<string> Missing(FeatRequirement r, FeatContext ctx, bool topLevel)
+    {
+        var missing = new List<string>();
+        if (!topLevel && r.Level is { } lvl && ctx.Level < lvl) // top-niveauets level tjekkes sammen med epic
+            missing.Add($"level {lvl}");
+        if (r.MaxLevel is { } max && ctx.Level > max)
+            missing.Add(max == 1 ? "kun på level 1" : $"højst level {max}");
+        if (r.Bab is { } bab && ctx.Bab < bab)
+            missing.Add($"BAB {bab} (har {ctx.Bab})");
+        foreach (var (key, value) in r.Abilities)
+            if (Enum.TryParse<Ability>(key, true, out var ab) && Get(ctx.Abilities, ab) < value)
+                missing.Add($"{key.ToUpperInvariant()} {value} (har {Get(ctx.Abilities, ab)})");
+        foreach (var name in r.Feats.Where(n => !HasFeat(ctx, n)))
+            missing.Add(name);
+        if (r.AnyFeats.Count > 0 && !r.AnyFeats.Any(n => HasFeat(ctx, n)))
+            missing.Add(string.Join(" eller ", r.AnyFeats));
+        foreach (var (name, ranks) in r.Skills)
+        {
+            var have = SkillRanksAt(ctx, name);
+            if (have < ranks) missing.Add($"{name} {ranks} ranks (højst {have})");
+        }
+        foreach (var (name, levels) in r.ClassLevels)
+        {
+            var cls = ctx.Rules.FindClass(name)?.Name ?? name;
+            if (ctx.ClassLevels.GetValueOrDefault(cls) < levels)
+                missing.Add($"{cls} {levels}");
+        }
+        return missing;
+    }
+
+    private static IEnumerable<string> Describe(FeatRequirement r)
+    {
+        foreach (var (k, v) in r.ClassLevels) yield return $"{k} {v}";
+        foreach (var f in r.Feats) yield return f;
+        foreach (var (k, v) in r.Abilities) yield return $"{k.ToUpperInvariant()} {v}";
+        if (r.Bab is { } b) yield return $"BAB {b}";
+    }
+
+    /// <summary>Har buildet featet (eller en variant af det, fx "Weapon Focus Missile" for "Weapon Focus")?</summary>
+    private static bool HasFeat(FeatContext ctx, string name)
+    {
+        var wanted = ctx.Rules.FindFeat(name)?.Name ?? name;
+        return ctx.Feats.Any(f => Same(f.Name, wanted) || (f.Base != null && Same(f.Base, wanted)));
+    }
+
+    /// <summary>Højst mulige ranks på dette level ud fra de point der er brugt i alt (skills gemmes ikke pr. level).</summary>
+    private static int SkillRanksAt(FeatContext ctx, string skill)
+    {
+        var points = ctx.Build.SkillRanks.FirstOrDefault(kv => Same(kv.Key, skill)).Value;
+        var isClass = ctx.BuildClasses.Any(c => c.ClassSkills.Any(cs => Same(cs, skill)));
+        var max = ctx.Level + ctx.Rules.Rules.MaxRanksAboveLevel;
+        return isClass ? Math.Min(points, max) : Math.Min(points / 2, max / 2);
+    }
+
+    private static bool Same(string a, string b) => string.Equals(a.Trim(), b.Trim(), StringComparison.OrdinalIgnoreCase);
 
     private static int BabFor(string type, int levels) => type switch
     {
