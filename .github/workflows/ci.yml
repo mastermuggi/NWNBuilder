@@ -14,7 +14,7 @@ jobs:
         ports:
           - 27017:27017
     env:
-      MONGO_TEST_CONNECTION: mongodb://localhost:27017
+      MONGO_TEST_CONNECTION: mongodb://127.0.0.1:27017
     steps:
       - uses: actions/checkout@v4
 
