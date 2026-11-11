@@ -118,7 +118,8 @@ public class CalculatorTests
         Assert.Equal(24, f.Bab);
         Assert.Equal(454, f.Hp);                 // inkl. Toughness
         Assert.Equal(356, f.SkillPointsTotal);
-        Assert.Equal((20, 18, 19), (f.Fort, f.Ref, f.Will));
+        // Arket siger Ref 18, men dets ability-række bruger DEX 18 (+4); slut-DEX er 22 (+6) → 20.
+        Assert.Equal((20, 20, 19), (f.Fort, f.Ref, f.Will));
         Assert.Equal(356, result.SkillPointsSpent);
     }
 }
