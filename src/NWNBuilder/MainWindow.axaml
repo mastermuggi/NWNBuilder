@@ -270,7 +270,11 @@
                             HeadersVisibility="Column" GridLinesVisibility="Horizontal" Background="Transparent">
                     <DataGrid.Columns>
                       <DataGridTextColumn Header="Skill" Binding="{Binding Name}" Width="*" />
-                      <DataGridTextColumn Header="Ranks" Binding="{Binding Value}" Width="90" />
+                      <DataGridTextColumn Header="Point" Binding="{Binding Points}" Width="70" />
+                      <DataGridTextColumn Header="Class" Binding="{Binding ClassSkill}" IsReadOnly="True" Width="64" />
+                      <DataGridTextColumn Header="Ranks" Binding="{Binding Ranks}" IsReadOnly="True" Width="64" />
+                      <DataGridTextColumn Header="Mod" Binding="{Binding Modifier}" IsReadOnly="True" Width="56" />
+                      <DataGridTextColumn Header="Total" Binding="{Binding Total}" IsReadOnly="True" Width="60" />
                       <DataGridTemplateColumn Width="50">
                         <DataGridTemplateColumn.CellTemplate>
                           <DataTemplate>

@@ -63,13 +63,40 @@ public sealed class LevelRow : INotifyPropertyChanged
     }
 }
 
+/// <summary>En skill i Skills-tabellen: point brugt (redigerbart) + beregnede ranks og total.</summary>
+public sealed class SkillRow : INotifyPropertyChanged
+{
+    private string _name = "";
+    private int _points;
+    private SkillResult? _result;
+
+    internal Action? Changed { get; set; }
+
+    public string Name { get => _name; set { _name = value ?? ""; Changed?.Invoke(); } }
+    public int Points { get => _points; set { _points = value; Changed?.Invoke(); } }
+
+    public string ClassSkill => _result == null ? "" : _result.IsClassSkill ? "✓" : "cross";
+    public int? Ranks => _result?.Ranks;
+    public int? MaxRanks => _result?.MaxRanks;
+    public int? Modifier => _result?.Modifier;
+    public int? Total => _result?.Total;
+
+    public event PropertyChangedEventHandler? PropertyChanged;
+
+    internal void SetResult(SkillResult? result)
+    {
+        _result = result;
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(string.Empty));
+    }
+}
+
 /// <summary>Redigerbar visning af et build. Apply() skriver ændringerne tilbage til Build.</summary>
 public sealed class BuildEditor : INotifyPropertyChanged
 {
     private readonly Ruleset? _ruleset;
 
     public Build Build { get; }
-    public ObservableCollection<NamedValue> Skills { get; }
+    public ObservableCollection<SkillRow> Skills { get; }
     public ObservableCollection<NamedValue> Crafting { get; }
     public ObservableCollection<Friend> Friends { get; }
     public ObservableCollection<LevelRow> Rows { get; }
@@ -89,10 +116,10 @@ public sealed class BuildEditor : INotifyPropertyChanged
         : $"Regelsæt: {_ruleset.Name} ({_ruleset.Version})";
     public AbilityScores? StartWithGifts => Result?.StartAbilities;
     public LevelResult? Final => Result?.Final;
-    public int SkillRanksSpent => Skills.Sum(s => s.Value);
+    public int SkillPointsSpent => Skills.Sum(s => s.Points);
     public string SkillPointsText => Final == null
         ? ""
-        : $"Skillpoints: {SkillRanksSpent} brugt af {Final.SkillPointsTotal} · max {Final.MaxRanks} ranks pr. skill";
+        : $"Skillpoints: {SkillPointsSpent} brugt af {Final.SkillPointsTotal} · max ranks {Final.MaxRanks} (class) / {Final.MaxRanks / 2} (cross) · cross-class koster 2 point pr. rank";
     public string WarningsText => Result == null ? "" : string.Join("\n", Result.Warnings);
 
     public event PropertyChangedEventHandler? PropertyChanged;
@@ -103,7 +130,15 @@ public sealed class BuildEditor : INotifyPropertyChanged
 
         Build = build;
         _ruleset = ruleset;
-        Skills = new(build.SkillRanks.Select(kv => new NamedValue { Name = kv.Key, Value = kv.Value }));
+        Skills = new(build.SkillRanks.Select(kv => new SkillRow { Name = kv.Key, Points = kv.Value }));
+        foreach (var row in Skills)
+            row.Changed = Recalculate;
+        Skills.CollectionChanged += (_, e) =>
+        {
+            foreach (var row in e.NewItems?.OfType<SkillRow>() ?? Enumerable.Empty<SkillRow>())
+                row.Changed = Recalculate;
+            Recalculate();
+        };
         Crafting = new(build.Crafting.Select(kv => new NamedValue { Name = kv.Key, Value = kv.Value }));
         Friends = new(build.Friends);
         Rows = new(build.Levels.OrderBy(l => l.Level).Select(l => new LevelRow(l, Recalculate)));
@@ -138,18 +173,21 @@ public sealed class BuildEditor : INotifyPropertyChanged
 
         if (Gifts.Count > 0)
             Build.GiftNames = Gifts.Where(g => g.IsSelected).Select(g => g.Name).ToList();
+        Build.SkillRanks = SkillsToDictionary();
 
         Result = Calculator.Calculate(Build, _ruleset);
         var byLevel = Result.Levels.ToDictionary(r => r.Level);
         foreach (var row in Rows)
             row.SetResult(byLevel.GetValueOrDefault(row.Level));
+        foreach (var row in Skills)
+            row.SetResult(Result.Skills.FirstOrDefault(r => string.Equals(r.Name, row.Name.Trim(), StringComparison.OrdinalIgnoreCase)));
 
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(string.Empty));
     }
 
     public Build Apply()
     {
-        Build.SkillRanks = ToDictionary(Skills);
+        Build.SkillRanks = SkillsToDictionary();
         Build.Crafting = ToDictionary(Crafting);
         Build.Friends = Friends
             .Where(f => !string.IsNullOrWhiteSpace(f.AccountName + f.PlayerName + f.Note))
@@ -187,6 +225,9 @@ public sealed class BuildEditor : INotifyPropertyChanged
         build.VoiceExample = null;
         build.Gifts = null;
     }
+
+    private Dictionary<string, int> SkillsToDictionary() =>
+        ToDictionary(Skills.Select(s => new NamedValue { Name = s.Name, Value = s.Points }));
 
     private static Dictionary<string, int> ToDictionary(IEnumerable<NamedValue> values)
     {

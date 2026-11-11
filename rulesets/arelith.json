@@ -2,14 +2,14 @@
   "id": "arelith",
   "name": "Arelith",
   "version": "2026-11-11",
-  "notes": "Kilde: wiki.nwnarelith.com (Monk (PGCC), Swashbuckler, Gift, Skill changes) + Hesper Salcedo-arket. Felter markeret 'unverified' i notes skal tjekkes.",
+  "notes": "Kilde: wiki.nwnarelith.com (Monk (PGCC), Swashbuckler, Gift, Skill changes) + Hesper Salcedo-arket + ejer.",
 
   "rules": {
     "maxLevel": 30,
     "epicFromLevel": 21,
     "level1SkillMultiplier": 4,
     "maxRanksAboveLevel": 3,
-    "notes": "HP er altid max. Alle skills koster 1 point pr. rank (cross-training). Epic: +1 BAB ved 21, 23, 25, 27, 29. +1 alle saves ved 22, 24, 26, 28, 30."
+    "notes": "HP er altid max. Class skill: 1 point pr. rank, max level+3. Cross-class: 2 point pr. rank, max (level+3)/2. Skills med crossTrainable=false kan kun tages som class skill. Epic: +1 BAB ved 21, 23, 25, 27, 29. +1 alle saves ved 22, 24, 26, 28, 30."
   },
 
   "saveTables": {
@@ -106,7 +106,7 @@
     { "name": "Spot", "ability": "Wis" },
     { "name": "Taunt", "ability": "Cha" },
     { "name": "Tumble", "ability": "Dex" },
-    { "name": "Use Magic Device", "ability": "Cha" },
+    { "name": "Use Magic Device", "ability": "Cha", "crossTrainable": false },
     { "name": "Use Trap" }
   ],
 
@@ -120,9 +120,9 @@
 
     { "name": "Discipline: Martial (Novice)", "aliases": ["Martial Novice"] },
     { "name": "Discipline: Martial (Practitioner)", "aliases": ["Martial Practitioner"], "ref": 1 },
-    { "name": "Discipline: Martial (Adept)", "aliases": ["Martial Adept"], "ref": 1, "notes": "unverified (udledt af Hesper-arket)" },
-    { "name": "Discipline: Martial (Master)", "aliases": ["Martial Master"], "ref": 1, "notes": "unverified (udledt af Hesper-arket)" },
-    { "name": "Discipline: Martial (Ascension)", "aliases": ["Martial Ascension"], "ref": 1, "notes": "unverified (udledt af Hesper-arket)" },
+    { "name": "Discipline: Martial (Adept)", "aliases": ["Martial Adept"], "ref": 1 },
+    { "name": "Discipline: Martial (Master)", "aliases": ["Martial Master"], "ref": 1 },
+    { "name": "Discipline: Martial (Ascension)", "aliases": ["Martial Ascension"], "ref": 1 },
 
     { "name": "Discipline: Body (Novice)", "aliases": ["Body Novice"] },
     { "name": "Discipline: Body (Practitioner)", "aliases": ["Body Practitioner"], "fort": 1 },

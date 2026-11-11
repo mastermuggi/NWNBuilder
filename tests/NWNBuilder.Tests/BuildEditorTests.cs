@@ -19,8 +19,8 @@ public class BuildEditorTests
     {
         var editor = new BuildEditor(BuildJson.LoadSample("hesper-salcedo"));
 
-        editor.Skills.Add(new NamedValue { Name = "Appraise", Value = 5 });
-        editor.Skills.Add(new NamedValue { Name = "  ", Value = 3 }); // tom række ignoreres
+        editor.Skills.Add(new SkillRow { Name = "Appraise", Points = 5 });
+        editor.Skills.Add(new SkillRow { Name = "  ", Points = 3 }); // tom række ignoreres
         editor.Crafting.Remove(editor.Crafting.First(c => c.Name == "Herbalism"));
         editor.Friends.Add(new Friend { AccountName = "acc123", PlayerName = "Mads", Note = "Crew på skibet" });
         editor.Friends.Add(new Friend()); // tom ven ignoreres

@@ -22,6 +22,7 @@ public sealed class Ruleset
     public ClassRule? FindClass(string name) => Classes.FirstOrDefault(c => Same(c.Name, name));
     public RaceRule? FindRace(string name) => Races.FirstOrDefault(r => Same(r.Name, name));
     public GiftRule? FindGift(string name) => Gifts.FirstOrDefault(g => Same(g.Name, name));
+    public SkillRule? FindSkill(string name) => Skills.FirstOrDefault(s => Same(s.Name, name));
     public FeatRule? FindFeat(string name) =>
         Feats.FirstOrDefault(f => Same(f.Name, name) || f.Aliases.Any(a => Same(a, name)));
 
@@ -83,6 +84,9 @@ public sealed class SkillRule
     public string Name { get; set; } = "";
     /// <summary>"Str", "Dex" … eller null hvis ukendt.</summary>
     public string? Ability { get; set; }
+
+    /// <summary>False = kan kun tages som class skill.</summary>
+    public bool CrossTrainable { get; set; } = true;
 }
 
 public sealed class FeatRule

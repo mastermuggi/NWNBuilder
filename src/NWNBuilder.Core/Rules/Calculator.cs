@@ -19,8 +19,21 @@ public sealed class LevelResult
     public int MaxRanks { get; init; }
 }
 
+public sealed class SkillResult
+{
+    public string Name { get; init; } = "";
+    public int Points { get; init; }
+    public bool IsClassSkill { get; init; }
+    public int Ranks { get; init; }
+    public int MaxRanks { get; init; }
+    public int Modifier { get; init; }
+    public int Total => Ranks + Modifier;
+}
+
 public sealed class BuildResult
 {
+    public List<SkillResult> Skills { get; init; } = new();
+    public int SkillPointsSpent => Skills.Sum(s => s.Points);
     /// <summary>Start-stats + race + hard gifts.</summary>
     public AbilityScores StartAbilities { get; init; } = new();
     public List<LevelResult> Levels { get; init; } = new();
@@ -144,8 +157,59 @@ public static class Calculator
             });
         }
 
-        return new BuildResult { StartAbilities = start, Levels = results, Warnings = warnings };
+        var skills = CalculateSkills(build, rules, results.LastOrDefault(), classLevels.Keys, gifts, warnings);
+        return new BuildResult { StartAbilities = start, Levels = results, Skills = skills, Warnings = warnings };
     }
+
+    /// <summary>
+    /// Skills ud fra point brugt pr. skill. Class skill (for en af buildets klasser): 1 point pr. rank, max level+3.
+    /// Cross-class: 2 point pr. rank, max (level+3)/2.
+    /// </summary>
+    private static List<SkillResult> CalculateSkills(Build build, Ruleset rules, LevelResult? final,
+        IEnumerable<string> classNames, List<GiftRule> gifts, List<string> warnings)
+    {
+        var result = new List<SkillResult>();
+        if (final == null)
+            return result;
+
+        var classes = classNames.Select(rules.FindClass).Where(c => c != null).ToList();
+        foreach (var (name, points) in build.SkillRanks)
+        {
+            var rule = rules.FindSkill(name);
+            if (rule == null)
+                warnings.Add($"Skill '{name}' findes ikke i regelsættet.");
+
+            var isClass = classes.Any(c => c!.ClassSkills.Any(cs => string.Equals(cs, name, StringComparison.OrdinalIgnoreCase)));
+            if (!isClass && rule is { CrossTrainable: false } && points > 0)
+                warnings.Add($"{name} kan ikke cross-trænes.");
+
+            var ranks = isClass ? points : points / 2;
+            var max = isClass ? final.MaxRanks : final.MaxRanks / 2;
+            if (ranks > max)
+                warnings.Add($"{name}: {ranks} ranks er over max {max}.");
+
+            var modifier = 0;
+            if (rule?.Ability != null && Enum.TryParse<Ability>(rule.Ability, true, out var ability))
+                modifier += Mod(Get(final.Abilities, ability));
+            modifier += gifts.Sum(g => g.Skills.FirstOrDefault(kv => string.Equals(kv.Key, name, StringComparison.OrdinalIgnoreCase)).Value);
+
+            result.Add(new SkillResult
+            {
+                Name = name, Points = points, IsClassSkill = isClass, Ranks = ranks, MaxRanks = max, Modifier = modifier,
+            });
+        }
+
+        var spent = result.Sum(s => s.Points);
+        if (spent > final.SkillPointsTotal)
+            warnings.Add($"Der er brugt {spent} skillpoints, men kun {final.SkillPointsTotal} til rådighed.");
+        return result;
+    }
+
+    private static int Get(AbilityScores a, Ability ability) => ability switch
+    {
+        Ability.Str => a.Str, Ability.Dex => a.Dex, Ability.Con => a.Con,
+        Ability.Int => a.Int, Ability.Wis => a.Wis, _ => a.Cha,
+    };
 
     private static int BabFor(string type, int levels) => type switch
     {

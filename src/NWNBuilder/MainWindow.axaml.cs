@@ -163,7 +163,7 @@ public partial class MainWindow : Window
 
     // --- Skills / crafting ---
 
-    private void AddSkill_Click(object? sender, RoutedEventArgs e) => _editor.Skills.Add(new NamedValue());
+    private void AddSkill_Click(object? sender, RoutedEventArgs e) => _editor.Skills.Add(new SkillRow());
 
     private void AddCraft_Click(object? sender, RoutedEventArgs e) => _editor.Crafting.Add(new NamedValue());
 
@@ -173,8 +173,10 @@ public partial class MainWindow : Window
     {
         switch ((sender as Button)?.DataContext)
         {
+            case SkillRow skill:
+                _editor.Skills.Remove(skill);
+                break;
             case NamedValue row:
-                _editor.Skills.Remove(row);
                 _editor.Crafting.Remove(row);
                 break;
             case Friend friend:

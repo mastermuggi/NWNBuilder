@@ -44,7 +44,7 @@ public sealed class Build
 
     public List<BuildLevel> Levels { get; set; } = new();
 
-    /// <summary>Samlede skill ranks (skill → ranks).</summary>
+    /// <summary>Skillpoints brugt pr. skill (skill → point). Cross-class: 2 point pr. rank.</summary>
     public Dictionary<string, int> SkillRanks { get; set; } = new();
 
     /// <summary>Crafting-point (craft → point).</summary>

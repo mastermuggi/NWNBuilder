@@ -60,6 +60,24 @@ public class CalculatorTests
         Assert.Equal(33, _hesper.Final.MaxRanks);
     }
 
+    [Theory]
+    [InlineData("Open Lock", false, 16, 8, 24)]   // 32 point cross-class → 16 ranks + DEX 8 (arket: 44 inkl. take 20)
+    [InlineData("Search", false, 16, 5, 21)]
+    [InlineData("Hide", true, 33, 12, 45)]        // DEX 8 + Gift of the Sneak 4
+    [InlineData("Move Silently", true, 33, 12, 45)]
+    [InlineData("Listen", true, 16, -1, 15)]
+    [InlineData("Tumble", true, 30, 8, 38)]
+    [InlineData("Sail", true, 33, -1, 32)]
+    [InlineData("Craft Mastery", true, 30, 5, 35)]
+    public void Skills_match_sheet(string name, bool classSkill, int ranks, int modifier, int total)
+    {
+        var skill = _hesper.Skills.Single(s => s.Name == name);
+        Assert.Equal((classSkill, ranks, modifier, total), (skill.IsClassSkill, skill.Ranks, skill.Modifier, skill.Total));
+    }
+
+    [Fact]
+    public void Skill_points_spent_equals_available() => Assert.Equal(390, _hesper.SkillPointsSpent);
+
     [Fact]
     public void Progression_stops_at_first_empty_level()
     {
