@@ -137,4 +137,18 @@ public class FeatRuleTests
         Assert.Contains("Mangler", info);
         Assert.StartsWith("⚠", editor.Rows[0].Problems);
     }
+
+    [Fact]
+    public void Swashbuckler_gets_mobility_at_7() // wiki.nwnarelith.com/Swashbuckler
+    {
+        var build = new Build
+        {
+            Race = "Human",
+            StartAbilities = new AbilityScores { Str = 10, Dex = 16, Con = 14, Int = 10, Wis = 10, Cha = 8 },
+            Levels = Enumerable.Range(1, 7).Select(i => new BuildLevel { Level = i, Class = "Swashbuckler" }).ToList(),
+        };
+        build.Levels[6].ClassFeat = "Mobility";
+
+        Assert.Empty(Problems(build, 7));
+    }
 }

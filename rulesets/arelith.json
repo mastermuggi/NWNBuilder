@@ -1,7 +1,7 @@
 {
   "id": "arelith",
   "name": "Arelith",
-  "version": "2026-11-11f",
+  "version": "2026-11-11g",
   "notes": "Kilde: wiki.nwnarelith.com (klassesider, Gift, Skill changes) + ejers ark (256 builds). Start-stats er efter race og før gifts, som i arkene. Feats: krav og beskrivelser fra NWN Wiki (nwn.fandom.com, CC BY-SA 3.0) via nwn-siala-builder, rettet efter wiki.nwnarelith.com/Feat_changes.",
   "rules": {
     "maxLevel": 30,
@@ -2088,6 +2088,10 @@
         {
           "classLevel": 1,
           "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 7,
+          "feat": "Mobility"
         }
       ]
     },
