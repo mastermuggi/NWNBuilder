@@ -36,7 +36,7 @@ public sealed class Build
     public string Deity { get; set; } = "";
     public int? Age { get; set; }
 
-    /// <summary>Start-stats før race og gifts.</summary>
+    /// <summary>Start-stats efter race, før gifts.</summary>
     public AbilityScores StartAbilities { get; set; } = new();
 
     /// <summary>Valgte gifts (navne fra regelsættet).</summary>

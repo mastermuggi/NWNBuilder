@@ -139,7 +139,7 @@
                       <TextBlock Grid.Row="0" Grid.Column="5" Classes="label" Text="WIS" HorizontalAlignment="Center" />
                       <TextBlock Grid.Row="0" Grid.Column="6" Classes="label" Text="CHA" HorizontalAlignment="Center" />
 
-                      <TextBlock Grid.Row="1" Grid.Column="0" Classes="label" Text="Point-buy" VerticalAlignment="Center" />
+                      <TextBlock Grid.Row="1" Grid.Column="0" Classes="label" Text="Start" VerticalAlignment="Center" />
                       <TextBox Grid.Row="1" Grid.Column="1" Classes="ability" Margin="0,0,6,0" Text="{Binding Build.StartAbilities.Str}" />
                       <TextBox Grid.Row="1" Grid.Column="2" Classes="ability" Margin="0,0,6,0" Text="{Binding Build.StartAbilities.Dex}" />
                       <TextBox Grid.Row="1" Grid.Column="3" Classes="ability" Margin="0,0,6,0" Text="{Binding Build.StartAbilities.Con}" />
@@ -147,7 +147,7 @@
                       <TextBox Grid.Row="1" Grid.Column="5" Classes="ability" Margin="0,0,6,0" Text="{Binding Build.StartAbilities.Wis}" />
                       <TextBox Grid.Row="1" Grid.Column="6" Classes="ability" Text="{Binding Build.StartAbilities.Cha}" />
 
-                      <TextBlock Grid.Row="2" Grid.Column="0" Classes="label" Text="Start" VerticalAlignment="Center" Margin="0,12,0,0" />
+                      <TextBlock Grid.Row="2" Grid.Column="0" Classes="label" Text="Med gifts" VerticalAlignment="Center" Margin="0,12,0,0" />
                       <TextBlock Grid.Row="2" Grid.Column="1" Classes="stat" Text="{Binding StartWithGifts.Str}" />
                       <TextBlock Grid.Row="2" Grid.Column="2" Classes="stat" Text="{Binding StartWithGifts.Dex}" />
                       <TextBlock Grid.Row="2" Grid.Column="3" Classes="stat" Text="{Binding StartWithGifts.Con}" />
@@ -164,7 +164,7 @@
                       <TextBlock Grid.Row="3" Grid.Column="6" Classes="stat gold" Text="{Binding Final.Abilities.Cha}" />
                     </Grid>
                     <TextBlock Classes="label" Margin="0,10,0,0"
-                               Text="Point-buy er før race og gifts. Start = med race og gifts. Slut = efter sidste level." />
+                               Text="Start = efter race, før gifts (som i dine ark). Slut = efter sidste level." />
                   </StackPanel>
                 </Border>
 

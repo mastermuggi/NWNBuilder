@@ -1,9 +1,8 @@
 {
   "id": "arelith",
   "name": "Arelith",
-  "version": "2026-11-11",
-  "notes": "Kilde: wiki.nwnarelith.com (Monk (PGCC), Swashbuckler, Gift, Skill changes) + Hesper Salcedo-arket + ejer.",
-
+  "version": "2026-11-11b",
+  "notes": "Kilde: wiki.nwnarelith.com (klassesider, Gift, Skill changes) + ejers ark (256 builds). Start-stats er efter race og før gifts, som i arkene.",
   "rules": {
     "maxLevel": 30,
     "epicFromLevel": 21,
@@ -11,14 +10,577 @@
     "maxRanksAboveLevel": 3,
     "notes": "HP er altid max. Class skill: 1 point pr. rank, max level+3. Cross-class: 2 point pr. rank, max (level+3)/2. Skills med crossTrainable=false kan kun tages som class skill. Epic: +1 BAB ved 21, 23, 25, 27, 29. +1 alle saves ved 22, 24, 26, 28, 30."
   },
-
   "saveTables": {
-    "high":   [2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12],
-    "low":    [0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6],
-    "medium": [1, 2, 2, 3, 3, 3, 4, 4, 5, 5, 5, 6, 6, 7, 7, 7, 8, 8, 9, 9]
+    "high": [
+      2,
+      3,
+      3,
+      4,
+      4,
+      5,
+      5,
+      6,
+      6,
+      7,
+      7,
+      8,
+      8,
+      9,
+      9,
+      10,
+      10,
+      11,
+      11,
+      12
+    ],
+    "low": [
+      0,
+      0,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      5,
+      5,
+      5,
+      6,
+      6,
+      6
+    ],
+    "medium": [
+      1,
+      2,
+      2,
+      3,
+      3,
+      3,
+      4,
+      4,
+      5,
+      5,
+      5,
+      6,
+      6,
+      7,
+      7,
+      7,
+      8,
+      8,
+      9,
+      9
+    ]
   },
-
   "classes": [
+    {
+      "name": "Arcane Archer",
+      "aliases": [
+        "AA"
+      ],
+      "hitDie": 8,
+      "bab": "full",
+      "fort": "high",
+      "ref": "high",
+      "will": "low",
+      "skillPoints": 4,
+      "classSkills": [
+        "Concentration",
+        "Craft Mastery",
+        "Heal",
+        "Hide",
+        "Listen",
+        "Lore",
+        "Move Silently",
+        "Ride",
+        "Sail",
+        "Spot"
+      ],
+      "notes": "Prestige, max 20."
+    },
+    {
+      "name": "Barbarian",
+      "hitDie": 12,
+      "bab": "full",
+      "fort": "high",
+      "ref": "low",
+      "will": "low",
+      "skillPoints": 6,
+      "classSkills": [
+        "Animal Empathy",
+        "Climb",
+        "Craft Mastery",
+        "Discipline",
+        "Heal",
+        "Intimidate",
+        "Listen",
+        "Lore",
+        "Parry",
+        "Ride",
+        "Sail",
+        "Spot",
+        "Taunt"
+      ],
+      "notes": "Rage-Will kun under rage (ikke med)."
+    },
+    {
+      "name": "Bard",
+      "hitDie": 6,
+      "bab": "3/4",
+      "fort": "low",
+      "ref": "high",
+      "will": "high",
+      "skillPoints": 6,
+      "classSkills": [
+        "Animal Empathy",
+        "Bluff",
+        "Concentration",
+        "Craft Mastery",
+        "Discipline",
+        "Heal",
+        "Hide",
+        "Intimidate",
+        "Leadership",
+        "Lore",
+        "Move Silently",
+        "Parry",
+        "Perform",
+        "Sail",
+        "Sleight of Hand",
+        "Spellcraft",
+        "Spot",
+        "Taunt",
+        "Tumble",
+        "Use Magic Device"
+      ],
+      "notes": "Wiki-siden kunne ikke hentes: hit die/saves er vanilla, skillpoints (6) og class skills fra dine ark."
+    },
+    {
+      "name": "Blackguard",
+      "aliases": [
+        "BG"
+      ],
+      "hitDie": 10,
+      "bab": "full",
+      "fort": "high",
+      "ref": "low",
+      "will": "low",
+      "skillPoints": 4,
+      "classSkills": [
+        "Bluff",
+        "Concentration",
+        "Craft Mastery",
+        "Discipline",
+        "Heal",
+        "Intimidate",
+        "Leadership",
+        "Listen",
+        "Lore",
+        "Parry",
+        "Ride",
+        "Sail",
+        "Spot",
+        "Taunt"
+      ],
+      "notes": "Prestige, max 20. Fearless kun vs fear."
+    },
+    {
+      "name": "Cavalier",
+      "hitDie": 12,
+      "bab": "full",
+      "fort": "high",
+      "ref": "low",
+      "will": "low",
+      "skillPoints": 4,
+      "classSkills": [
+        "Concentration",
+        "Craft Mastery",
+        "Discipline",
+        "Heal",
+        "Intimidate",
+        "Leadership",
+        "Listen",
+        "Lore",
+        "Ride",
+        "Sail",
+        "Spot",
+        "Taunt"
+      ],
+      "notes": "Prestige."
+    },
+    {
+      "name": "Cleric",
+      "hitDie": 8,
+      "bab": "3/4",
+      "fort": "high",
+      "ref": "low",
+      "will": "high",
+      "skillPoints": 4,
+      "classSkills": [
+        "Concentration",
+        "Craft Mastery",
+        "Heal",
+        "Intimidate",
+        "Leadership",
+        "Lore",
+        "Ride",
+        "Sail",
+        "Spellcraft"
+      ]
+    },
+    {
+      "name": "Dirgesinger",
+      "hitDie": 6,
+      "bab": "3/4",
+      "fort": "high",
+      "ref": "low",
+      "will": "high",
+      "skillPoints": 6,
+      "classSkills": [
+        "Appraise",
+        "Bluff",
+        "Concentration",
+        "Craft Mastery",
+        "Discipline",
+        "Heal",
+        "Hide",
+        "Intimidate",
+        "Leadership",
+        "Listen",
+        "Lore",
+        "Move Silently",
+        "Perform",
+        "Ride",
+        "Sail",
+        "Sleight of Hand",
+        "Spellcraft",
+        "Taunt",
+        "Tumble",
+        "Use Magic Device"
+      ],
+      "notes": "Prestige."
+    },
+    {
+      "name": "Divine Champion",
+      "aliases": [
+        "COT",
+        "Champion of Torm",
+        "DC"
+      ],
+      "hitDie": 10,
+      "bab": "full",
+      "fort": "high",
+      "ref": "high",
+      "will": "low",
+      "skillPoints": 4,
+      "classSkills": [
+        "Concentration",
+        "Craft Mastery",
+        "Discipline",
+        "Heal",
+        "Intimidate",
+        "Leadership",
+        "Listen",
+        "Lore",
+        "Parry",
+        "Ride",
+        "Sail",
+        "Spot",
+        "Taunt"
+      ],
+      "notes": "Prestige, max 20. Divine Wrath-saves kun når aktiv."
+    },
+    {
+      "name": "Druid",
+      "hitDie": 8,
+      "bab": "3/4",
+      "fort": "high",
+      "ref": "low",
+      "will": "high",
+      "skillPoints": 4,
+      "classSkills": [
+        "Animal Empathy",
+        "Concentration",
+        "Craft Mastery",
+        "Heal",
+        "Leadership",
+        "Lore",
+        "Sail",
+        "Spellcraft"
+      ]
+    },
+    {
+      "name": "Earthkin Defender",
+      "aliases": [
+        "Dwarven Defender",
+        "DD",
+        "ED",
+        "DwD"
+      ],
+      "hitDie": 12,
+      "bab": "full",
+      "fort": "high",
+      "ref": "low",
+      "will": "high",
+      "skillPoints": 4,
+      "classSkills": [
+        "Concentration",
+        "Craft Mastery",
+        "Discipline",
+        "Heal",
+        "Listen",
+        "Lore",
+        "Parry",
+        "Ride",
+        "Sail",
+        "Spot",
+        "Taunt"
+      ],
+      "notes": "Tidligere Dwarven Defender. Prestige, max 20. Stances kun når aktive."
+    },
+    {
+      "name": "Elementalist",
+      "hitDie": 6,
+      "bab": "1/2",
+      "fort": "low",
+      "ref": "low",
+      "will": "high",
+      "skillPoints": 4,
+      "classSkills": [
+        "Bluff",
+        "Concentration",
+        "Craft Mastery",
+        "Heal",
+        "Leadership",
+        "Lore",
+        "Sail",
+        "Spellcraft"
+      ],
+      "notes": "Fire path: universal save +1/+2/+3/+4 ved 5/10/15/20 (ikke med – afhænger af path)."
+    },
+    {
+      "name": "Favored Soul",
+      "hitDie": 8,
+      "bab": "3/4",
+      "fort": "high",
+      "ref": "high",
+      "will": "high",
+      "skillPoints": 4,
+      "classSkills": [
+        "Concentration",
+        "Craft Mastery",
+        "Heal",
+        "Intimidate",
+        "Leadership",
+        "Lore",
+        "Ride",
+        "Sail",
+        "Spellcraft"
+      ]
+    },
+    {
+      "name": "Fighter",
+      "hitDie": 10,
+      "bab": "full",
+      "fort": "high",
+      "ref": "low",
+      "will": "low",
+      "skillPoints": 4,
+      "classSkills": [
+        "Concentration",
+        "Craft Mastery",
+        "Discipline",
+        "Heal",
+        "Intimidate",
+        "Leadership",
+        "Listen",
+        "Lore",
+        "Parry",
+        "Ride",
+        "Sail",
+        "Spot",
+        "Taunt"
+      ],
+      "abilityBonuses": [
+        {
+          "classLevel": 10,
+          "ability": "StrOrDex",
+          "value": 1
+        },
+        {
+          "classLevel": 20,
+          "ability": "StrOrDex",
+          "value": 1
+        }
+      ],
+      "notes": "+1 STR eller DEX ved 10 og 20 (STR medmindre base DEX er højere)."
+    },
+    {
+      "name": "Harbinger",
+      "aliases": [
+        "Hexblade"
+      ],
+      "hitDie": 8,
+      "bab": "full",
+      "fort": "high",
+      "ref": "low",
+      "will": "low",
+      "skillPoints": 4,
+      "classSkills": [
+        "Bluff",
+        "Concentration",
+        "Craft Mastery",
+        "Disable Trap",
+        "Discipline",
+        "Heal",
+        "Intimidate",
+        "Leadership",
+        "Listen",
+        "Lore",
+        "Parry",
+        "Ride",
+        "Sail",
+        "Search",
+        "Spot",
+        "Taunt",
+        "Use Trap"
+      ]
+    },
+    {
+      "name": "Hemomancer",
+      "hitDie": 6,
+      "bab": "1/2",
+      "fort": "high",
+      "ref": "low",
+      "will": "high",
+      "skillPoints": 4,
+      "classSkills": [
+        "Bluff",
+        "Concentration",
+        "Craft Mastery",
+        "Heal",
+        "Leadership",
+        "Lore",
+        "Sail",
+        "Spellcraft"
+      ]
+    },
+    {
+      "name": "Invisible Blade",
+      "hitDie": 8,
+      "bab": "full",
+      "fort": "low",
+      "ref": "high",
+      "will": "low",
+      "skillPoints": 8,
+      "classSkills": [
+        "Bluff",
+        "Climb",
+        "Concentration",
+        "Craft Mastery",
+        "Discipline",
+        "Heal",
+        "Hide",
+        "Listen",
+        "Lore",
+        "Move Silently",
+        "Parry",
+        "Ride",
+        "Sail",
+        "Sleight of Hand",
+        "Spot",
+        "Tumble"
+      ],
+      "notes": "Prestige."
+    },
+    {
+      "name": "Knight",
+      "aliases": [
+        "Purple Dragon Knight",
+        "PDK"
+      ],
+      "hitDie": 10,
+      "bab": "full",
+      "fort": "high",
+      "ref": "low",
+      "will": "low",
+      "skillPoints": 4,
+      "classSkills": [
+        "Concentration",
+        "Craft Mastery",
+        "Discipline",
+        "Heal",
+        "Intimidate",
+        "Leadership",
+        "Listen",
+        "Lore",
+        "Parry",
+        "Ride",
+        "Sail",
+        "Spot",
+        "Taunt"
+      ],
+      "notes": "Prestige, max 10."
+    },
+    {
+      "name": "Liberator",
+      "hitDie": 10,
+      "bab": "full",
+      "fort": "high",
+      "ref": "low",
+      "will": "high",
+      "skillPoints": 4,
+      "classSkills": [
+        "Bluff",
+        "Climb",
+        "Concentration",
+        "Craft Mastery",
+        "Discipline",
+        "Heal",
+        "Intimidate",
+        "Listen",
+        "Lore",
+        "Parry",
+        "Ride",
+        "Sail",
+        "Spot",
+        "Taunt",
+        "Use Trap"
+      ],
+      "notes": "Prestige, max 20."
+    },
+    {
+      "name": "Loremaster",
+      "hitDie": 6,
+      "bab": "3/4",
+      "fort": "low",
+      "ref": "high",
+      "will": "high",
+      "skillPoints": 8,
+      "classSkills": [
+        "Appraise",
+        "Concentration",
+        "Craft Mastery",
+        "Disable Trap",
+        "Heal",
+        "Listen",
+        "Lore",
+        "Open Lock",
+        "Ride",
+        "Sail",
+        "Search",
+        "Spellcraft",
+        "Spot",
+        "Use Magic Device"
+      ],
+      "notes": "Prestige, max 5. Secrets kan give +2 til én save eller +30 HP (vælges som feat)."
+    },
     {
       "name": "Monk",
       "hitDie": 8,
@@ -27,9 +589,271 @@
       "ref": "medium",
       "will": "medium",
       "skillPoints": 6,
-      "classSkills": ["Concentration", "Craft Mastery", "Discipline", "Heal", "Hide", "Intimidate", "Leadership", "Listen", "Lore", "Move Silently", "Sail", "Spot", "Parry", "Perform", "Tumble", "Ride"],
-      "saveBonuses": [],
-      "notes": "Monk (PGCC). Medium saves verificeret mod wiki-tabellen lvl 1-20 (ejer, 11. nov)."
+      "classSkills": [
+        "Concentration",
+        "Craft Mastery",
+        "Discipline",
+        "Heal",
+        "Hide",
+        "Intimidate",
+        "Leadership",
+        "Listen",
+        "Lore",
+        "Move Silently",
+        "Parry",
+        "Perform",
+        "Ride",
+        "Sail",
+        "Spot",
+        "Tumble"
+      ],
+      "notes": "Monk (PGCC). Disciplin-feats giver soft saves (se feats)."
+    },
+    {
+      "name": "Paladin",
+      "hitDie": 10,
+      "bab": "full",
+      "fort": "high",
+      "ref": "low",
+      "will": "low",
+      "skillPoints": 4,
+      "classSkills": [
+        "Concentration",
+        "Craft Mastery",
+        "Discipline",
+        "Heal",
+        "Intimidate",
+        "Leadership",
+        "Listen",
+        "Lore",
+        "Parry",
+        "Ride",
+        "Sail",
+        "Spot",
+        "Taunt"
+      ],
+      "notes": "Fearless kun vs fear."
+    },
+    {
+      "name": "Pale Master",
+      "aliases": [
+        "Palemaster",
+        "PM"
+      ],
+      "hitDie": 6,
+      "bab": "1/2",
+      "fort": "high",
+      "ref": "low",
+      "will": "high",
+      "skillPoints": 4,
+      "classSkills": [
+        "Concentration",
+        "Craft Mastery",
+        "Heal",
+        "Hide",
+        "Intimidate",
+        "Lore",
+        "Move Silently",
+        "Sail",
+        "Spellcraft"
+      ],
+      "notes": "Prestige, max 20."
+    },
+    {
+      "name": "Ranger",
+      "hitDie": 10,
+      "bab": "full",
+      "fort": "high",
+      "ref": "low",
+      "will": "low",
+      "skillPoints": 8,
+      "classSkills": [
+        "Animal Empathy",
+        "Concentration",
+        "Craft Mastery",
+        "Disable Trap",
+        "Discipline",
+        "Heal",
+        "Hide",
+        "Intimidate",
+        "Listen",
+        "Lore",
+        "Move Silently",
+        "Parry",
+        "Ride",
+        "Sail",
+        "Search",
+        "Spot",
+        "Use Trap"
+      ]
+    },
+    {
+      "name": "Rogue",
+      "hitDie": 8,
+      "bab": "3/4",
+      "fort": "low",
+      "ref": "high",
+      "will": "low",
+      "skillPoints": 10,
+      "classSkills": [
+        "Appraise",
+        "Bluff",
+        "Climb",
+        "Craft Mastery",
+        "Disable Trap",
+        "Heal",
+        "Hide",
+        "Intimidate",
+        "Leadership",
+        "Listen",
+        "Lore",
+        "Move Silently",
+        "Open Lock",
+        "Parry",
+        "Perform",
+        "Ride",
+        "Sail",
+        "Search",
+        "Sleight of Hand",
+        "Spot",
+        "Taunt",
+        "Tumble",
+        "Use Magic Device",
+        "Use Trap"
+      ],
+      "notes": "Arelith: hit die d8. +2 Spot/Listen ved 14, +3 ved 24 (ikke med)."
+    },
+    {
+      "name": "Shadowdancer",
+      "aliases": [
+        "SD",
+        "Shadow Dancer"
+      ],
+      "hitDie": 8,
+      "bab": "3/4",
+      "fort": "low",
+      "ref": "high",
+      "will": "low",
+      "skillPoints": 8,
+      "classSkills": [
+        "Bluff",
+        "Climb",
+        "Craft Mastery",
+        "Heal",
+        "Hide",
+        "Listen",
+        "Lore",
+        "Move Silently",
+        "Parry",
+        "Perform",
+        "Ride",
+        "Sail",
+        "Search",
+        "Sleight of Hand",
+        "Spot",
+        "Tumble"
+      ],
+      "notes": "Prestige, max 20. +1 Hide pr. level (ikke med)."
+    },
+    {
+      "name": "Shaman",
+      "hitDie": 8,
+      "bab": "3/4",
+      "fort": "high",
+      "ref": "low",
+      "will": "high",
+      "skillPoints": 4,
+      "classSkills": [
+        "Animal Empathy",
+        "Concentration",
+        "Craft Mastery",
+        "Heal",
+        "Leadership",
+        "Lore",
+        "Sail",
+        "Spellcraft"
+      ]
+    },
+    {
+      "name": "Sorcerer",
+      "hitDie": 4,
+      "bab": "1/2",
+      "fort": "low",
+      "ref": "low",
+      "will": "high",
+      "skillPoints": 4,
+      "classSkills": [
+        "Bluff",
+        "Concentration",
+        "Craft Mastery",
+        "Heal",
+        "Leadership",
+        "Lore",
+        "Sail",
+        "Spellcraft"
+      ]
+    },
+    {
+      "name": "Specialist",
+      "hitDie": 6,
+      "bab": "none",
+      "fort": "none",
+      "ref": "none",
+      "will": "none",
+      "skillPoints": 8,
+      "classSkills": [
+        "Animal Empathy",
+        "Appraise",
+        "Bluff",
+        "Concentration",
+        "Craft Mastery",
+        "Disable Trap",
+        "Discipline",
+        "Heal",
+        "Hide",
+        "Intimidate",
+        "Leadership",
+        "Listen",
+        "Lore",
+        "Move Silently",
+        "Open Lock",
+        "Parry",
+        "Perform",
+        "Ride",
+        "Sail",
+        "Search",
+        "Sleight of Hand",
+        "Spellcraft",
+        "Spot",
+        "Taunt",
+        "Tumble",
+        "Use Magic Device",
+        "Use Trap"
+      ],
+      "notes": "Prestige, max 20. Kun epic-progression (ingen BAB/saves fra klassen). Alle skills undtagen Climb er class skills."
+    },
+    {
+      "name": "Spellsword",
+      "hitDie": 8,
+      "bab": "3/4",
+      "fort": "high",
+      "ref": "low",
+      "will": "high",
+      "skillPoints": 4,
+      "classSkills": [
+        "Concentration",
+        "Craft Mastery",
+        "Discipline",
+        "Heal",
+        "Leadership",
+        "Listen",
+        "Lore",
+        "Parry",
+        "Ride",
+        "Sail",
+        "Spellcraft",
+        "Spot"
+      ]
     },
     {
       "name": "Swashbuckler",
@@ -39,107 +863,723 @@
       "ref": "high",
       "will": "low",
       "skillPoints": 6,
-      "classSkills": ["Bluff", "Climb", "Craft Mastery", "Discipline", "Heal", "Intimidate", "Leadership", "Lore", "Parry", "Perform", "Sail", "Spot", "Taunt", "Tumble", "Ride"],
-      "saveBonuses": [
-        { "classLevel": 2, "ref": 1 },
-        { "classLevel": 11, "ref": 1 },
-        { "classLevel": 20, "ref": 1 },
-        { "classLevel": 29, "ref": 1 }
+      "classSkills": [
+        "Bluff",
+        "Climb",
+        "Craft Mastery",
+        "Discipline",
+        "Heal",
+        "Intimidate",
+        "Leadership",
+        "Lore",
+        "Parry",
+        "Perform",
+        "Ride",
+        "Sail",
+        "Spot",
+        "Taunt",
+        "Tumble"
       ],
-      "notes": "Grace: Reflex +1 ved 2, +2 ved 11, +3 ved 20, +4 ved 29."
+      "saveBonuses": [
+        {
+          "classLevel": 2,
+          "ref": 1
+        },
+        {
+          "classLevel": 11,
+          "ref": 1
+        },
+        {
+          "classLevel": 20,
+          "ref": 1
+        },
+        {
+          "classLevel": 29,
+          "ref": 1
+        }
+      ],
+      "notes": "Grace: Reflex +1 ved 2, 11, 20, 29."
+    },
+    {
+      "name": "Vigilante",
+      "hitDie": 10,
+      "bab": "full",
+      "fort": "low",
+      "ref": "high",
+      "will": "low",
+      "skillPoints": 8,
+      "classSkills": [
+        "Bluff",
+        "Climb",
+        "Concentration",
+        "Craft Mastery",
+        "Disable Trap",
+        "Discipline",
+        "Heal",
+        "Hide",
+        "Intimidate",
+        "Listen",
+        "Lore",
+        "Move Silently",
+        "Open Lock",
+        "Parry",
+        "Ride",
+        "Sail",
+        "Search",
+        "Sleight of Hand",
+        "Spot",
+        "Taunt",
+        "Tumble",
+        "Use Trap"
+      ],
+      "notes": "Prestige."
+    },
+    {
+      "name": "Warlock",
+      "hitDie": 6,
+      "bab": "3/4",
+      "fort": "low",
+      "ref": "high",
+      "will": "high",
+      "skillPoints": 6,
+      "classSkills": [
+        "Bluff",
+        "Concentration",
+        "Craft Mastery",
+        "Discipline",
+        "Heal",
+        "Hide",
+        "Intimidate",
+        "Leadership",
+        "Lore",
+        "Move Silently",
+        "Perform",
+        "Sail",
+        "Spellcraft",
+        "Spot",
+        "Tumble",
+        "Use Magic Device"
+      ]
+    },
+    {
+      "name": "Weapon Master",
+      "aliases": [
+        "Weaponmaster",
+        "WM"
+      ],
+      "hitDie": 10,
+      "bab": "full",
+      "fort": "low",
+      "ref": "high",
+      "will": "low",
+      "skillPoints": 4,
+      "classSkills": [
+        "Concentration",
+        "Craft Mastery",
+        "Discipline",
+        "Heal",
+        "Intimidate",
+        "Listen",
+        "Lore",
+        "Parry",
+        "Perform",
+        "Ride",
+        "Sail",
+        "Spot",
+        "Taunt"
+      ],
+      "notes": "Prestige, max 20."
+    },
+    {
+      "name": "Wizard",
+      "hitDie": 4,
+      "bab": "1/2",
+      "fort": "low",
+      "ref": "low",
+      "will": "high",
+      "skillPoints": 2,
+      "classSkills": [
+        "Concentration",
+        "Craft Mastery",
+        "Heal",
+        "Lore",
+        "Sail",
+        "Spellcraft"
+      ]
     }
   ],
-
   "races": [
-    { "name": "Human", "abilities": {}, "bonusSkillPoints": 1 }
+    {
+      "name": "Human",
+      "bonusSkillPoints": 1
+    },
+    {
+      "name": "Half-Orc",
+      "bonusSkillPoints": 0
+    },
+    {
+      "name": "Half-Elf",
+      "bonusSkillPoints": 0
+    },
+    {
+      "name": "Shield Dwarf",
+      "bonusSkillPoints": 0
+    },
+    {
+      "name": "Gold Dwarf",
+      "bonusSkillPoints": 0
+    },
+    {
+      "name": "Rock Gnome",
+      "bonusSkillPoints": 0
+    },
+    {
+      "name": "Svirfneblin",
+      "bonusSkillPoints": 0
+    },
+    {
+      "name": "Lightfoot Halfling",
+      "bonusSkillPoints": 0,
+      "aliases": [
+        "Halfling",
+        "Hafling"
+      ]
+    },
+    {
+      "name": "Sun Elf",
+      "bonusSkillPoints": 0
+    },
+    {
+      "name": "Wood Elf",
+      "bonusSkillPoints": 0
+    },
+    {
+      "name": "Drow",
+      "bonusSkillPoints": 0,
+      "aliases": [
+        "Drow Male",
+        "Drow Female"
+      ]
+    },
+    {
+      "name": "Goblin",
+      "bonusSkillPoints": 0
+    },
+    {
+      "name": "Kobold",
+      "bonusSkillPoints": 0
+    },
+    {
+      "name": "Orog",
+      "bonusSkillPoints": 0
+    }
   ],
-
   "gifts": [
-    { "name": "Gift of Might", "ecl": 1, "effect": "STR +2 (hard)", "abilities": { "Str": 2 } },
-    { "name": "Gift of Grace", "ecl": 1, "effect": "DEX +2 (hard)", "abilities": { "Dex": 2 } },
-    { "name": "Gift of Endurance", "ecl": 1, "effect": "CON +2 (hard)", "abilities": { "Con": 2 } },
-    { "name": "Gift of Learning", "ecl": 1, "effect": "INT +2 (hard)", "abilities": { "Int": 2 } },
-    { "name": "Gift of Insight", "ecl": 1, "effect": "WIS +2 (hard)", "abilities": { "Wis": 2 } },
-    { "name": "Gift of Confidence", "ecl": 1, "effect": "CHA +2 (hard)", "abilities": { "Cha": 2 } },
-    { "name": "Gift of Fortune", "ecl": 1, "effect": "Alle saves +2 (soft)", "allSaves": 2 },
-    { "name": "Gift of Craftsmanship", "ecl": 1, "effect": "Daily crafting points +10, tradeskills +10" },
-    { "name": "Gift of Tongues", "ecl": 1, "effect": "4 ekstra sprog" },
-    { "name": "Gift of Wealth", "ecl": 0.5, "effect": "Guld over tid" },
-    { "name": "Gift of Hardiness", "ecl": 0.5, "effect": "5% immunitet mod fire, cold, electricity, acid" },
-    { "name": "Gift of Darkness", "ecl": 0.5, "effect": "Darkness 1/dag" },
-    { "name": "Gift of Hiding", "ecl": 0.5, "effect": "Invisibility, 8 min cooldown" },
-    { "name": "Gift of Greenfingers", "ecl": 0.5, "effect": "Kan passe planter" },
-    { "name": "Gift of Light", "ecl": 0, "effect": "Light 1/dag" },
-    { "name": "Gift of the Gab", "ecl": 0, "effect": "Bluff +6", "skills": { "Bluff": 6 } },
-    { "name": "Gift of Lightfingers", "ecl": 0, "effect": "Sleight of Hand +6", "skills": { "Sleight of Hand": 6 } },
-    { "name": "Gift of the Hunter", "ecl": 0, "effect": "Spot +6", "skills": { "Spot": 6 } },
-    { "name": "Gift of the Sneak", "ecl": 0, "effect": "Hide +4, Move Silently +4", "skills": { "Hide": 4, "Move Silently": 4 } },
-    { "name": "Gift of Stardom", "ecl": 0, "effect": "Perform +6", "skills": { "Perform": 6 } },
-    { "name": "Gift of Sailing", "ecl": 0, "effect": "Sail +6", "skills": { "Sail": 6 } },
-    { "name": "Gift of Devotion", "ecl": 0, "effect": "Ceremonier/altre for ikke-clerics" }
+    {
+      "name": "Gift of Might",
+      "ecl": 1,
+      "effect": "STR +2 (hard)",
+      "abilities": {
+        "Str": 2
+      }
+    },
+    {
+      "name": "Gift of Grace",
+      "ecl": 1,
+      "effect": "DEX +2 (hard)",
+      "abilities": {
+        "Dex": 2
+      }
+    },
+    {
+      "name": "Gift of Endurance",
+      "ecl": 1,
+      "effect": "CON +2 (hard)",
+      "abilities": {
+        "Con": 2
+      }
+    },
+    {
+      "name": "Gift of Learning",
+      "ecl": 1,
+      "effect": "INT +2 (hard)",
+      "abilities": {
+        "Int": 2
+      }
+    },
+    {
+      "name": "Gift of Insight",
+      "ecl": 1,
+      "effect": "WIS +2 (hard)",
+      "abilities": {
+        "Wis": 2
+      }
+    },
+    {
+      "name": "Gift of Confidence",
+      "ecl": 1,
+      "effect": "CHA +2 (hard)",
+      "abilities": {
+        "Cha": 2
+      }
+    },
+    {
+      "name": "Gift of Fortune",
+      "ecl": 1,
+      "effect": "Alle saves +2 (soft)",
+      "allSaves": 2
+    },
+    {
+      "name": "Gift of Craftsmanship",
+      "ecl": 1,
+      "effect": "Daily crafting points +10, tradeskills +10"
+    },
+    {
+      "name": "Gift of Tongues",
+      "ecl": 1,
+      "effect": "4 ekstra sprog"
+    },
+    {
+      "name": "Gift of Wealth",
+      "ecl": 0.5,
+      "effect": "Guld over tid"
+    },
+    {
+      "name": "Gift of Hardiness",
+      "ecl": 0.5,
+      "effect": "5% immunitet mod fire, cold, electricity, acid"
+    },
+    {
+      "name": "Gift of Darkness",
+      "ecl": 0.5,
+      "effect": "Darkness 1/dag"
+    },
+    {
+      "name": "Gift of Hiding",
+      "ecl": 0.5,
+      "effect": "Invisibility, 8 min cooldown"
+    },
+    {
+      "name": "Gift of Greenfingers",
+      "ecl": 0.5,
+      "effect": "Kan passe planter"
+    },
+    {
+      "name": "Gift of Light",
+      "ecl": 0,
+      "effect": "Light 1/dag"
+    },
+    {
+      "name": "Gift of the Gab",
+      "ecl": 0,
+      "effect": "Bluff +6",
+      "skills": {
+        "Bluff": 6
+      }
+    },
+    {
+      "name": "Gift of Lightfingers",
+      "ecl": 0,
+      "effect": "Sleight of Hand +6",
+      "skills": {
+        "Sleight of Hand": 6
+      }
+    },
+    {
+      "name": "Gift of the Hunter",
+      "ecl": 0,
+      "effect": "Spot +6",
+      "skills": {
+        "Spot": 6
+      }
+    },
+    {
+      "name": "Gift of the Sneak",
+      "ecl": 0,
+      "effect": "Hide +4, Move Silently +4",
+      "skills": {
+        "Hide": 4,
+        "Move Silently": 4
+      }
+    },
+    {
+      "name": "Gift of Stardom",
+      "ecl": 0,
+      "effect": "Perform +6",
+      "skills": {
+        "Perform": 6
+      }
+    },
+    {
+      "name": "Gift of Sailing",
+      "ecl": 0,
+      "effect": "Sail +6",
+      "skills": {
+        "Sail": 6
+      }
+    },
+    {
+      "name": "Gift of Devotion",
+      "ecl": 0,
+      "effect": "Ceremonier/altre for ikke-clerics"
+    }
   ],
-
   "skills": [
-    { "name": "Animal Empathy", "ability": "Cha" },
-    { "name": "Appraise", "ability": "Int" },
-    { "name": "Bluff", "ability": "Cha" },
-    { "name": "Climb", "ability": "Str" },
-    { "name": "Concentration", "ability": "Con" },
-    { "name": "Craft Mastery", "ability": "Int" },
-    { "name": "Disable Trap", "ability": "Int" },
-    { "name": "Discipline", "ability": "Str" },
-    { "name": "Heal", "ability": "Wis" },
-    { "name": "Hide", "ability": "Dex" },
-    { "name": "Intimidate", "ability": "Cha" },
-    { "name": "Leadership", "ability": "Cha" },
-    { "name": "Listen", "ability": "Wis" },
-    { "name": "Lore", "ability": "Int" },
-    { "name": "Move Silently", "ability": "Dex" },
-    { "name": "Open Lock", "ability": "Dex" },
-    { "name": "Parry", "ability": "Dex" },
-    { "name": "Perform", "ability": "Cha" },
-    { "name": "Ride", "ability": "Dex" },
-    { "name": "Sail", "ability": "Wis" },
-    { "name": "Search", "ability": "Int" },
-    { "name": "Sleight of Hand", "ability": "Dex" },
-    { "name": "Spellcraft", "ability": "Int" },
-    { "name": "Spot", "ability": "Wis" },
-    { "name": "Taunt", "ability": "Cha" },
-    { "name": "Tumble", "ability": "Dex" },
-    { "name": "Use Magic Device", "ability": "Cha", "crossTrainable": false },
-    { "name": "Use Trap" }
+    {
+      "name": "Animal Empathy",
+      "ability": "Cha"
+    },
+    {
+      "name": "Appraise",
+      "ability": "Int"
+    },
+    {
+      "name": "Bluff",
+      "ability": "Cha"
+    },
+    {
+      "name": "Climb",
+      "ability": "Str"
+    },
+    {
+      "name": "Concentration",
+      "ability": "Con"
+    },
+    {
+      "name": "Craft Mastery",
+      "ability": "Int"
+    },
+    {
+      "name": "Disable Trap",
+      "ability": "Int"
+    },
+    {
+      "name": "Discipline",
+      "ability": "Str"
+    },
+    {
+      "name": "Heal",
+      "ability": "Wis"
+    },
+    {
+      "name": "Hide",
+      "ability": "Dex"
+    },
+    {
+      "name": "Intimidate",
+      "ability": "Cha"
+    },
+    {
+      "name": "Leadership",
+      "ability": "Cha"
+    },
+    {
+      "name": "Listen",
+      "ability": "Wis"
+    },
+    {
+      "name": "Lore",
+      "ability": "Int"
+    },
+    {
+      "name": "Move Silently",
+      "ability": "Dex"
+    },
+    {
+      "name": "Open Lock",
+      "ability": "Dex"
+    },
+    {
+      "name": "Parry",
+      "ability": "Dex"
+    },
+    {
+      "name": "Perform",
+      "ability": "Cha"
+    },
+    {
+      "name": "Ride",
+      "ability": "Dex"
+    },
+    {
+      "name": "Sail",
+      "ability": "Wis"
+    },
+    {
+      "name": "Search",
+      "ability": "Int"
+    },
+    {
+      "name": "Sleight of Hand",
+      "ability": "Dex"
+    },
+    {
+      "name": "Spellcraft",
+      "ability": "Int"
+    },
+    {
+      "name": "Spot",
+      "ability": "Wis"
+    },
+    {
+      "name": "Taunt",
+      "ability": "Cha"
+    },
+    {
+      "name": "Tumble",
+      "ability": "Dex"
+    },
+    {
+      "name": "Use Magic Device",
+      "ability": "Cha",
+      "crossTrainable": false
+    },
+    {
+      "name": "Use Trap"
+    }
   ],
-
   "feats": [
-    { "name": "Great Strength", "abilities": { "Str": 1 } },
-    { "name": "Great Dexterity", "abilities": { "Dex": 1 } },
-    { "name": "Great Constitution", "abilities": { "Con": 1 } },
-    { "name": "Great Intelligence", "abilities": { "Int": 1 } },
-    { "name": "Great Wisdom", "abilities": { "Wis": 1 } },
-    { "name": "Great Charisma", "abilities": { "Cha": 1 } },
-
-    { "name": "Discipline: Martial (Novice)", "aliases": ["Martial Novice"] },
-    { "name": "Discipline: Martial (Practitioner)", "aliases": ["Martial Practitioner"], "ref": 1 },
-    { "name": "Discipline: Martial (Adept)", "aliases": ["Martial Adept"], "ref": 1 },
-    { "name": "Discipline: Martial (Master)", "aliases": ["Martial Master"], "ref": 1 },
-    { "name": "Discipline: Martial (Ascension)", "aliases": ["Martial Ascension"], "ref": 1 },
-
-    { "name": "Discipline: Body (Novice)", "aliases": ["Body Novice"] },
-    { "name": "Discipline: Body (Practitioner)", "aliases": ["Body Practitioner"], "fort": 1 },
-    { "name": "Discipline: Body (Adept)", "aliases": ["Body Adept"], "fort": 1 },
-    { "name": "Discipline: Body (Master)", "aliases": ["Body Master"], "fort": 1 },
-    { "name": "Discipline: Body (Ascension)", "aliases": ["Body Ascension"] },
-
-    { "name": "Discipline: Mind (Novice)", "aliases": ["Mind Novice"] },
-    { "name": "Discipline: Mind (Practitioner)", "aliases": ["Mind Practitioner"], "will": 1 },
-    { "name": "Discipline: Mind (Adept)", "aliases": ["Mind Adept"], "will": 1 },
-    { "name": "Discipline: Mind (Master)", "aliases": ["Mind Master"], "will": 1 },
-    { "name": "Discipline: Mind (Ascension)", "aliases": ["Mind Ascension"] },
-
-    { "name": "Discipline: Spiritual (Novice)", "aliases": ["Spirit Novice", "Spiritual Novice"] },
-    { "name": "Discipline: Spiritual (Practitioner)", "aliases": ["Spirit Practitioner", "Spiritual Practitioner"], "notes": "+1 save vs death" },
-    { "name": "Discipline: Spiritual (Adept)", "aliases": ["Spirit Adept", "Spiritual Adept"], "notes": "+1 save vs death" },
-    { "name": "Discipline: Spiritual (Master)", "aliases": ["Spirit Master", "Spiritual Master"], "fort": 1, "ref": 1, "will": 1 },
-    { "name": "Discipline: Spiritual (Ascension)", "aliases": ["Spirit Ascension", "Spiritual Ascension"] }
+    {
+      "name": "Great Strength",
+      "abilities": {
+        "Str": 1
+      }
+    },
+    {
+      "name": "Great Dexterity",
+      "abilities": {
+        "Dex": 1
+      }
+    },
+    {
+      "name": "Great Constitution",
+      "abilities": {
+        "Con": 1
+      }
+    },
+    {
+      "name": "Great Intelligence",
+      "abilities": {
+        "Int": 1
+      }
+    },
+    {
+      "name": "Great Wisdom",
+      "abilities": {
+        "Wis": 1
+      }
+    },
+    {
+      "name": "Great Charisma",
+      "abilities": {
+        "Cha": 1
+      }
+    },
+    {
+      "name": "Discipline: Martial (Novice)",
+      "aliases": [
+        "Martial Novice"
+      ]
+    },
+    {
+      "name": "Discipline: Martial (Practitioner)",
+      "aliases": [
+        "Martial Practitioner"
+      ],
+      "ref": 1
+    },
+    {
+      "name": "Discipline: Martial (Adept)",
+      "aliases": [
+        "Martial Adept"
+      ],
+      "ref": 1
+    },
+    {
+      "name": "Discipline: Martial (Master)",
+      "aliases": [
+        "Martial Master"
+      ],
+      "ref": 1
+    },
+    {
+      "name": "Discipline: Martial (Ascension)",
+      "aliases": [
+        "Martial Ascension"
+      ],
+      "ref": 1
+    },
+    {
+      "name": "Discipline: Body (Novice)",
+      "aliases": [
+        "Body Novice"
+      ]
+    },
+    {
+      "name": "Discipline: Body (Practitioner)",
+      "aliases": [
+        "Body Practitioner"
+      ],
+      "fort": 1
+    },
+    {
+      "name": "Discipline: Body (Adept)",
+      "aliases": [
+        "Body Adept"
+      ],
+      "fort": 1
+    },
+    {
+      "name": "Discipline: Body (Master)",
+      "aliases": [
+        "Body Master"
+      ],
+      "fort": 1
+    },
+    {
+      "name": "Discipline: Body (Ascension)",
+      "aliases": [
+        "Body Ascension"
+      ]
+    },
+    {
+      "name": "Discipline: Mind (Novice)",
+      "aliases": [
+        "Mind Novice"
+      ]
+    },
+    {
+      "name": "Discipline: Mind (Practitioner)",
+      "aliases": [
+        "Mind Practitioner"
+      ],
+      "will": 1
+    },
+    {
+      "name": "Discipline: Mind (Adept)",
+      "aliases": [
+        "Mind Adept"
+      ],
+      "will": 1
+    },
+    {
+      "name": "Discipline: Mind (Master)",
+      "aliases": [
+        "Mind Master"
+      ],
+      "will": 1
+    },
+    {
+      "name": "Discipline: Mind (Ascension)",
+      "aliases": [
+        "Mind Ascension"
+      ]
+    },
+    {
+      "name": "Discipline: Spiritual (Novice)",
+      "aliases": [
+        "Spirit Novice",
+        "Spiritual Novice"
+      ]
+    },
+    {
+      "name": "Discipline: Spiritual (Practitioner)",
+      "aliases": [
+        "Spirit Practitioner",
+        "Spiritual Practitioner"
+      ],
+      "notes": "+1 save vs death"
+    },
+    {
+      "name": "Discipline: Spiritual (Adept)",
+      "aliases": [
+        "Spirit Adept",
+        "Spiritual Adept"
+      ],
+      "notes": "+1 save vs death"
+    },
+    {
+      "name": "Discipline: Spiritual (Master)",
+      "aliases": [
+        "Spirit Master",
+        "Spiritual Master"
+      ],
+      "fort": 1,
+      "ref": 1,
+      "will": 1
+    },
+    {
+      "name": "Discipline: Spiritual (Ascension)",
+      "aliases": [
+        "Spirit Ascension",
+        "Spiritual Ascension"
+      ]
+    },
+    {
+      "name": "Toughness",
+      "hpPerLevel": 1
+    },
+    {
+      "name": "Epic Toughness",
+      "aliases": [
+        "Epic Toughness I",
+        "Epic Toughness II",
+        "Epic Toughness III",
+        "Epic Toughness IV",
+        "Epic Toughness V",
+        "Epic Toughness VI",
+        "Epic Toughness VII",
+        "Epic Toughness VIII",
+        "Epic Toughness IX",
+        "Epic Toughness X",
+        "ET"
+      ],
+      "hp": 20
+    },
+    {
+      "name": "Secret: Lesser Health",
+      "aliases": [
+        "Lesser Health",
+        "+30 hp"
+      ],
+      "hp": 30,
+      "notes": "Loremaster secret."
+    },
+    {
+      "name": "Great Fortitude",
+      "fort": 2
+    },
+    {
+      "name": "Iron Will",
+      "will": 2
+    },
+    {
+      "name": "Lightning Reflexes",
+      "aliases": [
+        "Lightning Reflex"
+      ],
+      "ref": 2
+    },
+    {
+      "name": "Epic Fortitude",
+      "fort": 4
+    },
+    {
+      "name": "Epic Will",
+      "will": 4
+    },
+    {
+      "name": "Epic Reflex",
+      "aliases": [
+        "Epic Reflexes"
+      ],
+      "ref": 4
+    },
+    {
+      "name": "Luck of Heroes",
+      "fort": 1,
+      "ref": 1,
+      "will": 1
+    }
   ]
 }

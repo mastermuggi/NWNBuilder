@@ -19,8 +19,10 @@ public sealed class Ruleset
     public List<SkillRule> Skills { get; set; } = new();
     public List<FeatRule> Feats { get; set; } = new();
 
-    public ClassRule? FindClass(string name) => Classes.FirstOrDefault(c => Same(c.Name, name));
-    public RaceRule? FindRace(string name) => Races.FirstOrDefault(r => Same(r.Name, name));
+    public ClassRule? FindClass(string name) =>
+        Classes.FirstOrDefault(c => Same(c.Name, name) || c.Aliases.Any(a => Same(a, name)));
+    public RaceRule? FindRace(string name) =>
+        Races.FirstOrDefault(r => Same(r.Name, name) || r.Aliases.Any(a => Same(a, name)));
     public GiftRule? FindGift(string name) => Gifts.FirstOrDefault(g => Same(g.Name, name));
     public SkillRule? FindSkill(string name) => Skills.FirstOrDefault(s => Same(s.Name, name));
     public FeatRule? FindFeat(string name) =>
@@ -41,6 +43,7 @@ public sealed class GeneralRules
 public sealed class ClassRule
 {
     public string Name { get; set; } = "";
+    public List<string> Aliases { get; set; } = new();
     public int HitDie { get; set; }
     /// <summary>"full", "3/4" eller "1/2".</summary>
     public string Bab { get; set; } = "full";
@@ -50,7 +53,16 @@ public sealed class ClassRule
     public int SkillPoints { get; set; }
     public List<string> ClassSkills { get; set; } = new();
     public List<SaveBonus> SaveBonuses { get; set; } = new();
+    public List<AbilityBonus> AbilityBonuses { get; set; } = new();
     public string? Notes { get; set; }
+}
+
+/// <summary>Stat-bonus fra en klasse når klasse-level nås. Ability "StrOrDex" = STR medmindre start-DEX er højere.</summary>
+public sealed class AbilityBonus
+{
+    public int ClassLevel { get; set; }
+    public string Ability { get; set; } = "";
+    public int Value { get; set; }
 }
 
 /// <summary>Save-bonus fra en klasse når klasse-level nås (fx Swashbuckler Grace).</summary>
@@ -65,6 +77,7 @@ public sealed class SaveBonus
 public sealed class RaceRule
 {
     public string Name { get; set; } = "";
+    public List<string> Aliases { get; set; } = new();
     public Dictionary<string, int> Abilities { get; set; } = new();
     public int BonusSkillPoints { get; set; }
 }
@@ -97,5 +110,9 @@ public sealed class FeatRule
     public int Fort { get; set; }
     public int Ref { get; set; }
     public int Will { get; set; }
+    /// <summary>Ekstra HP pr. level (fx Toughness).</summary>
+    public int HpPerLevel { get; set; }
+    /// <summary>Fast ekstra HP (fx Epic Toughness).</summary>
+    public int Hp { get; set; }
     public string? Notes { get; set; }
 }

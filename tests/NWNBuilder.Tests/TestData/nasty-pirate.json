@@ -1,0 +1,197 @@
+{
+  "name": "Bill Crake",
+  "ruleset": "arelith",
+  "race": "Human",
+  "alignment": "Neutral Evil",
+  "deity": "Mask",
+  "age": 45,
+  "startAbilities": {
+    "str": 14,
+    "dex": 14,
+    "con": 14,
+    "int": 14,
+    "wis": 14,
+    "cha": 8
+  },
+  "giftNames": [
+    "Gift of Grace",
+    "Gift of Learning",
+    "Gift of Sailing"
+  ],
+  "levels": [
+    {
+      "level": 1,
+      "class": "Barbarian",
+      "classFeat": "Improved Expertise, Path: Tribal",
+      "generalFeat": "Expertise"
+    },
+    {
+      "level": 2,
+      "class": "Barbarian",
+      "classFeat": "Uncanny Dodge I"
+    },
+    {
+      "level": 3,
+      "class": "Barbarian",
+      "generalFeat": "Weapon Focus Thrown"
+    },
+    {
+      "level": 4,
+      "class": "Barbarian",
+      "abilityIncrease": "Dex"
+    },
+    {
+      "level": 5,
+      "class": "Barbarian",
+      "classFeat": "Uncanny Dodge II"
+    },
+    {
+      "level": 6,
+      "class": "Barbarian",
+      "generalFeat": "Weapon Focus Missile"
+    },
+    {
+      "level": 7,
+      "class": "Rogue"
+    },
+    {
+      "level": 8,
+      "class": "Rogue",
+      "classFeat": "Evasion",
+      "abilityIncrease": "Dex"
+    },
+    {
+      "level": 9,
+      "class": "Rogue",
+      "classFeat": "Uncanny Dodge I",
+      "generalFeat": "Iron Will"
+    },
+    {
+      "level": 10,
+      "class": "Barbarian"
+    },
+    {
+      "level": 11,
+      "class": "Ranger"
+    },
+    {
+      "level": 12,
+      "class": "Ranger",
+      "classFeat": "Path:Archer (Point Blank Shot, Rapid Shot, Rapid Reload)",
+      "generalFeat": "Dodge",
+      "abilityIncrease": "Dex"
+    },
+    {
+      "level": 13,
+      "class": "Ranger",
+      "classFeat": "Richochet"
+    },
+    {
+      "level": 14,
+      "class": "Barbarian"
+    },
+    {
+      "level": 15,
+      "class": "Barbarian",
+      "generalFeat": "Called Shot"
+    },
+    {
+      "level": 16,
+      "class": "Barbarian",
+      "classFeat": "Uncanny Dodge III",
+      "abilityIncrease": "Dex"
+    },
+    {
+      "level": 17,
+      "class": "Rogue",
+      "classFeat": "Dirty Fighting"
+    },
+    {
+      "level": 18,
+      "class": "Barbarian",
+      "generalFeat": "Toughness"
+    },
+    {
+      "level": 19,
+      "class": "Barbarian"
+    },
+    {
+      "level": 20,
+      "class": "Barbarian",
+      "classFeat": "Uncanny Dodge IV",
+      "abilityIncrease": "Dex"
+    },
+    {
+      "level": 21,
+      "class": "Barbarian",
+      "generalFeat": "Epic Will"
+    },
+    {
+      "level": 22,
+      "class": "Barbarian"
+    },
+    {
+      "level": 23,
+      "class": "Barbarian",
+      "classFeat": "Uncanny Dodge V"
+    },
+    {
+      "level": 24,
+      "class": "Barbarian",
+      "generalFeat": "Epic Skill Focus Leadership",
+      "abilityIncrease": "Dex"
+    },
+    {
+      "level": 25,
+      "class": "Barbarian"
+    },
+    {
+      "level": 26,
+      "class": "Barbarian",
+      "classFeat": "Uncanny Dodge VI"
+    },
+    {
+      "level": 27,
+      "class": "Barbarian",
+      "generalFeat": "Great Constitution"
+    },
+    {
+      "level": 28,
+      "class": "Barbarian",
+      "abilityIncrease": "Con"
+    },
+    {
+      "level": 29,
+      "class": "Barbarian"
+    },
+    {
+      "level": 30,
+      "class": "Rogue",
+      "generalFeat": "Epic Prowess"
+    }
+  ],
+  "skillRanks": {
+    "Tumble": 30,
+    "Heal": 18,
+    "Lore": 23,
+    "Bluff": 3,
+    "Sail": 22,
+    "Taunt": 33,
+    "Intimidate": 33,
+    "Leadership": 31,
+    "Use Magic Device": 31,
+    "Search": 33,
+    "Disable Trap": 33,
+    "Open Lock": 33,
+    "Use Trap": 33
+  },
+  "crafting": {
+    "Alchemy": 1,
+    "Tailoring": 6,
+    "Smithing": 1,
+    "Art Crafting": 1,
+    "Herbalism": 1,
+    "Carpentry": 51
+  },
+  "notes": "Importeret fra ark: Nasty Pirate"
+}

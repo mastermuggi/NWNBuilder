@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <None Include="..\..\rulesets\*.json" LinkBase="rulesets" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="TestData\*.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

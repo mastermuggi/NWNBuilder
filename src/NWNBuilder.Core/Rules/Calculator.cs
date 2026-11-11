@@ -68,7 +68,7 @@ public static class Calculator
         var classLevels = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
         var preEpicLevels = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
         var unknownClasses = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-        int featFort = 0, featRef = 0, featWill = 0, hitDice = 0, skillTotal = 0;
+        int featFort = 0, featRef = 0, featWill = 0, hitDice = 0, skillTotal = 0, hpPerLevel = 0, hpFlat = 0;
         var results = new List<LevelResult>();
 
         foreach (var lvl in build.Levels.OrderBy(l => l.Level))
@@ -79,23 +79,32 @@ public static class Calculator
             var L = lvl.Level;
             if (lvl.AbilityIncrease is { } inc) Add(abilities, inc, 1);
 
-            foreach (var featName in new[] { lvl.ClassFeat, lvl.GeneralFeat })
+            foreach (var featName in SplitFeats(lvl.ClassFeat).Concat(SplitFeats(lvl.GeneralFeat)))
             {
-                if (string.IsNullOrWhiteSpace(featName)) continue;
                 var feat = rules.FindFeat(featName);
                 if (feat == null) continue;
                 Add(abilities, feat.Abilities);
                 featFort += feat.Fort; featRef += feat.Ref; featWill += feat.Will;
+                hpPerLevel += feat.HpPerLevel; hpFlat += feat.Hp;
             }
 
-            var className = lvl.Class.Trim();
+            var cls = rules.FindClass(lvl.Class);
+            var className = cls?.Name ?? lvl.Class.Trim();
             classLevels[className] = classLevels.GetValueOrDefault(className) + 1;
             if (L < rules.Rules.EpicFromLevel)
                 preEpicLevels[className] = preEpicLevels.GetValueOrDefault(className) + 1;
 
-            var cls = rules.FindClass(className);
             if (cls == null && unknownClasses.Add(className))
                 warnings.Add($"Klasse '{className}' findes ikke i regelsættet – tæller ikke med.");
+
+            foreach (var bonus in cls?.AbilityBonuses.Where(b => b.ClassLevel == classLevels[className]) ?? Enumerable.Empty<AbilityBonus>())
+            {
+                var key = bonus.Ability.Equals("StrOrDex", StringComparison.OrdinalIgnoreCase)
+                    ? (build.StartAbilities.Dex > build.StartAbilities.Str ? "Dex" : "Str")
+                    : bonus.Ability;
+                if (Enum.TryParse<Ability>(key, true, out var ab))
+                    Add(abilities, ab, bonus.Value);
+            }
 
             int intMod = Mod(abilities.Int);
             int skill = 0;
@@ -150,7 +159,7 @@ public static class Calculator
                 Fort = fort,
                 Ref = refl,
                 Will = will,
-                Hp = hitDice + Mod(abilities.Con) * L, // max HP pr. level; CON gælder bagud
+                Hp = hitDice + (Mod(abilities.Con) + hpPerLevel) * L + hpFlat, // max HP; CON og Toughness gælder bagud
                 SkillPoints = skill,
                 SkillPointsTotal = skillTotal,
                 MaxRanks = L + rules.Rules.MaxRanksAboveLevel,
@@ -210,6 +219,13 @@ public static class Calculator
         Ability.Str => a.Str, Ability.Dex => a.Dex, Ability.Con => a.Con,
         Ability.Int => a.Int, Ability.Wis => a.Wis, _ => a.Cha,
     };
+
+    /// <summary>"Great Intelligence, Mummy Dust" → to feats. Tekst i parentes ignoreres.</summary>
+    private static IEnumerable<string> SplitFeats(string? cell) =>
+        string.IsNullOrWhiteSpace(cell)
+            ? Enumerable.Empty<string>()
+            : System.Text.RegularExpressions.Regex.Replace(cell, @"\(.*?\)", "")
+                .Split(new[] { ',', ';', '/' }, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
 
     private static int BabFor(string type, int levels) => type switch
     {

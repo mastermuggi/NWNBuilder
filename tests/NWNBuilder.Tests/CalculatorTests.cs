@@ -97,4 +97,28 @@ public class CalculatorTests
         Assert.Equal(11, editor.Final.Abilities.Str);
         Assert.Equal(11, editor.Rows[27].Str);
     }
+
+    // --- Bygget fra dit ark "Nasty Pirate" (Barbarian/Rogue/Ranger, Toughness, Iron Will + Epic Will) ---
+
+    private static Build LoadTestBuild(string name)
+    {
+        using var stream = File.OpenRead(Path.Combine(AppContext.BaseDirectory, "TestData", name + ".json"));
+        return BuildJson.Load(stream);
+    }
+
+    [Fact]
+    public void Nasty_pirate_matches_sheet()
+    {
+        var result = Calculator.Calculate(LoadTestBuild("nasty-pirate"), LoadArelith());
+        var f = result.Final!;
+
+        Assert.Empty(result.Warnings);
+        Assert.Equal((14, 22, 16, 16, 14, 8), (f.Abilities.Str, f.Abilities.Dex, f.Abilities.Con, f.Abilities.Int, f.Abilities.Wis, f.Abilities.Cha));
+        Assert.Equal(19, result.Levels[19].Bab);
+        Assert.Equal(24, f.Bab);
+        Assert.Equal(454, f.Hp);                 // inkl. Toughness
+        Assert.Equal(356, f.SkillPointsTotal);
+        Assert.Equal((20, 18, 19), (f.Fort, f.Ref, f.Will));
+        Assert.Equal(356, result.SkillPointsSpent);
+    }
 }
