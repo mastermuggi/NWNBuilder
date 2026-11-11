@@ -9,18 +9,28 @@ public partial class MainWindow : Window
 {
     private readonly AppSettings _settings = AppSettings.Load();
     private BuildStore? _store;
+    private List<Build> _builds = new();
+    private BuildEditor _editor = null!;
 
     public MainWindow()
     {
         InitializeComponent();
 
         // Vises indtil et build fra databasen vælges.
-        BuildView.DataContext = BuildJson.LoadSample("hesper-salcedo");
+        ShowBuild(BuildJson.LoadSample("hesper-salcedo"));
 
         ConnectionBox.Text = _settings.ConnectionString;
         if (!string.IsNullOrWhiteSpace(_settings.ConnectionString))
             _ = ConnectAsync();
     }
+
+    private void ShowBuild(Build build)
+    {
+        _editor = new BuildEditor(build);
+        Editor.DataContext = _editor;
+    }
+
+    // --- Database ---
 
     private async void Connect_Click(object? sender, RoutedEventArgs e) => await ConnectAsync();
 
@@ -43,7 +53,8 @@ public partial class MainWindow : Window
             _settings.ConnectionString = connectionString;
             _settings.Save();
 
-            ShowBuilds(builds, select: builds.FirstOrDefault());
+            _builds = builds;
+            RefreshList(select: builds.FirstOrDefault());
             StatusText.Text = $"Forbundet · {builds.Count} builds";
         }
         catch (Exception ex)
@@ -60,15 +71,17 @@ public partial class MainWindow : Window
             StatusText.Text = "Ikke forbundet.";
             return;
         }
-        if (BuildView.DataContext is not Build build)
-            return;
 
+        var build = _editor.Apply();
         try
         {
             await _store.SaveAsync(build);
-            var builds = await _store.ListAsync();
-            ShowBuilds(builds, select: builds.FirstOrDefault(b => b.Id == build.Id));
-            StatusText.Text = $"Gemt: {build.Name} · {builds.Count} builds";
+            _builds = await _store.ListAsync();
+            var saved = _builds.FirstOrDefault(b => b.Id == build.Id);
+            RefreshList(select: saved);
+            if (saved != null)
+                ShowBuild(saved);
+            StatusText.Text = $"Gemt: {build.Name} · {_builds.Count} builds";
         }
         catch (Exception ex)
         {
@@ -76,16 +89,45 @@ public partial class MainWindow : Window
         }
     }
 
-    private void ShowBuilds(List<Build> builds, Build? select)
+    // --- Liste ---
+
+    private void RefreshList(Build? select)
     {
-        BuildList.ItemsSource = builds;
-        if (select != null)
-            BuildList.SelectedItem = select;
+        var filter = SearchBox.Text?.Trim() ?? "";
+        BuildList.ItemsSource = filter.Length == 0
+            ? _builds
+            : _builds.Where(b => b.Name.Contains(filter, StringComparison.OrdinalIgnoreCase)).ToList();
+        BuildList.SelectedItem = select;
     }
+
+    private void Search_TextChanged(object? sender, TextChangedEventArgs e) =>
+        RefreshList(select: BuildList.SelectedItem as Build);
 
     private void BuildList_SelectionChanged(object? sender, SelectionChangedEventArgs e)
     {
-        if (BuildList.SelectedItem is Build build)
-            BuildView.DataContext = build;
+        if (BuildList.SelectedItem is Build build && build != _editor.Build)
+            ShowBuild(build);
+    }
+
+    private void New_Click(object? sender, RoutedEventArgs e)
+    {
+        BuildList.SelectedItem = null;
+        ShowBuild(BuildEditor.NewBuild());
+        StatusText.Text = "Nyt build – husk at gemme.";
+    }
+
+    // --- Skills / crafting ---
+
+    private void AddSkill_Click(object? sender, RoutedEventArgs e) => _editor.Skills.Add(new NamedValue());
+
+    private void AddCraft_Click(object? sender, RoutedEventArgs e) => _editor.Crafting.Add(new NamedValue());
+
+    private void RemoveRow_Click(object? sender, RoutedEventArgs e)
+    {
+        if (sender is Button { DataContext: NamedValue row })
+        {
+            _editor.Skills.Remove(row);
+            _editor.Crafting.Remove(row);
+        }
     }
 }

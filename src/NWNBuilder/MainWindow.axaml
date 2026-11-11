@@ -1,72 +1,286 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:NWNBuilder"
+        xmlns:core="using:NWNBuilder.Core"
         xmlns:m="using:NWNBuilder.Core.Models"
+        xmlns:sys="using:System"
         x:Class="NWNBuilder.MainWindow"
         Title="NWNBuilder"
-        Width="1100" Height="750">
+        Width="1320" Height="860" MinWidth="1000" MinHeight="640"
+        Background="{StaticResource AppBackground}">
 
-  <DockPanel Margin="16">
+  <Grid RowDefinitions="Auto,*">
 
-    <!-- Database -->
-    <Grid DockPanel.Dock="Top" ColumnDefinitions="Auto,*,Auto,Auto" Margin="0,0,0,8">
-      <TextBlock Grid.Column="0" Text="MongoDB" VerticalAlignment="Center" Margin="0,0,8,0" />
-      <TextBox Grid.Column="1" x:Name="ConnectionBox" PasswordChar="•"
-               Watermark="mongodb+srv://bruger:kodeord@..." />
-      <Button Grid.Column="2" Content="Forbind" Click="Connect_Click" Margin="8,0,0,0" />
-      <Button Grid.Column="3" Content="Gem build" Click="Save_Click" Margin="8,0,0,0" />
-    </Grid>
-    <TextBlock DockPanel.Dock="Top" x:Name="StatusText" Text="Ikke forbundet" Opacity="0.7" Margin="0,0,0,16" />
-
-    <!-- Builds i databasen -->
-    <DockPanel DockPanel.Dock="Left" Width="220" Margin="0,0,16,0">
-      <TextBlock DockPanel.Dock="Top" Text="Builds" FontWeight="SemiBold" Margin="0,0,0,4" />
-      <ListBox x:Name="BuildList" SelectionChanged="BuildList_SelectionChanged">
-        <ListBox.ItemTemplate>
-          <DataTemplate x:DataType="m:Build">
-            <TextBlock Text="{Binding Name}" />
-          </DataTemplate>
-        </ListBox.ItemTemplate>
-      </ListBox>
-    </DockPanel>
-
-    <!-- Valgt build -->
-    <DockPanel x:Name="BuildView" x:DataType="m:Build">
-
-      <StackPanel DockPanel.Dock="Top" Spacing="4" Margin="0,0,0,16">
-        <TextBlock Text="{Binding Name}" FontSize="24" FontWeight="SemiBold" />
-        <StackPanel Orientation="Horizontal" Spacing="16">
-          <TextBlock Text="{Binding Race}" />
-          <TextBlock Text="{Binding Alignment}" />
-          <TextBlock Text="{Binding Deity}" />
-          <TextBlock Text="{Binding Age, StringFormat='Age {0}'}" />
-          <TextBlock Text="{Binding Ruleset, StringFormat='Regelsæt: {0}'}" Opacity="0.6" />
+    <!-- Topbar -->
+    <Border Grid.Row="0" Background="{StaticResource SidebarBackground}"
+            BorderBrush="{StaticResource CardBorder}" BorderThickness="0,0,0,1" Padding="20,12">
+      <Grid ColumnDefinitions="Auto,*,Auto">
+        <TextBlock VerticalAlignment="Center" FontSize="20">
+          <Run Text="NWN" FontWeight="Bold" Foreground="{StaticResource Gold}" />
+          <Run Text="Builder" FontWeight="Light" />
+        </TextBlock>
+        <TextBlock Grid.Column="1" x:Name="StatusText" Text="Ikke forbundet"
+                   Foreground="{StaticResource Muted}" VerticalAlignment="Center"
+                   Margin="24,0" TextTrimming="CharacterEllipsis" />
+        <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="8">
+          <Button Content="+ Nyt build" Click="New_Click" />
+          <Button Content="Gem" Classes="accent" Click="Save_Click" MinWidth="80" />
         </StackPanel>
-      </StackPanel>
-
-      <Grid DockPanel.Dock="Top" ColumnDefinitions="50,140,220,240,100" Margin="0,0,0,4">
-        <TextBlock Grid.Column="0" Text="Lvl" FontWeight="SemiBold" />
-        <TextBlock Grid.Column="1" Text="Klasse" FontWeight="SemiBold" />
-        <TextBlock Grid.Column="2" Text="Class feat" FontWeight="SemiBold" />
-        <TextBlock Grid.Column="3" Text="General feat" FontWeight="SemiBold" />
-        <TextBlock Grid.Column="4" Text="Ability +1" FontWeight="SemiBold" />
       </Grid>
+    </Border>
 
-      <ScrollViewer>
-        <ItemsControl ItemsSource="{Binding Levels}">
-          <ItemsControl.ItemTemplate>
-            <DataTemplate x:DataType="m:BuildLevel">
-              <Grid ColumnDefinitions="50,140,220,240,100" Margin="0,2">
-                <TextBlock Grid.Column="0" Text="{Binding Level}" />
-                <TextBlock Grid.Column="1" Text="{Binding Class}" />
-                <TextBlock Grid.Column="2" Text="{Binding ClassFeat}" />
-                <TextBlock Grid.Column="3" Text="{Binding GeneralFeat}" />
-                <TextBlock Grid.Column="4" Text="{Binding AbilityIncrease}" />
+    <Grid Grid.Row="1" ColumnDefinitions="270,*">
+
+      <!-- Sidebar -->
+      <Border Background="{StaticResource SidebarBackground}"
+              BorderBrush="{StaticResource CardBorder}" BorderThickness="0,0,1,0" Padding="14">
+        <DockPanel>
+          <TextBlock DockPanel.Dock="Top" Classes="section" Text="BUILDS" />
+          <TextBox DockPanel.Dock="Top" x:Name="SearchBox" Watermark="Søg…"
+                   TextChanged="Search_TextChanged" Margin="0,0,0,10" />
+
+          <!-- Database -->
+          <StackPanel DockPanel.Dock="Bottom" Spacing="6" Margin="0,12,0,0">
+            <TextBlock Classes="section" Text="DATABASE" Margin="0,0,0,2" />
+            <TextBox x:Name="ConnectionBox" PasswordChar="•" Watermark="mongodb+srv://…" />
+            <Button Content="Forbind" Click="Connect_Click" HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Center" />
+          </StackPanel>
+
+          <ListBox x:Name="BuildList" Background="Transparent"
+                   SelectionChanged="BuildList_SelectionChanged">
+            <ListBox.ItemTemplate>
+              <DataTemplate x:DataType="m:Build">
+                <StackPanel Margin="2,4">
+                  <TextBlock Text="{Binding Name}" FontWeight="SemiBold" />
+                  <TextBlock Classes="label" Text="{Binding Race}" Margin="0" />
+                </StackPanel>
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
+        </DockPanel>
+      </Border>
+
+      <!-- Editor -->
+      <DockPanel Grid.Column="1" x:Name="Editor" x:DataType="core:BuildEditor" Margin="28,20,28,20">
+
+        <!-- Header -->
+        <StackPanel DockPanel.Dock="Top" Margin="0,0,0,8">
+          <TextBox Text="{Binding Build.Name}" Watermark="Navn" FontSize="30" FontWeight="SemiBold"
+                   Background="Transparent" BorderThickness="0" Padding="0" />
+          <StackPanel Orientation="Horizontal" Spacing="12" Margin="0,6,0,0">
+            <TextBlock Text="{Binding Summary}" Foreground="{StaticResource Muted}" VerticalAlignment="Center" />
+            <ItemsControl ItemsSource="{Binding ClassSplit}">
+              <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                  <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+              </ItemsControl.ItemsPanel>
+              <ItemsControl.ItemTemplate>
+                <DataTemplate x:DataType="sys:String">
+                  <Border Classes="chip" Margin="0,0,8,0">
+                    <TextBlock Text="{Binding}" Foreground="{StaticResource Gold}" FontSize="12" />
+                  </Border>
+                </DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ItemsControl>
+          </StackPanel>
+        </StackPanel>
+
+        <TabControl>
+
+          <!-- Oversigt -->
+          <TabItem Header="Oversigt">
+            <ScrollViewer>
+              <Grid ColumnDefinitions="*,20,*" RowDefinitions="Auto,20,Auto" Margin="0,12,0,0">
+
+                <Border Grid.Row="0" Grid.Column="0" Classes="card">
+                  <StackPanel>
+                    <TextBlock Classes="section" Text="KARAKTER" />
+                    <Grid ColumnDefinitions="*,16,*" RowDefinitions="Auto,12,Auto,12,Auto">
+                      <StackPanel Grid.Row="0" Grid.Column="0">
+                        <TextBlock Classes="label" Text="Race" />
+                        <TextBox Text="{Binding Build.Race}" />
+                      </StackPanel>
+                      <StackPanel Grid.Row="0" Grid.Column="2">
+                        <TextBlock Classes="label" Text="Alignment" />
+                        <ComboBox ItemsSource="{x:Static local:Options.Alignments}"
+                                  SelectedItem="{Binding Build.Alignment}" HorizontalAlignment="Stretch" />
+                      </StackPanel>
+                      <StackPanel Grid.Row="2" Grid.Column="0">
+                        <TextBlock Classes="label" Text="Gud" />
+                        <TextBox Text="{Binding Build.Deity}" />
+                      </StackPanel>
+                      <StackPanel Grid.Row="2" Grid.Column="2">
+                        <TextBlock Classes="label" Text="Alder" />
+                        <TextBox Text="{Binding Build.Age}" />
+                      </StackPanel>
+                      <StackPanel Grid.Row="4" Grid.Column="0">
+                        <TextBlock Classes="label" Text="Regelsæt" />
+                        <ComboBox ItemsSource="{x:Static local:Options.Rulesets}"
+                                  SelectedItem="{Binding Build.Ruleset}" HorizontalAlignment="Stretch" />
+                      </StackPanel>
+                    </Grid>
+                  </StackPanel>
+                </Border>
+
+                <Border Grid.Row="0" Grid.Column="2" Classes="card">
+                  <StackPanel>
+                    <TextBlock Classes="section" Text="START-STATS (FØR GIFTS)" />
+                    <UniformGrid Columns="6">
+                      <StackPanel Margin="0,0,8,0">
+                        <TextBlock Classes="label" Text="STR" HorizontalAlignment="Center" />
+                        <TextBox Classes="ability" Text="{Binding Build.StartAbilities.Str}" />
+                      </StackPanel>
+                      <StackPanel Margin="0,0,8,0">
+                        <TextBlock Classes="label" Text="DEX" HorizontalAlignment="Center" />
+                        <TextBox Classes="ability" Text="{Binding Build.StartAbilities.Dex}" />
+                      </StackPanel>
+                      <StackPanel Margin="0,0,8,0">
+                        <TextBlock Classes="label" Text="CON" HorizontalAlignment="Center" />
+                        <TextBox Classes="ability" Text="{Binding Build.StartAbilities.Con}" />
+                      </StackPanel>
+                      <StackPanel Margin="0,0,8,0">
+                        <TextBlock Classes="label" Text="INT" HorizontalAlignment="Center" />
+                        <TextBox Classes="ability" Text="{Binding Build.StartAbilities.Int}" />
+                      </StackPanel>
+                      <StackPanel Margin="0,0,8,0">
+                        <TextBlock Classes="label" Text="WIS" HorizontalAlignment="Center" />
+                        <TextBox Classes="ability" Text="{Binding Build.StartAbilities.Wis}" />
+                      </StackPanel>
+                      <StackPanel>
+                        <TextBlock Classes="label" Text="CHA" HorizontalAlignment="Center" />
+                        <TextBox Classes="ability" Text="{Binding Build.StartAbilities.Cha}" />
+                      </StackPanel>
+                    </UniformGrid>
+                    <TextBlock Classes="label" Text="Gifts" Margin="0,16,0,4" />
+                    <TextBox Text="{Binding Build.Gifts}" />
+                  </StackPanel>
+                </Border>
+
+                <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Classes="card">
+                  <StackPanel>
+                    <TextBlock Classes="section" Text="NOTER" />
+                    <TextBox Text="{Binding Build.Notes}" AcceptsReturn="True" TextWrapping="Wrap" MinHeight="90" />
+                  </StackPanel>
+                </Border>
               </Grid>
-            </DataTemplate>
-          </ItemsControl.ItemTemplate>
-        </ItemsControl>
-      </ScrollViewer>
+            </ScrollViewer>
+          </TabItem>
 
-    </DockPanel>
-  </DockPanel>
+          <!-- Levels -->
+          <TabItem Header="Levels">
+            <Border Classes="card" Padding="0" Margin="0,12,0,0">
+              <DataGrid x:CompileBindings="False" ItemsSource="{Binding Build.Levels}"
+                        AutoGenerateColumns="False" CanUserSortColumns="False" CanUserReorderColumns="False"
+                        HeadersVisibility="Column" GridLinesVisibility="Horizontal" Background="Transparent">
+                <DataGrid.Columns>
+                  <DataGridTextColumn Header="Lvl" Binding="{Binding Level}" IsReadOnly="True" Width="60" />
+                  <DataGridTextColumn Header="Klasse" Binding="{Binding Class}" Width="170" />
+                  <DataGridTextColumn Header="Class feat" Binding="{Binding ClassFeat}" Width="*" />
+                  <DataGridTextColumn Header="General feat" Binding="{Binding GeneralFeat}" Width="*" />
+                  <DataGridTemplateColumn Header="Ability +1" Width="130">
+                    <DataGridTemplateColumn.CellTemplate>
+                      <DataTemplate x:CompileBindings="False">
+                        <ComboBox ItemsSource="{x:Static local:Options.AbilityChoices}"
+                                  SelectedItem="{Binding AbilityIncrease, Mode=TwoWay}"
+                                  HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" />
+                      </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                  </DataGridTemplateColumn>
+                </DataGrid.Columns>
+              </DataGrid>
+            </Border>
+          </TabItem>
+
+          <!-- Skills & crafting -->
+          <TabItem Header="Skills &amp; crafting">
+            <Grid ColumnDefinitions="3*,20,2*" Margin="0,12,0,0">
+
+              <Border Grid.Column="0" Classes="card">
+                <DockPanel>
+                  <TextBlock DockPanel.Dock="Top" Classes="section" Text="SKILL RANKS" />
+                  <Button DockPanel.Dock="Bottom" Content="+ Tilføj skill" Click="AddSkill_Click" Margin="0,10,0,0" />
+                  <DataGrid x:CompileBindings="False" ItemsSource="{Binding Skills}"
+                            AutoGenerateColumns="False" CanUserReorderColumns="False"
+                            HeadersVisibility="Column" GridLinesVisibility="Horizontal" Background="Transparent">
+                    <DataGrid.Columns>
+                      <DataGridTextColumn Header="Skill" Binding="{Binding Name}" Width="*" />
+                      <DataGridTextColumn Header="Ranks" Binding="{Binding Value}" Width="90" />
+                      <DataGridTemplateColumn Width="50">
+                        <DataGridTemplateColumn.CellTemplate>
+                          <DataTemplate>
+                            <Button Content="✕" Click="RemoveRow_Click" Background="Transparent"
+                                    Foreground="{StaticResource Muted}" HorizontalAlignment="Center" />
+                          </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                      </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                  </DataGrid>
+                </DockPanel>
+              </Border>
+
+              <Border Grid.Column="2" Classes="card">
+                <DockPanel>
+                  <TextBlock DockPanel.Dock="Top" Classes="section" Text="CRAFTING" />
+                  <Button DockPanel.Dock="Bottom" Content="+ Tilføj craft" Click="AddCraft_Click" Margin="0,10,0,0" />
+                  <DataGrid x:CompileBindings="False" ItemsSource="{Binding Crafting}"
+                            AutoGenerateColumns="False" CanUserReorderColumns="False"
+                            HeadersVisibility="Column" GridLinesVisibility="Horizontal" Background="Transparent">
+                    <DataGrid.Columns>
+                      <DataGridTextColumn Header="Craft" Binding="{Binding Name}" Width="*" />
+                      <DataGridTextColumn Header="Point" Binding="{Binding Value}" Width="90" />
+                      <DataGridTemplateColumn Width="50">
+                        <DataGridTemplateColumn.CellTemplate>
+                          <DataTemplate>
+                            <Button Content="✕" Click="RemoveRow_Click" Background="Transparent"
+                                    Foreground="{StaticResource Muted}" HorizontalAlignment="Center" />
+                          </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                      </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                  </DataGrid>
+                </DockPanel>
+              </Border>
+            </Grid>
+          </TabItem>
+
+          <!-- Rollespil -->
+          <TabItem Header="Rollespil">
+            <ScrollViewer>
+              <Grid ColumnDefinitions="*,20,*" RowDefinitions="Auto,20,Auto" Margin="0,12,0,0">
+
+                <Border Grid.Row="0" Grid.Column="0" Classes="card">
+                  <StackPanel>
+                    <TextBlock Classes="section" Text="ORIGINS" />
+                    <TextBlock Classes="label" Text="Én pr. linje" />
+                    <TextBox Text="{Binding OriginsText}" AcceptsReturn="True" TextWrapping="Wrap" MinHeight="110" />
+                  </StackPanel>
+                </Border>
+
+                <Border Grid.Row="0" Grid.Column="2" Classes="card">
+                  <StackPanel>
+                    <TextBlock Classes="section" Text="STEMME" />
+                    <TextBlock Classes="label" Text="Voiceset" />
+                    <TextBox Text="{Binding Build.Voiceset}" />
+                    <TextBlock Classes="label" Text="Eksempel-replikker" Margin="0,12,0,4" />
+                    <TextBox Text="{Binding Build.VoiceExample}" AcceptsReturn="True" TextWrapping="Wrap" MinHeight="60" />
+                  </StackPanel>
+                </Border>
+
+                <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Classes="card">
+                  <StackPanel>
+                    <TextBlock Classes="section" Text="BAGGRUND" />
+                    <TextBox Text="{Binding Build.Background}" AcceptsReturn="True" TextWrapping="Wrap"
+                             MinHeight="320" FontSize="14" LineHeight="22" />
+                  </StackPanel>
+                </Border>
+              </Grid>
+            </ScrollViewer>
+          </TabItem>
+
+        </TabControl>
+      </DockPanel>
+    </Grid>
+  </Grid>
 </Window>
