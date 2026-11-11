@@ -54,6 +54,8 @@ public sealed class ClassRule
     public List<string> ClassSkills { get; set; } = new();
     public List<SaveBonus> SaveBonuses { get; set; } = new();
     public List<AbilityBonus> AbilityBonuses { get; set; } = new();
+    /// <summary>CHA-mod (hvis positiv) til alle saves fra dette klasse-level (Divine Grace m.fl.). Tælles kun én gang.</summary>
+    public int? ChaToSavesFromLevel { get; set; }
     public string? Notes { get; set; }
 }
 

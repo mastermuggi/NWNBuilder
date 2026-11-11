@@ -145,6 +145,10 @@ public static class Calculator
             }
 
             var allSaves = gifts.Sum(g => g.AllSaves);
+            var hasChaToSaves = classLevels.Any(kv =>
+                rules.FindClass(kv.Key)?.ChaToSavesFromLevel is { } from && kv.Value >= from);
+            if (hasChaToSaves)
+                allSaves += Math.Max(0, Mod(abilities.Cha));
             fort += featFort + allSaves + Mod(abilities.Con);
             refl += featRef + allSaves + Mod(abilities.Dex);
             will += featWill + allSaves + Mod(abilities.Wis);

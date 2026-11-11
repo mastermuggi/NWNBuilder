@@ -122,4 +122,26 @@ public class CalculatorTests
         Assert.Equal((20, 20, 19), (f.Fort, f.Ref, f.Will));
         Assert.Equal(356, result.SkillPointsSpent);
     }
+
+    [Fact]
+    public void Divine_grace_and_sacred_defense()
+    {
+        var build = new Build
+        {
+            Race = "Human",
+            StartAbilities = new AbilityScores { Str = 14, Dex = 10, Con = 10, Int = 10, Wis = 10, Cha = 14 },
+            Levels = new()
+            {
+                new BuildLevel { Level = 1, Class = "Paladin" },
+                new BuildLevel { Level = 2, Class = "Paladin" },
+                new BuildLevel { Level = 3, Class = "COT" },
+                new BuildLevel { Level = 4, Class = "COT" },
+            },
+        };
+
+        var f = Calculator.Calculate(build, LoadArelith()).Final!;
+
+        // Paladin 2: F3/R0/W0 · DC 2: F3/R3/W0 · CHA +2 (én gang) · Sacred Defense +1
+        Assert.Equal((3 + 3 + 2 + 1, 0 + 3 + 2 + 1, 0 + 0 + 2 + 1), (f.Fort, f.Ref, f.Will));
+    }
 }

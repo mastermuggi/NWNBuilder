@@ -1,7 +1,7 @@
 {
   "id": "arelith",
   "name": "Arelith",
-  "version": "2026-11-11b",
+  "version": "2026-11-11c",
   "notes": "Kilde: wiki.nwnarelith.com (klassesider, Gift, Skill changes) + ejers ark (256 builds). Start-stats er efter race og før gifts, som i arkene.",
   "rules": {
     "maxLevel": 30,
@@ -188,7 +188,8 @@
         "Spot",
         "Taunt"
       ],
-      "notes": "Prestige, max 20. Fearless kun vs fear."
+      "notes": "Prestige, max 20. Fearless kun vs fear. CHA-mod til alle saves fra level 2 (Divine Grace/Dark Blessing, tælles kun én gang).",
+      "chaToSavesFromLevel": 2
     },
     {
       "name": "Cavalier",
@@ -294,7 +295,69 @@
         "Spot",
         "Taunt"
       ],
-      "notes": "Prestige, max 20. Divine Wrath-saves kun når aktiv."
+      "notes": "Prestige, max 20. +1 alle saves pr. 2 levels (Sacred Defense).",
+      "saveBonuses": [
+        {
+          "classLevel": 2,
+          "fort": 1,
+          "ref": 1,
+          "will": 1
+        },
+        {
+          "classLevel": 4,
+          "fort": 1,
+          "ref": 1,
+          "will": 1
+        },
+        {
+          "classLevel": 6,
+          "fort": 1,
+          "ref": 1,
+          "will": 1
+        },
+        {
+          "classLevel": 8,
+          "fort": 1,
+          "ref": 1,
+          "will": 1
+        },
+        {
+          "classLevel": 10,
+          "fort": 1,
+          "ref": 1,
+          "will": 1
+        },
+        {
+          "classLevel": 12,
+          "fort": 1,
+          "ref": 1,
+          "will": 1
+        },
+        {
+          "classLevel": 14,
+          "fort": 1,
+          "ref": 1,
+          "will": 1
+        },
+        {
+          "classLevel": 16,
+          "fort": 1,
+          "ref": 1,
+          "will": 1
+        },
+        {
+          "classLevel": 18,
+          "fort": 1,
+          "ref": 1,
+          "will": 1
+        },
+        {
+          "classLevel": 20,
+          "fort": 1,
+          "ref": 1,
+          "will": 1
+        }
+      ]
     },
     {
       "name": "Druid",
@@ -526,7 +589,7 @@
         "Spot",
         "Taunt"
       ],
-      "notes": "Prestige, max 10."
+      "notes": "Prestige, max 10. Skillpoints: wiki siger 4, ejers ark har ofte 6 – uafklaret."
     },
     {
       "name": "Liberator",
@@ -553,7 +616,8 @@
         "Taunt",
         "Use Trap"
       ],
-      "notes": "Prestige, max 20."
+      "notes": "Prestige, max 20. CHA-mod til alle saves fra level 2 (Divine Grace/Dark Blessing, tælles kun én gang).",
+      "chaToSavesFromLevel": 2
     },
     {
       "name": "Loremaster",
@@ -632,7 +696,8 @@
         "Spot",
         "Taunt"
       ],
-      "notes": "Fearless kun vs fear."
+      "notes": "Fearless kun vs fear. CHA-mod til alle saves fra level 2 (Divine Grace/Dark Blessing, tælles kun én gang).",
+      "chaToSavesFromLevel": 2
     },
     {
       "name": "Pale Master",
@@ -959,7 +1024,8 @@
         "Spot",
         "Tumble",
         "Use Magic Device"
-      ]
+      ],
+      "notes": "CHA til saves er et tilvalg (feat-navn ukendt endnu)."
     },
     {
       "name": "Weapon Master",
