@@ -49,6 +49,11 @@
       <Setter Property="Margin" Value="0,0,0,4" />
     </Style>
 
+    <!-- Valgt build i sidebar: undertekst skal kunne læses på guld -->
+    <Style Selector="ListBoxItem:selected TextBlock.label">
+      <Setter Property="Foreground" Value="#3B3020" />
+    </Style>
+
     <Style Selector="TextBox.ability">
       <Setter Property="FontSize" Value="22" />
       <Setter Property="FontWeight" Value="SemiBold" />

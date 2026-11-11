@@ -1,4 +1,5 @@
 using NWNBuilder.Core;
+using NWNBuilder.Core.Models;
 
 namespace NWNBuilder.Tests;
 
@@ -21,13 +22,34 @@ public class BuildEditorTests
         editor.Skills.Add(new NamedValue { Name = "Appraise", Value = 5 });
         editor.Skills.Add(new NamedValue { Name = "  ", Value = 3 }); // tom række ignoreres
         editor.Crafting.Remove(editor.Crafting.First(c => c.Name == "Herbalism"));
-        editor.OriginsText = "Athkatla – Amn\r\n\r\nDark Ravens\n";
+        editor.Friends.Add(new Friend { AccountName = "acc123", PlayerName = "Mads", Note = "Crew på skibet" });
+        editor.Friends.Add(new Friend()); // tom ven ignoreres
 
         var build = editor.Apply();
 
         Assert.Equal(395, build.SkillRanks.Values.Sum());
         Assert.False(build.Crafting.ContainsKey("Herbalism"));
-        Assert.Equal(new[] { "Athkatla – Amn", "Dark Ravens" }, build.Origins);
+        var friend = Assert.Single(build.Friends);
+        Assert.Equal("acc123", friend.AccountName);
+    }
+
+    [Fact]
+    public void Old_origins_and_voice_move_into_notes()
+    {
+        var old = new Build
+        {
+            Notes = "Pirate",
+            Origins = new() { "Athkatla – Amn", "Dark Ravens" },
+            Voiceset = "Human, Male, Blackguard",
+            VoiceExample = "\"Oh dear\"",
+        };
+
+        var build = new BuildEditor(old).Apply();
+
+        Assert.Equal("Pirate\n\nOrigins:\nAthkatla – Amn\nDark Ravens\n\nVoiceset: Human, Male, Blackguard\n\n\"Oh dear\"", build.Notes);
+        Assert.Null(build.Origins);
+        Assert.Null(build.Voiceset);
+        Assert.Null(build.VoiceExample);
     }
 
     [Fact]

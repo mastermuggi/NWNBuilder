@@ -16,9 +16,7 @@ public sealed class BuildEditor
     public Build Build { get; }
     public ObservableCollection<NamedValue> Skills { get; }
     public ObservableCollection<NamedValue> Crafting { get; }
-
-    /// <summary>Origins som tekst, én pr. linje.</summary>
-    public string OriginsText { get; set; }
+    public ObservableCollection<Friend> Friends { get; }
 
     /// <summary>Fx "Human · Lawful Evil · Mask".</summary>
     public string Summary { get; }
@@ -28,10 +26,12 @@ public sealed class BuildEditor
 
     public BuildEditor(Build build)
     {
+        MoveOldFieldsToNotes(build);
+
         Build = build;
         Skills = new(build.SkillRanks.Select(kv => new NamedValue { Name = kv.Key, Value = kv.Value }));
         Crafting = new(build.Crafting.Select(kv => new NamedValue { Name = kv.Key, Value = kv.Value }));
-        OriginsText = string.Join(Environment.NewLine, build.Origins);
+        Friends = new(build.Friends);
 
         Summary = string.Join(" · ", new[] { build.Race, build.Alignment, build.Deity }
             .Where(s => !string.IsNullOrWhiteSpace(s)));
@@ -47,10 +47,8 @@ public sealed class BuildEditor
     {
         Build.SkillRanks = ToDictionary(Skills);
         Build.Crafting = ToDictionary(Crafting);
-        Build.Origins = OriginsText
-            .Split('\n')
-            .Select(s => s.Trim())
-            .Where(s => s.Length > 0)
+        Build.Friends = Friends
+            .Where(f => !string.IsNullOrWhiteSpace(f.AccountName + f.PlayerName + f.Note))
             .ToList();
         return Build;
     }
@@ -61,6 +59,25 @@ public sealed class BuildEditor
         Name = "Nyt build",
         Levels = Enumerable.Range(1, 30).Select(i => new BuildLevel { Level = i }).ToList(),
     };
+
+    /// <summary>Ældre builds havde origins/voiceset/replikker som egne felter – de lægges ind i noterne.</summary>
+    private static void MoveOldFieldsToNotes(Build build)
+    {
+        var parts = new List<string>();
+        if (build.Origins is { Count: > 0 })
+            parts.Add("Origins:\n" + string.Join("\n", build.Origins));
+        if (!string.IsNullOrWhiteSpace(build.Voiceset))
+            parts.Add("Voiceset: " + build.Voiceset);
+        if (!string.IsNullOrWhiteSpace(build.VoiceExample))
+            parts.Add(build.VoiceExample);
+
+        if (parts.Count > 0)
+            build.Notes = string.Join("\n\n", new[] { build.Notes }.Where(n => !string.IsNullOrWhiteSpace(n)).Concat(parts));
+
+        build.Origins = null;
+        build.Voiceset = null;
+        build.VoiceExample = null;
+    }
 
     private static Dictionary<string, int> ToDictionary(IEnumerable<NamedValue> values)
     {

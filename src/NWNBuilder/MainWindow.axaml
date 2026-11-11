@@ -92,7 +92,7 @@
           <!-- Oversigt -->
           <TabItem Header="Oversigt">
             <ScrollViewer>
-              <Grid ColumnDefinitions="*,20,*" RowDefinitions="Auto,20,Auto" Margin="0,12,0,0">
+              <Grid ColumnDefinitions="*,20,*" Margin="0,12,0,0">
 
                 <Border Grid.Row="0" Grid.Column="0" Classes="card">
                   <StackPanel>
@@ -155,13 +155,6 @@
                     </UniformGrid>
                     <TextBlock Classes="label" Text="Gifts" Margin="0,16,0,4" />
                     <TextBox Text="{Binding Build.Gifts}" />
-                  </StackPanel>
-                </Border>
-
-                <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Classes="card">
-                  <StackPanel>
-                    <TextBlock Classes="section" Text="NOTER" />
-                    <TextBox Text="{Binding Build.Notes}" AcceptsReturn="True" TextWrapping="Wrap" MinHeight="90" />
                   </StackPanel>
                 </Border>
               </Grid>
@@ -248,35 +241,49 @@
           <!-- Rollespil -->
           <TabItem Header="Rollespil">
             <ScrollViewer>
-              <Grid ColumnDefinitions="*,20,*" RowDefinitions="Auto,20,Auto" Margin="0,12,0,0">
-
-                <Border Grid.Row="0" Grid.Column="0" Classes="card">
+              <StackPanel Spacing="20" Margin="0,12,0,0">
+                <Border Classes="card">
                   <StackPanel>
-                    <TextBlock Classes="section" Text="ORIGINS" />
-                    <TextBlock Classes="label" Text="Én pr. linje" />
-                    <TextBox Text="{Binding OriginsText}" AcceptsReturn="True" TextWrapping="Wrap" MinHeight="110" />
+                    <TextBlock Classes="section" Text="NOTER" />
+                    <TextBox Text="{Binding Build.Notes}" AcceptsReturn="True" TextWrapping="Wrap" MinHeight="160" />
                   </StackPanel>
                 </Border>
-
-                <Border Grid.Row="0" Grid.Column="2" Classes="card">
-                  <StackPanel>
-                    <TextBlock Classes="section" Text="STEMME" />
-                    <TextBlock Classes="label" Text="Voiceset" />
-                    <TextBox Text="{Binding Build.Voiceset}" />
-                    <TextBlock Classes="label" Text="Eksempel-replikker" Margin="0,12,0,4" />
-                    <TextBox Text="{Binding Build.VoiceExample}" AcceptsReturn="True" TextWrapping="Wrap" MinHeight="60" />
-                  </StackPanel>
-                </Border>
-
-                <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Classes="card">
+                <Border Classes="card">
                   <StackPanel>
                     <TextBlock Classes="section" Text="BAGGRUND" />
                     <TextBox Text="{Binding Build.Background}" AcceptsReturn="True" TextWrapping="Wrap"
                              MinHeight="320" FontSize="14" LineHeight="22" />
                   </StackPanel>
                 </Border>
-              </Grid>
+              </StackPanel>
             </ScrollViewer>
+          </TabItem>
+
+          <!-- Venner -->
+          <TabItem Header="Venner">
+            <Border Classes="card" Margin="0,12,0,0">
+              <DockPanel>
+                <TextBlock DockPanel.Dock="Top" Classes="section" Text="VENNEBOG" />
+                <Button DockPanel.Dock="Bottom" Content="+ Tilføj ven" Click="AddFriend_Click" Margin="0,10,0,0" />
+                <DataGrid x:CompileBindings="False" ItemsSource="{Binding Friends}"
+                          AutoGenerateColumns="False" CanUserReorderColumns="False"
+                          HeadersVisibility="Column" GridLinesVisibility="Horizontal" Background="Transparent">
+                  <DataGrid.Columns>
+                    <DataGridTextColumn Header="Account" Binding="{Binding AccountName}" Width="220" />
+                    <DataGridTextColumn Header="Spiller" Binding="{Binding PlayerName}" Width="220" />
+                    <DataGridTextColumn Header="Note" Binding="{Binding Note}" Width="*" />
+                    <DataGridTemplateColumn Width="50">
+                      <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                          <Button Content="✕" Click="RemoveRow_Click" Background="Transparent"
+                                  Foreground="{StaticResource Muted}" HorizontalAlignment="Center" />
+                        </DataTemplate>
+                      </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                  </DataGrid.Columns>
+                </DataGrid>
+              </DockPanel>
+            </Border>
           </TabItem>
 
         </TabControl>

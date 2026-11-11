@@ -49,8 +49,21 @@ public sealed class Build
     public Dictionary<string, int> Crafting { get; set; } = new();
 
     public string Notes { get; set; } = "";
-    public List<string> Origins { get; set; } = new();
-    public string Voiceset { get; set; } = "";
-    public string VoiceExample { get; set; } = "";
     public string Background { get; set; } = "";
+
+    /// <summary>Vennebog.</summary>
+    public List<Friend> Friends { get; set; } = new();
+
+    // Gamle felter – læses kun fra ældre builds og flyttes ind i Notes (se BuildEditor).
+    public List<string>? Origins { get; set; }
+    public string? Voiceset { get; set; }
+    public string? VoiceExample { get; set; }
+}
+
+/// <summary>En ven i vennebogen.</summary>
+public sealed class Friend
+{
+    public string AccountName { get; set; } = "";
+    public string PlayerName { get; set; } = "";
+    public string Note { get; set; } = "";
 }

@@ -122,12 +122,19 @@ public partial class MainWindow : Window
 
     private void AddCraft_Click(object? sender, RoutedEventArgs e) => _editor.Crafting.Add(new NamedValue());
 
+    private void AddFriend_Click(object? sender, RoutedEventArgs e) => _editor.Friends.Add(new Friend());
+
     private void RemoveRow_Click(object? sender, RoutedEventArgs e)
     {
-        if (sender is Button { DataContext: NamedValue row })
+        switch ((sender as Button)?.DataContext)
         {
-            _editor.Skills.Remove(row);
-            _editor.Crafting.Remove(row);
+            case NamedValue row:
+                _editor.Skills.Remove(row);
+                _editor.Crafting.Remove(row);
+                break;
+            case Friend friend:
+                _editor.Friends.Remove(friend);
+                break;
         }
     }
 }
