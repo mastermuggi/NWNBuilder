@@ -2,46 +2,71 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:m="using:NWNBuilder.Core.Models"
         x:Class="NWNBuilder.MainWindow"
-        x:DataType="m:Build"
         Title="NWNBuilder"
-        Width="1000" Height="750">
+        Width="1100" Height="750">
 
   <DockPanel Margin="16">
 
-    <StackPanel DockPanel.Dock="Top" Spacing="4" Margin="0,0,0,16">
-      <TextBlock Text="{Binding Name}" FontSize="24" FontWeight="SemiBold" />
-      <StackPanel Orientation="Horizontal" Spacing="16">
-        <TextBlock Text="{Binding Race}" />
-        <TextBlock Text="{Binding Alignment}" />
-        <TextBlock Text="{Binding Deity}" />
-        <TextBlock Text="{Binding Age, StringFormat='Age {0}'}" />
-        <TextBlock Text="{Binding Ruleset, StringFormat='Regelsæt: {0}'}" Opacity="0.6" />
-      </StackPanel>
-    </StackPanel>
-
-    <Grid DockPanel.Dock="Top" ColumnDefinitions="50,140,220,240,100" Margin="0,0,0,4">
-      <TextBlock Grid.Column="0" Text="Lvl" FontWeight="SemiBold" />
-      <TextBlock Grid.Column="1" Text="Klasse" FontWeight="SemiBold" />
-      <TextBlock Grid.Column="2" Text="Class feat" FontWeight="SemiBold" />
-      <TextBlock Grid.Column="3" Text="General feat" FontWeight="SemiBold" />
-      <TextBlock Grid.Column="4" Text="Ability +1" FontWeight="SemiBold" />
+    <!-- Database -->
+    <Grid DockPanel.Dock="Top" ColumnDefinitions="Auto,*,Auto,Auto" Margin="0,0,0,8">
+      <TextBlock Grid.Column="0" Text="MongoDB" VerticalAlignment="Center" Margin="0,0,8,0" />
+      <TextBox Grid.Column="1" x:Name="ConnectionBox" PasswordChar="•"
+               Watermark="mongodb+srv://bruger:kodeord@..." />
+      <Button Grid.Column="2" Content="Forbind" Click="Connect_Click" Margin="8,0,0,0" />
+      <Button Grid.Column="3" Content="Gem build" Click="Save_Click" Margin="8,0,0,0" />
     </Grid>
+    <TextBlock DockPanel.Dock="Top" x:Name="StatusText" Text="Ikke forbundet" Opacity="0.7" Margin="0,0,0,16" />
 
-    <ScrollViewer>
-      <ItemsControl ItemsSource="{Binding Levels}">
-        <ItemsControl.ItemTemplate>
-          <DataTemplate x:DataType="m:BuildLevel">
-            <Grid ColumnDefinitions="50,140,220,240,100" Margin="0,2">
-              <TextBlock Grid.Column="0" Text="{Binding Level}" />
-              <TextBlock Grid.Column="1" Text="{Binding Class}" />
-              <TextBlock Grid.Column="2" Text="{Binding ClassFeat}" />
-              <TextBlock Grid.Column="3" Text="{Binding GeneralFeat}" />
-              <TextBlock Grid.Column="4" Text="{Binding AbilityIncrease}" />
-            </Grid>
+    <!-- Builds i databasen -->
+    <DockPanel DockPanel.Dock="Left" Width="220" Margin="0,0,16,0">
+      <TextBlock DockPanel.Dock="Top" Text="Builds" FontWeight="SemiBold" Margin="0,0,0,4" />
+      <ListBox x:Name="BuildList" SelectionChanged="BuildList_SelectionChanged">
+        <ListBox.ItemTemplate>
+          <DataTemplate x:DataType="m:Build">
+            <TextBlock Text="{Binding Name}" />
           </DataTemplate>
-        </ItemsControl.ItemTemplate>
-      </ItemsControl>
-    </ScrollViewer>
+        </ListBox.ItemTemplate>
+      </ListBox>
+    </DockPanel>
 
+    <!-- Valgt build -->
+    <DockPanel x:Name="BuildView" x:DataType="m:Build">
+
+      <StackPanel DockPanel.Dock="Top" Spacing="4" Margin="0,0,0,16">
+        <TextBlock Text="{Binding Name}" FontSize="24" FontWeight="SemiBold" />
+        <StackPanel Orientation="Horizontal" Spacing="16">
+          <TextBlock Text="{Binding Race}" />
+          <TextBlock Text="{Binding Alignment}" />
+          <TextBlock Text="{Binding Deity}" />
+          <TextBlock Text="{Binding Age, StringFormat='Age {0}'}" />
+          <TextBlock Text="{Binding Ruleset, StringFormat='Regelsæt: {0}'}" Opacity="0.6" />
+        </StackPanel>
+      </StackPanel>
+
+      <Grid DockPanel.Dock="Top" ColumnDefinitions="50,140,220,240,100" Margin="0,0,0,4">
+        <TextBlock Grid.Column="0" Text="Lvl" FontWeight="SemiBold" />
+        <TextBlock Grid.Column="1" Text="Klasse" FontWeight="SemiBold" />
+        <TextBlock Grid.Column="2" Text="Class feat" FontWeight="SemiBold" />
+        <TextBlock Grid.Column="3" Text="General feat" FontWeight="SemiBold" />
+        <TextBlock Grid.Column="4" Text="Ability +1" FontWeight="SemiBold" />
+      </Grid>
+
+      <ScrollViewer>
+        <ItemsControl ItemsSource="{Binding Levels}">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate x:DataType="m:BuildLevel">
+              <Grid ColumnDefinitions="50,140,220,240,100" Margin="0,2">
+                <TextBlock Grid.Column="0" Text="{Binding Level}" />
+                <TextBlock Grid.Column="1" Text="{Binding Class}" />
+                <TextBlock Grid.Column="2" Text="{Binding ClassFeat}" />
+                <TextBlock Grid.Column="3" Text="{Binding GeneralFeat}" />
+                <TextBlock Grid.Column="4" Text="{Binding AbilityIncrease}" />
+              </Grid>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </ScrollViewer>
+
+    </DockPanel>
   </DockPanel>
 </Window>

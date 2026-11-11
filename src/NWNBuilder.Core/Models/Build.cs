@@ -25,6 +25,9 @@ public sealed class BuildLevel
 /// <summary>Et character build. Kun det der vælges/skrives – beregnede værdier gemmes ikke.</summary>
 public sealed class Build
 {
+    /// <summary>Database-id. Null indtil buildet er gemt første gang.</summary>
+    public string? Id { get; set; }
+
     public string Name { get; set; } = "";
     public string Ruleset { get; set; } = "arelith";
 
