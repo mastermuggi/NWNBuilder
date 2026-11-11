@@ -239,18 +239,18 @@
                       </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                   </DataGridTemplateColumn>
-                  <DataGridTextColumn Header="BAB" Binding="{Binding Bab}" IsReadOnly="True" Width="52" />
-                  <DataGridTextColumn Header="F" Binding="{Binding Fort}" IsReadOnly="True" Width="44" />
-                  <DataGridTextColumn Header="R" Binding="{Binding Ref}" IsReadOnly="True" Width="44" />
-                  <DataGridTextColumn Header="W" Binding="{Binding Will}" IsReadOnly="True" Width="44" />
-                  <DataGridTextColumn Header="HP" Binding="{Binding Hp}" IsReadOnly="True" Width="52" />
-                  <DataGridTextColumn Header="SP" Binding="{Binding SkillPoints}" IsReadOnly="True" Width="48" />
-                  <DataGridTextColumn Header="STR" Binding="{Binding Str}" IsReadOnly="True" Width="48" />
-                  <DataGridTextColumn Header="DEX" Binding="{Binding Dex}" IsReadOnly="True" Width="48" />
-                  <DataGridTextColumn Header="CON" Binding="{Binding Con}" IsReadOnly="True" Width="48" />
-                  <DataGridTextColumn Header="INT" Binding="{Binding Int}" IsReadOnly="True" Width="48" />
-                  <DataGridTextColumn Header="WIS" Binding="{Binding Wis}" IsReadOnly="True" Width="48" />
-                  <DataGridTextColumn Header="CHA" Binding="{Binding Cha}" IsReadOnly="True" Width="48" />
+                  <DataGridTextColumn Header="BAB" Binding="{Binding Bab}" IsReadOnly="True" Width="64" CellStyleClasses="calc" />
+                  <DataGridTextColumn Header="Fort" Binding="{Binding Fort}" IsReadOnly="True" Width="64" CellStyleClasses="calc" />
+                  <DataGridTextColumn Header="Ref" Binding="{Binding Ref}" IsReadOnly="True" Width="60" CellStyleClasses="calc" />
+                  <DataGridTextColumn Header="Will" Binding="{Binding Will}" IsReadOnly="True" Width="60" CellStyleClasses="calc" />
+                  <DataGridTextColumn Header="HP" Binding="{Binding Hp}" IsReadOnly="True" Width="68" CellStyleClasses="calc" />
+                  <DataGridTextColumn Header="Skill pt" Binding="{Binding SkillPoints}" IsReadOnly="True" Width="80" CellStyleClasses="calc" />
+                  <DataGridTextColumn Header="STR" Binding="{Binding Str}" IsReadOnly="True" Width="60" CellStyleClasses="calc" />
+                  <DataGridTextColumn Header="DEX" Binding="{Binding Dex}" IsReadOnly="True" Width="60" CellStyleClasses="calc" />
+                  <DataGridTextColumn Header="CON" Binding="{Binding Con}" IsReadOnly="True" Width="60" CellStyleClasses="calc" />
+                  <DataGridTextColumn Header="INT" Binding="{Binding Int}" IsReadOnly="True" Width="60" CellStyleClasses="calc" />
+                  <DataGridTextColumn Header="WIS" Binding="{Binding Wis}" IsReadOnly="True" Width="60" CellStyleClasses="calc" />
+                  <DataGridTextColumn Header="CHA" Binding="{Binding Cha}" IsReadOnly="True" Width="60" CellStyleClasses="calc" />
                 </DataGrid.Columns>
               </DataGrid>
             </Border>

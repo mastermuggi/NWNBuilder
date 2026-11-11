@@ -70,6 +70,15 @@
       <Setter Property="Foreground" Value="{StaticResource Gold}" />
     </Style>
 
+    <!-- Beregnede kolonner i Levels-tabellen -->
+    <Style Selector="DataGridCell.calc">
+      <Setter Property="Foreground" Value="{StaticResource Gold}" />
+      <Setter Property="Background" Value="#14FFFFFF" />
+    </Style>
+    <Style Selector="DataGridColumnHeader">
+      <Setter Property="Padding" Value="8,0" />
+    </Style>
+
     <Style Selector="TabItem">
       <Setter Property="FontSize" Value="16" />
     </Style>
