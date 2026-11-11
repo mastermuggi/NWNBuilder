@@ -1,3 +1,4 @@
+using System.Security.Authentication;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Conventions;
@@ -42,6 +43,8 @@ public sealed class BuildStore
         var url = MongoUrl.Create(connectionString);
         var settings = MongoClientSettings.FromUrl(url);
         settings.ServerSelectionTimeout = TimeSpan.FromSeconds(10);
+        // Windows (SChannel) fejlede TLS-håndtryk mod Atlas med 0x80090304 → lås til TLS 1.2.
+        settings.SslSettings = new SslSettings { EnabledSslProtocols = SslProtocols.Tls12 };
 
         var db = new MongoClient(settings).GetDatabase(database ?? url.DatabaseName ?? DefaultDatabase);
         _builds = db.GetCollection<Build>("builds");
