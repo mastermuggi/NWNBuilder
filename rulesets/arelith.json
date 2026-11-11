@@ -15,7 +15,7 @@
   "saveTables": {
     "high":   [2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12],
     "low":    [0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6],
-    "medium": [1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 7, 7, 7, 8, 9, 9, 9]
+    "medium": [1, 2, 2, 3, 3, 3, 4, 4, 5, 5, 5, 6, 6, 7, 7, 7, 8, 8, 9, 9]
   },
 
   "classes": [
@@ -29,7 +29,7 @@
       "skillPoints": 6,
       "classSkills": ["Concentration", "Craft Mastery", "Discipline", "Heal", "Hide", "Intimidate", "Leadership", "Listen", "Lore", "Move Silently", "Sail", "Spot", "Parry", "Perform", "Tumble", "Ride"],
       "saveBonuses": [],
-      "notes": "Monk (PGCC). Medium saves: wiki viser lvl 2,3,5,7,9,11,15,17,19; lvl 16 = 7 fra Hesper-arket. Øvrige levels er unverified."
+      "notes": "Monk (PGCC). Medium saves verificeret mod wiki-tabellen lvl 1-20 (ejer, 11. nov)."
     },
     {
       "name": "Swashbuckler",
