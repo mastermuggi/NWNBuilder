@@ -95,14 +95,14 @@ public class FeatRuleTests
     [Fact]
     public void Class_granted_feats_are_not_checked_and_count_as_taken()
     {
-        // Monk får Stunning Fist på level 1 (BAB 8 kræves ellers) og Improved Unarmed Strike.
+        // Arelith Monk (wiki): Brawler og Improved Unarmed Strike på level 1. Brawler kræver ellers BAB 4.
         var build = new Build
         {
             Race = "Human",
             StartAbilities = new AbilityScores { Str = 10, Dex = 16, Con = 14, Int = 10, Wis = 14, Cha = 8 },
             Levels = new()
             {
-                new BuildLevel { Level = 1, Class = "Monk", ClassFeat = "Stunning Fist", GeneralFeat = "Deflect Arrows" },
+                new BuildLevel { Level = 1, Class = "Monk", ClassFeat = "Brawler", GeneralFeat = "Deflect Arrows" },
             },
         };
 
@@ -169,5 +169,30 @@ public class FeatRuleTests
 
         Assert.Empty(Problems(Cleric("Path: Warpriest"), 12));
         Assert.NotEmpty(Problems(Cleric(null), 12));
+    }
+
+    [Fact]
+    public void Monk_discipline_tiers_need_monk_levels_and_previous_tier() // wiki.nwnarelith.com feat-sider
+    {
+        var build = new Build
+        {
+            Race = "Human",
+            StartAbilities = new AbilityScores { Str = 10, Dex = 16, Con = 14, Int = 10, Wis = 14, Cha = 8 },
+            Levels = Enumerable.Range(1, 7).Select(i => new BuildLevel { Level = i, Class = "Monk" }).ToList(),
+        };
+        build.Levels[1].ClassFeat = "Discipline: Body (Novice)";
+        build.Levels[6].ClassFeat = "Discipline: Body (Practitioner)";
+        build.Levels[6].GeneralFeat = "Discipline: Mind (Practitioner)";
+
+        var problems = Problems(build, 7);
+        Assert.Single(problems);
+        Assert.Contains("Discipline: Mind (Novice)", problems[0]);
+    }
+
+    [Fact]
+    public void Hide_in_plain_sight_is_removed_on_arelith()
+    {
+        var build = Fighter(1, setup: b => b.Levels[0].GeneralFeat = "Hide in Plain Sight");
+        Assert.Contains(Problems(build, 1), p => p.Contains("Fjernet"));
     }
 }

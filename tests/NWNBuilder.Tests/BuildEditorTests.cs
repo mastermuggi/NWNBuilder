@@ -37,7 +37,7 @@ public class BuildEditorTests
     {
         var editor = new BuildEditor(BuildJson.LoadSample("hesper-salcedo"), TestRules.Arelith());
 
-        Assert.Equal(28, editor.Skills.Count);
+        Assert.Equal(29, editor.Skills.Count); // inkl. Climb og Linguistics (Arelith)
         Assert.Equal(6, editor.Crafting.Count);
 
         editor.ShowOnlyAllocated = true;

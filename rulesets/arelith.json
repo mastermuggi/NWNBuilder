@@ -1,8 +1,8 @@
 {
   "id": "arelith",
   "name": "Arelith",
-  "version": "2026-11-11h",
-  "notes": "Kilde: wiki.nwnarelith.com (klassesider, Gift, Skill changes) + ejers ark (256 builds). Start-stats er efter race og før gifts, som i arkene. Feats: krav og beskrivelser fra NWN Wiki (nwn.fandom.com, CC BY-SA 3.0) via nwn-siala-builder, rettet efter wiki.nwnarelith.com/Feat_changes.",
+  "version": "2026-11-11j",
+  "notes": "Kilde: wiki.nwnarelith.com (klassesider, Gift, Skill changes) + ejers ark (256 builds). Start-stats er efter race og før gifts, som i arkene. Feats: krav og beskrivelser fra NWN Wiki (nwn.fandom.com, CC BY-SA 3.0) via nwn-siala-builder, rettet efter wiki.nwnarelith.com/Feat_changes. Klasse-feats, class skills og feat-ændringer læst fra wiki.nwnarelith.com 11. nov 2026 (klassesider, Feat changes, Skill changes, feat-sider).",
   "rules": {
     "maxLevel": 30,
     "epicFromLevel": 21,
@@ -95,6 +95,7 @@
         "Craft Mastery",
         "Heal",
         "Hide",
+        "Linguistics",
         "Listen",
         "Lore",
         "Move Silently",
@@ -169,6 +170,7 @@
         "Discipline",
         "Heal",
         "Intimidate",
+        "Linguistics",
         "Listen",
         "Lore",
         "Parry",
@@ -212,24 +214,77 @@
           "feat": "Weapon Proficiency (Simple)"
         },
         {
-          "classLevel": 2,
-          "feat": "Uncanny Dodge"
+          "classLevel": 1,
+          "feat": "Blind Fight",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Tribesman"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Spring Attack",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Tribesman"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Cleave",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Tribesman"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Ambidexterity",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Tribesman"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Improved Two-Weapon Fighting",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Tribesman"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Focus",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Tribesman"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Weapon Specialization",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Tribesman"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Toughness",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Tribesman"
         },
         {
           "classLevel": 4,
           "feat": "Barbarian Rage"
         },
         {
-          "classLevel": 5,
-          "feat": "Uncanny Dodge"
+          "classLevel": 6,
+          "feat": "Skill Focus",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Tribesman"
         },
         {
           "classLevel": 8,
           "feat": "Barbarian Rage"
         },
         {
+          "classLevel": 9,
+          "feat": "Knockdown",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Tribesman"
+        },
+        {
           "classLevel": 10,
-          "feat": "Uncanny Dodge"
+          "feat": "Uncanny Dodge",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 11,
@@ -240,12 +295,20 @@
           "feat": "Barbarian Rage"
         },
         {
-          "classLevel": 13,
-          "feat": "Uncanny Dodge"
+          "classLevel": 12,
+          "feat": "Improved Critical",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Tribesman"
         },
         {
           "classLevel": 14,
           "feat": "Damage Reduction (Barbarian)"
+        },
+        {
+          "classLevel": 14,
+          "feat": "Mobility",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Tribesman"
         },
         {
           "classLevel": 15,
@@ -256,16 +319,8 @@
           "feat": "Barbarian Rage"
         },
         {
-          "classLevel": 16,
-          "feat": "Uncanny Dodge"
-        },
-        {
           "classLevel": 17,
           "feat": "Damage Reduction (Barbarian)"
-        },
-        {
-          "classLevel": 19,
-          "feat": "Uncanny Dodge"
         },
         {
           "classLevel": 20,
@@ -278,6 +333,24 @@
         {
           "classLevel": 23,
           "feat": "Epic Barbarian Damage Reduction"
+        },
+        {
+          "classLevel": 23,
+          "feat": "Armor Skin",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Tribesman"
+        },
+        {
+          "classLevel": 24,
+          "feat": "Epic Prowess",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Tribesman"
+        },
+        {
+          "classLevel": 24,
+          "feat": "Epic Weapon Focus",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Tribesman"
         },
         {
           "classLevel": 26,
@@ -311,7 +384,9 @@
       "skillPoints": 6,
       "classSkills": [
         "Animal Empathy",
+        "Appraise",
         "Bluff",
+        "Climb",
         "Concentration",
         "Craft Mastery",
         "Discipline",
@@ -319,11 +394,15 @@
         "Hide",
         "Intimidate",
         "Leadership",
+        "Linguistics",
+        "Listen",
         "Lore",
         "Move Silently",
         "Parry",
         "Perform",
+        "Ride",
         "Sail",
+        "Search",
         "Sleight of Hand",
         "Spellcraft",
         "Spot",
@@ -360,6 +439,16 @@
         {
           "classLevel": 1,
           "feat": "Weapon Proficiency (Simple)"
+        },
+        {
+          "classLevel": 10,
+          "feat": "Uncanny Dodge",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 20,
+          "feat": "Inspiring Minstrel",
+          "source": "wiki.nwnarelith.com"
         }
       ]
     },
@@ -382,6 +471,7 @@
         "Heal",
         "Intimidate",
         "Leadership",
+        "Linguistics",
         "Listen",
         "Lore",
         "Parry",
@@ -393,10 +483,6 @@
       "notes": "Prestige, max 20. Fearless kun vs fear. CHA-mod til alle saves fra level 2 (Divine Grace/Dark Blessing, tælles kun én gang).",
       "chaToSavesFromLevel": 2,
       "grantedFeats": [
-        {
-          "classLevel": 1,
-          "feat": "Weapon Finesse"
-        },
         {
           "classLevel": 1,
           "feat": "Armor Proficiency (Heavy)"
@@ -415,10 +501,6 @@
         },
         {
           "classLevel": 1,
-          "feat": "Use Poison"
-        },
-        {
-          "classLevel": 1,
           "feat": "Weapon Proficiency (Martial)"
         },
         {
@@ -426,44 +508,94 @@
           "feat": "Weapon Proficiency (Simple)"
         },
         {
-          "classLevel": 2,
-          "feat": "Bull's Strength"
+          "classLevel": 1,
+          "feat": "Use Poison",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 2,
-          "feat": "Dark Blessing"
+          "feat": "Bull's Strength",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 2,
-          "feat": "Divine Smite"
+          "feat": "Dark Blessing",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Divine Smite",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Fearless",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 3,
-          "feat": "Create Undead"
+          "feat": "Create Undead",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 3,
-          "feat": "Turn Undead"
+          "feat": "Turn Undead",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 4,
-          "feat": "Sneak Attack, Blackguard"
+          "feat": "Brutal Attack",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 5,
-          "feat": "Summon Fiend"
+          "feat": "Summon Fiend",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 6,
-          "feat": "Inflict Serious Wounds"
+          "feat": "Corrupt Weapon",
+          "source": "wiki.nwnarelith.com"
         },
         {
-          "classLevel": 7,
-          "feat": "Contagion"
+          "classLevel": 9,
+          "feat": "Fear Immunity",
+          "source": "wiki.nwnarelith.com"
         },
         {
-          "classLevel": 8,
-          "feat": "Inflict Critical Wounds"
+          "classLevel": 16,
+          "feat": "Epic Fiendish Servant",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 17,
+          "feat": "Divine Synergy",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 17,
+          "feat": "Improved Turning",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 18,
+          "feat": "Extra Smiting",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 19,
+          "feat": "Great Smiting",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 20,
+          "feat": "Aura of Despair",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 20,
+          "feat": "Unholy Accuracy",
+          "source": "wiki.nwnarelith.com"
         }
       ]
     },
@@ -482,6 +614,7 @@
         "Heal",
         "Intimidate",
         "Leadership",
+        "Linguistics",
         "Listen",
         "Lore",
         "Ride",
@@ -494,6 +627,51 @@
         {
           "classLevel": 1,
           "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Practiced Rider",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Cavalier Weapon Proficiency",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Spirited Charge",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Fearless",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Summon Mount",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Special Steeds",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 8,
+          "feat": "Weapon of Choice",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 9,
+          "feat": "Fear Immunity",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 9,
+          "feat": "Aura of Courage",
+          "source": "wiki.nwnarelith.com"
         }
       ]
     },
@@ -511,6 +689,7 @@
         "Heal",
         "Intimidate",
         "Leadership",
+        "Linguistics",
         "Lore",
         "Ride",
         "Sail",
@@ -539,23 +718,60 @@
         },
         {
           "classLevel": 1,
-          "feat": "Turn Undead"
+          "feat": "Weapon Proficiency (Simple)"
         },
         {
           "classLevel": 1,
-          "feat": "Weapon Proficiency (Simple)"
+          "feat": "Turn Undead",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 6,
+          "feat": "Combat Casting",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Warpriest"
+        },
+        {
+          "classLevel": 6,
+          "feat": "Bard Song",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Evangelist"
+        },
+        {
+          "classLevel": 6,
+          "feat": "Curse Song",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Evangelist"
         },
         {
           "classLevel": 12,
           "feat": "Weapon Specialization",
-          "withFeat": "Path: Warpriest",
-          "notes": "For eksisterende Weapon Focus feats. Kilde: wiki.nwnarelith.com/Cleric (Path of the Warpriest)"
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Warpriest"
+        },
+        {
+          "classLevel": 12,
+          "feat": "Uncanny Dodge",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Seeker"
+        },
+        {
+          "classLevel": 18,
+          "feat": "Improved Combat Casting",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Warpriest"
+        },
+        {
+          "classLevel": 20,
+          "feat": "Inspiring Minstrel",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Evangelist"
         },
         {
           "classLevel": 21,
           "feat": "Divine Synergy",
-          "withFeat": "Path: Warpriest",
-          "notes": "Kilde: wiki.nwnarelith.com/Cleric (Path of the Warpriest)"
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Warpriest"
         }
       ]
     },
@@ -568,32 +784,22 @@
       "will": "high",
       "skillPoints": 6,
       "classSkills": [
-        "Appraise",
-        "Bluff",
-        "Concentration",
         "Craft Mastery",
-        "Discipline",
         "Heal",
-        "Hide",
-        "Intimidate",
-        "Leadership",
-        "Listen",
+        "Linguistics",
         "Lore",
-        "Move Silently",
-        "Perform",
-        "Ride",
-        "Sail",
-        "Sleight of Hand",
-        "Spellcraft",
-        "Taunt",
-        "Tumble",
-        "Use Magic Device"
+        "Sail"
       ],
       "notes": "Prestige.",
       "grantedFeats": [
         {
           "classLevel": 1,
           "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 10,
+          "feat": "Inspiring Minstrel",
+          "source": "wiki.nwnarelith.com"
         }
       ]
     },
@@ -617,6 +823,7 @@
         "Heal",
         "Intimidate",
         "Leadership",
+        "Linguistics",
         "Listen",
         "Lore",
         "Parry",
@@ -703,10 +910,6 @@
         },
         {
           "classLevel": 1,
-          "feat": "Lay On Hands"
-        },
-        {
-          "classLevel": 1,
           "feat": "Shield Proficiency"
         },
         {
@@ -718,12 +921,18 @@
           "feat": "Weapon Proficiency (Simple)"
         },
         {
+          "classLevel": 1,
+          "feat": "Lay on Hands",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
           "classLevel": 2,
           "feat": "Sacred Defense"
         },
         {
           "classLevel": 3,
-          "feat": "Divine Smite"
+          "feat": "Divine Smite",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 4,
@@ -731,7 +940,8 @@
         },
         {
           "classLevel": 5,
-          "feat": "Divine Wrath"
+          "feat": "Divine Wrath",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 6,
@@ -740,10 +950,6 @@
         {
           "classLevel": 8,
           "feat": "Sacred Defense"
-        },
-        {
-          "classLevel": 10,
-          "feat": "Divine Wrath"
         },
         {
           "classLevel": 10,
@@ -758,20 +964,12 @@
           "feat": "Sacred Defense"
         },
         {
-          "classLevel": 15,
-          "feat": "Divine Wrath"
-        },
-        {
           "classLevel": 16,
           "feat": "Sacred Defense"
         },
         {
           "classLevel": 18,
           "feat": "Sacred Defense"
-        },
-        {
-          "classLevel": 20,
-          "feat": "Divine Wrath"
         },
         {
           "classLevel": 20,
@@ -786,20 +984,12 @@
           "feat": "Sacred Defense"
         },
         {
-          "classLevel": 25,
-          "feat": "Divine Wrath"
-        },
-        {
           "classLevel": 26,
           "feat": "Sacred Defense"
         },
         {
           "classLevel": 28,
           "feat": "Sacred Defense"
-        },
-        {
-          "classLevel": 30,
-          "feat": "Divine Wrath"
         },
         {
           "classLevel": 30,
@@ -821,6 +1011,7 @@
         "Craft Mastery",
         "Heal",
         "Leadership",
+        "Linguistics",
         "Lore",
         "Sail",
         "Spellcraft"
@@ -829,10 +1020,6 @@
         {
           "classLevel": 1,
           "feat": "Weapon Finesse"
-        },
-        {
-          "classLevel": 1,
-          "feat": "Animal Companion"
         },
         {
           "classLevel": 1,
@@ -855,12 +1042,23 @@
           "feat": "Weapon Proficiency (Druid)"
         },
         {
+          "classLevel": 1,
+          "feat": "Animal Companion",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Possess Creature",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
           "classLevel": 2,
           "feat": "Woodland Stride"
         },
         {
           "classLevel": 3,
-          "feat": "Trackless Step"
+          "feat": "Trackless Step",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 4,
@@ -880,7 +1078,8 @@
         },
         {
           "classLevel": 9,
-          "feat": "Venom Immunity"
+          "feat": "Venom Immunity",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 10,
@@ -912,11 +1111,13 @@
         },
         {
           "classLevel": 22,
-          "feat": "Infinite Wildshape"
+          "feat": "Infinite Wildshape",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 26,
-          "feat": "Infinite Elemental Shape"
+          "feat": "Infinite Elemental Shape",
+          "source": "wiki.nwnarelith.com"
         }
       ]
     },
@@ -939,6 +1140,7 @@
         "Craft Mastery",
         "Discipline",
         "Heal",
+        "Linguistics",
         "Listen",
         "Lore",
         "Parry",
@@ -949,10 +1151,6 @@
       ],
       "notes": "Tidligere Dwarven Defender. Prestige, max 20. Stances kun når aktive.",
       "grantedFeats": [
-        {
-          "classLevel": 1,
-          "feat": "Weapon Finesse"
-        },
         {
           "classLevel": 1,
           "feat": "Armor Proficiency (Heavy)"
@@ -967,10 +1165,6 @@
         },
         {
           "classLevel": 1,
-          "feat": "Defensive Stance"
-        },
-        {
-          "classLevel": 1,
           "feat": "Shield Proficiency"
         },
         {
@@ -982,20 +1176,29 @@
           "feat": "Weapon Proficiency (Simple)"
         },
         {
+          "classLevel": 1,
+          "feat": "Defensive Stance",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Dodge",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
           "classLevel": 2,
-          "feat": "Defensive Awareness"
+          "feat": "Defensive Awareness",
+          "source": "wiki.nwnarelith.com"
         },
         {
-          "classLevel": 5,
-          "feat": "Defensive Awareness"
+          "classLevel": 9,
+          "feat": "Evasion",
+          "source": "wiki.nwnarelith.com"
         },
         {
-          "classLevel": 6,
-          "feat": "Dwarven Defender Damage Reduction"
-        },
-        {
-          "classLevel": 10,
-          "feat": "Defensive Awareness"
+          "classLevel": 15,
+          "feat": "Armor Skin",
+          "source": "wiki.nwnarelith.com"
         }
       ]
     },
@@ -1013,11 +1216,13 @@
         "Craft Mastery",
         "Heal",
         "Leadership",
+        "Linguistics",
         "Lore",
         "Sail",
         "Spellcraft"
       ],
-      "notes": "Fire path: universal save +1/+2/+3/+4 ved 5/10/15/20 (ikke med – afhænger af path)."
+      "notes": "Fire path: universal save +1/+2/+3/+4 ved 5/10/15/20 (ikke med – afhænger af path).",
+      "grantedFeats": []
     },
     {
       "name": "Favored Soul",
@@ -1028,15 +1233,11 @@
       "will": "high",
       "skillPoints": 4,
       "classSkills": [
-        "Concentration",
         "Craft Mastery",
         "Heal",
-        "Intimidate",
-        "Leadership",
+        "Linguistics",
         "Lore",
-        "Ride",
-        "Sail",
-        "Spellcraft"
+        "Sail"
       ],
       "grantedFeats": [
         {
@@ -1060,6 +1261,7 @@
         "Heal",
         "Intimidate",
         "Leadership",
+        "Linguistics",
         "Listen",
         "Lore",
         "Parry",
@@ -1109,6 +1311,21 @@
         {
           "classLevel": 1,
           "feat": "Weapon Proficiency (Simple)"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Armored Vigil",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 10,
+          "feat": "Field Maintenance",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 21,
+          "feat": "Epic Second Wind",
+          "source": "wiki.nwnarelith.com"
         }
       ]
     },
@@ -1132,6 +1349,7 @@
         "Heal",
         "Intimidate",
         "Leadership",
+        "Linguistics",
         "Listen",
         "Lore",
         "Parry",
@@ -1146,6 +1364,71 @@
         {
           "classLevel": 1,
           "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Dark Claim",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Hex of Rust",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Accursed Will",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 4,
+          "feat": "Blood Arcana Proficiency",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 5,
+          "feat": "Weapon Hex: Mortality",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 7,
+          "feat": "Familiar",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 8,
+          "feat": "Ill Tidings",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 12,
+          "feat": "Uncanny Dodge",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 13,
+          "feat": "Mobility",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 13,
+          "feat": "Darkvision",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 14,
+          "feat": "Atrocity: Invocation",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 19,
+          "feat": "Automatic Silent Spell",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 29,
+          "feat": "Improved Dark Claim",
+          "source": "wiki.nwnarelith.com"
         }
       ]
     },
@@ -1163,10 +1446,12 @@
         "Craft Mastery",
         "Heal",
         "Leadership",
+        "Linguistics",
         "Lore",
         "Sail",
         "Spellcraft"
-      ]
+      ],
+      "grantedFeats": []
     },
     {
       "name": "Invisible Blade",
@@ -1184,6 +1469,7 @@
         "Discipline",
         "Heal",
         "Hide",
+        "Linguistics",
         "Listen",
         "Lore",
         "Move Silently",
@@ -1199,6 +1485,26 @@
         {
           "classLevel": 1,
           "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Bleeding Wound",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Crippling Throw",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Arcane Bleed",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Eviscerate",
+          "source": "wiki.nwnarelith.com"
         }
       ]
     },
@@ -1221,6 +1527,7 @@
         "Heal",
         "Intimidate",
         "Leadership",
+        "Linguistics",
         "Listen",
         "Lore",
         "Parry",
@@ -1233,35 +1540,43 @@
       "grantedFeats": [
         {
           "classLevel": 1,
-          "feat": "Weapon Finesse"
+          "feat": "Rallying Cry",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 1,
-          "feat": "Heroic Shield"
+          "feat": "Heroic Shield",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 1,
-          "feat": "Rallying Cry"
+          "feat": "Mounted Combat",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 2,
-          "feat": "Inspire Courage"
+          "feat": "Inspire Courage",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 3,
-          "feat": "Fear"
+          "feat": "Fear",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 4,
-          "feat": "Inspire Courage"
-        },
-        {
-          "classLevel": 4,
-          "feat": "Oath of Wrath"
+          "feat": "Oath of Wrath",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 5,
-          "feat": "Final Stand"
+          "feat": "Final Stand",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 5,
+          "feat": "Summon Mount",
+          "source": "wiki.nwnarelith.com"
         }
       ]
     },
@@ -1281,6 +1596,7 @@
         "Discipline",
         "Heal",
         "Intimidate",
+        "Linguistics",
         "Listen",
         "Lore",
         "Parry",
@@ -1295,7 +1611,88 @@
       "grantedFeats": [
         {
           "classLevel": 1,
-          "feat": "Weapon Finesse"
+          "feat": "Brawler",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Bull's Strength",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Fearless",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Divine Grace",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Divine Smite",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Turn Undead",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Pugilist",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 4,
+          "feat": "Brutal Attack",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 5,
+          "feat": "Method: Signature Weapon",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 6,
+          "feat": "Extra Smiting",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 9,
+          "feat": "Aura of Courage",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 9,
+          "feat": "Woodland Stride",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 11,
+          "feat": "Uncanny Dodge",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 12,
+          "feat": "Improved Method: Signature Weapon Mastery",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 13,
+          "feat": "Improved Turning",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 16,
+          "feat": "Divine Synergy",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 19,
+          "feat": "Great Smiting",
+          "source": "wiki.nwnarelith.com"
         }
       ]
     },
@@ -1313,6 +1710,7 @@
         "Craft Mastery",
         "Disable Trap",
         "Heal",
+        "Linguistics",
         "Listen",
         "Lore",
         "Open Lock",
@@ -1347,6 +1745,7 @@
         "Hide",
         "Intimidate",
         "Leadership",
+        "Linguistics",
         "Listen",
         "Lore",
         "Move Silently",
@@ -1361,103 +1760,168 @@
       "grantedFeats": [
         {
           "classLevel": 1,
-          "feat": "Weapon Finesse"
+          "feat": "Weapon Proficiency (Monk)",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 1,
-          "feat": "Cleave"
+          "feat": "Improved Unarmed Strike",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 1,
-          "feat": "Evasion"
+          "feat": "Brawler",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 1,
-          "feat": "Flurry of Blows"
+          "feat": "Ki Barrier",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Discipline: Body (Novice)"
         },
         {
           "classLevel": 1,
-          "feat": "Improved Unarmed Strike"
+          "feat": "Evasion",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Discipline: Body (Novice)"
         },
         {
           "classLevel": 1,
-          "feat": "Monk AC Bonus"
+          "feat": "Ki Sprint",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Discipline: Body (Novice)"
         },
         {
           "classLevel": 1,
-          "feat": "Stunning Fist"
+          "feat": "Purity of Body",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Discipline: Body (Practitioner)"
         },
         {
           "classLevel": 1,
-          "feat": "Weapon Proficiency (Monk)"
+          "feat": "Empty Body",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Discipline: Body (Practitioner)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Wholeness of Body",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Discipline: Body (Practitioner)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Ki Strike",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Discipline: Body (Adept)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Diamond Body",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Discipline: Body (Adept)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Martial Katas",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Discipline: Martial (Adept)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Advanced Katas",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Discipline: Martial (Adept)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Meditation",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Discipline: Spiritual (Novice)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Spiritual Mantra",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Discipline: Spiritual (Novice)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Exemplary Orator",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Discipline: Spiritual (Novice)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Worship",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Discipline: Spiritual (Practitioner)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Spiritual Serendipity",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Discipline: Spiritual (Adept)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Skilled Rhetorician",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Discipline: Mind (Novice)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Innovation",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Discipline: Mind (Novice)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Brilliance",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Discipline: Mind (Practitioner)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Mental Fortress",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Discipline: Mind (Practitioner)"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Perfect Self",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Discipline: Mind (Adept)"
         },
         {
           "classLevel": 2,
-          "feat": "Deflect Arrows"
+          "feat": "Deflect Arrows",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 3,
-          "feat": "Monk Speed"
+          "feat": "Still Mind",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 3,
-          "feat": "Still Mind"
-        },
-        {
-          "classLevel": 5,
-          "feat": "Purity of Body"
-        },
-        {
-          "classLevel": 6,
-          "feat": "Improved Knockdown"
-        },
-        {
-          "classLevel": 6,
-          "feat": "Knockdown"
-        },
-        {
-          "classLevel": 7,
-          "feat": "Wholeness of Body"
+          "feat": "Pugilist",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 9,
-          "feat": "Improved Evasion"
-        },
-        {
-          "classLevel": 10,
-          "feat": "Ki Strike"
-        },
-        {
-          "classLevel": 11,
-          "feat": "Diamond Body"
+          "feat": "Improved Evasion",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 12,
-          "feat": "Diamond Soul"
-        },
-        {
-          "classLevel": 13,
-          "feat": "Ki Strike"
-        },
-        {
-          "classLevel": 15,
-          "feat": "Quivering Palm"
-        },
-        {
-          "classLevel": 16,
-          "feat": "Ki Strike"
-        },
-        {
-          "classLevel": 18,
-          "feat": "Empty Body"
-        },
-        {
-          "classLevel": 20,
-          "feat": "Perfect Self"
+          "feat": "Uncanny Dodge",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 17,
-          "feat": "Defensive Roll"
+          "feat": "Defensive Roll",
+          "source": "wiki.nwnarelith.com"
         }
       ]
     },
@@ -1476,6 +1940,7 @@
         "Heal",
         "Intimidate",
         "Leadership",
+        "Linguistics",
         "Listen",
         "Lore",
         "Parry",
@@ -1505,15 +1970,7 @@
         },
         {
           "classLevel": 1,
-          "feat": "Divine Grace"
-        },
-        {
-          "classLevel": 1,
           "feat": "Divine Health"
-        },
-        {
-          "classLevel": 1,
-          "feat": "Lay On Hands"
         },
         {
           "classLevel": 1,
@@ -1528,24 +1985,53 @@
           "feat": "Weapon Proficiency (Simple)"
         },
         {
-          "classLevel": 2,
-          "feat": "Aura of Courage"
+          "classLevel": 1,
+          "feat": "Lay on Hands",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Divine Grace",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 2,
-          "feat": "Divine Smite"
+          "feat": "Divine Smite",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Fearless",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Aura of Courage",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 3,
-          "feat": "Remove Disease"
+          "feat": "Turn Undead",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 3,
-          "feat": "Turn Undead"
+          "feat": "Remove Disease",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 5,
           "feat": "Summon Mount"
+        },
+        {
+          "classLevel": 21,
+          "feat": "Divine Synergy",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 21,
+          "feat": "Improved Turning",
+          "source": "wiki.nwnarelith.com"
         }
       ]
     },
@@ -1567,6 +2053,7 @@
         "Heal",
         "Hide",
         "Intimidate",
+        "Linguistics",
         "Lore",
         "Move Silently",
         "Sail",
@@ -1694,6 +2181,7 @@
       "skillPoints": 8,
       "classSkills": [
         "Animal Empathy",
+        "Climb",
         "Concentration",
         "Craft Mastery",
         "Disable Trap",
@@ -1701,6 +2189,7 @@
         "Heal",
         "Hide",
         "Intimidate",
+        "Linguistics",
         "Listen",
         "Lore",
         "Move Silently",
@@ -1714,10 +2203,6 @@
       "grantedFeats": [
         {
           "classLevel": 1,
-          "feat": "Weapon Finesse"
-        },
-        {
-          "classLevel": 1,
           "feat": "Armor Proficiency (Light)"
         },
         {
@@ -1726,15 +2211,7 @@
         },
         {
           "classLevel": 1,
-          "feat": "Dual-wield"
-        },
-        {
-          "classLevel": 1,
           "feat": "Shield Proficiency"
-        },
-        {
-          "classLevel": 1,
-          "feat": "Trackless Step"
         },
         {
           "classLevel": 1,
@@ -1745,12 +2222,103 @@
           "feat": "Weapon Proficiency (Simple)"
         },
         {
+          "classLevel": 1,
+          "feat": "Trackless Step",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Track",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Dual-Wield",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Slayer"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Power Attack",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Highlander"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Point Blank Shot",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Archer"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Rapid Shot",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Archer"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Rapid Reload",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Archer"
+        },
+        {
+          "classLevel": 4,
+          "feat": "Animal Companion",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
           "classLevel": 6,
-          "feat": "Animal Companion"
+          "feat": "Use Poison",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 7,
+          "feat": "Woodland Stride",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 8,
+          "feat": "Uncanny Dodge",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 9,
-          "feat": "Improved Two-weapon Fighting"
+          "feat": "Evasion",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 9,
+          "feat": "Improved Two-Weapon Fighting",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Slayer"
+        },
+        {
+          "classLevel": 9,
+          "feat": "Called Shot",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Archer"
+        },
+        {
+          "classLevel": 9,
+          "feat": "Improved Power Attack",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Highlander"
+        },
+        {
+          "classLevel": 10,
+          "feat": "Keen Senses",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 16,
+          "feat": "Nature Sense",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 24,
+          "feat": "Great Cleave",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Path: Highlander"
         }
       ]
     },
@@ -1772,6 +2340,7 @@
         "Hide",
         "Intimidate",
         "Leadership",
+        "Linguistics",
         "Listen",
         "Lore",
         "Move Silently",
@@ -1792,10 +2361,6 @@
       "grantedFeats": [
         {
           "classLevel": 1,
-          "feat": "Weapon Finesse"
-        },
-        {
-          "classLevel": 1,
           "feat": "Armor Proficiency (Light)"
         },
         {
@@ -1808,31 +2373,38 @@
         },
         {
           "classLevel": 2,
-          "feat": "Evasion"
+          "feat": "Evasion",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Weapon Finesse",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 3,
-          "feat": "Uncanny Dodge"
+          "feat": "Uncanny Dodge",
+          "source": "wiki.nwnarelith.com"
         },
         {
-          "classLevel": 6,
-          "feat": "Uncanny Dodge"
+          "classLevel": 4,
+          "feat": "Dirty Fighting",
+          "source": "wiki.nwnarelith.com"
         },
         {
-          "classLevel": 11,
-          "feat": "Uncanny Dodge"
+          "classLevel": 10,
+          "feat": "Keen Senses",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 14,
-          "feat": "Uncanny Dodge"
+          "feat": "Sharp Alertness",
+          "source": "wiki.nwnarelith.com"
         },
         {
-          "classLevel": 17,
-          "feat": "Uncanny Dodge"
-        },
-        {
-          "classLevel": 20,
-          "feat": "Uncanny Dodge"
+          "classLevel": 24,
+          "feat": "Wary Alertness",
+          "source": "wiki.nwnarelith.com"
         }
       ]
     },
@@ -1854,6 +2426,7 @@
         "Craft Mastery",
         "Heal",
         "Hide",
+        "Linguistics",
         "Listen",
         "Lore",
         "Move Silently",
@@ -1870,63 +2443,76 @@
       "grantedFeats": [
         {
           "classLevel": 1,
-          "feat": "Weapon Finesse"
-        },
-        {
-          "classLevel": 1,
           "feat": "Armor Proficiency (Light)"
-        },
-        {
-          "classLevel": 1,
-          "feat": "Hide in Plain Sight"
         },
         {
           "classLevel": 1,
           "feat": "Weapon Proficiency (Simple)"
         },
         {
-          "classLevel": 2,
-          "feat": "Darkvision"
+          "classLevel": 1,
+          "feat": "One with Shadow",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 2,
-          "feat": "Evasion"
+          "feat": "Evasion",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 2,
-          "feat": "Uncanny Dodge"
+          "feat": "Uncanny Dodge",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Darkvision",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 3,
-          "feat": "Shadow Daze"
+          "feat": "Shadow Illusion",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 3,
-          "feat": "Summon Shadow"
+          "feat": "Manifest Shadow",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Possess Creature",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 4,
-          "feat": "Shadow Evade"
+          "feat": "Shadow Evade",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 4,
+          "feat": "Darkness",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 5,
-          "feat": "Defensive Roll"
+          "feat": "Defensive Roll",
+          "source": "wiki.nwnarelith.com"
         },
         {
-          "classLevel": 5,
-          "feat": "Uncanny Dodge"
+          "classLevel": 6,
+          "feat": "Shadow Jump",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 7,
-          "feat": "Slippery Mind"
+          "feat": "Slippery Mind",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 10,
-          "feat": "Improved Evasion"
-        },
-        {
-          "classLevel": 10,
-          "feat": "Uncanny Dodge"
+          "feat": "Improved Evasion",
+          "source": "wiki.nwnarelith.com"
         }
       ]
     },
@@ -1944,6 +2530,7 @@
         "Craft Mastery",
         "Heal",
         "Leadership",
+        "Linguistics",
         "Lore",
         "Sail",
         "Spellcraft"
@@ -1952,6 +2539,16 @@
         {
           "classLevel": 1,
           "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Use Poison",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 6,
+          "feat": "Craft Wand",
+          "source": "wiki.nwnarelith.com"
         }
       ]
     },
@@ -1969,6 +2566,7 @@
         "Craft Mastery",
         "Heal",
         "Leadership",
+        "Linguistics",
         "Lore",
         "Sail",
         "Spellcraft"
@@ -1976,11 +2574,22 @@
       "grantedFeats": [
         {
           "classLevel": 1,
-          "feat": "Familiar"
+          "feat": "Weapon Proficiency (Simple)"
         },
         {
           "classLevel": 1,
-          "feat": "Weapon Proficiency (Simple)"
+          "feat": "Brew Potion",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Familiar",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Arcane Flux",
+          "source": "wiki.nwnarelith.com"
         }
       ]
     },
@@ -1996,6 +2605,7 @@
         "Animal Empathy",
         "Appraise",
         "Bluff",
+        "Climb",
         "Concentration",
         "Craft Mastery",
         "Disable Trap",
@@ -2004,6 +2614,7 @@
         "Hide",
         "Intimidate",
         "Leadership",
+        "Linguistics",
         "Listen",
         "Lore",
         "Move Silently",
@@ -2021,7 +2632,8 @@
         "Use Magic Device",
         "Use Trap"
       ],
-      "notes": "Prestige, max 20. Kun epic-progression (ingen BAB/saves fra klassen). Alle skills undtagen Climb er class skills."
+      "notes": "Prestige, max 20. Kun epic-progression (ingen BAB/saves fra klassen). Alle skills undtagen Climb er class skills.",
+      "grantedFeats": []
     },
     {
       "name": "Spellsword",
@@ -2037,6 +2649,7 @@
         "Discipline",
         "Heal",
         "Leadership",
+        "Linguistics",
         "Listen",
         "Lore",
         "Parry",
@@ -2049,6 +2662,56 @@
         {
           "classLevel": 1,
           "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Familiar",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Arcane Flux",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 6,
+          "feat": "Elemental Strike",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 10,
+          "feat": "Uncanny Dodge",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 11,
+          "feat": "Imbue Armor",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 12,
+          "feat": "Combat Casting",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 16,
+          "feat": "Greater Elemental Strike",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 24,
+          "feat": "Improved Combat Casting",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 26,
+          "feat": "Elemental Maelstrom",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 26,
+          "feat": "Greater Imbue Armor",
+          "source": "wiki.nwnarelith.com"
         }
       ]
     },
@@ -2068,6 +2731,7 @@
         "Heal",
         "Intimidate",
         "Leadership",
+        "Linguistics",
         "Lore",
         "Parry",
         "Perform",
@@ -2099,11 +2763,93 @@
       "grantedFeats": [
         {
           "classLevel": 1,
-          "feat": "Weapon Finesse"
+          "feat": "Weapon Finesse",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Grace",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Insightful Strike",
+          "source": "wiki.nwnarelith.com"
         },
         {
           "classLevel": 7,
-          "feat": "Mobility"
+          "feat": "Mobility",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 8,
+          "feat": "Panache",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 10,
+          "feat": "Elegant Strike",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 10,
+          "feat": "Swashbuckler Dodge",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 11,
+          "feat": "Luck of Heroes",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 12,
+          "feat": "Uncanny Dodge",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 12,
+          "feat": "Skill Focus Sail",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 13,
+          "feat": "Acrobatics Skill Mastery",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 14,
+          "feat": "Feint",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 16,
+          "feat": "Evasion",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 17,
+          "feat": "Slippery Mind",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 19,
+          "feat": "Second Intention",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 21,
+          "feat": "Third Intention",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 25,
+          "feat": "Epic Skill Focus Sail",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 26,
+          "feat": "Improved Evasion",
+          "source": "wiki.nwnarelith.com"
         }
       ]
     },
@@ -2125,6 +2871,7 @@
         "Heal",
         "Hide",
         "Intimidate",
+        "Linguistics",
         "Listen",
         "Lore",
         "Move Silently",
@@ -2146,8 +2893,141 @@
           "feat": "Weapon Finesse"
         },
         {
+          "classLevel": 1,
+          "feat": "Brawler",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 2,
+          "feat": "Fearless",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Pugilist",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Ki Barrier",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Cause of Vigilance"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Zen Archery",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Cause of Vigilance"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Evasion",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Cause of Freedom"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Uncanny Dodge",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Cause of Freedom"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Use Poison",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Cause of Vindication"
+        },
+        {
+          "classLevel": 3,
+          "feat": "Brutal Attack",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Cause of Vindication"
+        },
+        {
+          "classLevel": 4,
+          "feat": "Ki Strike",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 4,
+          "feat": "Brutal Attack",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 5,
+          "feat": "Method: Signature Weapon",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Cause of Vigilance"
+        },
+        {
+          "classLevel": 5,
+          "feat": "Method: Gruesome Technique",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Cause of Freedom"
+        },
+        {
+          "classLevel": 5,
+          "feat": "Method: Skirmish Maneuvers",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Cause of Vindication"
+        },
+        {
+          "classLevel": 8,
+          "feat": "Still Mind",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Cause of Vigilance"
+        },
+        {
+          "classLevel": 9,
+          "feat": "Aura of Courage",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 10,
+          "feat": "Improved Evasion",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Cause of Freedom"
+        },
+        {
+          "classLevel": 11,
+          "feat": "Uncanny Dodge",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 12,
+          "feat": "Slippery Mind",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Cause of Vigilance"
+        },
+        {
+          "classLevel": 12,
+          "feat": "Improved Method: Guerilla Warfare",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Cause of Vindication"
+        },
+        {
+          "classLevel": 15,
+          "feat": "Improved Method: Signature Weapon Mastery",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Cause of Vigilance"
+        },
+        {
+          "classLevel": 15,
+          "feat": "Crippling Strike",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Cause of Vindication"
+        },
+        {
           "classLevel": 16,
-          "feat": "Defensive Roll"
+          "feat": "Defensive Roll",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Cause of Freedom"
+        },
+        {
+          "classLevel": 18,
+          "feat": "Keen Senses",
+          "source": "wiki.nwnarelith.com",
+          "withFeat": "Cause of Vigilance"
         }
       ]
     },
@@ -2168,6 +3048,7 @@
         "Hide",
         "Intimidate",
         "Leadership",
+        "Linguistics",
         "Lore",
         "Move Silently",
         "Perform",
@@ -2182,6 +3063,16 @@
         {
           "classLevel": 1,
           "feat": "Weapon Finesse"
+        },
+        {
+          "classLevel": 10,
+          "feat": "Uncanny Dodge",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 10,
+          "feat": "Familiar",
+          "source": "wiki.nwnarelith.com"
         }
       ]
     },
@@ -2203,6 +3094,7 @@
         "Discipline",
         "Heal",
         "Intimidate",
+        "Linguistics",
         "Listen",
         "Lore",
         "Parry",
@@ -2276,6 +3168,7 @@
         "Concentration",
         "Craft Mastery",
         "Heal",
+        "Linguistics",
         "Lore",
         "Sail",
         "Spellcraft"
@@ -2287,11 +3180,17 @@
         },
         {
           "classLevel": 1,
-          "feat": "Familiar"
+          "feat": "Weapon Proficiency (Wizard)"
         },
         {
           "classLevel": 1,
-          "feat": "Weapon Proficiency (Wizard)"
+          "feat": "Familiar",
+          "source": "wiki.nwnarelith.com"
+        },
+        {
+          "classLevel": 1,
+          "feat": "Arcane Flux",
+          "source": "wiki.nwnarelith.com"
         }
       ]
     }
@@ -2618,6 +3517,11 @@
       "ability": "Cha"
     },
     {
+      "name": "Linguistics",
+      "ability": "Int",
+      "crossTrainable": true
+    },
+    {
       "name": "Listen",
       "ability": "Wis"
     },
@@ -2693,7 +3597,8 @@
       "requires": {
         "level": 21
       },
-      "requiresText": "21st level"
+      "requiresText": "21st level",
+      "arelith": "Arelith: kun I og II kan vælges; II hedder Legendary Strength."
     },
     {
       "name": "Great Dexterity",
@@ -2705,7 +3610,8 @@
       "requires": {
         "level": 21
       },
-      "requiresText": "21st level"
+      "requiresText": "21st level",
+      "arelith": "Arelith: kun I og II kan vælges; II hedder Legendary Dexterity."
     },
     {
       "name": "Great Constitution",
@@ -2717,7 +3623,8 @@
       "requires": {
         "level": 21
       },
-      "requiresText": "21st level"
+      "requiresText": "21st level",
+      "arelith": "Arelith: kun I og II kan vælges; II hedder Legendary Constitution."
     },
     {
       "name": "Great Intelligence",
@@ -2729,7 +3636,8 @@
       "requires": {
         "level": 21
       },
-      "requiresText": "21st level"
+      "requiresText": "21st level",
+      "arelith": "Arelith: kun I og II kan vælges; II hedder Legendary Intelligence."
     },
     {
       "name": "Great Wisdom",
@@ -2741,7 +3649,8 @@
       "requires": {
         "level": 21
       },
-      "requiresText": "21st level"
+      "requiresText": "21st level",
+      "arelith": "Arelith: kun I og II kan vælges; II hedder Legendary Wisdom."
     },
     {
       "name": "Great Charisma",
@@ -2753,114 +3662,247 @@
       "requires": {
         "level": 21
       },
-      "requiresText": "21st level"
+      "requiresText": "21st level",
+      "arelith": "Arelith: kun I og II kan vælges; II hedder Legendary Charisma."
     },
     {
       "name": "Discipline: Martial (Novice)",
       "aliases": [
         "Martial Novice"
-      ]
+      ],
+      "requires": {
+        "classLevels": {
+          "Monk": 2
+        }
+      },
+      "requiresText": "Monk 2 (Arelith)"
     },
     {
       "name": "Discipline: Martial (Practitioner)",
       "aliases": [
         "Martial Practitioner"
       ],
-      "ref": 1
+      "ref": 1,
+      "requires": {
+        "classLevels": {
+          "Monk": 7
+        },
+        "feats": [
+          "Discipline: Martial (Novice)"
+        ]
+      },
+      "requiresText": "Discipline: Martial (Novice), Monk 7 (Arelith)"
     },
     {
       "name": "Discipline: Martial (Adept)",
       "aliases": [
         "Martial Adept"
       ],
-      "ref": 1
+      "ref": 1,
+      "requires": {
+        "classLevels": {
+          "Monk": 13
+        },
+        "feats": [
+          "Discipline: Martial (Practitioner)"
+        ]
+      },
+      "requiresText": "Discipline: Martial (Practitioner), Monk 13 (Arelith)"
     },
     {
       "name": "Discipline: Martial (Master)",
       "aliases": [
         "Martial Master"
       ],
-      "ref": 1
+      "ref": 1,
+      "requires": {
+        "classLevels": {
+          "Monk": 21
+        },
+        "feats": [
+          "Discipline: Martial (Adept)"
+        ]
+      },
+      "requiresText": "Discipline: Martial (Adept), Monk 21 (Arelith)"
     },
     {
       "name": "Discipline: Martial (Ascension)",
       "aliases": [
         "Martial Ascension"
       ],
-      "ref": 1
+      "ref": 1,
+      "requires": {
+        "classLevels": {
+          "Monk": 25
+        },
+        "feats": [
+          "Discipline: Martial (Master)"
+        ]
+      },
+      "requiresText": "Discipline: Martial (Master), Monk 25 (Arelith)"
     },
     {
       "name": "Discipline: Body (Novice)",
       "aliases": [
         "Body Novice"
-      ]
+      ],
+      "requires": {
+        "classLevels": {
+          "Monk": 2
+        }
+      },
+      "requiresText": "Monk 2 (Arelith)"
     },
     {
       "name": "Discipline: Body (Practitioner)",
       "aliases": [
         "Body Practitioner"
       ],
-      "fort": 1
+      "fort": 1,
+      "requires": {
+        "classLevels": {
+          "Monk": 7
+        },
+        "feats": [
+          "Discipline: Body (Novice)"
+        ]
+      },
+      "requiresText": "Discipline: Body (Novice), Monk 7 (Arelith)"
     },
     {
       "name": "Discipline: Body (Adept)",
       "aliases": [
         "Body Adept"
       ],
-      "fort": 1
+      "fort": 1,
+      "requires": {
+        "classLevels": {
+          "Monk": 13
+        },
+        "feats": [
+          "Discipline: Body (Practitioner)"
+        ]
+      },
+      "requiresText": "Discipline: Body (Practitioner), Monk 13 (Arelith)"
     },
     {
       "name": "Discipline: Body (Master)",
       "aliases": [
         "Body Master"
       ],
-      "fort": 1
+      "fort": 1,
+      "requires": {
+        "classLevels": {
+          "Monk": 21
+        },
+        "feats": [
+          "Discipline: Body (Adept)"
+        ]
+      },
+      "requiresText": "Discipline: Body (Adept), Monk 21 (Arelith)"
     },
     {
       "name": "Discipline: Body (Ascension)",
       "aliases": [
         "Body Ascension"
-      ]
+      ],
+      "requires": {
+        "classLevels": {
+          "Monk": 25
+        },
+        "feats": [
+          "Discipline: Body (Master)"
+        ]
+      },
+      "requiresText": "Discipline: Body (Master), Monk 25 (Arelith)"
     },
     {
       "name": "Discipline: Mind (Novice)",
       "aliases": [
         "Mind Novice"
-      ]
+      ],
+      "requires": {
+        "classLevels": {
+          "Monk": 2
+        }
+      },
+      "requiresText": "Monk 2 (Arelith)"
     },
     {
       "name": "Discipline: Mind (Practitioner)",
       "aliases": [
         "Mind Practitioner"
       ],
-      "will": 1
+      "will": 1,
+      "requires": {
+        "classLevels": {
+          "Monk": 7
+        },
+        "feats": [
+          "Discipline: Mind (Novice)"
+        ]
+      },
+      "requiresText": "Discipline: Mind (Novice), Monk 7 (Arelith)"
     },
     {
       "name": "Discipline: Mind (Adept)",
       "aliases": [
         "Mind Adept"
       ],
-      "will": 1
+      "will": 1,
+      "requires": {
+        "classLevels": {
+          "Monk": 13
+        },
+        "feats": [
+          "Discipline: Mind (Practitioner)"
+        ]
+      },
+      "requiresText": "Discipline: Mind (Practitioner), Monk 13 (Arelith)"
     },
     {
       "name": "Discipline: Mind (Master)",
       "aliases": [
         "Mind Master"
       ],
-      "will": 1
+      "will": 1,
+      "requires": {
+        "classLevels": {
+          "Monk": 21
+        },
+        "feats": [
+          "Discipline: Mind (Adept)"
+        ]
+      },
+      "requiresText": "Discipline: Mind (Adept), Monk 21 (Arelith)"
     },
     {
       "name": "Discipline: Mind (Ascension)",
       "aliases": [
         "Mind Ascension"
-      ]
+      ],
+      "requires": {
+        "classLevels": {
+          "Monk": 25
+        },
+        "feats": [
+          "Discipline: Mind (Master)"
+        ]
+      },
+      "requiresText": "Discipline: Mind (Master), Monk 25 (Arelith)"
     },
     {
       "name": "Discipline: Spiritual (Novice)",
       "aliases": [
         "Spirit Novice",
         "Spiritual Novice"
-      ]
+      ],
+      "requires": {
+        "classLevels": {
+          "Monk": 2
+        }
+      },
+      "requiresText": "Monk 2 (Arelith)"
     },
     {
       "name": "Discipline: Spiritual (Practitioner)",
@@ -2868,7 +3910,16 @@
         "Spirit Practitioner",
         "Spiritual Practitioner"
       ],
-      "notes": "+1 save vs death"
+      "notes": "+1 save vs death",
+      "requires": {
+        "classLevels": {
+          "Monk": 7
+        },
+        "feats": [
+          "Discipline: Spiritual (Novice)"
+        ]
+      },
+      "requiresText": "Discipline: Spiritual (Novice), Monk 7 (Arelith)"
     },
     {
       "name": "Discipline: Spiritual (Adept)",
@@ -2876,7 +3927,16 @@
         "Spirit Adept",
         "Spiritual Adept"
       ],
-      "notes": "+1 save vs death"
+      "notes": "+1 save vs death",
+      "requires": {
+        "classLevels": {
+          "Monk": 13
+        },
+        "feats": [
+          "Discipline: Spiritual (Practitioner)"
+        ]
+      },
+      "requiresText": "Discipline: Spiritual (Practitioner), Monk 13 (Arelith)"
     },
     {
       "name": "Discipline: Spiritual (Master)",
@@ -2886,14 +3946,32 @@
       ],
       "fort": 1,
       "ref": 1,
-      "will": 1
+      "will": 1,
+      "requires": {
+        "classLevels": {
+          "Monk": 21
+        },
+        "feats": [
+          "Discipline: Spiritual (Adept)"
+        ]
+      },
+      "requiresText": "Discipline: Spiritual (Adept), Monk 21 (Arelith)"
     },
     {
       "name": "Discipline: Spiritual (Ascension)",
       "aliases": [
         "Spirit Ascension",
         "Spiritual Ascension"
-      ]
+      ],
+      "requires": {
+        "classLevels": {
+          "Monk": 25
+        },
+        "feats": [
+          "Discipline: Spiritual (Master)"
+        ]
+      },
+      "requiresText": "Discipline: Spiritual (Master), Monk 25 (Arelith)"
     },
     {
       "name": "Toughness",
@@ -3174,10 +4252,23 @@
       "name": "Body Practicioner"
     },
     {
-      "name": "Bone of Stone"
+      "name": "Bone of Stone",
+      "requires": {
+        "feats": [
+          "Discipline: Body (Novice)"
+        ]
+      },
+      "requiresText": "Discipline: Body (Novice) (Arelith)"
     },
     {
-      "name": "Brawler"
+      "name": "Brawler",
+      "requires": {
+        "bab": 4,
+        "feats": [
+          "Improved Unarmed Strike"
+        ]
+      },
+      "requiresText": "Improved Unarmed Strike, base attack bonus +4 (Arelith)"
     },
     {
       "name": "Brew Potion",
@@ -3189,31 +4280,40 @@
       "name": "Brutal Attack +1",
       "aliases": [
         "Brutal Attack 1"
-      ]
+      ],
+      "base": "Brutal Attack"
     },
     {
-      "name": "Brutal Attack 1d6"
+      "name": "Brutal Attack 1d6",
+      "base": "Brutal Attack"
     },
     {
-      "name": "Brutal Attack 2"
+      "name": "Brutal Attack 2",
+      "base": "Brutal Attack"
     },
     {
-      "name": "Brutal Attack 2d6"
+      "name": "Brutal Attack 2d6",
+      "base": "Brutal Attack"
     },
     {
-      "name": "Brutal Attack 3"
+      "name": "Brutal Attack 3",
+      "base": "Brutal Attack"
     },
     {
-      "name": "Brutal Attack 3d6"
+      "name": "Brutal Attack 3d6",
+      "base": "Brutal Attack"
     },
     {
-      "name": "Brutal Attack 4"
+      "name": "Brutal Attack 4",
+      "base": "Brutal Attack"
     },
     {
-      "name": "Brutal Attack 5"
+      "name": "Brutal Attack 5",
+      "base": "Brutal Attack"
     },
     {
-      "name": "Brutal Attack 6"
+      "name": "Brutal Attack 6",
+      "base": "Brutal Attack"
     },
     {
       "name": "Bull's Strength",
@@ -3237,10 +4337,16 @@
       "requiresText": "base attack bonus of +1 or higher"
     },
     {
-      "name": "Cause: Freedom"
+      "name": "Cause: Freedom",
+      "aliases": [
+        "Cause of Freedom"
+      ]
     },
     {
-      "name": "Cause: Vindication"
+      "name": "Cause: Vindication",
+      "aliases": [
+        "Cause of Vindication"
+      ]
     },
     {
       "name": "Circle Kick",
@@ -3254,7 +4360,8 @@
           "Improved Unarmed Strike"
         ]
       },
-      "requiresText": "base attack bonus +3, dexterity 15+, improved unarmed strike"
+      "requiresText": "base attack bonus +3, dexterity 15+, improved unarmed strike",
+      "arelith": "Arelith: skifter ikke længere til nyt mål."
     },
     {
       "name": "Cleave",
@@ -3389,7 +4496,7 @@
           "Improved Unarmed Strike"
         ]
       },
-      "requiresText": "dexterity 13+, improved unarmed strike"
+      "requiresText": "dexterity 13+, Improved Unarmed Strike (Arelith)"
     },
     {
       "name": "Diamond Body",
@@ -3419,9 +4526,13 @@
       "name": "Dirty Fighting",
       "description": "The character knows brutal and effective fighting tactics. By sacrificing all other attacks during the round, the character can elect to perform a dirty fighting move that will deal an extra 1d4 points of damage. This mode cannot be used with power attack.",
       "requires": {
-        "bab": 2
+        "bab": 3,
+        "abilities": {
+          "Dex": 13
+        }
       },
-      "requiresText": "base attack bonus +2"
+      "requiresText": "base attack bonus +3, dexterity 13+ (Arelith)",
+      "arelith": "Arelith: instant-teknikker (Sand in the Eyes, Pommel Strike, Low Blow, Nosebreak, Headbutt) med -4 AB og 9 sek. cooldown."
     },
     {
       "name": "Disarm",
@@ -3435,7 +4546,17 @@
       "arelith": "Arelith: AB-straf -4 (Improved: -2). Våbnet tabes ikke; målet får -10 AB pr. hånd i 6 sek."
     },
     {
-      "name": "Disruptive Shot"
+      "name": "Disruptive Shot",
+      "requires": {
+        "feats": [
+          "Point Blank Shot"
+        ],
+        "anyFeats": [
+          "Weapon Focus Missile",
+          "Weapon Focus Thrown"
+        ]
+      },
+      "requiresText": "Point Blank Shot og Weapon Focus (Missile) eller (Thrown) (Arelith)"
     },
     {
       "name": "Divination"
@@ -3564,7 +4685,20 @@
       "type": "class"
     },
     {
-      "name": "Entangling Arrow"
+      "name": "Entangling Arrow",
+      "requires": {
+        "feats": [
+          "Point Blank Shot"
+        ],
+        "anyFeats": [
+          "Weapon Focus Missile",
+          "Weapon Focus Thrown"
+        ],
+        "classLevels": {
+          "Ranger": 1
+        }
+      },
+      "requiresText": "Ranger, Point Blank Shot og Weapon Focus (Missile) eller (Thrown) (Arelith)"
     },
     {
       "name": "Entangling Shot"
@@ -4230,13 +5364,24 @@
       "name": "field maintenance"
     },
     {
-      "name": "Flesh of Steel"
+      "name": "Flesh of Steel",
+      "requires": {
+        "feats": [
+          "Discipline: Body (Novice)"
+        ]
+      },
+      "requiresText": "Discipline: Body (Novice) (Arelith)"
     },
     {
       "name": "Flurry of Blows",
       "description": "Monks receive an extra attack per round when fighting with unarmed attacks or a kama. However, all attacks in that round suffer a -2 attack penalty.",
-      "requiresText": "monk 1",
-      "type": "class"
+      "requiresText": "Discipline: Martial (Novice) (Arelith)",
+      "type": "class",
+      "requires": {
+        "feats": [
+          "Discipline: Martial (Novice)"
+        ]
+      }
     },
     {
       "name": "Good Aim",
@@ -4446,7 +5591,11 @@
       "name": "Gruesome Technigue"
     },
     {
-      "name": "Gruesome Technique"
+      "name": "Gruesome Technique",
+      "aliases": [
+        "Method: Gruesome Technique",
+        "Gruesome Technigue"
+      ]
     },
     {
       "name": "Health"
@@ -4511,18 +5660,25 @@
       "name": "Improved Critical",
       "description": "Combat ability increases the critical threat range of a selected weapon by a range equal to the item's base threat range. A longsword that normally threatens a critical on a roll of 19-20 would now threaten a critical on a roll of 17-20.",
       "requires": {
-        "bab": 8
+        "bab": 8,
+        "feats": [
+          "Weapon Focus"
+        ]
       },
-      "requiresText": "proficiency with the chosen weapon, base attack bonus +8"
+      "requiresText": "base attack bonus +8, weapon focus i våbengruppen (Arelith)",
+      "arelith": "Arelith: kræver Weapon Focus i våbengruppen i stedet for proficiency."
     },
     {
       "name": "Improved Critical Unarmed",
       "base": "Improved Critical",
       "description": "Combat ability increases the critical threat range of a selected weapon by a range equal to the item's base threat range. A longsword that normally threatens a critical on a roll of 19-20 would now threaten a critical on a roll of 17-20.",
       "requires": {
-        "bab": 8
+        "bab": 8,
+        "feats": [
+          "Weapon Focus"
+        ]
       },
-      "requiresText": "proficiency with the chosen weapon, base attack bonus +8"
+      "requiresText": "base attack bonus +8, weapon focus i våbengruppen (Arelith)"
     },
     {
       "name": "Improved Disarm",
@@ -4539,7 +5695,8 @@
     },
     {
       "name": "Improved Dweomer Crafting",
-      "description": "Arelith: +1 tier til Magic og Mundane Dweomercraft."
+      "description": null,
+      "arelith": "Arelith: +2 tiers til Magic og Mundane Dweomercraft; kan arbejde med alle runer."
     },
     {
       "name": "Improved Evasion",
@@ -4688,13 +5845,14 @@
       "requires": {
         "level": 21,
         "feats": [
-          "Bard Song"
+          "Inspiring Minstrel"
         ],
         "skills": {
           "Perform": 25
         }
       },
-      "requiresText": "21st level, perform 25, bard song"
+      "requiresText": "Inspiring Minstrel, perform 25 (Arelith)",
+      "arelith": "Arelith: kræver Inspiring Minstrel (Bard 20 / Dirgesinger 10) og Perform 25."
     },
     {
       "name": "Lay on Hands",
@@ -4752,11 +5910,11 @@
       "requires": {
         "level": 21,
         "abilities": {
-          "Con": 21,
-          "Str": 21
+          "Str": 19,
+          "Con": 19
         }
       },
-      "requiresText": "21st level, strength 21+, constitution 21+, greater rage (6x per day)"
+      "requiresText": "21st level, strength 19, constitution 19 (Barbarian-siden) (Arelith)"
     },
     {
       "name": "Misfortune's Favor"
@@ -4782,7 +5940,15 @@
       "type": "class"
     },
     {
-      "name": "Monkey Grip"
+      "name": "Monkey Grip",
+      "arelith": "Arelith-feat.",
+      "requires": {
+        "bab": 3,
+        "abilities": {
+          "Str": 13
+        }
+      },
+      "requiresText": "base attack bonus +3, strength 13+ (Arelith)"
     },
     {
       "name": "Monolithic Elemental Shape"
@@ -4810,7 +5976,7 @@
         }
       },
       "requiresText": "ride 1 rank",
-      "arelith": "Arelith: +1 melee AB i stedet for AC-bonus."
+      "arelith": "Arelith: +1 melee AB i stedet for AC-bonus; fjerner 10% ASF fra ikke-arkane ridedyr."
     },
     {
       "name": "Mounting Resistance"
@@ -4883,7 +6049,10 @@
       "name": "Path: Shadowmage"
     },
     {
-      "name": "Path: Tribal"
+      "name": "Path: Tribal",
+      "aliases": [
+        "Path: Tribesman"
+      ]
     },
     {
       "name": "Path: Warpriest"
@@ -4934,7 +6103,14 @@
       "requiresText": "strength 13+"
     },
     {
-      "name": "Pugilist"
+      "name": "Pugilist",
+      "requires": {
+        "bab": 9,
+        "feats": [
+          "Brawler"
+        ]
+      },
+      "requiresText": "Brawler, base attack bonus +9 (Arelith)"
     },
     {
       "name": "Puglist"
@@ -4955,9 +6131,14 @@
     {
       "name": "Quivering Palm",
       "description": "This ability may be used once per day to instantly kill an opponent. If the character makes a successful attack after activating the ability, the target must make a fortitude save (DC 10 + half the monk's character level + the monk's wisdom modifier) or die.",
-      "requiresText": "monk 15",
+      "requiresText": "Discipline: Body (Novice) (Arelith)",
       "type": "class",
-      "arelith": "Arelith: ubegrænset brug, 5 minutters cooldown."
+      "arelith": "Arelith: ubegrænset brug, 5 minutters cooldown.",
+      "requires": {
+        "feats": [
+          "Discipline: Body (Novice)"
+        ]
+      }
     },
     {
       "name": "Rage"
@@ -4982,9 +6163,6 @@
         ]
       },
       "requiresText": "dexterity 13+, point blank shot"
-    },
-    {
-      "name": "Richochet"
     },
     {
       "name": "Scribe Scroll",
@@ -5044,7 +6222,10 @@
       "name": "Signature Spells"
     },
     {
-      "name": "Signature Weapon"
+      "name": "Signature Weapon",
+      "aliases": [
+        "Method: Signature Weapon"
+      ]
     },
     {
       "name": "Silent Spell",
@@ -5108,10 +6289,19 @@
       "type": "class"
     },
     {
-      "name": "Skin of Bronze"
+      "name": "Skin of Bronze",
+      "requires": {
+        "feats": [
+          "Discipline: Body (Novice)"
+        ]
+      },
+      "requiresText": "Discipline: Body (Novice) (Arelith)"
     },
     {
-      "name": "Skirmish Manouvers"
+      "name": "Skirmish Manouvers",
+      "aliases": [
+        "Method: Skirmish Maneuvers"
+      ]
     },
     {
       "name": "Slayer"
@@ -5180,7 +6370,13 @@
       "requiresText": "ability to cast first-level spells"
     },
     {
-      "name": "Spirit Shield"
+      "name": "Spirit Shield",
+      "requires": {
+        "feats": [
+          "Discipline: Spiritual (Novice)"
+        ]
+      },
+      "requiresText": "Discipline: Spiritual (Novice) (Arelith)"
     },
     {
       "name": "Spring Attack",
@@ -5267,10 +6463,11 @@
       "requires": {
         "level": 21,
         "abilities": {
-          "Str": 25
+          "Str": 23
         }
       },
-      "requiresText": "21st level, greater rage (4x per day), strength 25+"
+      "requiresText": "21st level, strength 23 (Barbarian-siden) (Arelith)",
+      "arelith": "Arelith: +1 APR under rage (stakker med Haste)."
     },
     {
       "name": "Totem: Parrot"
@@ -5342,8 +6539,13 @@
     {
       "name": "Use Poison",
       "description": "The character is trained in the use of poison and never has to make a dexterity check when applying poison to a blade.",
-      "requiresText": "assassin 1, blackguard 1",
-      "type": "class"
+      "requiresText": "dexterity 15+ (Arelith)",
+      "type": "class",
+      "requires": {
+        "abilities": {
+          "Dex": 15
+        }
+      }
     },
     {
       "name": "Valiant"
@@ -5596,7 +6798,8 @@
           "Wis": 13
         }
       },
-      "requiresText": "base attack bonus +3, wisdom 13+"
+      "requiresText": "base attack bonus +3, wisdom 13+",
+      "arelith": "Arelith: virker på alle ranged touch-spells; bruger højeste af DEX/WIS."
     },
     {
       "name": "Alertness",
@@ -6087,7 +7290,8 @@
           "Divine Smite"
         ]
       },
-      "requiresText": "21st level, charisma 25+, Divine Smite"
+      "requiresText": "21st level, charisma 25+, Divine Smite",
+      "arelith": "Arelith: højst 4 gange (ikke 10). Skade og effekter ændret; 7 sek. mellem smites."
     },
     {
       "name": "Greater Spell Focus",
@@ -6167,7 +7371,7 @@
       "description": "The shadowdancer is able to use the hide skill even while being observed. Note: This ability will not always be successful in the frenzy of combat, but disengaging from the enemy before attempting to hide in plain sight will succeed.",
       "requiresText": "shadowdancer 1",
       "type": "class",
-      "arelith": "Arelith: Shadowdancer får den på level 11. 30 sek. cooldown efter stealth."
+      "disabled": "Fjernet på Arelith."
     },
     {
       "name": "Hit Die Increase",
@@ -6221,30 +7425,27 @@
       "epic": true,
       "requires": {
         "abilities": {
-          "Wis": 21
+          "Wis": 16
         },
         "feats": [
           "Ki Strike"
-        ],
-        "classLevels": {
-          "Monk": 1
-        }
+        ]
       },
-      "requiresText": "monk, ki strike +3, wisdom 21"
+      "requiresText": "Ki Strike 3, wisdom 16 (Arelith)"
     },
     {
       "name": "Improved Ki Strike 5",
       "description": "The monk's unarmed attack counts as a +5 magic weapon against creatures with damage reduction.",
       "epic": true,
       "requires": {
+        "abilities": {
+          "Wis": 16
+        },
         "feats": [
           "Improved Ki Strike 4"
-        ],
-        "classLevels": {
-          "Monk": 1
-        }
+        ]
       },
-      "requiresText": "monk, improved ki strike 4"
+      "requiresText": "Improved Ki Strike 4, wisdom 16 (Arelith)"
     },
     {
       "name": "Improved Parry",
@@ -6269,10 +7470,10 @@
       "requires": {
         "level": 21,
         "feats": [
-          "Diamond Soul"
+          "Discipline: Spiritual (Novice)"
         ]
       },
-      "requiresText": "21st level, diamond soul"
+      "requiresText": "Discipline: Spiritual (Novice), level 21 (Arelith)"
     },
     {
       "name": "Improved Stunning Fist",
@@ -6511,14 +7712,16 @@
       "requires": {
         "level": 21,
         "abilities": {
-          "Cha": 19,
-          "Wis": 19
+          "Wis": 16,
+          "Cha": 16
         },
         "feats": [
-          "Turn Undead"
+          "Turn Undead",
+          "Improved Turning"
         ]
       },
-      "requiresText": "21st level, wisdom 19+, charisma 19+ (Arelith), turn undead"
+      "requiresText": "21st level, wisdom 16, charisma 16, turn undead, extra turning (Arelith)",
+      "arelith": "Arelith: WIS/CHA 16 og Extra Turning (Improved Turning)."
     },
     {
       "name": "Poison Save",
@@ -6855,14 +8058,303 @@
       "type": "class"
     },
     {
-      "name": "Craft Ammunition",
+      "name": "Create Ammunition",
       "requires": {
         "anyFeats": [
           "Weapon Focus"
         ]
       },
       "description": "Arelith: én gang om dagen, med våbnet udstyret, laves ammunition der skalerer med level (Bronze 1–5 … Masterly Damask 26–30).",
-      "requiresText": "Weapon Focus i våbengruppen (bow, crossbow, sling eller thrown)"
+      "requiresText": "Weapon Focus i våbengruppen (bow, crossbow, sling eller thrown)",
+      "aliases": [
+        "Craft Ammunition"
+      ]
+    },
+    {
+      "name": "Path: Seeker",
+      "type": "class"
+    },
+    {
+      "name": "Path: Slayer",
+      "type": "class"
+    },
+    {
+      "name": "Path: Highlander",
+      "type": "class"
+    },
+    {
+      "name": "Cause of Vigilance",
+      "type": "class"
+    },
+    {
+      "name": "Brutal Attack",
+      "type": "class"
+    },
+    {
+      "name": "Ki Sprint",
+      "type": "class"
+    },
+    {
+      "name": "Martial Katas",
+      "type": "class"
+    },
+    {
+      "name": "Advanced Katas",
+      "type": "class"
+    },
+    {
+      "name": "Meditation",
+      "type": "class"
+    },
+    {
+      "name": "Spiritual Mantra",
+      "type": "class"
+    },
+    {
+      "name": "Exemplary Orator",
+      "type": "class"
+    },
+    {
+      "name": "Worship",
+      "type": "class"
+    },
+    {
+      "name": "Spiritual Serendipity",
+      "type": "class"
+    },
+    {
+      "name": "Skilled Rhetorician",
+      "type": "class"
+    },
+    {
+      "name": "Innovation",
+      "type": "class"
+    },
+    {
+      "name": "Brilliance",
+      "type": "class"
+    },
+    {
+      "name": "Mental Fortress",
+      "type": "class"
+    },
+    {
+      "name": "Practiced Rider",
+      "type": "class"
+    },
+    {
+      "name": "Cavalier Weapon Proficiency",
+      "type": "class"
+    },
+    {
+      "name": "Spirited Charge",
+      "type": "class"
+    },
+    {
+      "name": "Special Steeds",
+      "type": "class"
+    },
+    {
+      "name": "Aura of Despair",
+      "type": "class"
+    },
+    {
+      "name": "Unholy Accuracy",
+      "type": "class"
+    },
+    {
+      "name": "Improved Dark Claim",
+      "type": "class"
+    },
+    {
+      "name": "Improved Method: Signature Weapon Mastery",
+      "aliases": [
+        "Signature Weapon Mastery"
+      ],
+      "type": "class"
+    },
+    {
+      "name": "Improved Method: Guerilla Warfare",
+      "type": "class"
+    },
+    {
+      "name": "Wary Alertness",
+      "type": "class"
+    },
+    {
+      "name": "Arcane Flux",
+      "type": "class"
+    },
+    {
+      "name": "Track",
+      "type": "class"
+    },
+    {
+      "name": "Possess Creature",
+      "type": "class"
+    },
+    {
+      "name": "Epic Skill Focus Sail",
+      "base": "Epic Skill Focus",
+      "epic": true,
+      "description": "The character gains a +10 bonus on all skill checks with the chosen skill.",
+      "requires": {
+        "level": 21,
+        "skills": {
+          "Sail": 20
+        }
+      }
+    },
+    {
+      "name": "Grasp of Hu Sen",
+      "type": "class",
+      "requires": {
+        "bab": 3,
+        "feats": [
+          "Discipline: Body (Novice)"
+        ]
+      },
+      "requiresText": "Discipline: Body (Novice), base attack bonus +3 (Arelith)"
+    },
+    {
+      "name": "Stance: Equipoise",
+      "type": "class",
+      "requires": {
+        "feats": [
+          "Discipline: Body (Novice)"
+        ]
+      },
+      "requiresText": "Discipline: Body (Novice) (Arelith)"
+    },
+    {
+      "name": "Improved Katas",
+      "type": "class",
+      "requires": {
+        "abilities": {
+          "Int": 13
+        },
+        "feats": [
+          "Martial Katas"
+        ]
+      },
+      "requiresText": "Martial Katas, intelligence 13+ (Arelith)"
+    },
+    {
+      "name": "Meridian Flow: Yang",
+      "type": "class",
+      "requires": {
+        "feats": [
+          "Discipline: Spiritual (Practitioner)"
+        ]
+      },
+      "requiresText": "Discipline: Spiritual (Practitioner) (Arelith)"
+    },
+    {
+      "name": "Meridian Flow: Yin",
+      "type": "class",
+      "requires": {
+        "feats": [
+          "Discipline: Mind (Practitioner)"
+        ]
+      },
+      "requiresText": "Discipline: Mind (Practitioner) (Arelith)"
+    },
+    {
+      "name": "Ricochet",
+      "type": "class",
+      "requires": {
+        "feats": [
+          "Point Blank Shot"
+        ],
+        "anyFeats": [
+          "Weapon Focus Missile",
+          "Weapon Focus Thrown"
+        ]
+      },
+      "requiresText": "Point Blank Shot og Weapon Focus (Missile) eller (Thrown) (Arelith)",
+      "aliases": [
+        "Richochet"
+      ]
+    },
+    {
+      "name": "Technique: Beggar's Staff",
+      "type": "class",
+      "requires": {
+        "feats": [
+          "Discipline: Martial (Novice)"
+        ]
+      },
+      "requiresText": "Discipline: Martial (Novice) (Arelith)"
+    },
+    {
+      "name": "Technique: Dragon Sundering Eighteenth Palm",
+      "type": "class",
+      "requires": {
+        "feats": [
+          "Discipline: Martial (Novice)"
+        ]
+      },
+      "requiresText": "Discipline: Martial (Novice) (Arelith)"
+    },
+    {
+      "name": "Technique: Eight Trigram Spear",
+      "type": "class",
+      "requires": {
+        "feats": [
+          "Discipline: Martial (Novice)"
+        ]
+      },
+      "requiresText": "Discipline: Martial (Novice) (Arelith)"
+    },
+    {
+      "name": "Technique: Nine Sword of the Recluse",
+      "type": "class",
+      "requires": {
+        "feats": [
+          "Discipline: Martial (Novice)"
+        ]
+      },
+      "requiresText": "Discipline: Martial (Novice) (Arelith)"
+    },
+    {
+      "name": "Technique: Night Fang Piercer Art",
+      "type": "class",
+      "requires": {
+        "feats": [
+          "Discipline: Martial (Novice)"
+        ]
+      },
+      "requiresText": "Discipline: Martial (Novice) (Arelith)"
+    },
+    {
+      "name": "Technique: Blooming Blood Lotus",
+      "type": "class",
+      "requires": {
+        "feats": [
+          "Discipline: Martial (Novice)"
+        ]
+      },
+      "requiresText": "Discipline: Martial (Novice) (Arelith)"
+    },
+    {
+      "name": "Technique: Open Hand of Deliverance",
+      "type": "class",
+      "requires": {
+        "feats": [
+          "Discipline: Spiritual (Novice)"
+        ]
+      },
+      "requiresText": "Discipline: Spiritual (Novice) (Arelith)"
+    },
+    {
+      "name": "Technique: Thousand Hand Godly Fist",
+      "type": "class",
+      "requires": {
+        "feats": [
+          "Discipline: Spiritual (Novice)"
+        ]
+      },
+      "requiresText": "Discipline: Spiritual (Novice) (Arelith)"
     }
   ],
   "crafts": [
