@@ -1,14 +1,14 @@
 {
   "id": "arelith",
   "name": "Arelith",
-  "version": "2026-11-11d",
+  "version": "2026-11-11e",
   "notes": "Kilde: wiki.nwnarelith.com (klassesider, Gift, Skill changes) + ejers ark (256 builds). Start-stats er efter race og før gifts, som i arkene.",
   "rules": {
     "maxLevel": 30,
     "epicFromLevel": 21,
     "level1SkillMultiplier": 4,
     "maxRanksAboveLevel": 3,
-    "notes": "HP er altid max. Class skill: 1 point pr. rank, max level+3. Cross-class: 2 point pr. rank, max (level+3)/2. Skills med crossTrainable=false kan kun tages som class skill. Epic: +1 BAB ved 21, 23, 25, 27, 29. +1 alle saves ved 22, 24, 26, 28, 30."
+    "notes": "HP er altid max. Class skill: 1 point pr. rank, max level+3. Cross-class: 2 point pr. rank, max (level+3)/2. Skills med crossTrainable=false kan kun tages som class skill. Epic: +1 BAB ved 21, 23, 25, 27, 29. +1 alle saves ved 22, 24, 26, 28, 30. Gifts: race bestemmer antal major/minor (ECL-tabel på wiki). En minor kan tages i stedet for en major. Major = ECL ≥ 1 (antagelse – wikiens fed-markering kunne ikke læses)."
   },
   "saveTables": {
     "high": [
@@ -1077,31 +1077,45 @@
   "races": [
     {
       "name": "Human",
-      "bonusSkillPoints": 1
+      "bonusSkillPoints": 1,
+      "majorGifts": 2,
+      "minorGifts": 1
     },
     {
       "name": "Half-Orc",
-      "bonusSkillPoints": 0
+      "bonusSkillPoints": 0,
+      "majorGifts": 2,
+      "minorGifts": 1
     },
     {
       "name": "Half-Elf",
-      "bonusSkillPoints": 0
+      "bonusSkillPoints": 0,
+      "majorGifts": 2,
+      "minorGifts": 1
     },
     {
       "name": "Shield Dwarf",
-      "bonusSkillPoints": 0
+      "bonusSkillPoints": 0,
+      "majorGifts": 2,
+      "minorGifts": 1
     },
     {
       "name": "Gold Dwarf",
-      "bonusSkillPoints": 0
+      "bonusSkillPoints": 0,
+      "majorGifts": 2,
+      "minorGifts": 1
     },
     {
       "name": "Rock Gnome",
-      "bonusSkillPoints": 0
+      "bonusSkillPoints": 0,
+      "majorGifts": 2,
+      "minorGifts": 1
     },
     {
       "name": "Svirfneblin",
-      "bonusSkillPoints": 0
+      "bonusSkillPoints": 0,
+      "majorGifts": 1,
+      "minorGifts": 1
     },
     {
       "name": "Lightfoot Halfling",
@@ -1111,15 +1125,21 @@
         "Hafling"
       ],
       "allSaves": 1,
-      "notes": "Lucky: +1 alle saves fra level 1."
+      "notes": "Lucky: +1 alle saves fra level 1.",
+      "majorGifts": 2,
+      "minorGifts": 1
     },
     {
       "name": "Sun Elf",
-      "bonusSkillPoints": 0
+      "bonusSkillPoints": 0,
+      "majorGifts": 2,
+      "minorGifts": 1
     },
     {
       "name": "Wood Elf",
-      "bonusSkillPoints": 0
+      "bonusSkillPoints": 0,
+      "majorGifts": 2,
+      "minorGifts": 1
     },
     {
       "name": "Drow",
@@ -1127,19 +1147,28 @@
       "aliases": [
         "Drow Male",
         "Drow Female"
-      ]
+      ],
+      "majorGifts": 1,
+      "minorGifts": 1,
+      "notes": "Gift-antal ukendt (wiki nævner kun Gloaming Drow, ECL +2) – sat til 1 major + 1 minor."
     },
     {
       "name": "Goblin",
-      "bonusSkillPoints": 0
+      "bonusSkillPoints": 0,
+      "majorGifts": 2,
+      "minorGifts": 1
     },
     {
       "name": "Kobold",
-      "bonusSkillPoints": 0
+      "bonusSkillPoints": 0,
+      "majorGifts": 2,
+      "minorGifts": 1
     },
     {
       "name": "Orog",
-      "bonusSkillPoints": 0
+      "bonusSkillPoints": 0,
+      "majorGifts": 1,
+      "minorGifts": 1
     }
   ],
   "gifts": [
@@ -1149,7 +1178,8 @@
       "effect": "STR +2 (hard)",
       "abilities": {
         "Str": 2
-      }
+      },
+      "major": true
     },
     {
       "name": "Gift of Grace",
@@ -1157,7 +1187,8 @@
       "effect": "DEX +2 (hard)",
       "abilities": {
         "Dex": 2
-      }
+      },
+      "major": true
     },
     {
       "name": "Gift of Endurance",
@@ -1165,7 +1196,8 @@
       "effect": "CON +2 (hard)",
       "abilities": {
         "Con": 2
-      }
+      },
+      "major": true
     },
     {
       "name": "Gift of Learning",
@@ -1173,7 +1205,8 @@
       "effect": "INT +2 (hard)",
       "abilities": {
         "Int": 2
-      }
+      },
+      "major": true
     },
     {
       "name": "Gift of Insight",
@@ -1181,7 +1214,8 @@
       "effect": "WIS +2 (hard)",
       "abilities": {
         "Wis": 2
-      }
+      },
+      "major": true
     },
     {
       "name": "Gift of Confidence",
@@ -1189,53 +1223,63 @@
       "effect": "CHA +2 (hard)",
       "abilities": {
         "Cha": 2
-      }
+      },
+      "major": true
     },
     {
       "name": "Gift of Fortune",
       "ecl": 1,
       "effect": "Alle saves +2 (soft)",
-      "allSaves": 2
+      "allSaves": 2,
+      "major": true
     },
     {
       "name": "Gift of Craftsmanship",
       "ecl": 1,
-      "effect": "Daily crafting points +10, tradeskills +10"
+      "effect": "Daily crafting points +10, tradeskills +10",
+      "major": true
     },
     {
       "name": "Gift of Tongues",
       "ecl": 1,
-      "effect": "4 ekstra sprog"
+      "effect": "4 ekstra sprog",
+      "major": true
     },
     {
       "name": "Gift of Wealth",
       "ecl": 0.5,
-      "effect": "Guld over tid"
+      "effect": "Guld over tid",
+      "major": false
     },
     {
       "name": "Gift of Hardiness",
       "ecl": 0.5,
-      "effect": "5% immunitet mod fire, cold, electricity, acid"
+      "effect": "5% immunitet mod fire, cold, electricity, acid",
+      "major": false
     },
     {
       "name": "Gift of Darkness",
       "ecl": 0.5,
-      "effect": "Darkness 1/dag"
+      "effect": "Darkness 1/dag",
+      "major": false
     },
     {
       "name": "Gift of Hiding",
       "ecl": 0.5,
-      "effect": "Invisibility, 8 min cooldown"
+      "effect": "Invisibility, 8 min cooldown",
+      "major": false
     },
     {
       "name": "Gift of Greenfingers",
       "ecl": 0.5,
-      "effect": "Kan passe planter"
+      "effect": "Kan passe planter",
+      "major": false
     },
     {
       "name": "Gift of Light",
       "ecl": 0,
-      "effect": "Light 1/dag"
+      "effect": "Light 1/dag",
+      "major": false
     },
     {
       "name": "Gift of the Gab",
@@ -1243,7 +1287,8 @@
       "effect": "Bluff +6",
       "skills": {
         "Bluff": 6
-      }
+      },
+      "major": false
     },
     {
       "name": "Gift of Lightfingers",
@@ -1251,7 +1296,8 @@
       "effect": "Sleight of Hand +6",
       "skills": {
         "Sleight of Hand": 6
-      }
+      },
+      "major": false
     },
     {
       "name": "Gift of the Hunter",
@@ -1259,7 +1305,8 @@
       "effect": "Spot +6",
       "skills": {
         "Spot": 6
-      }
+      },
+      "major": false
     },
     {
       "name": "Gift of the Sneak",
@@ -1268,7 +1315,8 @@
       "skills": {
         "Hide": 4,
         "Move Silently": 4
-      }
+      },
+      "major": false
     },
     {
       "name": "Gift of Stardom",
@@ -1276,7 +1324,8 @@
       "effect": "Perform +6",
       "skills": {
         "Perform": 6
-      }
+      },
+      "major": false
     },
     {
       "name": "Gift of Sailing",
@@ -1284,12 +1333,14 @@
       "effect": "Sail +6",
       "skills": {
         "Sail": 6
-      }
+      },
+      "major": false
     },
     {
       "name": "Gift of Devotion",
       "ecl": 0,
-      "effect": "Ceremonier/altre for ikke-clerics"
+      "effect": "Ceremonier/altre for ikke-clerics",
+      "major": false
     }
   ],
   "skills": [
@@ -1648,6 +1699,1229 @@
       "fort": 1,
       "ref": 1,
       "will": 1
+    },
+    {
+      "name": "Accursed Will"
+    },
+    {
+      "name": "Acrobatics Skill Mastery"
+    },
+    {
+      "name": "Agonizing Blasts"
+    },
+    {
+      "name": "Ambidexterity"
+    },
+    {
+      "name": "Animal Companion"
+    },
+    {
+      "name": "Animal Language"
+    },
+    {
+      "name": "Arcane Bleed"
+    },
+    {
+      "name": "Archer"
+    },
+    {
+      "name": "Archer Path"
+    },
+    {
+      "name": "Armor Skin"
+    },
+    {
+      "name": "Armored Vigil"
+    },
+    {
+      "name": "Atrocity Invocation"
+    },
+    {
+      "name": "Atrocity Strike"
+    },
+    {
+      "name": "Atrocity: Invocation"
+    },
+    {
+      "name": "Atrocity: Strike"
+    },
+    {
+      "name": "Atrocity: Whisper"
+    },
+    {
+      "name": "Aura of Courage"
+    },
+    {
+      "name": "Auto Silent I"
+    },
+    {
+      "name": "Auto Silent Spell 1"
+    },
+    {
+      "name": "Automatic Still Spell I"
+    },
+    {
+      "name": "Automatic Still Spell II"
+    },
+    {
+      "name": "Automatic Still Spell III"
+    },
+    {
+      "name": "Bane of Enemies"
+    },
+    {
+      "name": "Banner I"
+    },
+    {
+      "name": "Barbarian Rage"
+    },
+    {
+      "name": "Bard Song"
+    },
+    {
+      "name": "Bleeding Wound"
+    },
+    {
+      "name": "Blindfight"
+    },
+    {
+      "name": "Blinding Speed"
+    },
+    {
+      "name": "Blood Arcana Proficiency"
+    },
+    {
+      "name": "Bloodlust"
+    },
+    {
+      "name": "Body Practicioner"
+    },
+    {
+      "name": "Bone of Stone"
+    },
+    {
+      "name": "Brawler"
+    },
+    {
+      "name": "Brew Potion"
+    },
+    {
+      "name": "Brutal Attack +1"
+    },
+    {
+      "name": "Brutal Attack 1"
+    },
+    {
+      "name": "Brutal Attack 1d6"
+    },
+    {
+      "name": "Brutal Attack 2"
+    },
+    {
+      "name": "Brutal Attack 2d6"
+    },
+    {
+      "name": "Brutal Attack 3"
+    },
+    {
+      "name": "Brutal Attack 3d6"
+    },
+    {
+      "name": "Brutal Attack 4"
+    },
+    {
+      "name": "Brutal Attack 5"
+    },
+    {
+      "name": "Brutal Attack 6"
+    },
+    {
+      "name": "Bull's Strength"
+    },
+    {
+      "name": "Bulls"
+    },
+    {
+      "name": "Bulls Strength"
+    },
+    {
+      "name": "Call of The Wild"
+    },
+    {
+      "name": "Called Shot"
+    },
+    {
+      "name": "Cause: Freedom"
+    },
+    {
+      "name": "Cause: Vindication"
+    },
+    {
+      "name": "Circle Kick"
+    },
+    {
+      "name": "Cleave"
+    },
+    {
+      "name": "Combat Casting"
+    },
+    {
+      "name": "Combat Mastery"
+    },
+    {
+      "name": "Corrupt Weapon"
+    },
+    {
+      "name": "Craft Wand"
+    },
+    {
+      "name": "Create Undead"
+    },
+    {
+      "name": "Crippling Strike"
+    },
+    {
+      "name": "Crippling Throw"
+    },
+    {
+      "name": "Curse Armaments"
+    },
+    {
+      "name": "Curse of Rust"
+    },
+    {
+      "name": "Curse Song"
+    },
+    {
+      "name": "Cursed Armaments"
+    },
+    {
+      "name": "Dark Blessing"
+    },
+    {
+      "name": "Dark Claim"
+    },
+    {
+      "name": "Dark Focus Crimson Count"
+    },
+    {
+      "name": "Dark Focus Dark Seraph"
+    },
+    {
+      "name": "Dark Messenger"
+    },
+    {
+      "name": "Darkness"
+    },
+    {
+      "name": "Darkvision"
+    },
+    {
+      "name": "Defensive Awareness I"
+    },
+    {
+      "name": "Defensive Awareness II"
+    },
+    {
+      "name": "Defensive Awareness III"
+    },
+    {
+      "name": "Defensive Roll"
+    },
+    {
+      "name": "Defensive Stance"
+    },
+    {
+      "name": "Deflect Arrows"
+    },
+    {
+      "name": "Diamond Body"
+    },
+    {
+      "name": "Diamond Soul"
+    },
+    {
+      "name": "Dirge of Awakening"
+    },
+    {
+      "name": "Dirge of Damnation"
+    },
+    {
+      "name": "Dirge of Harvest"
+    },
+    {
+      "name": "Dirge of Reprisal"
+    },
+    {
+      "name": "Dirty Fighting"
+    },
+    {
+      "name": "Disarm"
+    },
+    {
+      "name": "Disruptive Shot"
+    },
+    {
+      "name": "Divination"
+    },
+    {
+      "name": "Divine Grace"
+    },
+    {
+      "name": "Divine Might"
+    },
+    {
+      "name": "Divine Shield"
+    },
+    {
+      "name": "Divine Smite"
+    },
+    {
+      "name": "Divine Synergy"
+    },
+    {
+      "name": "Divine Wrath"
+    },
+    {
+      "name": "Dodge"
+    },
+    {
+      "name": "Dodge Trick"
+    },
+    {
+      "name": "Domain: Trickery"
+    },
+    {
+      "name": "Dragon Knight"
+    },
+    {
+      "name": "EDR"
+    },
+    {
+      "name": "Elder Elemental Shape"
+    },
+    {
+      "name": "Eldritch Armor"
+    },
+    {
+      "name": "Eldritch Doom"
+    },
+    {
+      "name": "Eldritch Euphony"
+    },
+    {
+      "name": "Eldritch Summon"
+    },
+    {
+      "name": "Elegant Strike"
+    },
+    {
+      "name": "Elemental Avatar"
+    },
+    {
+      "name": "Elemental Maelstrom"
+    },
+    {
+      "name": "Elemental Meteor"
+    },
+    {
+      "name": "Elemental Shape"
+    },
+    {
+      "name": "Elemental Strike"
+    },
+    {
+      "name": "Empower Spell"
+    },
+    {
+      "name": "Empty Body"
+    },
+    {
+      "name": "Entangling Arrow"
+    },
+    {
+      "name": "Entangling Shot"
+    },
+    {
+      "name": "Epic Dodge"
+    },
+    {
+      "name": "Epic Eldritch Summon"
+    },
+    {
+      "name": "Epic Energy Resistance Cold"
+    },
+    {
+      "name": "Epic Fiendish Servant"
+    },
+    {
+      "name": "Epic Harbinger"
+    },
+    {
+      "name": "Epic Mage Armor"
+    },
+    {
+      "name": "Epic Pact: Abyssal"
+    },
+    {
+      "name": "Epic Pact: Undying"
+    },
+    {
+      "name": "Epic Pact: Unseelie Fey"
+    },
+    {
+      "name": "Epic Prowess"
+    },
+    {
+      "name": "Epic Second Wind"
+    },
+    {
+      "name": "Epic Shadowlord"
+    },
+    {
+      "name": "Epic Skill Focus Animal Empathy"
+    },
+    {
+      "name": "Epic Skill Focus Discipline"
+    },
+    {
+      "name": "Epic Skill Focus Hide"
+    },
+    {
+      "name": "Epic Skill Focus Intimidate"
+    },
+    {
+      "name": "Epic Skill Focus Leadership"
+    },
+    {
+      "name": "Epic Skill Focus Parry"
+    },
+    {
+      "name": "Epic Skill Focus Perform"
+    },
+    {
+      "name": "Epic Skill Focus Taunt"
+    },
+    {
+      "name": "Epic Spell Focus Conjuration"
+    },
+    {
+      "name": "Epic Spell Focus Enchantment"
+    },
+    {
+      "name": "Epic Spell Focus Evocation"
+    },
+    {
+      "name": "Epic Spell Focus Illusion"
+    },
+    {
+      "name": "Epic Spell Focus Necromancy"
+    },
+    {
+      "name": "Epic Spell Focus Transmutation"
+    },
+    {
+      "name": "Epic Spell: Dragon Knight"
+    },
+    {
+      "name": "Epic Weapon Focus"
+    },
+    {
+      "name": "Epic Weapon Focus Concussion"
+    },
+    {
+      "name": "Epic Weapon Focus Edged"
+    },
+    {
+      "name": "Epic Weapon Focus Melee"
+    },
+    {
+      "name": "Epic Weapon Focus Missile"
+    },
+    {
+      "name": "Epic Weapon Focus Ranged"
+    },
+    {
+      "name": "Epic Weapon Focus Throwing"
+    },
+    {
+      "name": "Epic Weapon Focus Thrown"
+    },
+    {
+      "name": "Epic Weapon Focus Unarmed"
+    },
+    {
+      "name": "Epic Weapon Specialization"
+    },
+    {
+      "name": "Epic Weapon Specialization Missile"
+    },
+    {
+      "name": "Epic Weapon Specialization Throwing"
+    },
+    {
+      "name": "Epic Weapon Specialization Thrown"
+    },
+    {
+      "name": "Epic Weapon Specialization Unarmed"
+    },
+    {
+      "name": "Equipoise"
+    },
+    {
+      "name": "Evasiion"
+    },
+    {
+      "name": "Evasion"
+    },
+    {
+      "name": "Eviscerate"
+    },
+    {
+      "name": "Exotic Weapons"
+    },
+    {
+      "name": "Expertise"
+    },
+    {
+      "name": "Extend Spell"
+    },
+    {
+      "name": "Extra Music"
+    },
+    {
+      "name": "Extra Smiting"
+    },
+    {
+      "name": "Extra Turning"
+    },
+    {
+      "name": "Familiar"
+    },
+    {
+      "name": "Favored Enemy Undead"
+    },
+    {
+      "name": "fe constructs"
+    },
+    {
+      "name": "Fe Dragons"
+    },
+    {
+      "name": "fe elementals"
+    },
+    {
+      "name": "Fe Humans"
+    },
+    {
+      "name": "fe orcs"
+    },
+    {
+      "name": "fe undead"
+    },
+    {
+      "name": "Fear Immune"
+    },
+    {
+      "name": "Fear Immunity"
+    },
+    {
+      "name": "Fearless"
+    },
+    {
+      "name": "Fearless +2"
+    },
+    {
+      "name": "Fearless +4"
+    },
+    {
+      "name": "Fearless +6"
+    },
+    {
+      "name": "Feint"
+    },
+    {
+      "name": "field maintenance"
+    },
+    {
+      "name": "Flesh of Steel"
+    },
+    {
+      "name": "Flurry of Blows"
+    },
+    {
+      "name": "Good Aim"
+    },
+    {
+      "name": "Grace"
+    },
+    {
+      "name": "Great Cleave"
+    },
+    {
+      "name": "Great Smiting I"
+    },
+    {
+      "name": "Great Smiting II"
+    },
+    {
+      "name": "Great Smiting III"
+    },
+    {
+      "name": "Great Smiting IV"
+    },
+    {
+      "name": "Greater Eldritch Doom"
+    },
+    {
+      "name": "Greater Elemental Strike"
+    },
+    {
+      "name": "Greater Imbue Armor"
+    },
+    {
+      "name": "Greater Pact: Abyssal"
+    },
+    {
+      "name": "Greater Pact: Undying"
+    },
+    {
+      "name": "Greater Pact: Unseelie Fey"
+    },
+    {
+      "name": "Greater Ruin"
+    },
+    {
+      "name": "Greater Spell Focus Conjuration"
+    },
+    {
+      "name": "Greater Spell Focus Enchantment"
+    },
+    {
+      "name": "Greater Spell Focus Evocation"
+    },
+    {
+      "name": "Greater Spell Focus Illusion"
+    },
+    {
+      "name": "Greater Spell Focus Necromancy"
+    },
+    {
+      "name": "Greater Spell Focus Transmutation"
+    },
+    {
+      "name": "Greater Spell Penetration"
+    },
+    {
+      "name": "Grenades"
+    },
+    {
+      "name": "Grenadier Basics"
+    },
+    {
+      "name": "Gruesome Technigue"
+    },
+    {
+      "name": "Gruesome Technique"
+    },
+    {
+      "name": "Health"
+    },
+    {
+      "name": "Heavy Armor"
+    },
+    {
+      "name": "Hellball"
+    },
+    {
+      "name": "Hex of Arcane Hunger"
+    },
+    {
+      "name": "Hex of Rune Breaker"
+    },
+    {
+      "name": "Hex of Rust"
+    },
+    {
+      "name": "Hidden Persona"
+    },
+    {
+      "name": "Hideous Blow"
+    },
+    {
+      "name": "HiPS"
+    },
+    {
+      "name": "Ill Tidings"
+    },
+    {
+      "name": "Imbue Armor"
+    },
+    {
+      "name": "Imbue Weapon"
+    },
+    {
+      "name": "Improved Combat Casting"
+    },
+    {
+      "name": "Improved Critical"
+    },
+    {
+      "name": "Improved Critical Unarmed"
+    },
+    {
+      "name": "Improved Disarm"
+    },
+    {
+      "name": "Improved Dweomer Crafting"
+    },
+    {
+      "name": "Improved Evasion"
+    },
+    {
+      "name": "Improved Expertise"
+    },
+    {
+      "name": "Improved Knockdown"
+    },
+    {
+      "name": "Improved Power Attack"
+    },
+    {
+      "name": "Improved Turning"
+    },
+    {
+      "name": "Improved Unarmed Strike"
+    },
+    {
+      "name": "Improved Weapon Hex"
+    },
+    {
+      "name": "Improved Wildshape"
+    },
+    {
+      "name": "Insightful Strike"
+    },
+    {
+      "name": "Inspiring Minstrel"
+    },
+    {
+      "name": "Iron Stance"
+    },
+    {
+      "name": "ITWF"
+    },
+    {
+      "name": "Keen Senses"
+    },
+    {
+      "name": "Ki Barrier"
+    },
+    {
+      "name": "Ki Strike +1"
+    },
+    {
+      "name": "Ki Strike +2"
+    },
+    {
+      "name": "Ki Strike +3"
+    },
+    {
+      "name": "Ki Strike +4"
+    },
+    {
+      "name": "Ki Strike +5"
+    },
+    {
+      "name": "Ki Strike 1"
+    },
+    {
+      "name": "Ki Strike 2"
+    },
+    {
+      "name": "Knockdown"
+    },
+    {
+      "name": "Lasting Inpiration"
+    },
+    {
+      "name": "Lasting Inspiration"
+    },
+    {
+      "name": "Lay on Hands"
+    },
+    {
+      "name": "Legendary Charisma"
+    },
+    {
+      "name": "Legendary Constitution"
+    },
+    {
+      "name": "Legendary Dexterity"
+    },
+    {
+      "name": "Legendary Intelligence"
+    },
+    {
+      "name": "Legendary Strength"
+    },
+    {
+      "name": "Legendary Wisdom"
+    },
+    {
+      "name": "Light Armor"
+    },
+    {
+      "name": "Lucky"
+    },
+    {
+      "name": "Lurker in Darkness"
+    },
+    {
+      "name": "Lurker In the Darkness"
+    },
+    {
+      "name": "Manifest Shadow"
+    },
+    {
+      "name": "Martial Practicioner"
+    },
+    {
+      "name": "Martial Weapons"
+    },
+    {
+      "name": "Maximize Spell"
+    },
+    {
+      "name": "Mighty Rage"
+    },
+    {
+      "name": "Misfortune's Favor"
+    },
+    {
+      "name": "Mobility"
+    },
+    {
+      "name": "Monk Speed I"
+    },
+    {
+      "name": "Monkey Grip"
+    },
+    {
+      "name": "Monolithic Elemental Shape"
+    },
+    {
+      "name": "Mounted Archery"
+    },
+    {
+      "name": "Mounted Combat"
+    },
+    {
+      "name": "Mounting Resistance"
+    },
+    {
+      "name": "Mounting Resistance I"
+    },
+    {
+      "name": "Mounting Resistance II"
+    },
+    {
+      "name": "Mummy Dust"
+    },
+    {
+      "name": "Night Fang Piercer Art"
+    },
+    {
+      "name": "Nightmare Tactics"
+    },
+    {
+      "name": "One With Shadow"
+    },
+    {
+      "name": "Pact: Abyssal"
+    },
+    {
+      "name": "Pact: Infernal"
+    },
+    {
+      "name": "Pact: Night Hag"
+    },
+    {
+      "name": "Pact: Undying"
+    },
+    {
+      "name": "Pact: Unseelie Fey"
+    },
+    {
+      "name": "Panache"
+    },
+    {
+      "name": "Path: Air"
+    },
+    {
+      "name": "Path: Archer"
+    },
+    {
+      "name": "Path: Cloistered"
+    },
+    {
+      "name": "Path: Evangelist"
+    },
+    {
+      "name": "Path: Shadowmage"
+    },
+    {
+      "name": "Path: Tribal"
+    },
+    {
+      "name": "Path: Warpriest"
+    },
+    {
+      "name": "Path: Water"
+    },
+    {
+      "name": "Path:Archer"
+    },
+    {
+      "name": "Perfect Health"
+    },
+    {
+      "name": "Perfect Self"
+    },
+    {
+      "name": "Planar Conduit"
+    },
+    {
+      "name": "Plant Shape"
+    },
+    {
+      "name": "Point Blank Shot"
+    },
+    {
+      "name": "Power Attack"
+    },
+    {
+      "name": "Pugilist"
+    },
+    {
+      "name": "Puglist"
+    },
+    {
+      "name": "Purity of Body"
+    },
+    {
+      "name": "Quicken Spell"
+    },
+    {
+      "name": "Quivering Palm"
+    },
+    {
+      "name": "Rage"
+    },
+    {
+      "name": "Rapid Reload"
+    },
+    {
+      "name": "Rapid Shot"
+    },
+    {
+      "name": "Richochet"
+    },
+    {
+      "name": "Rogue Weapon Proficiency"
+    },
+    {
+      "name": "Rogue Weapons"
+    },
+    {
+      "name": "Scribe Scroll"
+    },
+    {
+      "name": "Second Intention"
+    },
+    {
+      "name": "SF: Illusion"
+    },
+    {
+      "name": "Shadow Daze"
+    },
+    {
+      "name": "Shadow Displacement"
+    },
+    {
+      "name": "Shadow Evade"
+    },
+    {
+      "name": "Shadow Illusion"
+    },
+    {
+      "name": "Shadow Jump"
+    },
+    {
+      "name": "Shadow Magic"
+    },
+    {
+      "name": "Shadow Manifest"
+    },
+    {
+      "name": "Shadowdaze"
+    },
+    {
+      "name": "Shadowmagic"
+    },
+    {
+      "name": "Sharp Alertness"
+    },
+    {
+      "name": "Shields"
+    },
+    {
+      "name": "Signature Mastery"
+    },
+    {
+      "name": "Signature Spells"
+    },
+    {
+      "name": "Signature Weapon"
+    },
+    {
+      "name": "Silent Spell"
+    },
+    {
+      "name": "Simple Weapons"
+    },
+    {
+      "name": "Skill Focus Animal Empathy"
+    },
+    {
+      "name": "Skill Focus Concentration"
+    },
+    {
+      "name": "Skill Focus Leadership"
+    },
+    {
+      "name": "Skill Focus Lore"
+    },
+    {
+      "name": "Skill Focus Parry"
+    },
+    {
+      "name": "Skill Focus Perform"
+    },
+    {
+      "name": "Skill Focus Sail"
+    },
+    {
+      "name": "Skill Mastery"
+    },
+    {
+      "name": "Skin of Bronze"
+    },
+    {
+      "name": "Skirmish Manouvers"
+    },
+    {
+      "name": "Slayer"
+    },
+    {
+      "name": "Slippery Mind"
+    },
+    {
+      "name": "Slow Fall"
+    },
+    {
+      "name": "Smite"
+    },
+    {
+      "name": "Sneak Attack"
+    },
+    {
+      "name": "Sneak Attack +1d6"
+    },
+    {
+      "name": "Spell Focus Conjuration"
+    },
+    {
+      "name": "Spell Focus Enchantment"
+    },
+    {
+      "name": "Spell Focus Evocation"
+    },
+    {
+      "name": "Spell Focus Illusion"
+    },
+    {
+      "name": "Spell Focus Necromancy"
+    },
+    {
+      "name": "Spell Focus Transmutation"
+    },
+    {
+      "name": "Spell Penetration"
+    },
+    {
+      "name": "Spirit Shield"
+    },
+    {
+      "name": "Spring Attack"
+    },
+    {
+      "name": "Still Mind"
+    },
+    {
+      "name": "Still Spell"
+    },
+    {
+      "name": "Stunning Fist"
+    },
+    {
+      "name": "Summon Fiend"
+    },
+    {
+      "name": "Summon Shadow"
+    },
+    {
+      "name": "Swashbuckler Dodge"
+    },
+    {
+      "name": "Technigue: Eight Trigram Spear"
+    },
+    {
+      "name": "Tensors Avaiable"
+    },
+    {
+      "name": "Terrifying Rage"
+    },
+    {
+      "name": "Third Intention"
+    },
+    {
+      "name": "Thundering Rage"
+    },
+    {
+      "name": "Totem: Parrot"
+    },
+    {
+      "name": "Totem: Rat"
+    },
+    {
+      "name": "Tribal"
+    },
+    {
+      "name": "Turn Undead"
+    },
+    {
+      "name": "Two Weapon Fighting"
+    },
+    {
+      "name": "Uncanny Dodge"
+    },
+    {
+      "name": "Uncanny Dodge I"
+    },
+    {
+      "name": "Uncanny Dodge II"
+    },
+    {
+      "name": "Uncanny Dodge III"
+    },
+    {
+      "name": "Uncanny Dodge IV"
+    },
+    {
+      "name": "Uncanny Dodge V"
+    },
+    {
+      "name": "Uncanny Dodge VI"
+    },
+    {
+      "name": "Use Poison"
+    },
+    {
+      "name": "Valiant"
+    },
+    {
+      "name": "Weapon Finesse"
+    },
+    {
+      "name": "Weapon Focus"
+    },
+    {
+      "name": "Weapon Focus Concussion"
+    },
+    {
+      "name": "Weapon Focus Edged"
+    },
+    {
+      "name": "Weapon Focus Missile"
+    },
+    {
+      "name": "Weapon Focus One Handed Edged"
+    },
+    {
+      "name": "Weapon Focus Polearm"
+    },
+    {
+      "name": "Weapon Focus Ranged"
+    },
+    {
+      "name": "Weapon Focus Throwing"
+    },
+    {
+      "name": "Weapon Focus Thrown"
+    },
+    {
+      "name": "Weapon Focus Two Handed"
+    },
+    {
+      "name": "Weapon Focus Unarmed"
+    },
+    {
+      "name": "Weapon Hex: Mortality"
+    },
+    {
+      "name": "Weapon Proficiency Rogue"
+    },
+    {
+      "name": "Weapon Specialization"
+    },
+    {
+      "name": "Weapon Specialization Concussion"
+    },
+    {
+      "name": "Weapon Specialization Missile"
+    },
+    {
+      "name": "Weapon Specialization Thrown"
+    },
+    {
+      "name": "Weapon Specialization Unarmed"
+    },
+    {
+      "name": "Weapon Trick"
+    },
+    {
+      "name": "Whirlwind Attack"
+    },
+    {
+      "name": "Wholeness of Body"
+    },
+    {
+      "name": "Wildshape"
+    },
+    {
+      "name": "Woodland Stride"
+    },
+    {
+      "name": "Zen Archery"
     }
+  ],
+  "crafts": [
+    "Alchemy",
+    "Art Crafting",
+    "Carpentry",
+    "Herbalism",
+    "Smithing",
+    "Tailoring"
   ]
 }

@@ -18,6 +18,8 @@ public sealed class Ruleset
     public List<GiftRule> Gifts { get; set; } = new();
     public List<SkillRule> Skills { get; set; } = new();
     public List<FeatRule> Feats { get; set; } = new();
+    /// <summary>Crafting-kategorier (fx Alchemy, Smithing).</summary>
+    public List<string> Crafts { get; set; } = new();
 
     public ClassRule? FindClass(string name) =>
         Classes.FirstOrDefault(c => Same(c.Name, name) || c.Aliases.Any(a => Same(a, name)));
@@ -82,6 +84,9 @@ public sealed class RaceRule
     public List<string> Aliases { get; set; } = new();
     public Dictionary<string, int> Abilities { get; set; } = new();
     public int BonusSkillPoints { get; set; }
+    /// <summary>Antal major/minor gifts racen må vælge (ECL-tabel). En minor kan tages i stedet for en major.</summary>
+    public int MajorGifts { get; set; } = 2;
+    public int MinorGifts { get; set; } = 1;
     /// <summary>Bonus til alle saves (fx Lightfoot Halfling: Lucky +1).</summary>
     public int AllSaves { get; set; }
     public string? Notes { get; set; }
@@ -95,6 +100,7 @@ public sealed class GiftRule
     public Dictionary<string, int> Abilities { get; set; } = new();
     public Dictionary<string, int> Skills { get; set; } = new();
     public int AllSaves { get; set; }
+    public bool Major { get; set; }
 }
 
 public sealed class SkillRule

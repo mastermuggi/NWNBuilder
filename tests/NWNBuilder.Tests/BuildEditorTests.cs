@@ -17,11 +17,10 @@ public class BuildEditorTests
     [Fact]
     public void Apply_writes_edits_back()
     {
-        var editor = new BuildEditor(BuildJson.LoadSample("hesper-salcedo"));
+        var editor = new BuildEditor(BuildJson.LoadSample("hesper-salcedo"), TestRules.Arelith());
 
-        editor.Skills.Add(new SkillRow { Name = "Appraise", Points = 5 });
-        editor.Skills.Add(new SkillRow { Name = "  ", Points = 3 }); // tom række ignoreres
-        editor.Crafting.Remove(editor.Crafting.First(c => c.Name == "Herbalism"));
+        editor.Skills.Single(s => s.Name == "Appraise").Points = 5;
+        editor.Crafting.Single(c => c.Name == "Herbalism").Value = 0;
         editor.Friends.Add(new Friend { AccountName = "acc123", PlayerName = "Mads", Note = "Crew på skibet" });
         editor.Friends.Add(new Friend()); // tom ven ignoreres
 
@@ -31,6 +30,43 @@ public class BuildEditorTests
         Assert.False(build.Crafting.ContainsKey("Herbalism"));
         var friend = Assert.Single(build.Friends);
         Assert.Equal("acc123", friend.AccountName);
+    }
+
+    [Fact]
+    public void All_skills_and_crafts_are_listed_and_filter_works()
+    {
+        var editor = new BuildEditor(BuildJson.LoadSample("hesper-salcedo"), TestRules.Arelith());
+
+        Assert.Equal(28, editor.Skills.Count);
+        Assert.Equal(6, editor.Crafting.Count);
+
+        editor.ShowOnlyAllocated = true;
+        Assert.Equal(13, editor.VisibleSkills.Count()); // Spellcraft har 0 point
+    }
+
+    [Fact]
+    public void Gift_limit_is_enforced()
+    {
+        var editor = new BuildEditor(BuildJson.LoadSample("hesper-salcedo"), TestRules.Arelith());
+        var might = editor.Gifts.Single(g => g.Name == "Gift of Might");
+
+        might.IsSelected = true;
+        var error = editor.ToggleGift(might);
+
+        Assert.NotNull(error);
+        Assert.False(might.IsSelected);
+        Assert.Empty(editor.Result!.Warnings);
+    }
+
+    [Fact]
+    public void Dropdowns_contain_rules_and_build_values()
+    {
+        var editor = new BuildEditor(BuildJson.LoadSample("hesper-salcedo"), TestRules.Arelith());
+
+        Assert.Equal("", editor.ClassOptions[0]);
+        Assert.Contains("Swashbuckler", editor.ClassOptions);
+        Assert.Contains("Martial Novice", editor.FeatOptions);
+        Assert.Contains("Human", editor.RaceOptions);
     }
 
     [Fact]

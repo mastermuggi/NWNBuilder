@@ -102,7 +102,8 @@
                     <Grid ColumnDefinitions="*,16,*" RowDefinitions="Auto,12,Auto,12,Auto">
                       <StackPanel Grid.Row="0" Grid.Column="0">
                         <TextBlock Classes="label" Text="Race" />
-                        <TextBox Text="{Binding Build.Race}" />
+                        <ComboBox ItemsSource="{Binding RaceOptions}" SelectedItem="{Binding Build.Race}"
+                                  HorizontalAlignment="Stretch" SelectionChanged="Race_SelectionChanged" />
                       </StackPanel>
                       <StackPanel Grid.Row="0" Grid.Column="2">
                         <TextBlock Classes="label" Text="Alignment" />
@@ -171,6 +172,7 @@
                 <Border Grid.Row="2" Grid.Column="0" Classes="card">
                   <StackPanel>
                     <TextBlock Classes="section" Text="GIFTS" />
+                    <TextBlock Classes="label" Text="{Binding GiftLimitText}" Margin="0,-6,0,10" />
                     <ItemsControl ItemsSource="{Binding Gifts}">
                       <ItemsControl.ItemTemplate>
                         <DataTemplate x:DataType="core:GiftOption">
@@ -226,11 +228,35 @@
                         AutoGenerateColumns="False" CanUserSortColumns="False" CanUserReorderColumns="False"
                         HeadersVisibility="Column" GridLinesVisibility="Horizontal" Background="Transparent">
                 <DataGrid.Columns>
-                  <DataGridTextColumn Header="Lvl" Binding="{Binding Level}" IsReadOnly="True" Width="50" />
-                  <DataGridTextColumn Header="Klasse" Binding="{Binding Class}" Width="140" />
-                  <DataGridTextColumn Header="Class feat" Binding="{Binding ClassFeat}" Width="*" />
-                  <DataGridTextColumn Header="General feat" Binding="{Binding GeneralFeat}" Width="*" />
-                  <DataGridTemplateColumn Header="Ability +1" Width="110">
+                  <DataGridTextColumn Header="Lvl" Binding="{Binding Level}" IsReadOnly="True" Width="60" />
+                  <DataGridTemplateColumn Header="Klasse" Width="200">
+                    <DataGridTemplateColumn.CellTemplate>
+                      <DataTemplate x:CompileBindings="False">
+                        <ComboBox ItemsSource="{Binding $parent[DataGrid].DataContext.ClassOptions}"
+                                  SelectedItem="{Binding Class, Mode=TwoWay}"
+                                  HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" />
+                      </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                  </DataGridTemplateColumn>
+                  <DataGridTemplateColumn Header="Class feat" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                      <DataTemplate x:CompileBindings="False">
+                        <ComboBox ItemsSource="{Binding $parent[DataGrid].DataContext.FeatOptions}"
+                                  SelectedItem="{Binding ClassFeat, Mode=TwoWay}"
+                                  HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" />
+                      </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                  </DataGridTemplateColumn>
+                  <DataGridTemplateColumn Header="General feat" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                      <DataTemplate x:CompileBindings="False">
+                        <ComboBox ItemsSource="{Binding $parent[DataGrid].DataContext.FeatOptions}"
+                                  SelectedItem="{Binding GeneralFeat, Mode=TwoWay}"
+                                  HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" />
+                      </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                  </DataGridTemplateColumn>
+                  <DataGridTemplateColumn Header="Ability +1" Width="130">
                     <DataGridTemplateColumn.CellTemplate>
                       <DataTemplate x:CompileBindings="False">
                         <ComboBox ItemsSource="{x:Static local:Options.AbilityChoices}"
@@ -239,18 +265,32 @@
                       </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                   </DataGridTemplateColumn>
-                  <DataGridTextColumn Header="BAB" Binding="{Binding Bab}" IsReadOnly="True" Width="64" CellStyleClasses="calc" />
-                  <DataGridTextColumn Header="Fort" Binding="{Binding Fort}" IsReadOnly="True" Width="64" CellStyleClasses="calc" />
-                  <DataGridTextColumn Header="Ref" Binding="{Binding Ref}" IsReadOnly="True" Width="60" CellStyleClasses="calc" />
-                  <DataGridTextColumn Header="Will" Binding="{Binding Will}" IsReadOnly="True" Width="60" CellStyleClasses="calc" />
-                  <DataGridTextColumn Header="HP" Binding="{Binding Hp}" IsReadOnly="True" Width="68" CellStyleClasses="calc" />
-                  <DataGridTextColumn Header="Skill pt" Binding="{Binding SkillPoints}" IsReadOnly="True" Width="80" CellStyleClasses="calc" />
-                  <DataGridTextColumn Header="STR" Binding="{Binding Str}" IsReadOnly="True" Width="60" CellStyleClasses="calc" />
-                  <DataGridTextColumn Header="DEX" Binding="{Binding Dex}" IsReadOnly="True" Width="60" CellStyleClasses="calc" />
-                  <DataGridTextColumn Header="CON" Binding="{Binding Con}" IsReadOnly="True" Width="60" CellStyleClasses="calc" />
-                  <DataGridTextColumn Header="INT" Binding="{Binding Int}" IsReadOnly="True" Width="60" CellStyleClasses="calc" />
-                  <DataGridTextColumn Header="WIS" Binding="{Binding Wis}" IsReadOnly="True" Width="60" CellStyleClasses="calc" />
-                  <DataGridTextColumn Header="CHA" Binding="{Binding Cha}" IsReadOnly="True" Width="60" CellStyleClasses="calc" />
+                </DataGrid.Columns>
+              </DataGrid>
+            </Border>
+          </TabItem>
+
+          <!-- Progression (beregnet) -->
+          <TabItem Header="Progression">
+            <Border Classes="card" Padding="0" Margin="0,12,0,0">
+              <DataGrid x:CompileBindings="False" ItemsSource="{Binding Rows}" IsReadOnly="True"
+                        AutoGenerateColumns="False" CanUserSortColumns="False" CanUserReorderColumns="False"
+                        HeadersVisibility="Column" GridLinesVisibility="Horizontal" Background="Transparent">
+                <DataGrid.Columns>
+                  <DataGridTextColumn Header="Lvl" Binding="{Binding Level}" Width="60" />
+                  <DataGridTextColumn Header="Klasse" Binding="{Binding Class}" Width="180" />
+                  <DataGridTextColumn Header="BAB" Binding="{Binding Bab}" Width="70" />
+                  <DataGridTextColumn Header="Fort" Binding="{Binding Fort}" Width="70" />
+                  <DataGridTextColumn Header="Ref" Binding="{Binding Ref}" Width="70" />
+                  <DataGridTextColumn Header="Will" Binding="{Binding Will}" Width="70" />
+                  <DataGridTextColumn Header="HP" Binding="{Binding Hp}" Width="80" />
+                  <DataGridTextColumn Header="Skill pt" Binding="{Binding SkillPoints}" Width="90" />
+                  <DataGridTextColumn Header="STR" Binding="{Binding Str}" Width="70" />
+                  <DataGridTextColumn Header="DEX" Binding="{Binding Dex}" Width="70" />
+                  <DataGridTextColumn Header="CON" Binding="{Binding Con}" Width="70" />
+                  <DataGridTextColumn Header="INT" Binding="{Binding Int}" Width="70" />
+                  <DataGridTextColumn Header="WIS" Binding="{Binding Wis}" Width="70" />
+                  <DataGridTextColumn Header="CHA" Binding="{Binding Cha}" Width="70" />
                 </DataGrid.Columns>
               </DataGrid>
             </Border>
@@ -262,50 +302,33 @@
 
               <Border Grid.Column="0" Classes="card">
                 <DockPanel>
-                  <TextBlock DockPanel.Dock="Top" Classes="section" Text="SKILL RANKS" />
+                  <TextBlock DockPanel.Dock="Top" Classes="section" Text="SKILLS" />
                   <TextBlock DockPanel.Dock="Top" Classes="label" Text="{Binding SkillPointsText}" Margin="0,-6,0,8" />
-                  <Button DockPanel.Dock="Bottom" Content="+ Tilføj skill" Click="AddSkill_Click" Margin="0,10,0,0" />
-                  <DataGrid x:CompileBindings="False" ItemsSource="{Binding Skills}"
+                  <CheckBox DockPanel.Dock="Top" Content="Vis kun skills med point" IsChecked="{Binding ShowOnlyAllocated}" Margin="0,0,0,8" />
+                  <DataGrid x:CompileBindings="False" ItemsSource="{Binding VisibleSkills}"
                             AutoGenerateColumns="False" CanUserReorderColumns="False"
                             HeadersVisibility="Column" GridLinesVisibility="Horizontal" Background="Transparent">
                     <DataGrid.Columns>
-                      <DataGridTextColumn Header="Skill" Binding="{Binding Name}" Width="*" />
-                      <DataGridTextColumn Header="Point" Binding="{Binding Points}" Width="70" />
-                      <DataGridTextColumn Header="Class" Binding="{Binding ClassSkill}" IsReadOnly="True" Width="64" />
-                      <DataGridTextColumn Header="Ranks" Binding="{Binding Ranks}" IsReadOnly="True" Width="64" />
-                      <DataGridTextColumn Header="Mod" Binding="{Binding Modifier}" IsReadOnly="True" Width="56" />
-                      <DataGridTextColumn Header="Total" Binding="{Binding Total}" IsReadOnly="True" Width="60" />
-                      <DataGridTemplateColumn Width="50">
-                        <DataGridTemplateColumn.CellTemplate>
-                          <DataTemplate>
-                            <Button Content="✕" Click="RemoveRow_Click" Background="Transparent"
-                                    Foreground="{StaticResource Muted}" HorizontalAlignment="Center" />
-                          </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                      </DataGridTemplateColumn>
+                      <DataGridTextColumn Header="Skill" Binding="{Binding Name}" IsReadOnly="True" Width="*" />
+                      <DataGridTextColumn Header="Point" Binding="{Binding Points}" Width="80" />
+                      <DataGridTextColumn Header="Class" Binding="{Binding ClassSkill}" IsReadOnly="True" Width="70" CellStyleClasses="calc" />
+                      <DataGridTextColumn Header="Ranks" Binding="{Binding Ranks}" IsReadOnly="True" Width="72" CellStyleClasses="calc" />
+                      <DataGridTextColumn Header="Mod" Binding="{Binding Modifier}" IsReadOnly="True" Width="64" CellStyleClasses="calc" />
+                      <DataGridTextColumn Header="Total" Binding="{Binding Total}" IsReadOnly="True" Width="70" CellStyleClasses="calc" />
                     </DataGrid.Columns>
                   </DataGrid>
                 </DockPanel>
               </Border>
 
-              <Border Grid.Column="2" Classes="card">
+              <Border Grid.Column="2" Classes="card" VerticalAlignment="Top">
                 <DockPanel>
                   <TextBlock DockPanel.Dock="Top" Classes="section" Text="CRAFTING" />
-                  <Button DockPanel.Dock="Bottom" Content="+ Tilføj craft" Click="AddCraft_Click" Margin="0,10,0,0" />
                   <DataGrid x:CompileBindings="False" ItemsSource="{Binding Crafting}"
-                            AutoGenerateColumns="False" CanUserReorderColumns="False"
+                            AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserSortColumns="False"
                             HeadersVisibility="Column" GridLinesVisibility="Horizontal" Background="Transparent">
                     <DataGrid.Columns>
-                      <DataGridTextColumn Header="Craft" Binding="{Binding Name}" Width="*" />
+                      <DataGridTextColumn Header="Craft" Binding="{Binding Name}" IsReadOnly="True" Width="*" />
                       <DataGridTextColumn Header="Point" Binding="{Binding Value}" Width="90" />
-                      <DataGridTemplateColumn Width="50">
-                        <DataGridTemplateColumn.CellTemplate>
-                          <DataTemplate>
-                            <Button Content="✕" Click="RemoveRow_Click" Background="Transparent"
-                                    Foreground="{StaticResource Muted}" HorizontalAlignment="Center" />
-                          </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                      </DataGridTemplateColumn>
                     </DataGrid.Columns>
                   </DataGrid>
                 </DockPanel>

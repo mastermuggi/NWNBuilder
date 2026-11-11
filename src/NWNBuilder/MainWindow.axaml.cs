@@ -132,7 +132,13 @@ public partial class MainWindow : Window
 
     private void Tabs_SelectionChanged(object? sender, SelectionChangedEventArgs e) => _editor?.Recalculate();
 
-    private void Gift_Click(object? sender, RoutedEventArgs e) => _editor.Recalculate();
+    private void Gift_Click(object? sender, RoutedEventArgs e)
+    {
+        if (sender is CheckBox { DataContext: GiftOption gift } && _editor.ToggleGift(gift) is { } error)
+            StatusText.Text = error;
+    }
+
+    private void Race_SelectionChanged(object? sender, SelectionChangedEventArgs e) => _editor?.Recalculate();
 
     // --- Liste ---
 
@@ -163,22 +169,12 @@ public partial class MainWindow : Window
 
     // --- Skills / crafting ---
 
-    private void AddSkill_Click(object? sender, RoutedEventArgs e) => _editor.Skills.Add(new SkillRow());
-
-    private void AddCraft_Click(object? sender, RoutedEventArgs e) => _editor.Crafting.Add(new NamedValue());
-
     private void AddFriend_Click(object? sender, RoutedEventArgs e) => _editor.Friends.Add(new Friend());
 
     private void RemoveRow_Click(object? sender, RoutedEventArgs e)
     {
         switch ((sender as Button)?.DataContext)
         {
-            case SkillRow skill:
-                _editor.Skills.Remove(skill);
-                break;
-            case NamedValue row:
-                _editor.Crafting.Remove(row);
-                break;
             case Friend friend:
                 _editor.Friends.Remove(friend);
                 break;

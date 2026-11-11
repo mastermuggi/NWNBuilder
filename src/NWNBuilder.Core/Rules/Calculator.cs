@@ -45,6 +45,19 @@ public static class Calculator
 {
     public static int Mod(int score) => (int)Math.Floor((score - 10) / 2.0);
 
+    /// <summary>Null hvis gift-valget er tilladt for racen, ellers en forklaring.</summary>
+    public static string? GiftLimitError(IEnumerable<string> giftNames, RaceRule? race, Ruleset rules)
+    {
+        if (race == null) return null;
+        var gifts = giftNames.Select(rules.FindGift).Where(g => g != null).ToList();
+        var majors = gifts.Count(g => g!.Major);
+        if (majors > race.MajorGifts)
+            return $"{race.Name} må højst have {race.MajorGifts} major gift(s).";
+        if (gifts.Count > race.MajorGifts + race.MinorGifts)
+            return $"{race.Name} må højst have {race.MajorGifts + race.MinorGifts} gifts ({race.MajorGifts} major + {race.MinorGifts} minor).";
+        return null;
+    }
+
     public static BuildResult Calculate(Build build, Ruleset rules)
     {
         var warnings = new List<string>();
@@ -59,6 +72,9 @@ public static class Calculator
             if (gift == null) warnings.Add($"Gift '{name}' findes ikke i regelsættet.");
             else gifts.Add(gift);
         }
+
+        if (GiftLimitError(build.GiftNames, race, rules) is { } giftError)
+            warnings.Add(giftError);
 
         var abilities = Copy(build.StartAbilities);
         if (race != null) Add(abilities, race.Abilities);
