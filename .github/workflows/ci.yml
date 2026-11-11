@@ -8,24 +8,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      MONGO_TEST_CONNECTION: mongodb://127.0.0.1:27017
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.x'
-
-      - name: Start MongoDB
-        run: |
-          docker run -d --name mongo -p 27017:27017 mongo:7.0
-          for i in $(seq 1 30); do
-            docker exec mongo mongosh --quiet --eval 'db.runCommand({ping:1}).ok' && exit 0
-            sleep 2
-          done
-          echo "::error::MongoDB startede ikke: $(docker logs mongo 2>&1 | tail -20 | tr '\n' ' ')"
-          exit 1
 
       - name: Test
         run: dotnet test NWNBuilder.slnx -c Release --logger GitHubActions
