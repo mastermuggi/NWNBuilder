@@ -21,16 +21,16 @@ public sealed class Ruleset
     /// <summary>Crafting-kategorier (fx Alchemy, Smithing).</summary>
     public List<string> Crafts { get; set; } = new();
 
-    public ClassRule? FindClass(string name) =>
+    public ClassRule? FindClass(string? name) =>
         Classes.FirstOrDefault(c => Same(c.Name, name) || c.Aliases.Any(a => Same(a, name)));
-    public RaceRule? FindRace(string name) =>
+    public RaceRule? FindRace(string? name) =>
         Races.FirstOrDefault(r => Same(r.Name, name) || r.Aliases.Any(a => Same(a, name)));
-    public GiftRule? FindGift(string name) => Gifts.FirstOrDefault(g => Same(g.Name, name));
-    public SkillRule? FindSkill(string name) => Skills.FirstOrDefault(s => Same(s.Name, name));
-    public FeatRule? FindFeat(string name) =>
+    public GiftRule? FindGift(string? name) => Gifts.FirstOrDefault(g => Same(g.Name, name));
+    public SkillRule? FindSkill(string? name) => Skills.FirstOrDefault(s => Same(s.Name, name));
+    public FeatRule? FindFeat(string? name) =>
         Feats.FirstOrDefault(f => Same(f.Name, name) || f.Aliases.Any(a => Same(a, name)));
 
-    private static bool Same(string a, string b) => string.Equals(a.Trim(), b.Trim(), StringComparison.OrdinalIgnoreCase);
+    private static bool Same(string? a, string? b) => string.Equals(a?.Trim(), b?.Trim(), StringComparison.OrdinalIgnoreCase);
 }
 
 public sealed class GeneralRules

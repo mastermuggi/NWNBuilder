@@ -359,7 +359,7 @@ public static class Calculator
         return isClass ? Math.Min(points, max) : Math.Min(points / 2, max / 2);
     }
 
-    private static bool Same(string a, string b) => string.Equals(a.Trim(), b.Trim(), StringComparison.OrdinalIgnoreCase);
+    private static bool Same(string? a, string? b) => string.Equals(a?.Trim(), b?.Trim(), StringComparison.OrdinalIgnoreCase);
 
     private static int BabFor(string type, int levels) => type switch
     {

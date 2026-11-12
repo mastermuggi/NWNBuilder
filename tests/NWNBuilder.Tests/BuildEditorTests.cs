@@ -115,4 +115,20 @@ public class BuildEditorTests
         row.GeneralFeat = "";   // bevidst "ingen"
         Assert.Null(editor.Build.Levels[0].GeneralFeat);
     }
+
+    [Fact]
+    public void New_build_survives_empty_race_from_dropdown()
+    {
+        // Race-dropdown sender null, når "" ikke er i listen – det må ikke crashe beregningen.
+        var editor = new BuildEditor(BuildEditor.NewBuild(), TestRules.Arelith());
+        editor.Build.Race = null!;
+
+        editor.Recalculate();
+
+        Assert.NotNull(editor.Result);
+        Assert.All(editor.Rows, r => Assert.NotNull(r.FeatInfo));
+        _ = editor.Rows[0].FeatOptions;
+        _ = editor.GiftLimitText;
+        _ = editor.Summary;
+    }
 }
