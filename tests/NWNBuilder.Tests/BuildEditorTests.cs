@@ -131,4 +131,17 @@ public class BuildEditorTests
         _ = editor.GiftLimitText;
         _ = editor.Summary;
     }
+
+    [Fact]
+    public void Empty_start_stat_keeps_value_and_valid_input_recalculates()
+    {
+        var editor = new BuildEditor(BuildJson.LoadSample("hesper-salcedo"), TestRules.Arelith());
+        var before = editor.StartWithGifts!.Int;
+
+        editor.StartInt = "";            // feltet tømmes mens man skriver
+        Assert.Equal(before, editor.StartWithGifts!.Int);
+
+        editor.StartInt = (editor.Build.StartAbilities.Int + 1).ToString();
+        Assert.Equal(before + 1, editor.StartWithGifts!.Int);
+    }
 }

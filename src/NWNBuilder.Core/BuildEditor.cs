@@ -234,6 +234,22 @@ public sealed class BuildEditor : INotifyPropertyChanged
         Recalculate();
     }
 
+    // --- Start-stats som tekst: tomt eller ugyldigt felt beholder den gamle værdi i stedet for at give fejl ---
+    public string StartStr { get => Build.StartAbilities.Str.ToString(); set => SetStart(value, v => Build.StartAbilities.Str = v); }
+    public string StartDex { get => Build.StartAbilities.Dex.ToString(); set => SetStart(value, v => Build.StartAbilities.Dex = v); }
+    public string StartCon { get => Build.StartAbilities.Con.ToString(); set => SetStart(value, v => Build.StartAbilities.Con = v); }
+    public string StartInt { get => Build.StartAbilities.Int.ToString(); set => SetStart(value, v => Build.StartAbilities.Int = v); }
+    public string StartWis { get => Build.StartAbilities.Wis.ToString(); set => SetStart(value, v => Build.StartAbilities.Wis = v); }
+    public string StartCha { get => Build.StartAbilities.Cha.ToString(); set => SetStart(value, v => Build.StartAbilities.Cha = v); }
+
+    private void SetStart(string? text, Action<int> set)
+    {
+        if (!int.TryParse(text?.Trim(), out var value))
+            return;
+        set(value);
+        Recalculate();
+    }
+
     public IReadOnlyList<string> FeatOptionsFor(int level) =>
         level >= (_ruleset?.Rules.EpicFromLevel ?? 21) ? FeatOptions : PreEpicFeatOptions;
 

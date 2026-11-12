@@ -141,12 +141,12 @@
                       <TextBlock Grid.Row="0" Grid.Column="6" Classes="label" Text="CHA" HorizontalAlignment="Center" />
 
                       <TextBlock Grid.Row="1" Grid.Column="0" Classes="label" Text="Start" VerticalAlignment="Center" />
-                      <TextBox Grid.Row="1" Grid.Column="1" Classes="ability" Margin="0,0,6,0" Text="{Binding Build.StartAbilities.Str}" />
-                      <TextBox Grid.Row="1" Grid.Column="2" Classes="ability" Margin="0,0,6,0" Text="{Binding Build.StartAbilities.Dex}" />
-                      <TextBox Grid.Row="1" Grid.Column="3" Classes="ability" Margin="0,0,6,0" Text="{Binding Build.StartAbilities.Con}" />
-                      <TextBox Grid.Row="1" Grid.Column="4" Classes="ability" Margin="0,0,6,0" Text="{Binding Build.StartAbilities.Int}" />
-                      <TextBox Grid.Row="1" Grid.Column="5" Classes="ability" Margin="0,0,6,0" Text="{Binding Build.StartAbilities.Wis}" />
-                      <TextBox Grid.Row="1" Grid.Column="6" Classes="ability" Text="{Binding Build.StartAbilities.Cha}" />
+                      <TextBox Grid.Row="1" Grid.Column="1" Classes="ability" Margin="0,0,6,0" Text="{Binding StartStr}" />
+                      <TextBox Grid.Row="1" Grid.Column="2" Classes="ability" Margin="0,0,6,0" Text="{Binding StartDex}" />
+                      <TextBox Grid.Row="1" Grid.Column="3" Classes="ability" Margin="0,0,6,0" Text="{Binding StartCon}" />
+                      <TextBox Grid.Row="1" Grid.Column="4" Classes="ability" Margin="0,0,6,0" Text="{Binding StartInt}" />
+                      <TextBox Grid.Row="1" Grid.Column="5" Classes="ability" Margin="0,0,6,0" Text="{Binding StartWis}" />
+                      <TextBox Grid.Row="1" Grid.Column="6" Classes="ability" Text="{Binding StartCha}" />
 
                       <TextBlock Grid.Row="2" Grid.Column="0" Classes="label" Text="Med gifts" VerticalAlignment="Center" Margin="0,12,0,0" />
                       <TextBlock Grid.Row="2" Grid.Column="1" Classes="stat" Text="{Binding StartWithGifts.Str}" />
